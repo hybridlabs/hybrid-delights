@@ -46,9 +46,7 @@
 		"minecraft": "~1.21.4",
 		"java": ">=21",
 		"fabric-api": "*",
-		"fabric-language-kotlin": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
+		"fabric-language-kotlin": "*",
+		"hybrid-aquatic": "*"
 	}
 }
