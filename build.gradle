@@ -16,6 +16,31 @@ repositories {
 		name = "Modrinth"
 		url  = "https://api.modrinth.com/maven"
 	}
+
+	maven {
+		name = "Greenhouse"
+		url  = "https://repo.greenhouse.house/releases/"
+	}
+
+	maven {
+		name = "devOS"
+		url  = "https://mvn.devos.one/releases/"
+	}
+
+	maven {
+		name = "jamieswhiteshirt"
+		url  = "https://maven.jamieswhiteshirt.com/libs-release/"
+	}
+
+	maven {
+		name = "Jitpack"
+		url  = "https://jitpack.io/"
+	}
+
+	maven {
+		name = "GeckoLib"
+		url  = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
+	}
 }
 
 loom {
@@ -39,6 +64,11 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-language-kotlin:$fabric_kotlin_version+kotlin.$kotlin_version"
 
 	modImplementation "maven.modrinth:hybrid-aquatic:$aquatic_version"
+	modImplementation "software.bernie.geckolib:geckolib-fabric-$minecraft_version:$geckolib_version"
+	modImplementation "com.eliotlash.mclib:mclib:20"
+
+	modImplementation "vectorwing:FarmersDelight:$farmers_delight_version+refabricated"
+	modImplementation "com.electronwill.night-config:toml:$nightconfig_version"
 }
 
 processResources {
