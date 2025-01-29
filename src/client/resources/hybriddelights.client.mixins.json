@@ -1,9 +1,9 @@
 {
 	"required": true,
-	"package": "dev.hybridlabs.mixin.client",
+	"package": "dev.hybridlabs.hybriddelights.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"ExampleClientMixin"
+        "ExampleClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
