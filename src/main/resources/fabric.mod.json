@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "hybriddelights",
+	"id": "hybrid-delights",
 	"version": "${version}",
 	"name": "Hybrid Delights",
 	"description": "This is an example description! Tell everyone what your mod is about!",
@@ -17,19 +17,19 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "dev.hybridlabs.HybridDelights",
+				"value": "dev.hybridlabs.hybriddelights.HybridDelights",
 				"adapter": "kotlin"
 			}
 		],
 		"client": [
 			{
-				"value": "dev.hybridlabs.HybridDelightsClient",
+				"value": "dev.hybridlabs.hybriddelights.HybridDelightsClient",
 				"adapter": "kotlin"
 			}
 		],
 		"fabric-datagen": [
 			{
-				"value": "dev.hybridlabs.HybridDelightsDataGenerator",
+				"value": "dev.hybridlabs.hybriddelights.HybridDelightsDataGenerator",
 				"adapter": "kotlin"
 			}
 		]
