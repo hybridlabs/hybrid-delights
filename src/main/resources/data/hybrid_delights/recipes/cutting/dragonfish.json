@@ -1,0 +1,30 @@
+
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ],
+
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "hybrid-aquatic:dragonfish"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "hybrid-aquatic:raw_fish_meat"
+    },
+    {
+      "item": "hybrid-aquatic:glow_slime"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}
