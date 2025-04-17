@@ -1,4 +1,4 @@
-package dev.hybridlabs.hybriddelights
+package dev.hybridlabs.delights
 
 import net.fabricmc.api.ClientModInitializer
 

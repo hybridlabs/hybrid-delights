@@ -1,4 +1,4 @@
-package dev.hybridlabs.hybriddelights.mixin;
+package dev.hybridlabs.delights.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
