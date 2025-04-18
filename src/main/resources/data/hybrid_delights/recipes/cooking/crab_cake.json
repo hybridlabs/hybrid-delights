@@ -1,28 +1,21 @@
 {
   "type": "farmersdelight:cooking",
-  "experience": 1.0,
+  "cookingtime": 100,
+  "experience": 0.35,
   "ingredients": [
     {
+      "tag": "c:grains/wheat"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
       "item": "hybrid-aquatic:cooked_crab"
-    },
-    {
-      "item": "minecraft:egg"
-    },
-    {
-      "fabric:type": "fabric:any",
-      "ingredients": [
-        {
-          "item": "minecraft:wheat"
-        },
-        {
-          "item": "create:wheat_flour"
-        }
-      ]
     }
   ],
   "recipe_book_tab": "misc",
   "result": {
     "count": 2,
-    "id": "hybrid-aquatic:crab_cake"
+    "item": "hybrid_delights:crab_cake"
   }
 }

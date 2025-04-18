@@ -2,7 +2,6 @@
 
 package dev.hybridlabs.delights.item
 
-import dev.hybridlabs.aquatic.HybridAquatic
 import dev.hybridlabs.delights.HybridDelights
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.minecraft.item.ItemGroup
@@ -23,10 +22,9 @@ object  HybridDelightsItemGroups {
             entries.add(HybridDelightsItems.CRAB_CAKE)
 
 
-            // spawn eggs
             Registries.ITEM.forEach { item ->
                 val id = Registries.ITEM.getId(item)
-                if (id.namespace != HybridAquatic.MOD_ID) {
+                if (id.namespace != HybridDelights.MOD_ID) {
                     return@forEach
                 }
             }

@@ -2,18 +2,25 @@
 	"schemaVersion": 1,
 	"id": "hybrid_delights",
 	"version": "${version}",
+
 	"name": "Hybrid Delights",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A mod that adds integration between HybridLabs' mods and Farmers Delight",
+
 	"authors": [
-		"MysticKoko"
+		"MysticKoko",
+		"Andante",
+		"Eggo"
 	],
+
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
+
 	"license": "CC0-1.0",
-	"icon": "assets/hybriddelights/icon.png",
+	"icon": "assets/hybrid_delights/icon.png",
 	"environment": "*",
+
 	"entrypoints": {
 		"main": [
 			{
@@ -35,7 +42,7 @@
 		]
 	},
 	"mixins": [
-		"hybriddelights.mixins.json",
+		"hybrid_delights.mixins.json",
 		{
 			"config": "hybriddelights.client.mixins.json",
 			"environment": "client"

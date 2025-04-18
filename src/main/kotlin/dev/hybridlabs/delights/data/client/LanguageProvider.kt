@@ -1,7 +1,5 @@
 package dev.hybridlabs.delights.data.client
 
-import dev.hybridlabs.aquatic.data.HybridAquaticDataGenerator
-import dev.hybridlabs.delights.data.HybridDelightsDataGenerator
 import dev.hybridlabs.delights.item.HybridDelightsItemGroups
 import dev.hybridlabs.delights.item.HybridDelightsItems
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
