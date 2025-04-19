@@ -1,8 +1,8 @@
 package dev.hybridlabs.delights.data
 
+import dev.hybridlabs.delights.HybridDelights
 import dev.hybridlabs.delights.data.client.LanguageProvider
 import dev.hybridlabs.delights.data.client.ModelProvider
-import dev.hybridlabs.delights.HybridDelights
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
 import net.minecraft.registry.Registry
@@ -17,7 +17,11 @@ object HybridDelightsDataGenerator : DataGeneratorEntrypoint {
     fun <T> filterHybridDelights(registry: Registry<T>): (T) -> Boolean {
         return { o ->
             val id = registry.getId(o)
-            id?.namespace == HybridDelights.MOD_ID
+            if (id == null) {
+                false
+            } else {
+                id.namespace == HybridDelights.MOD_ID
+            }
         }
     }
 }

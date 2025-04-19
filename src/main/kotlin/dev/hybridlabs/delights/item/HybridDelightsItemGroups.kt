@@ -12,7 +12,7 @@ import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 
 object  HybridDelightsItemGroups {
-    val ITEMS = register("items", FabricItemGroup.builder()
+    val HYBRID_DELIGHTS = register("items", FabricItemGroup.builder()
         .displayName(Text.translatable("itemGroup.${HybridDelights.MOD_ID}.items"))
         .icon { ItemStack(HybridDelightsItems.CRAB_CAKE) }
         .entries { _, entries ->
