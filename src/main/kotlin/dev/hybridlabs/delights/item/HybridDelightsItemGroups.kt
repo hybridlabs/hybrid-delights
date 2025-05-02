@@ -20,6 +20,12 @@ object  HybridDelightsItemGroups {
             // food items
 
             entries.add(HybridDelightsItems.CRAB_CAKE)
+            entries.add(HybridDelightsItems.CRAB_RANGOON)
+            entries.add(HybridDelightsItems.BISQUE)
+            entries.add(HybridDelightsItems.FISHERMANS_SOUP)
+            entries.add(HybridDelightsItems.RAW_RAY_WING)
+            entries.add(HybridDelightsItems.FISH_FILET)
+            entries.add(HybridDelightsItems.BARREL_EYES)
 
 
             Registries.ITEM.forEach { item ->

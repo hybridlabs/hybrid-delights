@@ -17,8 +17,12 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
         // items
         mapOf(
             HybridDelightsItems.CRAB_CAKE to "Crab Cake",
+            HybridDelightsItems.CRAB_RANGOON to "Crab Rangoon",
+            HybridDelightsItems.BISQUE to "Bisque",
+            HybridDelightsItems.FISHERMANS_SOUP  to "Fisherman's Soup",
             HybridDelightsItems.FISH_FILET to "Fish Filet",
             HybridDelightsItems.RAW_RAY_WING to "Raw Ray Wing",
+            HybridDelightsItems.BARREL_EYES to "Barrel Eyes",
         ).forEach { (item, translation) ->
             builder.add(item, translation)
         }

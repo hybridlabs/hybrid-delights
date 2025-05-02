@@ -1,6 +1,10 @@
 {
+  "item.hybrid_delights.barrel_eyes": "Barrel Eyes",
+  "item.hybrid_delights.bisque": "Bisque",
   "item.hybrid_delights.crab_cake": "Crab Cake",
+  "item.hybrid_delights.crab_rangoon": "Crab Rangoon",
   "item.hybrid_delights.fish_filet": "Fish Filet",
+  "item.hybrid_delights.fishermans_soup": "Fisherman's Soup",
   "item.hybrid_delights.raw_ray_wing": "Raw Ray Wing",
   "itemGroup.hybrid_delights.items": "Hybrid Delights"
 }
