@@ -20,8 +20,8 @@ repositories {
 	}
 
 	maven {
-		name = "Greenhouse"
-		url  = "https://repo.greenhouse.house/releases/"
+		name = "Greenhouse Maven"
+		url = 'https://repo.greenhouse.house/releases/'
 	}
 
 	maven {
@@ -30,8 +30,10 @@ repositories {
 	}
 
 	maven {
-		name = "jamieswhiteshirt"
-		url  = "https://maven.jamieswhiteshirt.com/libs-release/"
+		url "https://maven.jamieswhiteshirt.com/libs-release" // Reach Entity Attributes (Required by Porting Lib)
+		content {
+			includeGroup "com.jamieswhiteshirt"
+		}
 	}
 
 	maven {
@@ -42,23 +44,6 @@ repositories {
 	maven {
 		name = "GeckoLib"
 		url  = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
-	}
-}
-
-fabricApi {
-	configureDataGeneration {
-		outputDirectory = file("src/generated/resources")
-	}
-}
-
-loom {
-	splitEnvironmentSourceSets()
-
-	mods {
-		mod_id {
-			sourceSet sourceSets.main
-			sourceSet sourceSets.client
-		}
 	}
 }
 
@@ -73,10 +58,28 @@ dependencies {
 
 	modImplementation "maven.modrinth:hybrid-aquatic:$aquatic_version"
 	modImplementation "software.bernie.geckolib:geckolib-fabric-$minecraft_version:$geckolib_version"
-	modImplementation "com.eliotlash.mclib:mclib:20"
 
-	modImplementation "vectorwing:FarmersDelight:$farmers_delight_version+refabricated"
-	modImplementation "com.electronwill.night-config:toml:$nightconfig_version"
+	modImplementation("vectorwing:FarmersDelight:$farmers_delight_version+refabricated") {
+		exclude(group: "net.fabricmc")
+	}
+}
+
+fabricApi {
+	configureDataGeneration {
+		setModId("$mod_id")
+		outputDirectory = file("src/generated/resources")
+	}
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		mod_id {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
 }
 
 processResources {

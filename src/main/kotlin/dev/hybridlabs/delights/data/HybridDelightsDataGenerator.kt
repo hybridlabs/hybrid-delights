@@ -17,11 +17,7 @@ object HybridDelightsDataGenerator : DataGeneratorEntrypoint {
     fun <T> filterHybridDelights(registry: Registry<T>): (T) -> Boolean {
         return { o ->
             val id = registry.getId(o)
-            if (id == null) {
-                false
-            } else {
-                id.namespace == HybridDelights.MOD_ID
-            }
+            id?.namespace == HybridDelights.MOD_ID
         }
     }
 }
