@@ -38,8 +38,8 @@ object HybridDelightsItems {
         )
     )
 
-    val RAY_WING = register(
-        "ray_wing",
+    val RAW_RAY_WING = register(
+        "raw_ray_wing",
         Item(
             FabricItemSettings()
                 .food(
