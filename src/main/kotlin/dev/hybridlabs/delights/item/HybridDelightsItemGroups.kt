@@ -31,9 +31,6 @@ object  HybridDelightsItemGroups {
             entries.add(HybridDelightsItems.TUNA_SALAD)
             entries.add(HybridDelightsItems.EEL_NOODLES)
             entries.add(HybridDelightsItems.MASGOUF)
-            entries.add(HybridDelightsItems.RAW_RAY_WING)
-            entries.add(HybridDelightsItems.FISH_FILET)
-            entries.add(HybridDelightsItems.BARREL_EYES)
 
 
             Registries.ITEM.forEach { item ->

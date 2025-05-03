@@ -28,9 +28,6 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
             HybridDelightsItems.TUNA_CASSEROLE  to "Tuna Casserole",
             HybridDelightsItems.TUNA_SALAD  to "Tuna Salad",
             HybridDelightsItems.EEL_NOODLES  to "Eel Noodles",
-            HybridDelightsItems.FISH_FILET to "Fish Filet",
-            HybridDelightsItems.RAW_RAY_WING to "Raw Ray Wing",
-            HybridDelightsItems.BARREL_EYES to "Barrel Eyes",
         ).forEach { (item, translation) ->
             builder.add(item, translation)
         }

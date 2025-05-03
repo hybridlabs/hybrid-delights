@@ -11,20 +11,6 @@ import net.minecraft.util.Identifier
 
 object HybridDelightsItems {
 
-    val FISH_FILET = register(
-        "fish_filet",
-        Item(
-            FabricItemSettings()
-                .food(
-                    FoodComponent.Builder()
-                        .hunger(2)
-                        .saturationModifier(0.4F)
-                        .meat()
-                        .build()
-                )
-        )
-    )
-
     val CRAB_CAKE = register(
         "crab_cake",
         Item(
@@ -195,34 +181,6 @@ object HybridDelightsItems {
                     FoodComponent.Builder()
                         .hunger(6)
                         .saturationModifier(1.0F)
-                        .meat()
-                        .build()
-                )
-        )
-    )
-
-    val RAW_RAY_WING = register(
-        "raw_ray_wing",
-        Item(
-            FabricItemSettings()
-                .food(
-                    FoodComponent.Builder()
-                        .hunger(2)
-                        .saturationModifier(0.4F)
-                        .meat()
-                        .build()
-                )
-        )
-    )
-
-    val BARREL_EYES = register(
-        "barrel_eyes",
-        Item(
-            FabricItemSettings()
-                .food(
-                    FoodComponent.Builder()
-                        .hunger(2)
-                        .saturationModifier(0.4F)
                         .meat()
                         .build()
                 )

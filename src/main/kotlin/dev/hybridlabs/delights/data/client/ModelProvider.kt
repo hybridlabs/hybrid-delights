@@ -9,11 +9,9 @@ import net.minecraft.data.client.Models
 
 class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
     override fun generateBlockStateModels(generator: BlockStateModelGenerator) {
-
     }
     
     override fun generateItemModels(generator: ItemModelGenerator) {
-        generator.register(HybridDelightsItems.BARREL_EYES, Models.GENERATED)
         generator.register(HybridDelightsItems.BISQUE, Models.GENERATED)
         generator.register(HybridDelightsItems.CHOWDER, Models.GENERATED)
         generator.register(HybridDelightsItems.CRAB_CAKE, Models.GENERATED)
@@ -26,7 +24,5 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         generator.register(HybridDelightsItems.TUNA_CASSEROLE, Models.GENERATED)
         generator.register(HybridDelightsItems.TUNA_SALAD, Models.GENERATED)
         generator.register(HybridDelightsItems.TUNA_SANDWICH, Models.GENERATED)
-        generator.register(HybridDelightsItems.FISH_FILET, Models.GENERATED)
-        generator.register(HybridDelightsItems.RAW_RAY_WING, Models.GENERATED)
     }
 }

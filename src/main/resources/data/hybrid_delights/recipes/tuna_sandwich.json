@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:foods/breads"
+    },
+    {
+      "item": "hybrid-aquatic:yellowfin_tuna"
+    },
+    {
+      "item": "farmersdelight:cabbage"
+    },
+    {
+      "tag": "c:crops/tomato"
+    }
+  ],
+  "result": {
+    "item": "hybrid_delights:tuna_sandwich"
+  }
+}
