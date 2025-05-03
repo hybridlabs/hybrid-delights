@@ -18,6 +18,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
+    "count": 3,
     "item": "hybrid_delights:fishermans_soup"
   }
 }

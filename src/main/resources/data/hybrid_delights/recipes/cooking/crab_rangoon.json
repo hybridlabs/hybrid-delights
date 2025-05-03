@@ -4,16 +4,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:raw_cod"
+      "item": "farmersdelight:onion"
     },
     {
-      "tag": "c:eggs"
+      "item": "farmersdelight:milk_bottle"
     },
     {
       "tag": "c:doughs"
     },
     {
-      "item": "hybrid-aquatic:raw_shrimp"
+      "item": "hybrid-aquatic:raw_crab"
     }
   ],
   "recipe_book_tab": "meals",

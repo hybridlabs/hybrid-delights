@@ -7,7 +7,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "hybrid-aquatic:raw_crab"
+      "tag": "hybrid-aquatic:crustacean_meat"
     },
     {
       "item": "farmersdelight:rice"
