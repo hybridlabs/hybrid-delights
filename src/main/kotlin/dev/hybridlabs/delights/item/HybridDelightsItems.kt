@@ -2,12 +2,13 @@ package dev.hybridlabs.delights.item
 
 import dev.hybridlabs.delights.HybridDelights
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
+import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.item.FoodComponent
 import net.minecraft.item.Item
-import net.minecraft.item.Items
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
+import vectorwing.farmersdelight.common.registry.ModEffects
 
 object HybridDelightsItems {
 
@@ -35,6 +36,7 @@ object HybridDelightsItems {
                         .hunger(6)
                         .saturationModifier(1.0F)
                         .meat()
+                        .statusEffect(StatusEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f)
                         .build()
                 )
                 .maxCount(1)
@@ -50,6 +52,7 @@ object HybridDelightsItems {
                         .hunger(6)
                         .saturationModifier(1.0F)
                         .meat()
+                        .statusEffect(StatusEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f)
                         .build()
                 )
                 .maxCount(1)
@@ -65,6 +68,7 @@ object HybridDelightsItems {
                         .hunger(6)
                         .saturationModifier(1.0F)
                         .meat()
+                        .statusEffect(StatusEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f)
                         .build()
                 )
                 .maxCount(1)
@@ -94,6 +98,7 @@ object HybridDelightsItems {
                         .hunger(6)
                         .saturationModifier(1.0F)
                         .meat()
+                        .statusEffect(StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f)
                         .build()
                 )
                 .maxCount(1)
@@ -124,6 +129,7 @@ object HybridDelightsItems {
                         .hunger(6)
                         .saturationModifier(1.0F)
                         .meat()
+                        .statusEffect(StatusEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0f)
                         .build()
                 )
                 .maxCount(1)
@@ -154,6 +160,7 @@ object HybridDelightsItems {
                         .hunger(6)
                         .saturationModifier(1.0F)
                         .meat()
+                        .statusEffect(StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f)
                         .build()
                 )
         )
@@ -167,6 +174,7 @@ object HybridDelightsItems {
                     FoodComponent.Builder()
                         .hunger(6)
                         .saturationModifier(1.0F)
+                        .snack()
                         .meat()
                         .build()
                 )
@@ -182,6 +190,7 @@ object HybridDelightsItems {
                         .hunger(6)
                         .saturationModifier(1.0F)
                         .meat()
+                        .statusEffect(StatusEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f)
                         .build()
                 )
         )
