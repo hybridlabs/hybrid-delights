@@ -1,10 +1,18 @@
 {
   "item.hybrid_delights.barrel_eyes": "Barrel Eyes",
   "item.hybrid_delights.bisque": "Bisque",
+  "item.hybrid_delights.chowder": "Chowder",
   "item.hybrid_delights.crab_cake": "Crab Cake",
   "item.hybrid_delights.crab_rangoon": "Crab Rangoon",
+  "item.hybrid_delights.eel_noodles": "Eel Noodles",
   "item.hybrid_delights.fish_filet": "Fish Filet",
+  "item.hybrid_delights.fishermans_pie": "Fisherman's Pie",
   "item.hybrid_delights.fishermans_soup": "Fisherman's Soup",
+  "item.hybrid_delights.lobster_stew": "Lobster Stew",
+  "item.hybrid_delights.masgouf": "Masgouf",
   "item.hybrid_delights.raw_ray_wing": "Raw Ray Wing",
+  "item.hybrid_delights.tuna_casserole": "Tuna Casserole",
+  "item.hybrid_delights.tuna_salad": "Tuna Salad",
+  "item.hybrid_delights.tuna_sandwich": "Tuna Sandwich",
   "itemGroup.hybrid_delights.items": "Hybrid Delights"
 }

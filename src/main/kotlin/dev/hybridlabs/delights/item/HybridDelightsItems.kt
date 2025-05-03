@@ -55,6 +55,80 @@ object HybridDelightsItems {
         )
     )
 
+    val LOBSTER_STEW = register(
+        "lobster_stew",
+        Item(
+            FabricItemSettings()
+                .food(
+                    FoodComponent.Builder()
+                        .hunger(6)
+                        .saturationModifier(1.0F)
+                        .meat()
+                        .build()
+                )
+                .maxCount(1)
+        )
+    )
+
+    val CHOWDER = register(
+        "chowder",
+        Item(
+            FabricItemSettings()
+                .food(
+                    FoodComponent.Builder()
+                        .hunger(6)
+                        .saturationModifier(1.0F)
+                        .meat()
+                        .build()
+                )
+                .maxCount(1)
+        )
+    )
+
+    val TUNA_SANDWICH = register(
+        "tuna_sandwich",
+        Item(
+            FabricItemSettings()
+                .food(
+                    FoodComponent.Builder()
+                        .hunger(6)
+                        .saturationModifier(1.0F)
+                        .meat()
+                        .build()
+                )
+        )
+    )
+
+    val TUNA_CASSEROLE = register(
+        "tuna_casserole",
+        Item(
+            FabricItemSettings()
+                .food(
+                    FoodComponent.Builder()
+                        .hunger(6)
+                        .saturationModifier(1.0F)
+                        .meat()
+                        .build()
+                )
+                .maxCount(1)
+        )
+    )
+
+    val TUNA_SALAD = register(
+        "tuna_salad",
+        Item(
+            FabricItemSettings()
+                .food(
+                    FoodComponent.Builder()
+                        .hunger(6)
+                        .saturationModifier(1.0F)
+                        .meat()
+                        .build()
+                )
+                .maxCount(1)
+        )
+    )
+
     val FISHERMANS_SOUP = register(
         "fishermans_soup",
         Item(
@@ -70,8 +144,51 @@ object HybridDelightsItems {
         )
     )
 
+    val EEL_NOODLES = register(
+        "eel_noodles",
+        Item(
+            FabricItemSettings()
+                .food(
+                    FoodComponent.Builder()
+                        .hunger(6)
+                        .saturationModifier(1.0F)
+                        .meat()
+                        .build()
+                )
+                .maxCount(1)
+        )
+    )
+
+    val FISHERMANS_PIE = register(
+        "fishermans_pie",
+        Item(
+            FabricItemSettings()
+                .food(
+                    FoodComponent.Builder()
+                        .hunger(6)
+                        .saturationModifier(1.0F)
+                        .meat()
+                        .build()
+                )
+        )
+    )
+
     val CRAB_RANGOON = register(
         "crab_rangoon",
+        Item(
+            FabricItemSettings()
+                .food(
+                    FoodComponent.Builder()
+                        .hunger(6)
+                        .saturationModifier(1.0F)
+                        .meat()
+                        .build()
+                )
+        )
+    )
+
+    val MASGOUF = register(
+        "masgouf",
         Item(
             FabricItemSettings()
                 .food(
