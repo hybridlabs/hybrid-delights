@@ -8,6 +8,7 @@
 
 	"authors": [
 		"MysticKoko",
+		"Aqua",
 		"Andante",
 		"Eggo"
 	],
@@ -17,7 +18,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/hybrid_delights/icon.png",
 	"environment": "*",
 
