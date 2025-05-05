@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_carp": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
@@ -15,21 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid_delights:masgouf"
+        "recipe": "hybrid_delights:cooking/masgouf"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_carp",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "hybrid_delights:masgouf"
+      "hybrid_delights:cooking/masgouf"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

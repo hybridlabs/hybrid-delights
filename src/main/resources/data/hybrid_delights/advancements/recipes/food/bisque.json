@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_crustacean_meat": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
@@ -13,21 +13,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid_delights:bisque"
+        "recipe": "hybrid_delights:cooking/bisque"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_crustacean_meat",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "hybrid_delights:bisque"
+      "hybrid_delights:cooking/bisque"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

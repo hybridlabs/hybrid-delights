@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_tuna": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
@@ -20,7 +20,7 @@
   },
   "requirements": [
     [
-      "has_tuna",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
@@ -29,5 +29,5 @@
       "hybrid_delights:tuna_sandwich"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

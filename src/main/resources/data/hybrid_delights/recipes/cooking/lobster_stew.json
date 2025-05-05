@@ -22,7 +22,7 @@
       "item": "minecraft:bread"
     }
   ],
-  "recipe_book_tab": "meals",
+  "recipe_book_tab": "misc",
   "result": {
     "count": 2,
     "item": "hybrid_delights:lobster_stew"

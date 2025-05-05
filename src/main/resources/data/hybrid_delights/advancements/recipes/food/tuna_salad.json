@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_tuna": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
@@ -13,21 +13,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid_delights:tuna_salad"
+        "recipe": "hybrid_delights:cooking/tuna_salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_tuna",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "hybrid_delights:tuna_salad"
+      "hybrid_delights:cooking/tuna_salad"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

@@ -1,17 +1,15 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lobster": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
             "items": [
-              "hybrid-aquatic:raw_lobster"
-            ]
-          },
-          {
-            "items": [
-              "hybrid-aquatic:raw_lobster_tail"
+              "hybrid-aquatic:raw_lobster",
+              "hybrid-aquatic:cooked_lobster",
+              "hybrid-aquatic:raw_lobster_tail",
+              "hybrid-aquatic:cooked_lobster_tail"
             ]
           }
         ]
@@ -20,21 +18,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid_delights:lobster_stew"
+        "recipe": "hybrid_delights:cooking/lobster_stew"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_carp",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "hybrid_delights:lobster_stew"
+      "hybrid_delights:cooking/lobster_stew"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }
