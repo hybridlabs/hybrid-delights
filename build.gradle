@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+//file:noinspection ALL
 
 plugins {
 	id "fabric-loom" version "1.10-SNAPSHOT"
@@ -47,6 +47,13 @@ repositories {
 	}
 }
 
+fabricApi {
+	configureDataGeneration {
+		setModId("$mod_id")
+		outputDirectory = file("src/generated/resources")
+	}
+}
+
 dependencies {
 	minecraft "com.mojang:minecraft:$minecraft_version"
 	mappings "net.fabricmc:yarn:$minecraft_version+build.$yarn_build:v2"
@@ -64,13 +71,6 @@ dependencies {
 	}
 }
 
-fabricApi {
-	configureDataGeneration {
-		setModId("$mod_id")
-		outputDirectory = file("src/generated/resources")
-	}
-}
-
 loom {
 	splitEnvironmentSourceSets()
 
@@ -83,20 +83,10 @@ loom {
 }
 
 processResources {
-	inputs.property "version", project.version
+	inputs.property "version", version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version
-	}
-}
-
-tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
-}
-
-tasks.withType(KotlinCompile).configureEach {
-	kotlinOptions {
-		jvmTarget = 17
+		expand "version": version
 	}
 }
 
@@ -105,6 +95,10 @@ java {
 
 	sourceCompatibility = JavaVersion.VERSION_17
 	targetCompatibility = JavaVersion.VERSION_17
+}
+
+kotlin {
+	jvmToolchain(17)
 }
 
 jar {
