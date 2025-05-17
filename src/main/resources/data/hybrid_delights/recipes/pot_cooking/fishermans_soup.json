@@ -1,0 +1,25 @@
+{
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "item": "hybrid-aquatic:carp"
+    },
+    {
+      "item": "farm_and_charm:onion"
+    },
+    {
+      "item": "farm_and_charm:tomato"
+    }
+  ],
+  "container": {
+    "required": true,
+    "item": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "result": {
+    "item": "hybrid_delights:fishermans_soup",
+    "count": 1
+  },
+  "requiresLearning": false
+}

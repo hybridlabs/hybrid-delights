@@ -1,0 +1,22 @@
+{
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "hybrid-aquatic:tuna"
+    },
+    {
+      "item": "farm_and_charm:tomato"
+    },
+    {
+      "item": "farm_and_charm:lettuce"
+    }
+  ],
+  "container": {
+    "required": false
+  },
+  "result": {
+    "item": "hybrid_delights:tuna_salad",
+    "count": 1
+  },
+  "requiresLearning": false
+}

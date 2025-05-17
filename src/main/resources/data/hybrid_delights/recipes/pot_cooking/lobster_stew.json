@@ -1,0 +1,31 @@
+{
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "item": "hybrid-aquatic:raw_lobster"
+    },
+    {
+      "item": "hybrid-aquatic:raw_lobster_tail"
+    },
+    {
+      "item": "farm_and_charm:onion"
+    },
+    {
+      "item": "farm_and_charm:tomato"
+    },
+    {
+      "item": "minecraft:bread"
+    }
+  ],
+  "container": {
+    "required": true,
+    "item": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "result": {
+    "item": "hybrid_delights:lobster_stew",
+    "count": 1
+  },
+  "requiresLearning": false
+}

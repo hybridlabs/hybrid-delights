@@ -1,0 +1,22 @@
+{
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "item": "hybrid-aquatic:cooked_crab"
+    },
+    {
+      "item": "farm_and_charm:flour"
+    },
+    {
+      "item": "minecraft:egg"
+    }
+  ],
+  "container": {
+    "required": false
+  },
+  "result": {
+    "item": "hybrid_delights:crab_cake",
+    "count": 1
+  },
+  "requiresLearning": false
+}
