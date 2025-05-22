@@ -1,0 +1,31 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "hybrid-aquatic:tuna"
+    },
+    {
+      "item": "farmersdelight:cabbage"
+    },
+    {
+      "item": "farmersdelight:tomato"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "hybrid-delights:tuna_salad"
+  }
+}

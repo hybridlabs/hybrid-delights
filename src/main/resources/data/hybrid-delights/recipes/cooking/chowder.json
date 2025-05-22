@@ -1,0 +1,38 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "hybrid-aquatic:crustacean_meat"
+    },
+    {
+      "item": "farmersdelight:onion"
+    },
+    {
+      "item": "farmersdelight:tomato"
+    },
+    {
+      "item": "farmersdelight:milk_bottle"
+    },
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "count": 2,
+    "item": "hybrid-delights:chowder"
+  }
+}

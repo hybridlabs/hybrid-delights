@@ -1,0 +1,29 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:foods/breads"
+    },
+    {
+      "tag": "hybrid-aquatic:tuna"
+    },
+    {
+      "item": "farmersdelight:cabbage"
+    },
+    {
+      "tag": "c:crops/tomato"
+    }
+  ],
+  "result": {
+    "item": "hybrid-delights:tuna_sandwich"
+  }
+}

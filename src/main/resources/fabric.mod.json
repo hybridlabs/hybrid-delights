@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "hybrid_delights",
+	"id": "hybrid-delights",
 	"version": "${version}",
 
 	"name": "Hybrid Delights",
@@ -19,7 +19,7 @@
 	},
 
 	"license": "MIT",
-	"icon": "assets/hybrid_delights/icon.png",
+	"icon": "assets/hybrid-delights/icon.png",
 	"environment": "*",
 
 	"entrypoints": {
@@ -43,9 +43,9 @@
 		]
 	},
 	"mixins": [
-		"hybrid_delights.mixins.json",
+		"hybrid-delights.mixins.json",
 		{
-			"config": "hybriddelights.client.mixins.json",
+			"config": "hybrid-delights.client.mixins.json",
 			"environment": "client"
 		}
 	],
@@ -56,5 +56,8 @@
 		"fabric-api": "*",
 		"fabric-language-kotlin": "*",
 		"hybrid-aquatic": "*"
+	},
+	"suggests": {
+		"farmersdelight": "*"
 	}
 }

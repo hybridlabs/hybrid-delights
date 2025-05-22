@@ -1,0 +1,36 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farm_and_charm"
+      ]
+    }
+  ],
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "hybrid-aquatic:crustacean_meat"
+    },
+    {
+      "item": "farm_and_charm:onion"
+    },
+    {
+      "item": "farm_and_charm:tomato"
+    },
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "container": {
+    "required": true,
+    "item": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "result": {
+    "item": "hybrid-delights:chowder",
+    "count": 1
+  },
+  "requiresLearning": false
+}

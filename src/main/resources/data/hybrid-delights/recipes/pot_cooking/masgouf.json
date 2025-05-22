@@ -1,0 +1,30 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farm_and_charm"
+      ]
+    }
+  ],
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "item": "hybrid-aquatic:carp"
+    },
+    {
+      "item": "farm_and_charm:onion"
+    },
+    {
+      "item": "farm_and_charm:tomato"
+    }
+  ],
+  "container": {
+    "required": false
+  },
+  "result": {
+    "item": "hybrid-delights:masgouf",
+    "count": 1
+  },
+  "requiresLearning": false
+}
