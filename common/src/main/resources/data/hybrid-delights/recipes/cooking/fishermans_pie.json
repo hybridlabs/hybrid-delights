@@ -12,13 +12,13 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:raw_cod"
+      "item": "minecraft:cod"
     },
     {
       "tag": "c:eggs"
     },
     {
-      "item": "farmersdelight:wheat_dough"
+      "tag": "c:dough"
     },
     {
       "tag": "hybrid-aquatic:crustacean_meat"

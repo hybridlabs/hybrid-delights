@@ -16,7 +16,7 @@
       "item": "farm_and_charm:flour"
     },
     {
-      "item": "minecraft:egg"
+      "tag": "c:eggs"
     }
   ],
   "container": {

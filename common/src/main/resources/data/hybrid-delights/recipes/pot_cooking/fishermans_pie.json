@@ -13,13 +13,13 @@
       "tag": "hybrid-aquatic:crustacean_meat"
     },
     {
-      "item": "farm_and_charm:dough"
+      "tag": "c:dough"
     },
     {
-      "item": "minecraft:egg"
+      "tag": "c:eggs"
     },
     {
-      "item": "minecraft:raw_cod"
+      "item": "minecraft:cod"
     }
   ],
   "container": {
