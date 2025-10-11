@@ -1,0 +1,52 @@
+{
+	"schemaVersion": 1,
+	"id": "hybrid-delights",
+	"version": "${version}",
+
+	"name": "Hybrid Delights",
+	"description": "A mod that adds integration between HybridLabs' mods and Farmers Delight",
+
+	"authors": [
+		"MysticKoko",
+		"Aqua",
+		"Andante",
+		"Eggo"
+	],
+
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+
+	"license": "MIT",
+	"icon": "assets/hybrid-delights/icon.png",
+	"environment": "*",
+
+	"entrypoints": {
+		"main": [
+			{
+				"value": "dev.hybridlabs.delights.HybridDelights",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "dev.hybridlabs.delights.data.HybridDelightsDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+
+	"depends": {
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-language-kotlin": "*",
+		"fabric-api": ">=0.92",
+		"hybrid-aquatic": ">=1.5.0"
+	},
+
+	"suggests": {
+		"farmersdelight": "*",
+		"farm_and_charm": "*"
+	}
+}
