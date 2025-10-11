@@ -16,7 +16,7 @@
       "item": "farm_and_charm:onion"
     },
     {
-      "item": "farm_and_charm:dough"
+      "tag": "c:dough"
     }
   ],
   "container": {
