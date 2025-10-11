@@ -10,5 +10,6 @@
   "item.hybrid-delights.masgouf": "Masgouf",
   "item.hybrid-delights.tuna_casserole": "Tuna Casserole",
   "item.hybrid-delights.tuna_salad": "Tuna Salad",
-  "item.hybrid-delights.tuna_sandwich": "Tuna Sandwich"
+  "item.hybrid-delights.tuna_sandwich": "Tuna Sandwich",
+  "itemGroup.hybrid-delights.items": "Hybrid Delights"
 }

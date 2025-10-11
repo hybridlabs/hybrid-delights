@@ -16,11 +16,6 @@ legacyForge {
     apply plugin: 'kotlin'
     version = "${minecraft_version}-${forge_version}"
 
-    mixin {
-        add(sourceSets.main, "${forge_mod_id}.refmap.json")
-        config("${mod_id}.forge.mixins.json")
-    }
-
     // AT validation is broken on Forge 1.20.1
     validateAccessTransformers = false
 
@@ -46,7 +41,7 @@ legacyForge {
         }
         data {
             data()
-            programArguments.addAll '--mod', 'hybrid_aquatic', '--all',
+            programArguments.addAll '--mod', 'hybrid_delights', '--all',
                     '--output', file('src/generated/resources/').getAbsolutePath(),
                     '--existing', file('src/main/resources/').getAbsolutePath(),
                     '--existing', file("../fabric/src/generated/resources").getAbsolutePath()
@@ -69,6 +64,10 @@ repositories {
         url = 'https://thedarkcolour.github.io/KotlinForForge/'
     }
     maven {
+        name = "Geckolib"
+        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
+    }
+    maven {
         name = "Modrinth"
         url = "https://api.modrinth.com/maven/"
     }
@@ -89,16 +88,12 @@ dependencies {
     compileOnly project(":common")
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
+    modImplementation "maven.modrinth:hybrid-aquatic:$aquatic_version-forge"
+    modImplementation "software.bernie.geckolib:geckolib-forge-$geckolib_version"
+    modImplementation "maven.modrinth:lithostitched:${lithostitched_version}-forge-1.20"
     implementation 'org.jetbrains:annotations:25.0.0'
     implementation 'thedarkcolour:kotlinforforge:4.11.0'
     implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0"))
-}
-
-jar {
-    finalizedBy('reobfJar')
-    manifest.attributes([
-            "MixinConfigs": "${mod_id}.forge.mixins.json"
-    ])
 }
 
 compileKotlin {

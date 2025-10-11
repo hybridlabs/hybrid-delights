@@ -8,6 +8,11 @@ import net.minecraft.core.registries.BuiltInRegistries
 
 class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output) {
     override fun generateTranslations(builder: TranslationBuilder) {
+        // item group
+        builder.add(
+            BuiltInRegistries.CREATIVE_MODE_TAB.getResourceKey(HybridDelightsItemGroups.HYBRID_DELIGHTS.get())
+                .orElseThrow { IllegalStateException("Item group not registered") }, "Hybrid Delights"
+        )
 
         // items
         mapOf(
