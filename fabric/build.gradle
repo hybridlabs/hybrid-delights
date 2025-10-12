@@ -6,21 +6,6 @@ plugins {
 
 repositories {
     maven { url "https://maven.terraformersmc.com/releases/" }
-    maven {
-        name = "Geckolib"
-        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
-    }
-
-    maven {
-        name = "Greenhouse Maven"
-        url = 'https://repo.greenhouse.house/releases/'
-    }
-    maven { url "https://mvn.devos.one/releases/" } // Porting Lib
-
-    maven {
-        name = "JamiesWhiteShirt"
-        url = "https://maven.jamieswhiteshirt.com/libs-release/"
-    }
 
     maven {
         url "https://jitpack.io/" // Fabric ASM
@@ -62,10 +47,6 @@ dependencies {
     //We still have to load the loader-specific version of any mods included in common
     modRuntimeOnly "io.github.flemmli97:debugutils:$minecraft_version-$debug_utils_version-fabric"
     modRuntimeOnly "maven.modrinth:carpet:$carpet_version"
-    modRuntimeOnly "maven.modrinth:hybrid-aquatic:$aquatic_version-fabric"
-    modApi "software.bernie.geckolib:geckolib-fabric-$geckolib_version"
-    modImplementation "maven.modrinth:lithostitched:${lithostitched_version}-fabric-1.20"
-    include modImplementation("com.jamieswhiteshirt:reach-entity-attributes:$reach_entity_attributes_version")
 
     modRuntimeOnly "maven.modrinth:cyanide:4.1.1-fabric"
 

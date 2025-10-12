@@ -41,8 +41,7 @@
 		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-language-kotlin": "*",
-		"fabric-api": ">=0.92",
-		"hybrid-aquatic": ">=1.5.0"
+		"fabric-api": ">=0.92"
 	},
 
 	"suggests": {

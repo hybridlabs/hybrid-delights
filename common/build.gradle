@@ -26,11 +26,6 @@ repositories {
     }
 
     maven {
-        name = "Geckolib"
-        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
-    }
-
-    maven {
         name = "Modrinth"
         url = "https://api.modrinth.com/maven/"
     }
@@ -44,20 +39,6 @@ repositories {
         name = "Minecraft Forge"
         url = "https://maven.minecraftforge.net/"
     }
-
-    maven {
-        name = "Greenhouse Maven"
-        url = 'https://repo.greenhouse.house/releases/'
-    }
-
-    maven {
-        url = "https://mvn.devos.one/releases/"
-    }
-
-    maven {
-        name = "JamiesWhiteShirt"
-        url = "https://maven.jamieswhiteshirt.com/libs-release/"
-    }
     mavenCentral()
 }
 
@@ -66,9 +47,6 @@ dependencies {
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
     implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0"))
     implementation 'org.jetbrains:annotations:25.0.0'
-
-    modImplementation "software.bernie.geckolib:geckolib-forge-$geckolib_version"
-    modImplementation "maven.modrinth:lithostitched:${lithostitched_version}-forge-1.20"
 }
 
 configurations {
