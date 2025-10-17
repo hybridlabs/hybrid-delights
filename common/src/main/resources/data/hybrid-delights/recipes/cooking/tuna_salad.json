@@ -12,7 +12,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "hybrid-aquatic:tuna"
+      "item": "hybrid-aquatic:tuna"
     },
     {
       "item": "farmersdelight:cabbage"

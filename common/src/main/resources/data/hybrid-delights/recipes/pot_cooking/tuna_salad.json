@@ -10,7 +10,7 @@
   "type": "farm_and_charm:pot_cooking",
   "ingredients": [
     {
-      "tag": "hybrid-aquatic:tuna"
+      "item": "hybrid-aquatic:tuna"
     },
     {
       "item": "farm_and_charm:tomato"

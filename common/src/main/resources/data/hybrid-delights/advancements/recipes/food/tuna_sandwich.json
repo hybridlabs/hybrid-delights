@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "hybrid-aquatic:tuna"
+            "item": "hybrid-aquatic:tuna"
           }
         ]
       },
