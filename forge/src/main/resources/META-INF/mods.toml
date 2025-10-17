@@ -34,10 +34,3 @@ mandatory = true
 versionRange = "${aquatic_version}"
 ordering = "NONE"
 side = "BOTH"
-
-[[dependencies.${forge_mod_id}]]
-modId = "farm_and_charm"
-mandatory = false
-versionRange = "${fac_version}"
-ordering = "NONE"
-side = "BOTH"
