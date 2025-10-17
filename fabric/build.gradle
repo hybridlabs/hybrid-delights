@@ -15,6 +15,25 @@ repositories {
     }
 
     maven {
+        name = "Geckolib"
+        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
+    }
+
+    maven {
+        name = "Greenhouse Maven"
+        url = 'https://repo.greenhouse.house/releases/'
+    }
+
+    maven { url "https://mvn.devos.one/releases/" } // Porting Lib
+
+    maven {
+        url "https://maven.jamieswhiteshirt.com/libs-release" // Reach Entity Attributes (Required by Porting Lib)
+        content {
+            includeGroup "com.jamieswhiteshirt"
+        }
+    }
+
+    maven {
         name = "Modrinth"
         url = "https://api.modrinth.com/maven/"
     }
@@ -45,10 +64,13 @@ dependencies {
     implementation 'org.jetbrains:annotations:25.0.0'
 
     //We still have to load the loader-specific version of any mods included in common
+    modImplementation "maven.modrinth:hybrid-aquatic:$aquatic_version-fabric"
+    modImplementation "maven.modrinth:lets-do-farm-charm:$fac_version"
     modRuntimeOnly "io.github.flemmli97:debugutils:$minecraft_version-$debug_utils_version-fabric"
     modRuntimeOnly "maven.modrinth:carpet:$carpet_version"
-
-    modRuntimeOnly "maven.modrinth:cyanide:4.1.1-fabric"
+    modRuntimeOnly "software.bernie.geckolib:geckolib-fabric-$geckolib_version"
+    modRuntimeOnly "maven.modrinth:lithostitched:${lithostitched_version}-fabric-1.20"
+    modRuntimeOnly("com.jamieswhiteshirt:reach-entity-attributes:$reach_entity_attributes_version")
 
     modApi("com.terraformersmc:modmenu:${modmenu_version}")
 }
@@ -67,7 +89,6 @@ fabricApi {
         datagenOutput files(runDatagen)
     }
 }
-
 
 loom {
     if (project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()) {
