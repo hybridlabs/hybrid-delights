@@ -12,13 +12,13 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "hybrid-aquatic:crustacean_meat"
+      "item": "hybrid-aquatic:raw_crab"
     },
     {
       "tag": "c:eggs"
     },
     {
-      "tag": "c:dough"
+      "item": "farmersdelight:wheat_dough"
     },
     {
       "item": "hybrid-aquatic:fish_steak"

@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "hybrid-aquatic:crustacean_meat"
+            "item": "hybrid-aquatic:raw_crab"
           }
         ]
       },

@@ -10,7 +10,7 @@
   "type": "farm_and_charm:pot_cooking",
   "ingredients": [
     {
-      "tag": "hybrid-aquatic:crustacean_meat"
+      "item": "hybrid-aquatic:raw_crab"
     },
     {
       "tag": "c:crops/onion"
