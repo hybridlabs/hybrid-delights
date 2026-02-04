@@ -18,10 +18,10 @@
       "tag": "hybrid-aquatic:crustacean_meat"
     },
     {
-      "item": "farmersdelight:onion"
+      "tag": "c:crops/onion"
     },
     {
-      "item": "farmersdelight:tomato"
+      "tag": "c:crops/tomato"
     },
     {
       "item": "farmersdelight:milk_bottle"
@@ -32,7 +32,7 @@
   ],
   "recipe_book_tab": "misc",
   "result": {
-    "count": 2,
+    "count": 1,
     "item": "hybrid-delights:chowder"
   }
 }

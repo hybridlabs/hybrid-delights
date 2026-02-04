@@ -13,10 +13,13 @@
       "tag": "hybrid-aquatic:crustacean_meat"
     },
     {
-      "item": "farm_and_charm:onion"
+      "tag": "c:crops/onion"
     },
     {
-      "item": "farm_and_charm:tomato"
+      "tag": "c:crops/tomato"
+    },
+    {
+      "item": "minecraft:milk_bucket"
     },
     {
       "item": "minecraft:potato"

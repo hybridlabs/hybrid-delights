@@ -10,10 +10,16 @@
   "type": "farm_and_charm:pot_cooking",
   "ingredients": [
     {
-      "tag": "hybrid-aquatic:crustacean_meat"
+      "item": "hybrid-aquatic:raw_tentacle"
     },
     {
-      "item": "farm_and_charm:barley"
+      "item": "hybrid-aquatic:raw_crayfish"
+    },
+    {
+      "item": "hybrid-aquatic:uni"
+    },
+    {
+      "tag": "c:crops/tomato"
     }
   ],
   "container": {

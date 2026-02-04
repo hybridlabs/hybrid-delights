@@ -12,7 +12,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "farmersdelight:onion"
+      "tag": "c:crops/onion"
     },
     {
       "item": "farmersdelight:milk_bottle"
@@ -26,6 +26,7 @@
   ],
   "recipe_book_tab": "misc",
   "result": {
+    "count": 2,
     "item": "hybrid-delights:crab_rangoon"
   }
 }

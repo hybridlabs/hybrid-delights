@@ -13,13 +13,13 @@
       "tag": "hybrid-aquatic:crustacean_meat"
     },
     {
-      "tag": "c:dough"
-    },
-    {
       "tag": "c:eggs"
     },
     {
-      "item": "minecraft:cod"
+      "tag": "c:dough"
+    },
+    {
+      "item": "hybrid-aquatic:fish_steak"
     }
   ],
   "container": {

@@ -13,10 +13,10 @@
       "item": "hybrid-aquatic:carp"
     },
     {
-      "item": "farm_and_charm:onion"
+      "tag": "c:crops/onion"
     },
     {
-      "item": "farm_and_charm:tomato"
+      "tag": "c:crops/tomato"
     }
   ],
   "container": {

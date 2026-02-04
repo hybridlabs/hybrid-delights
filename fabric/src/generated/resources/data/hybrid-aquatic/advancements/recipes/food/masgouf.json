@@ -5,8 +5,8 @@
       "conditions": {
         "items": [
           {
-            "item": [
-              "hybrid-aquatic:tuna"
+            "items": [
+              "hybrid-aquatic:carp"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:cooking/tuna_casserole"
+        "recipe": "hybrid-delights:cooking/masgouf"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:cooking/tuna_casserole"
+      "hybrid-delights:cooking/masgouf"
     ]
   },
   "sends_telemetry_event": true

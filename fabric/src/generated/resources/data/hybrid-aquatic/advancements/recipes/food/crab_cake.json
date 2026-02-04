@@ -5,8 +5,9 @@
       "conditions": {
         "items": [
           {
-            "item": [
-              "hybrid-aquatic:tuna"
+            "items": [
+              "hybrid-aquatic:raw_crab",
+              "hybrid-aquatic:cooked_crab"
             ]
           }
         ]
@@ -15,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:cooking/tuna_casserole"
+        "recipe": "hybrid-delights:cooking/crab_cake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:cooking/tuna_casserole"
+      "hybrid-delights:cooking/crab_cake"
     ]
   },
   "sends_telemetry_event": true

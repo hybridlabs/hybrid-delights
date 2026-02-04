@@ -15,10 +15,10 @@
       "item": "hybrid-aquatic:carp"
     },
     {
-      "item": "farmersdelight:onion"
+      "tag": "c:crops/onion"
     },
     {
-      "item": "farmersdelight:tomato"
+      "tag": "c:crops/tomato"
     }
   ],
   "recipe_book_tab": "meals",

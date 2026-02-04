@@ -15,15 +15,21 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "hybrid-aquatic:crustacean_meat"
+      "item": "hybrid-aquatic:raw_tentacle"
     },
     {
-      "item": "farmersdelight:rice"
+      "item": "hybrid-aquatic:raw_crayfish"
+    },
+    {
+      "item": "hybrid-aquatic:uni"
+    },
+    {
+      "tag": "c:crops/tomato"
     }
   ],
   "recipe_book_tab": "misc",
   "result": {
-    "count": 2,
+    "count": 1,
     "item": "hybrid-delights:bisque"
   }
 }

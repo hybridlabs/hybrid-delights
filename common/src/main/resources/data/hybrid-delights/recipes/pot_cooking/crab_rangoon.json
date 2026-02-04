@@ -13,7 +13,10 @@
       "item": "hybrid-aquatic:raw_crab"
     },
     {
-      "item": "farm_and_charm:onion"
+      "tag": "c:crops/onion"
+    },
+    {
+      "item": "minecraft:milk_bucket"
     },
     {
       "tag": "c:dough"
@@ -24,7 +27,7 @@
   },
   "result": {
     "item": "hybrid-delights:crab_rangoon",
-    "count": 1
+    "count": 4
   },
   "requiresLearning": false
 }

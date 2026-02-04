@@ -12,7 +12,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:cod"
+      "tag": "hybrid-aquatic:crustacean_meat"
     },
     {
       "tag": "c:eggs"
@@ -21,7 +21,7 @@
       "tag": "c:dough"
     },
     {
-      "tag": "hybrid-aquatic:crustacean_meat"
+      "item": "hybrid-aquatic:fish_steak"
     }
   ],
   "recipe_book_tab": "meals",

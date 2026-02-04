@@ -5,8 +5,11 @@
       "conditions": {
         "items": [
           {
-            "item": [
-              "hybrid-aquatic:tuna"
+            "items": [
+              "hybrid-aquatic:raw_lobster",
+              "hybrid-aquatic:cooked_lobster",
+              "hybrid-aquatic:raw_lobster_tail",
+              "hybrid-aquatic:cooked_lobster_tail"
             ]
           }
         ]
@@ -15,7 +18,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:cooking/tuna_casserole"
+        "recipe": "hybrid-delights:cooking/lobster_stew"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +31,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:cooking/tuna_casserole"
+      "hybrid-delights:cooking/lobster_stew"
     ]
   },
   "sends_telemetry_event": true
