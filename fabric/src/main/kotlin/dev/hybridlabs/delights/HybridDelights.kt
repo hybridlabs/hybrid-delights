@@ -18,6 +18,7 @@ object HybridDelights : ModInitializer {
 
 	override fun onInitialize() {
 		logger.info("Initializing $MOD_NAME")
+        CommonClass.init()
 
 		HybridDelightsItems
 		HybridDelightsItemGroups
