@@ -1,6 +1,6 @@
 package dev.hybridlabs.delights.item
 
-import dev.hybridlabs.delights.CommonClass
+import dev.hybridlabs.delights.HybridDelightsCommon
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.Item
 import java.util.function.Supplier
@@ -197,6 +197,6 @@ object HybridDelightsItems {
     }
 
     private fun register(id: String, item: Supplier<Item>): Supplier<Item> {
-        return CommonClass.ITEMS.register(id, item)
+        return HybridDelightsCommon.ITEMS.register(id, item)
     }
 }

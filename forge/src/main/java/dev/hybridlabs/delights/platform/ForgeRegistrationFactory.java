@@ -1,7 +1,8 @@
-package dev.hybridlabs.delights.platform.services;
+package dev.hybridlabs.delights.platform;
 
 import dev.hybridlabs.delights.platform.registration.RegistrationProvider;
 import dev.hybridlabs.delights.platform.registration.RegistryObject;
+import dev.hybridlabs.delights.platform.services.ForgePlatformHelper;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
