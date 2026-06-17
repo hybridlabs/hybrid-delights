@@ -6,6 +6,7 @@ import net.minecraft.data.recipes.FinishedRecipe
 import java.util.function.Consumer
 
 class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
+
     override fun buildRecipes(exporter: Consumer<FinishedRecipe>) {
     }
 }
