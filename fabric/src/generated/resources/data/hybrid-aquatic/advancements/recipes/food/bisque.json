@@ -19,7 +19,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:cooking/bisque"
+        "recipe": "hybrid_delights:cooking/bisque"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -32,7 +32,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:cooking/bisque"
+      "hybrid_delights:cooking/bisque"
     ]
   },
   "sends_telemetry_event": true

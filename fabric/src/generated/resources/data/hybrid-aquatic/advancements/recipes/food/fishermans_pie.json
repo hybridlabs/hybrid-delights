@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:cooking/fishermans_pie"
+        "recipe": "hybrid_delights:cooking/fishermans_pie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:cooking/fishermans_pie"
+      "hybrid_delights:cooking/fishermans_pie"
     ]
   },
   "sends_telemetry_event": true

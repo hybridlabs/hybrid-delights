@@ -18,7 +18,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:cooking/lobster_stew"
+        "recipe": "hybrid_delights:cooking/lobster_stew"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -31,7 +31,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:cooking/lobster_stew"
+      "hybrid_delights:cooking/lobster_stew"
     ]
   },
   "sends_telemetry_event": true

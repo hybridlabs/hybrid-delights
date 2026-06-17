@@ -1,0 +1,25 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:sponge"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "hybrid_aquatic:tube_sponge"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:cooking/tuna_casserole"
+        "recipe": "hybrid_delights:cooking/tuna_casserole"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:cooking/tuna_casserole"
+      "hybrid_delights:cooking/tuna_casserole"
     ]
   },
   "sends_telemetry_event": true

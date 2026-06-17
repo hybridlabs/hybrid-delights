@@ -16,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:cooking/crab_cake"
+        "recipe": "hybrid_delights:cooking/crab_cake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:cooking/crab_cake"
+      "hybrid_delights:cooking/crab_cake"
     ]
   },
   "sends_telemetry_event": true

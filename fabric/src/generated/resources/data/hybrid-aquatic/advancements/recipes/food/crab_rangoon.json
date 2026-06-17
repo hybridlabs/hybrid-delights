@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:cooking/crab_rangoon"
+        "recipe": "hybrid_delights:cooking/crab_rangoon"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:cooking/crab_rangoon"
+      "hybrid_delights:cooking/crab_rangoon"
     ]
   },
   "sends_telemetry_event": true

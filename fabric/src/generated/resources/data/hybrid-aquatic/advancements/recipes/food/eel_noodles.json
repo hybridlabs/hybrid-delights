@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:cooking/eel_noodles"
+        "recipe": "hybrid_delights:cooking/eel_noodles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:cooking/eel_noodles"
+      "hybrid_delights:cooking/eel_noodles"
     ]
   },
   "sends_telemetry_event": true

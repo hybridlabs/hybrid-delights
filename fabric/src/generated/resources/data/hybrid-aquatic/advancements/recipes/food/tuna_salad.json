@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hybrid-delights:tuna_salad"
+        "recipe": "hybrid_delights:tuna_salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hybrid-delights:tuna_salad"
+      "hybrid_delights:tuna_salad"
     ]
   },
   "sends_telemetry_event": true
