@@ -10,26 +10,27 @@ import net.minecraft.network.chat.Component
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
 
-object  HybridDelightsItemGroups {
+object  HDItemGroups {
 
     val HYBRID_DELIGHTS = register(
         Constants.MOD_ID, CreativeModeTab.builder(CreativeModeTab.Row.TOP,0)
         .title(Component.translatable("itemGroup.${Constants.MOD_ID}.items"))
-        .icon { ItemStack(HybridDelightsItems.CRAB_CAKE.get()) }
+        .icon { ItemStack(HDItems.CRAB_CAKE.get()) }
         .displayItems { _, entries ->
 
-            entries.accept(HybridDelightsItems.CRAB_CAKE.get())
-            entries.accept(HybridDelightsItems.CRAB_RANGOON.get())
-            entries.accept(HybridDelightsItems.BISQUE.get())
-            entries.accept(HybridDelightsItems.LOBSTER_STEW.get())
-            entries.accept(HybridDelightsItems.CHOWDER.get())
-            entries.accept(HybridDelightsItems.TUNA_SANDWICH.get())
-            entries.accept(HybridDelightsItems.TUNA_CASSEROLE.get())
-            entries.accept(HybridDelightsItems.TUNA_SALAD.get())
-            entries.accept(HybridDelightsItems.FISHERMANS_SOUP.get())
-            entries.accept(HybridDelightsItems.FISHERMANS_PIE.get())
-            entries.accept(HybridDelightsItems.EEL_NOODLES.get())
-            entries.accept(HybridDelightsItems.MASGOUF.get())
+            entries.accept(HDItems.CRAB_CAKE.get())
+            entries.accept(HDItems.CRAB_RANGOON.get())
+            entries.accept(HDItems.BISQUE.get())
+            entries.accept(HDItems.LOBSTER_STEW.get())
+            entries.accept(HDItems.BAKED_STUFFED_LOBSTER.get())
+            entries.accept(HDItems.CHOWDER.get())
+            entries.accept(HDItems.TUNA_SANDWICH.get())
+            entries.accept(HDItems.TUNA_CASSEROLE.get())
+            entries.accept(HDItems.TUNA_SALAD.get())
+            entries.accept(HDItems.FISHERMANS_SOUP.get())
+            entries.accept(HDItems.FISHERMANS_PIE.get())
+            entries.accept(HDItems.EEL_NOODLES.get())
+            entries.accept(HDItems.MASGOUF.get())
 
             BuiltInRegistries.ITEM.forEach { item ->
                 val id = BuiltInRegistries.ITEM.getKey(item)

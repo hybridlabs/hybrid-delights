@@ -5,7 +5,7 @@ import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.Item
 import java.util.function.Supplier
 
-object HybridDelightsItems {
+object HDItems {
 
     val CRAB_CAKE = register(
         "crab_cake"
@@ -183,6 +183,21 @@ object HybridDelightsItems {
 
     val MASGOUF = register(
         "masgouf",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(14)
+                        .saturationMod(0.75F)
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val BAKED_STUFFED_LOBSTER = register(
+        "baked_stuffed_lobster",
     ) {
         Item(
             Item.Properties()

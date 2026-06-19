@@ -1,7 +1,7 @@
 package dev.hybridlabs.delights
 
-import dev.hybridlabs.delights.item.HybridDelightsItemGroups
-import dev.hybridlabs.delights.item.HybridDelightsItems
+import dev.hybridlabs.delights.item.HDItemGroups
+import dev.hybridlabs.delights.item.HDItems
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.loader.api.FabricLoader
 import org.slf4j.Logger
@@ -20,7 +20,7 @@ object HybridDelights : ModInitializer {
 		logger.info("Initializing $MOD_NAME")
         HybridDelightsCommon.init()
 
-		HybridDelightsItems
-		HybridDelightsItemGroups
+		HDItems
+		HDItemGroups
 	}
 }

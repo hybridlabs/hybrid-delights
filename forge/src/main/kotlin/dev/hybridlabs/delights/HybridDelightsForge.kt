@@ -1,6 +1,6 @@
 package dev.hybridlabs.delights
-import dev.hybridlabs.delights.item.HybridDelightsItemGroups
-import dev.hybridlabs.delights.item.HybridDelightsItems
+import dev.hybridlabs.delights.item.HDItemGroups
+import dev.hybridlabs.delights.item.HDItems
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent
@@ -20,8 +20,8 @@ object HybridDelightsForge {
     init {
         HybridDelightsCommon.init()
 
-        HybridDelightsItems
-        HybridDelightsItemGroups
+        HDItems
+        HDItemGroups
     }
 
     /**
