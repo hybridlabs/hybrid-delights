@@ -8,7 +8,7 @@
     }
   ],
   "type": "farmersdelight:cooking",
-  "cookingtime": 200,
+  "cookingtime": 400,
   "experience": 1.0,
   "ingredients": [
     {
@@ -21,11 +21,12 @@
       "item": "farmersdelight:wheat_dough"
     },
     {
-      "item": "hybrid_aquatic:fish_steak"
+      "item": "hybrid_aquatic:raw_fish_steak"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
+    "count": 1,
     "item": "hybrid_delights:fishermans_pie"
   }
 }
