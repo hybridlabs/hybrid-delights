@@ -24,6 +24,7 @@ object HDItems {
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
         )
     }
 
