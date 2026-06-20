@@ -12,6 +12,13 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
     
     override fun generateItemModels(generator: ItemModelGenerators) {
         setOf(
+        HDItems.BRINE_BOTTLE.get(),
+        HDItems.PUFFERFISH_SLICE.get(),
+        HDItems.COOKED_PUFFERFISH_SLICE.get(),
+        HDItems.CARP_ROE.get(),
+        HDItems.COD_ROE.get(),
+        HDItems.SALMON_ROE.get(),
+        HDItems.TROPICAL_FISH_ROE.get(),
         HDItems.BISQUE.get(),
         HDItems.CHOWDER.get(),
         HDItems.CRAB_CAKE.get(),
@@ -22,6 +29,8 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         HDItems.LOBSTER_STEW.get(),
         HDItems.BAKED_STUFFED_LOBSTER.get(),
         HDItems.MASGOUF.get(),
+        HDItems.TUNA_ROLL.get(),
+        HDItems.FISH_KEBAB.get(),
         HDItems.TUNA_CASSEROLE.get(),
         HDItems.TUNA_SALAD.get(),
         HDItems.TUNA_SANDWICH.get(),

@@ -10,13 +10,17 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "minecraft:sponge"
+      "item": "hybrid_aquatic:dragonfish"
     }
   ],
   "result": [
     {
-      "count": 4,
-      "item": "hybrid_aquatic:tube_sponge"
+      "count": 2,
+      "item": "hybrid_aquatic:raw_fish_meat"
+    },
+    {
+      "chance": 0.75,
+      "item": "hybrid_aquatic:glowslime"
     }
   ],
   "tool": {

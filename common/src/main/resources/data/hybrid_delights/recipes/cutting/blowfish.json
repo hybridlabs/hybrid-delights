@@ -10,13 +10,13 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "minecraft:sponge"
+      "item": "hybrid_aquatic:blowfish"
     }
   ],
   "result": [
     {
-      "count": 4,
-      "item": "hybrid_aquatic:tube_sponge"
+      "count": 2,
+      "item": "hybrid_delights:pufferfish_slice"
     }
   ],
   "tool": {

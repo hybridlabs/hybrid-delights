@@ -14,19 +14,11 @@
       "item": "hybrid_aquatic:tuna"
     },
     {
-      "tag": "c:crops/tomato"
-    },
-    {
-      "tag": "c:salad_ingredients"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "item": "minecraft:bowl"
+      "item": "farmersdelight:cooked_rice"
     }
   ],
   "result": {
-    "item": "hybrid_delights:tuna_salad"
+    "count": 2,
+    "item": "hybrid_delights:tuna_roll"
   }
 }

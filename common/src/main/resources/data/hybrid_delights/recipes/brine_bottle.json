@@ -11,22 +11,23 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "hybrid_aquatic:tuna"
+      "item": "hybrid_aquatic:brine_bucket"
     },
     {
-      "tag": "c:crops/tomato"
+      "item": "minecraft:bottle"
     },
     {
-      "tag": "c:salad_ingredients"
+      "item": "minecraft:bottle"
     },
     {
-      "tag": "c:eggs"
+      "item": "minecraft:bottle"
     },
     {
-      "item": "minecraft:bowl"
+      "item": "minecraft:bottle"
     }
   ],
   "result": {
-    "item": "hybrid_delights:tuna_salad"
+    "count": 4,
+    "item": "hybrid_delights:brine_bottle"
   }
 }

@@ -16,6 +16,13 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
 
         // items
         mapOf(
+            HDItems.BRINE_BOTTLE.get() to "Brine Bottle",
+            HDItems.COD_ROE.get() to "Cod Roe",
+            HDItems.SALMON_ROE.get() to "Salmon Roe",
+            HDItems.TROPICAL_FISH_ROE.get() to "Tropical Fish Roe",
+            HDItems.CARP_ROE.get() to "Carp Roe",
+            HDItems.PUFFERFISH_SLICE.get() to "Pufferfish Slice",
+            HDItems.COOKED_PUFFERFISH_SLICE.get() to "Cooked Pufferfish Slice",
             HDItems.CRAB_CAKE.get() to "Crab Cake",
             HDItems.CRAB_RANGOON.get() to "Crab Rangoon",
             HDItems.BISQUE.get() to "Bisque",
@@ -25,6 +32,8 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
             HDItems.FISHERMANS_SOUP.get() to "Fisherman's Soup",
             HDItems.FISHERMANS_PIE.get() to "Fisherman's Pie",
             HDItems.MASGOUF.get() to "Masgouf",
+            HDItems.TUNA_ROLL.get() to "Tuna Roll",
+            HDItems.FISH_KEBAB.get() to "Fish Kebab",
             HDItems.TUNA_SANDWICH.get() to "Tuna Sandwich",
             HDItems.TUNA_CASSEROLE.get() to "Tuna Casserole",
             HDItems.TUNA_SALAD.get() to "Tuna Salad",

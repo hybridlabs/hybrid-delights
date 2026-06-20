@@ -2,11 +2,127 @@ package dev.hybridlabs.delights.item
 
 import dev.hybridlabs.delights.HybridDelightsCommon
 import net.minecraft.world.effect.MobEffectInstance
+import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.Item
+import net.minecraft.world.item.Items
 import java.util.function.Supplier
 
 object HDItems {
+
+    val BRINE_BOTTLE = register(
+        "brine_bottle"
+    ) {
+        BrineBottleItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(0)
+                        .saturationMod(0.0F)
+                        .effect(MobEffectInstance(MobEffects.POISON, 300, 0),1.0f)
+                        .meat()
+                        .build()
+                )
+                .craftRemainder(Items.GLASS_BOTTLE)
+        )
+    }
+
+    val COD_ROE = register(
+        "cod_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.4F)
+                        .fast()
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val SALMON_ROE = register(
+        "salmon_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.4F)
+                        .fast()
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val TROPICAL_FISH_ROE = register(
+        "tropical_fish_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.4F)
+                        .fast()
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val CARP_ROE = register(
+        "carp_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.4F)
+                        .fast()
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val PUFFERFISH_SLICE = register(
+        "pufferfish_slice"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.4F)
+                        .effect(MobEffectInstance(MobEffects.POISON, 300, 0),0.25f)
+                        .fast()
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val COOKED_PUFFERFISH_SLICE = register(
+        "cooked_pufferfish_slice"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.4F)
+                        .fast()
+                        .meat()
+                        .build()
+                )
+        )
+    }
 
     val CRAB_CAKE = register(
         "crab_cake"
@@ -192,6 +308,36 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val FISH_KEBAB = register(
+        "fish_kebab"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(10)
+                        .saturationMod(1.0F)
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val TUNA_ROLL = register(
+        "tuna_roll",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(7)
+                        .saturationMod(0.6F)
                         .meat()
                         .build()
                 )

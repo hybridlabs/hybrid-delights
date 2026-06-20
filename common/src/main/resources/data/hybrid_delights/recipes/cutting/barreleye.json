@@ -10,13 +10,17 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "tag": "hybrid_aquatic:small_fish"
+      "item": "hybrid_aquatic:barreleye"
     }
   ],
   "result": [
     {
       "count": 2,
       "item": "hybrid_aquatic:raw_fish_meat"
+    },
+    {
+      "chance": 0.75,
+      "item": "hybrid_aquatic:glowslime"
     }
   ],
   "tool": {
