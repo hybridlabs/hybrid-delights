@@ -47,7 +47,7 @@
 		"java": ">=17",
 		"fabric-language-kotlin": "*",
 		"fabric-api": ">=0.92",
-		"hybrid_aquatic": ">=1.6.0"
+		"hybrid_aquatic": ">=1.6.3"
 	},
 
 	"suggests": {
