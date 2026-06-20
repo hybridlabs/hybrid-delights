@@ -4,7 +4,6 @@ import dev.hybridlabs.delights.HybridDelightsCommon
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.Item
-import vectorwing.farmersdelight.common.registry.ModEffects
 import java.util.function.Supplier
 
 object HDItems {
@@ -67,9 +66,6 @@ object HDItems {
                         .nutrition(12)
                         .saturationMod(0.8F)
                         .meat()
-                        .effect(MobEffectInstance(
-                            ModEffects.COMFORT.get(), 3600, 0),
-                            1.0f)
                         .build()
                 )
                 .stacksTo(1)
@@ -212,9 +208,6 @@ object HDItems {
                         .nutrition(14)
                         .saturationMod(0.75F)
                         .meat()
-                        .effect(MobEffectInstance(
-                            ModEffects.NOURISHMENT.get(), 3600, 0),
-                            1.0f)
                         .build()
                 )
         )
