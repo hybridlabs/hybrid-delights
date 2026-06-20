@@ -8,7 +8,7 @@
     }
   ],
   "type": "farmersdelight:cooking",
-  "cookingtime": 300,
+  "cookingtime": 400,
   "experience": 1.0,
   "ingredients": [
     {
@@ -18,7 +18,7 @@
       "item": "hybrid_aquatic:raw_lobster_tail"
     },
     {
-      "item": "hybrid_aquatic:raw_crab_meat"
+      "item": "hybrid_aquatic:raw_crab"
     },
     {
       "tag": "c:crops/onion"
