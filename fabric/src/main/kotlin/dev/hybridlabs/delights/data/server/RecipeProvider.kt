@@ -46,6 +46,50 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
             .saveToHD(exporter)
+        
+        HDCookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.CURED_COD_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
+            .addIngredient(HDItems.SALT.get())
+            .addIngredient(HDItems.COD_ROE.get())
+            .unlockedByAnyIngredient(
+                HDItems.SALT.get(), 
+                HDItems.COD_ROE.get()
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+            .saveToHD(exporter)
+        
+        HDCookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.CURED_SALMON_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
+            .addIngredient(HDItems.SALT.get())
+            .addIngredient(HDItems.SALMON_ROE.get())
+            .unlockedByAnyIngredient(
+                HDItems.SALT.get(), 
+                HDItems.SALMON_ROE.get()
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+            .saveToHD(exporter)
+        
+        HDCookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.CURED_TROPICAL_FISH_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
+            .addIngredient(HDItems.SALT.get())
+            .addIngredient(HDItems.TROPICAL_FISH_ROE.get())
+            .unlockedByAnyIngredient(
+                HDItems.SALT.get(), 
+                HDItems.TROPICAL_FISH_ROE.get()
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+            .saveToHD(exporter)
+        
+        HDCookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.CURED_CARP_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
+            .addIngredient(HDItems.SALT.get())
+            .addIngredient(HDItems.CARP_ROE.get())
+            .unlockedByAnyIngredient(
+                HDItems.SALT.get(), 
+                HDItems.CARP_ROE.get()
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+            .saveToHD(exporter)
 
         HDCookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.BAKED_STUFFED_LOBSTER.get(), 1, 400, 1.0f)

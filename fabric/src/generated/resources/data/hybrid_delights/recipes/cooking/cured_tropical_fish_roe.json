@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 150,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "hybrid_delights:salt"
+    },
+    {
+      "item": "hybrid_delights:tropical_fish_roe"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "hybrid_delights:cured_tropical_fish_roe"
+  }
+}

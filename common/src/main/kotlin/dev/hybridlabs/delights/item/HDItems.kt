@@ -153,6 +153,25 @@ object HDItems {
                         .meat()
                         .build()
                 )
+                .stacksTo(16)
+        )
+    }
+
+    val CURED_COD_ROE = register(
+        "cured_cod_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationMod(0.6F)
+                        .meat()
+                        .fast()
+                        .build()
+                )
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
         )
     }
 
@@ -168,6 +187,25 @@ object HDItems {
                         .meat()
                         .build()
                 )
+                .stacksTo(16)
+        )
+    }
+
+    val CURED_SALMON_ROE = register(
+        "cured_salmon_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationMod(0.6F)
+                        .meat()
+                        .fast()
+                        .build()
+                )
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
         )
     }
 
@@ -183,6 +221,25 @@ object HDItems {
                         .meat()
                         .build()
                 )
+                .stacksTo(16)
+        )
+    }
+
+    val CURED_TROPICAL_FISH_ROE = register(
+        "cured_tropical_fish_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationMod(0.6F)
+                        .meat()
+                        .fast()
+                        .build()
+                )
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
         )
     }
 
@@ -198,6 +255,25 @@ object HDItems {
                         .meat()
                         .build()
                 )
+                .stacksTo(16)
+        )
+    }
+
+    val CURED_CARP_ROE = register(
+        "cured_carp_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationMod(0.6F)
+                        .meat()
+                        .fast()
+                        .build()
+                )
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
         )
     }
 

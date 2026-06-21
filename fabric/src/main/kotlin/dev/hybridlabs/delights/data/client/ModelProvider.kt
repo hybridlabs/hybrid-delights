@@ -34,9 +34,13 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.SALTED_PUFFERFISH_SLICE.get(),
 
             HDItems.CARP_ROE.get(),
+            HDItems.CURED_CARP_ROE.get(),
             HDItems.COD_ROE.get(),
+            HDItems.CURED_COD_ROE.get(),
             HDItems.SALMON_ROE.get(),
+            HDItems.CURED_SALMON_ROE.get(),
             HDItems.TROPICAL_FISH_ROE.get(),
+            HDItems.CURED_TROPICAL_FISH_ROE.get(),
 
             HDItems.BISQUE.get(),
             HDItems.CHOWDER.get(),
