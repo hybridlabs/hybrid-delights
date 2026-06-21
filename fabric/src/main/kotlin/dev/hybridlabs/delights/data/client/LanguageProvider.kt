@@ -25,6 +25,7 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
             HDItems.SALTED_SALMON.get() to "Salted Salmon",
             HDItems.SALTED_SALMON_SLICE.get() to "Salted Salmon Slice",
             HDItems.PICKLED_HERRING.get() to "Pickled Herring",
+            HDItems.FISH_GELATIN.get() to "Fish Gelatin",
             HDItems.COD_ROE.get() to "Cod Roe",
             HDItems.CURED_COD_ROE.get() to "Cured Cod Roe",
             HDItems.SALMON_ROE.get() to "Salmon Roe",

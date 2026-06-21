@@ -289,6 +289,14 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .saveToHD(exporter)
 
         HDCuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(HAItems.TUNA.get()),
+            KNIVES,
+            HAItems.RAW_FISH_STEAK.get(), 2
+        )
+            .addResultWithChance(HDItems.FISH_GELATIN.get(), 0.66f)
+            .saveToHD(exporter)
+
+        HDCuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.STINGRAY.get()),
             KNIVES,
             HDItems.RAY_WING.get(), 2

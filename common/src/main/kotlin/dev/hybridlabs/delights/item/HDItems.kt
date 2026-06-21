@@ -141,6 +141,21 @@ object HDItems {
         )
     }
 
+    val FISH_GELATIN = register(
+        "fish_gelatin"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(1)
+                        .saturationMod(0.2F)
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
     val COD_ROE = register(
         "cod_roe"
     ) {

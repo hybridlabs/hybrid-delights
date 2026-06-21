@@ -25,6 +25,7 @@ object  HDItemGroups {
             entries.accept(HDItems.SALT.get())
 
             entries.accept(HDItems.COD_ROE.get())
+            entries.accept(HDItems.COD_ROE.get())
             entries.accept(HDItems.CURED_COD_ROE.get())
             entries.accept(HDItems.SALMON_ROE.get())
             entries.accept(HDItems.CURED_SALMON_ROE.get())
@@ -32,6 +33,8 @@ object  HDItemGroups {
             entries.accept(HDItems.CURED_TROPICAL_FISH_ROE.get())
             entries.accept(HDItems.CARP_ROE.get())
             entries.accept(HDItems.CURED_CARP_ROE.get())
+
+            entries.accept(HDItems.FISH_GELATIN.get())
 
             entries.accept(HDItems.PICKLED_HERRING.get())
 
