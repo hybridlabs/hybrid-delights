@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 300,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "hybrid_aquatic:cooked_crab"
+    },
+    {
+      "tag": "c:grains/wheat"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "hybrid_delights:crab_cake"
+  }
+}

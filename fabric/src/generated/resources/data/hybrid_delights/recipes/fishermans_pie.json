@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "hybrid_aquatic:cooked_crab"
+    },
+    "E": {
+      "tag": "c:eggs"
+    },
+    "F": {
+      "item": "hybrid_aquatic:cooked_fish_steak"
+    },
+    "P": {
+      "item": "farmersdelight:pie_crust"
+    }
+  },
+  "pattern": [
+    " C ",
+    "FEF",
+    " P "
+  ],
+  "result": {
+    "item": "hybrid_delights:fishermans_pie"
+  },
+  "show_notification": true
+}

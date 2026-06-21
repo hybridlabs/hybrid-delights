@@ -1,12 +1,14 @@
 package dev.hybridlabs.delights.item
 
+import dev.hybridlabs.aquatic.item.HAToolMaterials
 import dev.hybridlabs.delights.HybridDelightsCommon
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
-import net.minecraft.world.item.PotionItem
+import vectorwing.farmersdelight.common.item.DrinkableItem
+import vectorwing.farmersdelight.common.item.KnifeItem
 import java.util.function.Supplier
 
 object HDItems {
@@ -36,18 +38,96 @@ object HDItems {
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
-                        .nutrition(1)
-                        .saturationMod(0.1F)
+                        .nutrition(2)
+                        .saturationMod(0.3F)
                         .meat()
                         .build()
                 )
         )
     }
 
+    val SALTED_COD = register(
+        "salted_cod"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(3)
+                        .saturationMod(0.3F)
+                        .meat()
+                        .fast()
+                        .build()
+                )
+        )
+    }
+
+    val SALTED_COD_SLICE = register(
+        "salted_cod_slice"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.3F)
+                        .meat()
+                        .fast()
+                        .build()
+                )
+        )
+    }
+
+    val SALTED_SALMON = register(
+        "salted_salmon"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(3)
+                        .saturationMod(0.3F)
+                        .meat()
+                        .fast()
+                        .build()
+                )
+        )
+    }
+
+    val SALTED_SALMON_SLICE = register(
+        "salted_salmon_slice"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.3F)
+                        .meat()
+                        .fast()
+                        .build()
+                )
+        )
+    }
+
+    val CORAL_KNIFE = register(
+        "coral_knife"
+    ) {
+        KnifeItem(HAToolMaterials.CORAL, 0.5f, -2.0f, Item.Properties()
+        )
+    }
+
+    val SHARK_TOOTH_KNIFE = register(
+        "shark_tooth_knife"
+    ) {
+        KnifeItem(HAToolMaterials.SEASHELL, 0.5f, -2.0f, Item.Properties()
+        )
+    }
+
     val PICKLED_HERRING = register(
         "pickled_herring"
     ) {
-        PotionItem(
+        DrinkableItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -70,7 +150,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.4F)
-                        .fast()
                         .meat()
                         .build()
                 )
@@ -86,7 +165,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.4F)
-                        .fast()
                         .meat()
                         .build()
                 )
@@ -102,7 +180,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.4F)
-                        .fast()
                         .meat()
                         .build()
                 )
@@ -111,6 +188,51 @@ object HDItems {
 
     val CARP_ROE = register(
         "carp_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.4F)
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val RAY_WING = register(
+        "ray_wing"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.4F)
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val COOKED_RAY_WING = register(
+        "cooked_ray_wing"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.4F)
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val SALTED_RAY_WING = register(
+        "salted_ray_wing"
     ) {
         Item(
             Item.Properties()
@@ -132,10 +254,9 @@ object HDItems {
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.4F)
+                        .nutrition(1)
+                        .saturationMod(0.1F)
                         .effect(MobEffectInstance(MobEffects.POISON, 300, 0),0.25f)
-                        .fast()
                         .meat()
                         .build()
                 )
@@ -149,8 +270,23 @@ object HDItems {
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
+                        .nutrition(3)
+                        .saturationMod(0.8F)
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val SALTED_PUFFERFISH_SLICE = register(
+        "salted_pufferfish_slice"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
                         .nutrition(2)
-                        .saturationMod(0.4F)
+                        .saturationMod(0.3F)
                         .fast()
                         .meat()
                         .build()
@@ -167,7 +303,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationMod(0.8F)
-                        .fast()
                         .meat()
                         .build()
                 )
@@ -183,7 +318,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationMod(0.8F)
-                        .fast()
                         .meat()
                         .build()
                 )

@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:cod"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "farmersdelight:cod_slice"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "chance": 0.5,
+      "item": "hybrid_delights:cod_roe"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

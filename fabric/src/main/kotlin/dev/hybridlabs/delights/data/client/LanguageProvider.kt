@@ -16,8 +16,12 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
 
         // items
         mapOf(
+            HDItems.CORAL_KNIFE.get() to "Coral Knife",
+            HDItems.SHARK_TOOTH_KNIFE.get() to "Shark Tooth Knife",
             HDItems.BRINE_BOTTLE.get() to "Brine Bottle",
             HDItems.SALT.get() to "Salt",
+            HDItems.SALTED_COD.get() to "Salted Cod",
+            HDItems.SALTED_SALMON.get() to "Salted Salmon",
             HDItems.PICKLED_HERRING.get() to "Pickled Herring",
             HDItems.COD_ROE.get() to "Cod Roe",
             HDItems.SALMON_ROE.get() to "Salmon Roe",

@@ -18,17 +18,32 @@ object  HDItemGroups {
         .icon { ItemStack(HDItems.CRAB_CAKE.get()) }
         .displayItems { _, entries ->
 
+            entries.accept(HDItems.CORAL_KNIFE.get())
+            entries.accept(HDItems.SHARK_TOOTH_KNIFE.get())
+
             entries.accept(HDItems.BRINE_BOTTLE.get())
             entries.accept(HDItems.SALT.get())
-            entries.accept(HDItems.PICKLED_HERRING.get())
 
             entries.accept(HDItems.COD_ROE.get())
             entries.accept(HDItems.SALMON_ROE.get())
             entries.accept(HDItems.TROPICAL_FISH_ROE.get())
             entries.accept(HDItems.CARP_ROE.get())
 
+            entries.accept(HDItems.PICKLED_HERRING.get())
+
+            entries.accept(HDItems.SALTED_COD.get())
+            entries.accept(HDItems.SALTED_COD_SLICE.get())
+            
+            entries.accept(HDItems.SALTED_SALMON.get())
+            entries.accept(HDItems.SALTED_SALMON_SLICE.get())
+            
             entries.accept(HDItems.PUFFERFISH_SLICE.get())
             entries.accept(HDItems.COOKED_PUFFERFISH_SLICE.get())
+            entries.accept(HDItems.SALTED_PUFFERFISH_SLICE.get())
+
+            entries.accept(HDItems.RAY_WING.get())
+            entries.accept(HDItems.COOKED_RAY_WING.get())
+            entries.accept(HDItems.SALTED_RAY_WING.get())
 
             entries.accept(HDItems.CRAB_CAKE.get())
             entries.accept(HDItems.CRAB_RANGOON.get())

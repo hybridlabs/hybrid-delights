@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "hybrid_aquatic:raw_lobster"
+    },
+    {
+      "item": "hybrid_aquatic:raw_lobster_tail"
+    },
+    {
+      "item": "hybrid_aquatic:raw_crab"
+    },
+    {
+      "tag": "c:crops/onion"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "hybrid_delights:baked_stuffed_lobster"
+  }
+}

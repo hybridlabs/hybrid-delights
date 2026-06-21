@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "hybrid_aquatic:barreleye"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "hybrid_aquatic:raw_fish_meat"
+    },
+    {
+      "chance": 0.75,
+      "item": "hybrid_aquatic:glowslime"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}
