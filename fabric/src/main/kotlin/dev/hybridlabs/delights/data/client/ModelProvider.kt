@@ -65,6 +65,7 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.TUNA_ROLL.get(),
             HDItems.TUNA_CASSEROLE.get(),
             HDItems.TUNA_SALAD.get(),
+            HDItems.TUNA_NACHOS.get(),
             HDItems.TUNA_SANDWICH.get(),
         ).forEach { item ->
             generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM)

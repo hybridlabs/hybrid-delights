@@ -55,6 +55,7 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
             HDItems.TUNA_SANDWICH.get() to "Tuna Sandwich",
             HDItems.TUNA_CASSEROLE.get() to "Tuna Casserole",
             HDItems.TUNA_SALAD.get() to "Tuna Salad",
+            HDItems.TUNA_NACHOS.get() to "Tuna Nachos",
             HDItems.EEL_NOODLES.get() to "Eel Noodles",
         ).forEach { (item, translation) ->
             builder.add(item, translation)

@@ -477,6 +477,21 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             )
             .save(exporter)
 
+        ShapelessRecipeBuilder.shapeless(
+            RecipeCategory.MISC,
+            HDItems.TUNA_NACHOS.get()
+        )
+            .requires(HAItems.TUNA.get())
+            .requires(Items.BOWL)
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "crops/tomato")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "crops/cabbage")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "bread/wheat")))
+            .unlockedBy(
+                "has_tuna",
+                InventoryChangeTrigger.TriggerInstance.hasItems(HAItems.TUNA.get())
+            )
+            .save(exporter)
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.TUNA_SANDWICH.get())
             .requires(HAItems.TUNA.get())
             .requires(Items.BREAD)

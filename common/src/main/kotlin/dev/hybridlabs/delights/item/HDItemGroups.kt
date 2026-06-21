@@ -65,6 +65,7 @@ object  HDItemGroups {
             entries.accept(HDItems.TUNA_ROLL.get())
             entries.accept(HDItems.TUNA_CASSEROLE.get())
             entries.accept(HDItems.TUNA_SALAD.get())
+            entries.accept(HDItems.TUNA_NACHOS.get())
 
             entries.accept(HDItems.FISHERMANS_SOUP.get())
             entries.accept(HDItems.FISHERMANS_PIE.get())

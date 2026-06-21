@@ -500,6 +500,22 @@ object HDItems {
         )
     }
 
+    val TUNA_NACHOS = register(
+        "tuna_nachos"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(10)
+                        .saturationMod(0.8F)
+                        .meat()
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
     val TUNA_CASSEROLE = register(
         "tuna_casserole"
     ) {
