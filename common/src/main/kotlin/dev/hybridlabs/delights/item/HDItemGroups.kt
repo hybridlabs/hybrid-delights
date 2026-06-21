@@ -25,7 +25,6 @@ object  HDItemGroups {
             entries.accept(HDItems.SALT.get())
 
             entries.accept(HDItems.COD_ROE.get())
-            entries.accept(HDItems.COD_ROE.get())
             entries.accept(HDItems.CURED_COD_ROE.get())
             entries.accept(HDItems.SALMON_ROE.get())
             entries.accept(HDItems.CURED_SALMON_ROE.get())
