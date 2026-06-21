@@ -19,6 +19,8 @@ object  HDItemGroups {
         .displayItems { _, entries ->
 
             entries.accept(HDItems.BRINE_BOTTLE.get())
+            entries.accept(HDItems.SALT.get())
+            entries.accept(HDItems.PICKLED_HERRING.get())
 
             entries.accept(HDItems.COD_ROE.get())
             entries.accept(HDItems.SALMON_ROE.get())

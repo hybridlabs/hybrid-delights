@@ -6,6 +6,7 @@ import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
+import net.minecraft.world.item.PotionItem
 import java.util.function.Supplier
 
 object HDItems {
@@ -20,6 +21,38 @@ object HDItems {
                         .nutrition(0)
                         .saturationMod(0.0F)
                         .effect(MobEffectInstance(MobEffects.POISON, 300, 0),1.0f)
+                        .meat()
+                        .build()
+                )
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+        )
+    }
+
+    val SALT = register(
+        "salt"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(1)
+                        .saturationMod(0.1F)
+                        .meat()
+                        .build()
+                )
+        )
+    }
+
+    val PICKLED_HERRING = register(
+        "pickled_herring"
+    ) {
+        PotionItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(1)
+                        .saturationMod(0.1F)
                         .meat()
                         .build()
                 )

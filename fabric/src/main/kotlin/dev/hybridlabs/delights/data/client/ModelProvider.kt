@@ -13,6 +13,8 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
     override fun generateItemModels(generator: ItemModelGenerators) {
         setOf(
         HDItems.BRINE_BOTTLE.get(),
+        HDItems.SALT.get(),
+        HDItems.PICKLED_HERRING.get(),
         HDItems.PUFFERFISH_SLICE.get(),
         HDItems.COOKED_PUFFERFISH_SLICE.get(),
         HDItems.CARP_ROE.get(),
