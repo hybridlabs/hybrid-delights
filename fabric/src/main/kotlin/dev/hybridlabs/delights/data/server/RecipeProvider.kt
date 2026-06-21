@@ -236,6 +236,23 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .saveToHD(exporter)
+
+        HDCookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.SHRIMP_FRIED_RICE.get(), 1, 200, 1.0f, Items.BOWL)
+            .addIngredient(HAItems.RAW_SHRIMP.get())
+            .addIngredient(TagKey.create(Registries.ITEM,
+                ResourceLocation("c", "crops/onion")))
+            .addIngredient(TagKey.create(Registries.ITEM,
+                ResourceLocation("c", "eggs")))
+            .addIngredient(TagKey.create(Registries.ITEM,
+                ResourceLocation("c", "crops/rice")))
+            .addIngredient(TagKey.create(Registries.ITEM,
+                ResourceLocation("c", "vegetables/carrot")))
+            .unlockedByAnyIngredient(
+                HAItems.RAW_SHRIMP.get()
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+            .saveToHD(exporter)
     }
 
     private fun cuttingRecipes(exporter: Consumer<FinishedRecipe>) {
@@ -413,7 +430,8 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .define('P', ModItems.PIE_CRUST.get())
             .define('F', HAItems.COOKED_FISH_STEAK.get())
             .define('C', HAItems.COOKED_CRAB.get())
-            .define('E', TagKey.create(Registries.ITEM, ResourceLocation("c", "eggs")))
+            .define('E', TagKey.create(Registries.ITEM,
+                ResourceLocation("c", "eggs")))
             .unlockedBy(
                 "has_cooked_fish_steak",
                 InventoryChangeTrigger.TriggerInstance.hasItems(HAItems.COOKED_FISH_STEAK.get())

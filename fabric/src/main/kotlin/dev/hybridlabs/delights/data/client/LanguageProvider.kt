@@ -45,6 +45,7 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
             HDItems.BISQUE.get() to "Bisque",
             HDItems.LOBSTER_STEW.get() to "Lobster Stew",
             HDItems.BAKED_STUFFED_LOBSTER.get() to "Baked Stuffed Lobster",
+            HDItems.SHRIMP_FRIED_RICE.get() to "Shrimp Fried Rice",
             HDItems.CHOWDER.get() to "Chowder",
             HDItems.FISHERMANS_SOUP.get() to "Fisherman's Soup",
             HDItems.FISHERMANS_PIE.get() to "Fisherman's Pie",

@@ -57,6 +57,7 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
             HDItems.LOBSTER_STEW.get(),
             HDItems.BAKED_STUFFED_LOBSTER.get(),
+            HDItems.SHRIMP_FRIED_RICE.get(),
 
             HDItems.MASGOUF.get(),
             HDItems.FISH_KEBAB.get(),

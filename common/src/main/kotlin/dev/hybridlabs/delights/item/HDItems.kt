@@ -409,6 +409,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationMod(0.8F)
+                        .fast()
                         .meat()
                         .build()
                 )
@@ -427,7 +428,25 @@ object HDItems {
                         .meat()
                         .build()
                 )
-                .stacksTo(1)
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
+        )
+    }
+
+    val SHRIMP_FRIED_RICE = register(
+        "shrimp_fried_rice"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(12)
+                        .saturationMod(0.8F)
+                        .meat()
+                        .build()
+                )
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
         )
     }
 
@@ -443,7 +462,8 @@ object HDItems {
                         .meat()
                         .build()
                 )
-                .stacksTo(1)
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
         )
     }
 
@@ -460,7 +480,8 @@ object HDItems {
                         .meat()
                         .build()
                 )
-                .stacksTo(1)
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
         )
     }
 
@@ -491,7 +512,8 @@ object HDItems {
                         .meat()
                         .build()
                 )
-                .stacksTo(1)
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
         )
     }
 
@@ -507,7 +529,8 @@ object HDItems {
                         .meat()
                         .build()
                 )
-                .stacksTo(1)
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
         )
     }
 
@@ -523,7 +546,8 @@ object HDItems {
                         .meat()
                         .build()
                 )
-                .stacksTo(1)
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
         )
     }
 
@@ -539,7 +563,8 @@ object HDItems {
                         .meat()
                         .build()
                 )
-                .stacksTo(1)
+                .craftRemainder(Items.BOWL)
+                .stacksTo(16)
         )
     }
 
@@ -555,6 +580,7 @@ object HDItems {
                         .meat()
                         .build()
                 )
+                .stacksTo(1)
         )
     }
 
@@ -570,6 +596,7 @@ object HDItems {
                         .meat()
                         .build()
                 )
+                .stacksTo(16)
         )
     }
 
@@ -585,6 +612,7 @@ object HDItems {
                         .meat()
                         .build()
                 )
+                .stacksTo(16)
         )
     }
 
@@ -615,6 +643,7 @@ object HDItems {
                         .meat()
                         .build()
                 )
+                .stacksTo(16)
         )
     }
 

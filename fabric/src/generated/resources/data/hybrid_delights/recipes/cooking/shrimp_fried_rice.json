@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "hybrid_aquatic:raw_shrimp"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "tag": "c:vegetables/carrot"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "hybrid_delights:shrimp_fried_rice"
+  }
+}

@@ -58,6 +58,7 @@ object  HDItemGroups {
             entries.accept(HDItems.LOBSTER_STEW.get())
             entries.accept(HDItems.BAKED_STUFFED_LOBSTER.get())
 
+            entries.accept(HDItems.SHRIMP_FRIED_RICE.get())
             entries.accept(HDItems.CHOWDER.get())
 
             entries.accept(HDItems.TUNA_SANDWICH.get())
