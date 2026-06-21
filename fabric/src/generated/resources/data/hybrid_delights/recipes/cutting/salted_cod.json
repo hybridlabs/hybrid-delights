@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "hybrid_delights:salted_cod"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "hybrid_delights:salted_cod_slice"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

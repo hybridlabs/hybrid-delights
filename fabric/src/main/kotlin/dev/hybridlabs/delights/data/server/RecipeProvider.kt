@@ -293,31 +293,39 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
         HDCuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.PUFFERFISH),
             KNIVES,
-            HDItems.PUFFERFISH_SLICE.get(), 2
-        )
+            HDItems.PUFFERFISH_SLICE.get(), 2)
             .addResult(Items.BONE_MEAL)
             .saveToHD(exporter)
 
         HDCuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.BLOWFISH.get()),
             KNIVES,
-            HDItems.PUFFERFISH_SLICE.get(), 2
-        )
+            HDItems.PUFFERFISH_SLICE.get(), 2)
             .addResult(Items.BONE_MEAL)
+            .saveToHD(exporter)
+
+        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(HDItems.SALTED_COD.get()),
+            KNIVES,
+            HDItems.SALTED_COD_SLICE.get(), 2)
+            .saveToHD(exporter)
+
+        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(HDItems.SALTED_SALMON.get()),
+            KNIVES,
+            HDItems.SALTED_SALMON_SLICE.get(), 2)
             .saveToHD(exporter)
 
         HDCuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.RAW_FISH_STEAK.get()),
             KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 2
-        )
+            HAItems.RAW_FISH_MEAT.get(), 2)
             .saveToHD(exporter)
 
         HDCuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.SPONGE),
             KNIVES,
-            HAItems.TUBE_SPONGE.get(), 4
-        )
+            HAItems.TUBE_SPONGE.get(), 4)
             .saveToHD(exporter)
     }
 
