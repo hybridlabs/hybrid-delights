@@ -46,8 +46,9 @@ legacyForge {
         }
         data {
             data()
-            programArguments.addAll '--mod', 'hybrid_delights', '--all',
+            programArguments.addAll '--mod', mod_id, '--all',
                     '--output', file('src/generated/resources/').getAbsolutePath(),
+                    '--existing', file('../common/src/main/resources/').getAbsolutePath(),
                     '--existing', file('src/main/resources/').getAbsolutePath(),
                     '--existing', file("../fabric/src/generated/resources").getAbsolutePath()
         }
@@ -100,16 +101,24 @@ processResources {
 
 dependencies {
     compileOnly project(":common")
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 
     modImplementation ("maven.modrinth:hybrid-aquatic:${aquatic_version}-forge") {
         transitive = false
     }
     modRuntimeOnly  "software.bernie.geckolib:geckolib-forge-$geckolib_version"
+    modImplementation "maven.modrinth:lithostitched:${lithostitched_version}-forge-1.20"
+    modImplementation("com.terraformersmc:biolith-forge:${biolith_version}") {
+        exclude(group: "com.github.glitchfiend")
+    }
+    modCompileOnly "top.theillusivec4.curios:curios-forge:${curios_version}:api"
+    modRuntimeOnly "top.theillusivec4.curios:curios-forge:${curios_version}"
     modImplementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
 
     implementation 'org.jetbrains:annotations:25.0.0'
     implementation 'thedarkcolour:kotlinforforge:4.11.0'
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0"))
 }
 
 compileKotlin {
