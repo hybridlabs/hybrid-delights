@@ -54,13 +54,13 @@ repositories {
 
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
-    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
-    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0"))
     implementation 'org.jetbrains:annotations:25.0.0'
 
     //We load the Forge version of any included mod dependencies
     modImplementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
-    modImplementation "maven.modrinth:hybrid-aquatic:${aquatic_version}-forge"
+    modImplementation("maven.modrinth:hybrid-aquatic:${aquatic_version}-forge") {
+        transitive = false
+    }
 }
 
 configurations {
