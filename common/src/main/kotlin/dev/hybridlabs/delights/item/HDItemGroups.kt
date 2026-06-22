@@ -38,6 +38,7 @@ object  HDItemGroups {
             entries.accept(HDItems.FISH_GELATIN.get())
 
             entries.accept(HDItems.PICKLED_HERRING.get())
+            entries.accept(HDItems.PICKLED_BULL_KELP.get())
 
             entries.accept(HDItems.SALTED_COD.get())
             entries.accept(HDItems.SALTED_COD_SLICE.get())

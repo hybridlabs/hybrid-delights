@@ -18,6 +18,7 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.BRINE_BOTTLE.get(),
             HDItems.SALT.get(),
             HDItems.PICKLED_HERRING.get(),
+            HDItems.PICKLED_BULL_KELP.get(),
 
             HDItems.SALTED_COD.get(),
             HDItems.SALTED_COD_SLICE.get(),

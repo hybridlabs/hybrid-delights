@@ -131,8 +131,25 @@ object HDItems {
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
-                        .nutrition(1)
-                        .saturationMod(0.1F)
+                        .nutrition(6)
+                        .saturationMod(0.6F)
+                        .meat()
+                        .build()
+                )
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+        )
+    }
+
+    val PICKLED_BULL_KELP = register(
+        "pickled_bull_kelp"
+    ) {
+        DrinkableItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationMod(0.6F)
                         .meat()
                         .build()
                 )

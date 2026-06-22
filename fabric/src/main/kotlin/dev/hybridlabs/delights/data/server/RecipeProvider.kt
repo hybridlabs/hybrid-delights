@@ -531,12 +531,21 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             )
             .save(exporter)
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.PICKLED_HERRING.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.PICKLED_HERRING.get())
             .requires(HAItems.HERRING.get())
             .requires(HDItems.BRINE_BOTTLE.get())
             .unlockedBy(
                 "has_herring",
                 has(HAItems.HERRING.get())
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.PICKLED_BULL_KELP.get())
+            .requires(HAItems.BULL_KELP.get())
+            .requires(HDItems.BRINE_BOTTLE.get())
+            .unlockedBy(
+                "has_bull_kelp",
+                has(HAItems.BULL_KELP.get())
             )
             .save(exporter)
 
