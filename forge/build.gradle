@@ -16,6 +16,11 @@ legacyForge {
     apply plugin: 'kotlin'
     version = "${minecraft_version}-${forge_version}"
 
+    mixin {
+        add(sourceSets.main, "${mod_id}.refmap.json")
+        config("${mod_id}.forge.mixins.json")
+    }
+
     // AT validation is broken on Forge 1.20.1
     validateAccessTransformers = false
 
@@ -26,7 +31,7 @@ legacyForge {
     }
 
     parchment {
-        minecraftVersion = parchment_minecraft
+        minecraftVersion = minecraft_version
         mappingsVersion = parchment_version
     }
 
