@@ -292,6 +292,23 @@ object HDItems {
         )
     }
 
+    val CAVIAR_TOAST = register(
+        "caviar_toast"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationMod(0.8F)
+                        .meat()
+                        .fast()
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
     val RAY_WING = register(
         "ray_wing"
     ) {
@@ -597,6 +614,22 @@ object HDItems {
                         .build()
                 )
                 .stacksTo(1)
+        )
+    }
+
+    val JELLIED_CARP = register(
+        "jellied_carp",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(14)
+                        .saturationMod(0.75F)
+                        .meat()
+                        .build()
+                )
+                .stacksTo(16)
         )
     }
 

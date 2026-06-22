@@ -11,6 +11,9 @@ import net.minecraft.world.item.Item
 object HDItemTags {
     val KNIVES = createConventional("tools/knives")
 
+    val ROE = create("roe")
+    val CURED_ROE = create("cured_roe")
+
     private fun create(id: String): TagKey<Item> {
         return TagKey.create(Registries.ITEM, CommonClass.locate(id))
     }

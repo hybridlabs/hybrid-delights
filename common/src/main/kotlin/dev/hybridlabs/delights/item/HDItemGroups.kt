@@ -33,6 +33,8 @@ object  HDItemGroups {
             entries.accept(HDItems.CARP_ROE.get())
             entries.accept(HDItems.CURED_CARP_ROE.get())
 
+            entries.accept(HDItems.CAVIAR_TOAST.get())
+
             entries.accept(HDItems.FISH_GELATIN.get())
 
             entries.accept(HDItems.PICKLED_HERRING.get())
@@ -71,6 +73,7 @@ object  HDItemGroups {
             entries.accept(HDItems.FISHERMANS_PIE.get())
 
             entries.accept(HDItems.EEL_NOODLES.get())
+            entries.accept(HDItems.JELLIED_CARP.get())
             entries.accept(HDItems.MASGOUF.get())
             entries.accept(HDItems.FISH_KEBAB.get())
 

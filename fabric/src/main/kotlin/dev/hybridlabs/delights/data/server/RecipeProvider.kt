@@ -5,6 +5,7 @@ import dev.hybridlabs.aquatic.item.HAPlatformItems
 import dev.hybridlabs.delights.data.builder.HDCookingPotRecipeBuilder
 import dev.hybridlabs.delights.data.builder.HDCuttingBoardRecipeBuilder
 import dev.hybridlabs.delights.item.HDItems
+import dev.hybridlabs.delights.tag.HDItemTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
 import net.minecraft.advancements.critereon.InventoryChangeTrigger
@@ -406,7 +407,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .define('S', Items.STICK)
             .unlockedBy(
                 "coral_chunk",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HAItems.CORAL_CHUNK.get())
+                has(HAItems.CORAL_CHUNK.get())
             )
             .save(exporter)
 
@@ -417,7 +418,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .define('S', Items.STICK)
             .unlockedBy(
                 "shark_tooth",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HAItems.SHARK_TOOTH.get())
+                has(HAItems.SHARK_TOOTH.get())
             )
             .save(exporter)
     }
@@ -434,7 +435,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
                 ResourceLocation("c", "eggs")))
             .unlockedBy(
                 "has_cooked_fish_steak",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HAItems.COOKED_FISH_STEAK.get())
+                has(HAItems.COOKED_FISH_STEAK.get())
             )
             .save(exporter)
 
@@ -445,7 +446,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(Items.GLASS_BOTTLE, 4)
             .unlockedBy(
                 "has_brine_bucket",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HAPlatformItems.BRINE_BUCKET.get())
+                has(HAPlatformItems.BRINE_BUCKET.get())
             )
             .save(exporter)
 
@@ -458,7 +459,20 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(ModItems.COOKED_RICE.get())
             .unlockedBy(
                 "has_tuna",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HAItems.TUNA.get())
+                has(HAItems.TUNA.get())
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(
+            RecipeCategory.MISC,
+            HDItems.CAVIAR_TOAST.get(),
+            2
+        )
+            .requires(HDItemTags.CURED_ROE)
+            .requires(Items.BREAD)
+            .unlockedBy(
+                "has_roe",
+                has(HDItemTags.CURED_ROE)
             )
             .save(exporter)
 
@@ -473,7 +487,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "eggs")))
             .unlockedBy(
                 "has_tuna",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HAItems.TUNA.get())
+                has(HAItems.TUNA.get())
             )
             .save(exporter)
 
@@ -488,7 +502,21 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "bread/wheat")))
             .unlockedBy(
                 "has_tuna",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HAItems.TUNA.get())
+                has(HAItems.TUNA.get())
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(
+            RecipeCategory.MISC,
+            HDItems.JELLIED_CARP.get()
+        )
+            .requires(HAItems.CARP.get())
+            .requires(HDItems.FISH_GELATIN.get(),2)
+            .requires(TagKey.create(Registries.ITEM,
+                ResourceLocation("c", "vegetables/carrot")))
+            .unlockedBy(
+                "has_carp",
+                has(HAItems.CARP.get())
             )
             .save(exporter)
 
@@ -499,7 +527,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "salad_ingredients")))
             .unlockedBy(
                 "has_tuna",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HAItems.TUNA.get())
+                has(HAItems.TUNA.get())
             )
             .save(exporter)
 
@@ -508,7 +536,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(HDItems.BRINE_BOTTLE.get())
             .unlockedBy(
                 "has_herring",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HAItems.HERRING.get())
+                has(HAItems.HERRING.get())
             )
             .save(exporter)
 
@@ -517,7 +545,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
                 "has_salt",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HDItems.SALT.get())
+                has(HDItems.SALT.get())
             )
             .save(exporter)
 
@@ -526,7 +554,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
                 "has_salt",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HDItems.SALT.get())
+                has(HDItems.SALT.get())
             )
             .save(exporter)
 
@@ -535,7 +563,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
                 "has_salt",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HDItems.SALT.get())
+                has(HDItems.SALT.get())
             )
             .save(exporter)
 
@@ -544,7 +572,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
                 "has_salt",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HDItems.SALT.get())
+                has(HDItems.SALT.get())
             )
             .save(exporter)
 
@@ -553,7 +581,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
                 "has_salt",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HDItems.SALT.get())
+                has(HDItems.SALT.get())
             )
             .save(exporter)
 
@@ -562,7 +590,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
                 "has_salt",
-                InventoryChangeTrigger.TriggerInstance.hasItems(HDItems.SALT.get())
+                has(HDItems.SALT.get())
             )
             .save(exporter)
     }

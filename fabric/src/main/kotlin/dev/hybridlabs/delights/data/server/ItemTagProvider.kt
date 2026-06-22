@@ -17,5 +17,23 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
         ).forEach { item ->
             getOrCreateTagBuilder(HDItemTags.KNIVES).add(item)
         }
+
+        setOf(
+            HDItems.COD_ROE.get(),
+            HDItems.SALMON_ROE.get(),
+            HDItems.TROPICAL_FISH_ROE.get(),
+            HDItems.CARP_ROE.get(),
+        ).forEach { item ->
+            getOrCreateTagBuilder(HDItemTags.ROE).add(item)
+        }
+
+        setOf(
+            HDItems.CURED_COD_ROE.get(),
+            HDItems.CURED_SALMON_ROE.get(),
+            HDItems.CURED_TROPICAL_FISH_ROE.get(),
+            HDItems.CURED_CARP_ROE.get(),
+        ).forEach { item ->
+            getOrCreateTagBuilder(HDItemTags.CURED_ROE).add(item)
+        }
     }
 }

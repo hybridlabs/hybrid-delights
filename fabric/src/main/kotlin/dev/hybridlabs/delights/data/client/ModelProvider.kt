@@ -42,6 +42,8 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.TROPICAL_FISH_ROE.get(),
             HDItems.CURED_TROPICAL_FISH_ROE.get(),
 
+            HDItems.CAVIAR_TOAST.get(),
+
             HDItems.FISH_GELATIN.get(),
 
             HDItems.BISQUE.get(),
@@ -59,6 +61,7 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.BAKED_STUFFED_LOBSTER.get(),
             HDItems.SHRIMP_FRIED_RICE.get(),
 
+            HDItems.JELLIED_CARP.get(),
             HDItems.MASGOUF.get(),
             HDItems.FISH_KEBAB.get(),
 
