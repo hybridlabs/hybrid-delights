@@ -334,7 +334,7 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(2)
-                        .saturationMod(0.4F)
+                        .saturationMod(0.1F)
                         .meat()
                         .build()
                 )
@@ -348,8 +348,8 @@ object HDItems {
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.4F)
+                        .nutrition(6)
+                        .saturationMod(0.8F)
                         .meat()
                         .build()
                 )
@@ -363,8 +363,8 @@ object HDItems {
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.4F)
+                        .nutrition(3)
+                        .saturationMod(0.3F)
                         .fast()
                         .meat()
                         .build()
