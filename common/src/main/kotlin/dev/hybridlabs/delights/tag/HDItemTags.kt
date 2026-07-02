@@ -2,7 +2,7 @@
 
 package dev.hybridlabs.delights.tag
 
-import dev.hybridlabs.aquatic.CommonClass
+import dev.hybridlabs.delights.HybridDelightsCommon
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
@@ -15,7 +15,7 @@ object HDItemTags {
     val CURED_ROE = create("cured_roe")
 
     private fun create(id: String): TagKey<Item> {
-        return TagKey.create(Registries.ITEM, CommonClass.locate(id))
+        return TagKey.create(Registries.ITEM, HybridDelightsCommon.locate(id))
     }
 
     private fun createConventional(id: String): TagKey<Item> {
