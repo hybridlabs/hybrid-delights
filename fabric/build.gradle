@@ -1,6 +1,7 @@
 plugins {
     id 'multiloader-loader'
     id 'fabric-loom'
+    id "me.modmuss50.mod-publish-plugin" version "0.8.4"
     id "org.jetbrains.kotlin.jvm"
 }
 
@@ -73,7 +74,7 @@ dependencies {
     }
     modApi "software.bernie.geckolib:geckolib-fabric-$geckolib_version"
     include modImplementation("com.jamieswhiteshirt:reach-entity-attributes:$reach_entity_attributes_version")
-    modImplementation "maven.modrinth:lithostitched:${lithostitched_version}-fabric-1.20"
+    modImplementation "maven.modrinth:lithostitched:${lithostitched_version}-fabric-1.21.1"
     modImplementation("com.terraformersmc:biolith-fabric:${biolith_version}") {
         exclude(group: "com.github.glitchfiend")
     }
@@ -114,13 +115,11 @@ loom {
     }
 
     mixin {
-        useLegacyMixinAp = true
         defaultRefmapName.set("${mod_id}.refmap.json")
     }
 
     compileKotlin {
         source(project(":common").sourceSets.main.allSource)
-        source(sourceSets.main.allSource)
         inputs.file "../gradle.properties"
     }
 
