@@ -63,7 +63,7 @@ dependencies {
 
     //We load the Forge version of any included mod dependencies
     implementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
-    implementation("maven.modrinth:hybrid-aquatic:${aquatic_version}-forge") {
+    implementation("maven.modrinth:hybrid-aquatic:${aquatic_version}-neoforge") {
         transitive = false
     }
 
@@ -101,9 +101,6 @@ subprojects {
     }
 
     compileKotlin {
-        if (file("src/main/resources/META-INF/accesstransformer.cfg").exists()) {
-            accessTransformers = ["src/main/resources/META-INF/accesstransformer.cfg"]
-        }
         source(project(":common").sourceSets.main.allSource)
         inputs.file "../gradle.properties"
     }

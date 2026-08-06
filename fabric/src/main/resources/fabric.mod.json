@@ -7,16 +7,13 @@
 	"description": "A mod that adds integration between HybridLabs' mods and Farmers Delight",
 
 	"authors": [
-		"MysticKoko",
-		"Aqua",
-		"Andante",
-		"Eggo"
+		"Hybrid Labs"
 	],
 
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
+  "contact": {
+    "sources": "https://github.com/hybridlabs/hybrid-delights",
+    "issues": "https://github.com/hybridlabs/hybrid-delights/issues"
+  },
 
 	"license": "MIT",
 	"icon": "assets/hybrid_delights/icon.png",

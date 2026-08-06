@@ -86,8 +86,6 @@ dependencies {
     modRuntimeOnly "io.github.flemmli97:debugutils:$minecraft_version-$debug_utils_version-fabric"
     modRuntimeOnly "maven.modrinth:carpet:$carpet_version"
     modImplementation("vectorwing:FarmersDelight:${fdrf_version}") {exclude(group: "net.fabricmc")}
-
-    modApi("com.terraformersmc:modmenu:${modmenu_version}")
 }
 
 // Set up datagen and export the output to be consumed by other projects
@@ -107,12 +105,6 @@ fabricApi {
 }
 
 loom {
-    var accessWidenerFile = file("src/main/resources/${mod_id}.accesswidener")
-    if (accessWidenerFile.exists()) {
-        accessWidenerPath.set(accessWidenerFile)
-    } else {
-        println "No access widener exists!"
-    }
 
     mixin {
         defaultRefmapName.set("${mod_id}.refmap.json")
