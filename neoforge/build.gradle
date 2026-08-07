@@ -7,11 +7,6 @@ plugins {
 
 neoForge {
     version = neoforge_version
-    // Automatically enable neoforge AccessTransformers if the file exists
-    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
-    if (at.exists()) {
-        accessTransformers.from(at.absolutePath)
-    }
     parchment {
         minecraftVersion = parchment_minecraft
         mappingsVersion = parchment_version
@@ -20,7 +15,6 @@ neoForge {
     sourceSets {
         main.kotlin.srcDirs = ['src/main/java', 'src/main/kotlin']
     }
-
 
     runs {
         configureEach {
@@ -97,7 +91,7 @@ dependencies {
     implementation "thedarkcolour:kotlinforforge-neoforge:${kotlin_for_forge_version}"
     compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}:api"
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
-    modImplementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
+    implementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
 }
 
 jar {
