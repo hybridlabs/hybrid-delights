@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hybrid_aquatic:herring"
+    },
+    {
+      "item": "hybrid_delights:brine_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:pickled_herring"
+  }
+}

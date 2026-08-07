@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hybrid_delights:ray_wing"
+    },
+    {
+      "item": "hybrid_delights:salt"
+    },
+    {
+      "item": "hybrid_delights:salt"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:salted_ray_wing"
+  }
+}

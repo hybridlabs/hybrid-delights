@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "hybrid_delights:brine_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:salt"
+  }
+}

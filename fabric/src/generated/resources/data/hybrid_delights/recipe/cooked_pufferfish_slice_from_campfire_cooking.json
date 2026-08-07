@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "hybrid_delights:pufferfish_slice"
+  },
+  "result": {
+    "id": "hybrid_delights:cooked_pufferfish_slice"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "cookingtime": 150,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "hybrid_delights:salt"
+    },
+    {
+      "item": "hybrid_delights:carp_roe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:cured_carp_roe"
+  }
+}

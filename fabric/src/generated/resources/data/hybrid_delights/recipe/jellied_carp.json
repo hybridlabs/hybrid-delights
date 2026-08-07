@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hybrid_aquatic:carp"
+    },
+    {
+      "item": "hybrid_delights:fish_gelatin"
+    },
+    {
+      "item": "hybrid_delights:fish_gelatin"
+    },
+    {
+      "tag": "c:vegetables/carrot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:jellied_carp"
+  }
+}

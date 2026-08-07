@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "hybrid_aquatic:raw_crab"
+    },
+    {
+      "item": "farmersdelight:milk_bottle"
+    },
+    {
+      "tag": "c:dough"
+    },
+    {
+      "tag": "c:onion"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:crab_rangoon"
+  }
+}

@@ -11,10 +11,8 @@ repositories {
     }
 
     maven {
-        url "https://jitpack.io/" // Fabric ASM
-        content {
-            excludeGroup "io.github.fabricators_of_create"
-        }
+        name = "Sleeping Town"
+        url = "https://repo.sleeping.town/"
     }
 
     maven {
@@ -28,17 +26,8 @@ repositories {
     }
 
     maven {
-        name = "Greenhouse Maven"
-        url = 'https://maven.greenhouse.lgbt/releases/'
-    }
-
-    maven { url "https://mvn.devos.one/releases/" } // Porting Lib
-
-    maven {
-        url "https://maven.jamieswhiteshirt.com/libs-release" // Reach Entity Attributes (Required by Porting Lib)
-        content {
-            includeGroup "com.jamieswhiteshirt"
-        }
+        name = "Cassian's Maven"
+        url = 'https://maven.cassian.cc'
     }
 
     maven {
@@ -82,9 +71,12 @@ dependencies {
     implementation 'org.jetbrains:annotations:25.0.0'
 
     //We still have to load the loader-specific version of any mods included in common
+
     modRuntimeOnly "io.github.flemmli97:debugutils:$minecraft_version-$debug_utils_version-fabric"
-    modRuntimeOnly "maven.modrinth:carpet:$carpet_version"
-    modImplementation("vectorwing:FarmersDelight:${fdrf_version}") {exclude(group: "net.fabricmc")}
+    modImplementation "maven.modrinth:carpet:$carpet_version"
+    modImplementation("vectorwing:FarmersDelight:${fdrf_version}") {
+        exclude(group: "net.fabricmc")
+    }
 }
 
 // Set up datagen and export the output to be consumed by other projects

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "hybrid_delights:ray_wing"
+  },
+  "result": {
+    "id": "hybrid_delights:cooked_ray_wing"
+  }
+}
