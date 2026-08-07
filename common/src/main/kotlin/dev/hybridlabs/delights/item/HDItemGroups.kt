@@ -77,6 +77,7 @@ object  HDItemGroups {
             entries.accept(HDItems.EEL_NOODLES.get())
             entries.accept(HDItems.MASGOUF.get())
             entries.accept(HDItems.FISH_KEBAB.get())
+            entries.accept(HDItems.FISH_N_CHIPS.get())
 
             BuiltInRegistries.ITEM.forEach { item ->
                 val id = BuiltInRegistries.ITEM.getKey(item)

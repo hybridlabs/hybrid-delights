@@ -53,6 +53,7 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
             HDItems.FISHERMANS_PIE.get() to "Fisherman's Pie",
             HDItems.JELLIED_CARP.get() to "Jellied Carp",
             HDItems.MASGOUF.get() to "Masgouf",
+            HDItems.FISH_N_CHIPS.get() to "Fish N Chips",
             HDItems.TUNA_ROLL.get() to "Tuna Roll",
             HDItems.FISH_KEBAB.get() to "Fish Kebab",
             HDItems.TUNA_SANDWICH.get() to "Tuna Sandwich",

@@ -22,6 +22,7 @@ import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.item.crafting.RecipeSerializer
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab
 import vectorwing.farmersdelight.common.registry.ModItems
+import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder
 import java.util.function.Consumer
 
 class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
@@ -232,6 +233,16 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .addIngredient(HAItems.RAW_FISH_MEAT.get())
             .addIngredient(ModItems.COD_SLICE.get())
             .addIngredient(ModItems.SALMON_SLICE.get())
+            .unlockedByAnyIngredient(
+                HAItems.RAW_FISH_MEAT.get()
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+            .saveToHD(exporter)
+
+        HDCookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.FISH_N_CHIPS.get(), 1, 200, 1.0f, Items.STICK)
+            .addIngredient(HAItems.RAW_FISH_MEAT.get())
+            .addIngredient(Items.POTATO)
             .unlockedByAnyIngredient(
                 HAItems.RAW_FISH_MEAT.get()
             )
