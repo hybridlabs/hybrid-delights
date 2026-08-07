@@ -15,9 +15,10 @@ pluginManagement {
 			url = 'https://repo.spongepowered.org/repository/maven-public/'
 		}
 	}
-	plugins {
-		id("org.jetbrains.kotlin.jvm").version(kotlin_version)
-	}
+    plugins {
+        id("org.jetbrains.kotlin.jvm").version(kotlin_version)
+        id("fabric-loom").version(loom_version).apply(false)
+    }
 }
 
 plugins {

@@ -2,35 +2,35 @@ package dev.hybridlabs.delights.data.server
 
 import dev.hybridlabs.aquatic.item.HAItems
 import dev.hybridlabs.aquatic.item.HAPlatformItems
-import dev.hybridlabs.delights.data.builder.HDCookingPotRecipeBuilder
-import dev.hybridlabs.delights.data.builder.HDCuttingBoardRecipeBuilder
 import dev.hybridlabs.delights.item.HDItems
 import dev.hybridlabs.delights.tag.HDItemTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
-import net.minecraft.advancements.critereon.InventoryChangeTrigger
+import net.minecraft.core.HolderLookup
 import net.minecraft.core.registries.Registries
-import net.minecraft.data.recipes.FinishedRecipe
 import net.minecraft.data.recipes.RecipeCategory
+import net.minecraft.data.recipes.RecipeOutput
 import net.minecraft.data.recipes.ShapedRecipeBuilder
 import net.minecraft.data.recipes.ShapelessRecipeBuilder
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
-import net.minecraft.world.item.crafting.Ingredient
-import net.minecraft.world.item.crafting.RecipeSerializer
+import net.minecraft.world.item.crafting.*
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab
 import vectorwing.farmersdelight.common.registry.ModItems
-import java.util.function.Consumer
+import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder
+import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder
+import java.util.concurrent.CompletableFuture
 
-class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
+class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture<HolderLookup.Provider>) :
+    FabricRecipeProvider(output, lookupProvider) {
     val KNIVES: Ingredient =
         Ingredient.of(
-            TagKey.create(Registries.ITEM, ResourceLocation("c", "tools/knives"))
+            TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/knives"))
         )
 
-    override fun buildRecipes(exporter: Consumer<FinishedRecipe>) {
+    override fun buildRecipes(exporter: RecipeOutput) {
         cuttingRecipes(exporter)
         knifeRecipes(exporter)
         craftingRecipes(exporter)
@@ -38,17 +38,17 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
         cookingRecipes(exporter)
     }
 
-    private fun cookingRecipes(exporter: Consumer<FinishedRecipe>) {
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+    private fun cookingRecipes(exporter: RecipeOutput) {
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.SALT.get(), 1, 100, 1.0f)
             .addIngredient(HDItems.BRINE_BOTTLE.get())
             .unlockedByAnyIngredient(
                 HDItems.BRINE_BOTTLE.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-            .saveToHD(exporter)
+            .save(exporter)
         
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CURED_COD_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
             .addIngredient(HDItems.SALT.get())
             .addIngredient(HDItems.COD_ROE.get())
@@ -57,9 +57,9 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
                 HDItems.COD_ROE.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-            .saveToHD(exporter)
+            .save(exporter)
         
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CURED_SALMON_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
             .addIngredient(HDItems.SALT.get())
             .addIngredient(HDItems.SALMON_ROE.get())
@@ -68,9 +68,9 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
                 HDItems.SALMON_ROE.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-            .saveToHD(exporter)
+            .save(exporter)
         
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CURED_TROPICAL_FISH_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
             .addIngredient(HDItems.SALT.get())
             .addIngredient(HDItems.TROPICAL_FISH_ROE.get())
@@ -79,9 +79,9 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
                 HDItems.TROPICAL_FISH_ROE.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-            .saveToHD(exporter)
+            .save(exporter)
         
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CURED_CARP_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
             .addIngredient(HDItems.SALT.get())
             .addIngredient(HDItems.CARP_ROE.get())
@@ -90,133 +90,133 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
                 HDItems.CARP_ROE.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.BAKED_STUFFED_LOBSTER.get(), 1, 400, 1.0f)
             .addIngredient(HAItems.RAW_LOBSTER.get())
             .addIngredient(HAItems.RAW_LOBSTER_TAIL.get())
             .addIngredient(HAItems.RAW_CRAB.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/onion")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .unlockedByAnyIngredient(
                 HAItems.RAW_LOBSTER.get(),
                 HAItems.RAW_LOBSTER_TAIL.get(),
                 HAItems.RAW_CRAB.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.LOBSTER_STEW.get(), 1, 400, 1.0f, Items.BOWL)
             .addIngredient(HAItems.RAW_LOBSTER.get())
             .addIngredient(HAItems.RAW_LOBSTER_TAIL.get())
             .addIngredient(Items.BREAD)
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/onion")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/tomato")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .unlockedByAnyIngredient(
                 HAItems.RAW_LOBSTER.get(),
                 HAItems.RAW_LOBSTER_TAIL.get(),
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.BISQUE.get(), 1, 300, 1.0f, Items.BOWL)
             .addIngredient(HAItems.RAW_TENTACLE.get())
             .addIngredient(HAItems.RAW_CRAYFISH.get())
             .addIngredient(HAItems.UNI.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/tomato")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .unlockedByAnyIngredient(
                 HAItems.RAW_TENTACLE.get(),
                 HAItems.RAW_CRAYFISH.get(),
                 HAItems.UNI.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CHOWDER.get(), 1, 300, 1.0f, Items.BOWL)
             .addIngredient(HAItems.RAW_CRAB.get())
             .addIngredient(ModItems.MILK_BOTTLE.get())
             .addIngredient(Items.POTATO)
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/tomato")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .unlockedByAnyIngredient(
                 HAItems.RAW_CRAB.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CRAB_CAKE.get(), 1, 300, 1.0f)
             .addIngredient(HAItems.COOKED_CRAB.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "grains/wheat")))
+                ResourceLocation.fromNamespaceAndPath("c", "grains/wheat")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "eggs")))
+                ResourceLocation.fromNamespaceAndPath("c", "eggs")))
             .unlockedByAnyIngredient(
                 HAItems.COOKED_CRAB.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CRAB_RANGOON.get(), 1, 200, 1.0f)
             .addIngredient(HAItems.RAW_CRAB.get())
             .addIngredient(ModItems.MILK_BOTTLE.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "dough")))
+                ResourceLocation.fromNamespaceAndPath("c", "dough")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "onion")))
+                ResourceLocation.fromNamespaceAndPath("c", "onion")))
             .unlockedByAnyIngredient(
                 HAItems.RAW_CRAB.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.TUNA_CASSEROLE.get(), 1, 400, 1.0f, Items.BOWL)
             .addIngredient(HAItems.TUNA.get())
             .addIngredient(ModItems.RAW_PASTA.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "eggs")))
+                ResourceLocation.fromNamespaceAndPath("c", "eggs")))
             .unlockedByAnyIngredient(
                 HAItems.TUNA.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.MASGOUF.get(), 1, 400, 1.0f)
             .addIngredient(HAItems.CARP.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/onion")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/tomato")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .unlockedByAnyIngredient(
                 HAItems.CARP.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.FISHERMANS_SOUP.get(), 1, 200, 1.0f, Items.BOWL)
             .addIngredient(HAItems.RAW_FISH_MEAT.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/onion")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/tomato")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .unlockedByAnyIngredient(
                 HAItems.RAW_FISH_MEAT.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.EEL_NOODLES.get(), 1, 400, 1.0f, Items.BOWL)
             .addIngredient(HAItems.MORAY_EEL.get())
             .addIngredient(ModItems.RAW_PASTA.get())
@@ -225,9 +225,9 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
                 HAItems.MORAY_EEL.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.FISH_KEBAB.get(), 1, 200, 1.0f, Items.STICK)
             .addIngredient(HAItems.RAW_FISH_MEAT.get())
             .addIngredient(ModItems.COD_SLICE.get())
@@ -236,92 +236,92 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
                 HAItems.RAW_FISH_MEAT.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCookingPotRecipeBuilder.cookingPotRecipe(
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.SHRIMP_FRIED_RICE.get(), 1, 200, 1.0f, Items.BOWL)
             .addIngredient(HAItems.RAW_SHRIMP.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/onion")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "eggs")))
+                ResourceLocation.fromNamespaceAndPath("c", "eggs")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "crops/rice")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/rice")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "vegetables/carrot")))
+                ResourceLocation.fromNamespaceAndPath("c", "vegetables/carrot")))
             .unlockedByAnyIngredient(
                 HAItems.RAW_SHRIMP.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-            .saveToHD(exporter)
+            .save(exporter)
     }
 
-    private fun cuttingRecipes(exporter: Consumer<FinishedRecipe>) {
+    private fun cuttingRecipes(exporter: RecipeOutput) {
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.ANGLERFISH.get()),
             KNIVES,
             HAItems.RAW_FISH_MEAT.get(), 2
         )
             .addResultWithChance(HAItems.GLOWSLIME.get(), 0.75f)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.DRAGONFISH.get()),
             KNIVES,
             HAItems.RAW_FISH_MEAT.get(), 2
         )
             .addResultWithChance(HAItems.GLOWSLIME.get(), 0.75f)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.FLASHLIGHT_FISH.get()),
             KNIVES,
             HAItems.RAW_FISH_MEAT.get(), 2
         )
             .addResultWithChance(HAItems.GLOWSLIME.get(), 0.75f)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.BARRELEYE.get()),
             KNIVES,
             HAItems.RAW_FISH_MEAT.get(), 2
         )
             .addResultWithChance(HAItems.GLOWSLIME.get(), 0.75f)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.HAGFISH.get()),
             KNIVES,
             HAItems.RAW_FISH_MEAT.get(), 2
         )
             .addResultWithChance(HAItems.HAGSLIME.get(), 1.0f)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.CARP.get()),
             KNIVES,
             HAItems.RAW_FISH_MEAT.get(), 2
         )
             .addResultWithChance(HDItems.CARP_ROE.get(), 0.5f)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.TUNA.get()),
             KNIVES,
             HAItems.RAW_FISH_STEAK.get(), 2
         )
             .addResultWithChance(HDItems.FISH_GELATIN.get(), 0.66f)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.STINGRAY.get()),
             KNIVES,
             HDItems.RAY_WING.get(), 2
         )
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.COD),
             KNIVES,
             ModItems.COD_SLICE.get(), 2
@@ -330,13 +330,13 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .addResultWithChance(HDItems.COD_ROE.get(), 0.5f)
             .save(
                 exporter,
-                ResourceLocation(
+                ResourceLocation.fromNamespaceAndPath(
                     "farmersdelight",
                     "cutting/cod"
                 )
             )
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.SALMON),
             KNIVES,
             ModItems.SALMON_SLICE.get(), 2
@@ -345,61 +345,61 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .addResultWithChance(HDItems.SALMON_ROE.get(), 0.5f)
             .save(
                 exporter,
-                ResourceLocation(
+                ResourceLocation.fromNamespaceAndPath(
                     "farmersdelight",
                     "cutting/salmon"
                 )
             )
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.TROPICAL_FISH),
             KNIVES,
             HAItems.RAW_FISH_MEAT.get(), 2
         )
             .addResult(Items.BONE_MEAL)
             .addResultWithChance(HDItems.TROPICAL_FISH_ROE.get(), 0.5f)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.PUFFERFISH),
             KNIVES,
             HDItems.PUFFERFISH_SLICE.get(), 2)
             .addResult(Items.BONE_MEAL)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.BLOWFISH.get()),
             KNIVES,
             HDItems.PUFFERFISH_SLICE.get(), 2)
             .addResult(Items.BONE_MEAL)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HDItems.SALTED_COD.get()),
             KNIVES,
             HDItems.SALTED_COD_SLICE.get(), 2)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HDItems.SALTED_SALMON.get()),
             KNIVES,
             HDItems.SALTED_SALMON_SLICE.get(), 2)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.RAW_FISH_STEAK.get()),
             KNIVES,
             HAItems.RAW_FISH_MEAT.get(), 2)
-            .saveToHD(exporter)
+            .save(exporter)
 
-        HDCuttingBoardRecipeBuilder.cuttingRecipe(
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.SPONGE),
             KNIVES,
             HAItems.TUBE_SPONGE.get(), 4)
-            .saveToHD(exporter)
+            .save(exporter)
     }
 
-    private fun knifeRecipes(exporter: Consumer<FinishedRecipe>) {
+    private fun knifeRecipes(exporter: RecipeOutput) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, HDItems.CORAL_KNIFE.get())
             .pattern("C")
             .pattern("S")
@@ -423,7 +423,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .save(exporter)
     }
 
-    private fun craftingRecipes(exporter: Consumer<FinishedRecipe>) {
+    private fun craftingRecipes(exporter: RecipeOutput) {
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, HDItems.FISHERMANS_PIE.get())
             .pattern(" C ")
             .pattern("FEF")
@@ -432,7 +432,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .define('F', HAItems.COOKED_FISH_STEAK.get())
             .define('C', HAItems.COOKED_CRAB.get())
             .define('E', TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "eggs")))
+                ResourceLocation.fromNamespaceAndPath("c", "eggs")))
             .unlockedBy(
                 "has_cooked_fish_steak",
                 has(HAItems.COOKED_FISH_STEAK.get())
@@ -482,9 +482,9 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
         )
             .requires(HAItems.TUNA.get())
             .requires(Items.BOWL)
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "crops/tomato")))
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "salad_ingredients")))
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "eggs")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "salad_ingredients")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "eggs")))
             .unlockedBy(
                 "has_tuna",
                 has(HAItems.TUNA.get())
@@ -497,9 +497,9 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
         )
             .requires(HAItems.TUNA.get())
             .requires(Items.BOWL)
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "crops/tomato")))
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "crops/cabbage")))
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "bread/wheat")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/cabbage")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "bread/wheat")))
             .unlockedBy(
                 "has_tuna",
                 has(HAItems.TUNA.get())
@@ -513,7 +513,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .requires(HAItems.CARP.get())
             .requires(HDItems.FISH_GELATIN.get(),2)
             .requires(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "vegetables/carrot")))
+                ResourceLocation.fromNamespaceAndPath("c", "vegetables/carrot")))
             .unlockedBy(
                 "has_carp",
                 has(HAItems.CARP.get())
@@ -523,8 +523,8 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.TUNA_SANDWICH.get())
             .requires(HAItems.TUNA.get())
             .requires(Items.BREAD)
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "crops/tomato")))
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation("c", "salad_ingredients")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "salad_ingredients")))
             .unlockedBy(
                 "has_tuna",
                 has(HAItems.TUNA.get())
@@ -604,7 +604,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .save(exporter)
     }
 
-    private fun smeltingRecipes(exporter: Consumer<FinishedRecipe>) {
+    private fun smeltingRecipes(exporter: RecipeOutput) {
 
         offerSmeltingRecipes(
             exporter,
@@ -621,11 +621,12 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
         )
     }
 
-    private fun offerSmeltingRecipes(exporter: Consumer<FinishedRecipe>, input: Item, output: Item, experience: Float) {
+    private fun offerSmeltingRecipes(exporter: RecipeOutput, input: Item, output: Item, experience: Float) {
         simpleCookingRecipe(
             exporter,
             "smelting",
             RecipeSerializer.SMELTING_RECIPE,
+            ::SmeltingRecipe,
             200,
             input,
             output,
@@ -635,6 +636,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             exporter,
             "smoking",
             RecipeSerializer.SMOKING_RECIPE,
+            ::SmokingRecipe,
             100,
             input,
             output,
@@ -644,6 +646,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             exporter,
             "campfire_cooking",
             RecipeSerializer.CAMPFIRE_COOKING_RECIPE,
+            ::CampfireCookingRecipe,
             600,
             input,
             output,

@@ -108,8 +108,8 @@ dependencies {
         transitive = false
     }
     modRuntimeOnly  "software.bernie.geckolib:geckolib-forge-$geckolib_version"
-    modImplementation "maven.modrinth:lithostitched:${lithostitched_version}-forge-1.21.1"
-    modImplementation("com.terraformersmc:biolith-forge:${biolith_version}") {
+    modRuntimeOnly "maven.modrinth:lithostitched:${lithostitched_version}-forge-1.21.1"
+    modRuntimeOnly("com.terraformersmc:biolith-forge:${biolith_version}") {
         exclude(group: "com.github.glitchfiend")
     }
     modCompileOnly "top.theillusivec4.curios:curios-forge:${curios_version}:api"

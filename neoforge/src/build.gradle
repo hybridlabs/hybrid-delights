@@ -88,9 +88,9 @@ dependencies {
     implementation ("maven.modrinth:hybrid-aquatic:${aquatic_version}-neoforge") {
         transitive = false
     }
-    implementation "software.bernie.geckolib:geckolib-neoforge-$geckolib_version"
-    implementation "maven.modrinth:lithostitched:${lithostitched_version}-neoforge-1.21.1"
-    implementation("com.terraformersmc:biolith-neoforge:${biolith_version}") {
+    runtimeOnly "software.bernie.geckolib:geckolib-neoforge-$geckolib_version"
+    runtimeOnly "maven.modrinth:lithostitched:${lithostitched_version}-neoforge-1.21.1"
+    runtimeOnly("com.terraformersmc:biolith-neoforge:${biolith_version}") {
         exclude(group: "com.github.glitchfiend")
     }
     implementation 'org.jetbrains:annotations:25.0.0'

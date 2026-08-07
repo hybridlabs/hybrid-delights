@@ -34,7 +34,7 @@ class BrineBottleItem(properties: Properties) : Item(properties) {
         }
     }
 
-    override fun getUseDuration(stack: ItemStack): Int {
+    override fun getUseDuration(stack: ItemStack, entity: LivingEntity): Int {
         return 40
     }
 
