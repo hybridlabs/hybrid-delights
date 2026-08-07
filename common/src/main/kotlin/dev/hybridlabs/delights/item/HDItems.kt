@@ -690,8 +690,8 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(10)
-                        .saturationModifier(1.0F)
-
+                        .saturationMod(1.0F)
+                        .meat()
                         .build()
                 )
                 .stacksTo(16)
