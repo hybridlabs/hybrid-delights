@@ -12,9 +12,6 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
     override fun generateItemModels(generator: ItemModelGenerators) {
         setOf(
-            HDItems.CORAL_KNIFE.get(),
-            HDItems.SHARK_TOOTH_KNIFE.get(),
-
             HDItems.BRINE_BOTTLE.get(),
             HDItems.SALT.get(),
             HDItems.PICKLED_HERRING.get(),
@@ -74,6 +71,13 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.TUNA_SANDWICH.get(),
         ).forEach { item ->
             generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM)
+        }
+
+        setOf(
+            HDItems.CORAL_KNIFE.get(),
+            HDItems.SHARK_TOOTH_KNIFE.get(),
+        ).forEach { item ->
+            generator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM)
         }
     }
 }
