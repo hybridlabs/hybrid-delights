@@ -8,7 +8,6 @@ import dev.hybridlabs.delights.item.HDItems
 import dev.hybridlabs.delights.tag.HDItemTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
-import net.minecraft.advancements.critereon.InventoryChangeTrigger
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.recipes.FinishedRecipe
 import net.minecraft.data.recipes.RecipeCategory
