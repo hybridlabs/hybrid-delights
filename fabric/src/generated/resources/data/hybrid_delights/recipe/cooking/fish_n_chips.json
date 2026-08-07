@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:stick"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "hybrid_aquatic:raw_fish_meat"
+    },
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:fish_n_chips"
+  }
+}

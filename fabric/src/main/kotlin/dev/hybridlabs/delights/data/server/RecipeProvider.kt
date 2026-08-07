@@ -239,6 +239,16 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.FISH_N_CHIPS.get(), 1, 200, 1.0f, Items.STICK)
+            .addIngredient(HAItems.RAW_FISH_MEAT.get())
+            .addIngredient(Items.POTATO)
+            .unlockedByAnyIngredient(
+                HAItems.RAW_FISH_MEAT.get()
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+            .save(exporter)
+
+        CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.SHRIMP_FRIED_RICE.get(), 1, 200, 1.0f, Items.BOWL)
             .addIngredient(HAItems.RAW_SHRIMP.get())
             .addIngredient(TagKey.create(Registries.ITEM,

@@ -681,6 +681,22 @@ object HDItems {
         )
     }
 
+    val FISH_N_CHIPS = register(
+        "fish_n_chips"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(10)
+                        .saturationModifier(1.0F)
+
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
     val TUNA_ROLL = register(
         "tuna_roll",
     ) {
