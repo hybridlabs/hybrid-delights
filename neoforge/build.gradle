@@ -94,12 +94,6 @@ dependencies {
     implementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
 }
 
-jar {
-    manifest.attributes([
-            "MixinConfigs": "${mod_id}.forge.mixins.json"
-    ])
-}
-
 compileKotlin {
     source(project(":common").sourceSets.main.allSource)
     inputs.file "../gradle.properties"

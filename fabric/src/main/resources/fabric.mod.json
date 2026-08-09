@@ -34,11 +34,6 @@
 		]
 	},
 
-  "mixins": [
-    "hybrid_delights.mixins.json",
-    "hybrid_delights.fabric.mixins.json"
-  ],
-
 	"depends": {
       "minecraft": "~1.21.1",
       "java": ">=21",
