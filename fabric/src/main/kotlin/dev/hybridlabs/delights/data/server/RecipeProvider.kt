@@ -1,12 +1,14 @@
 package dev.hybridlabs.delights.data.server
 
-import dev.hybridlabs.aquatic.item.HAItems
-import dev.hybridlabs.aquatic.item.HAPlatformItems
 import dev.hybridlabs.delights.item.HDItems
 import dev.hybridlabs.delights.tag.HDItemTags
+import dev.hybridlabs.hapi.tag.HAPIItemTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
+import net.minecraft.advancements.critereon.InventoryChangeTrigger
+import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.core.HolderLookup
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.RecipeOutput
@@ -29,6 +31,14 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         Ingredient.of(
             TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/knives"))
         )
+
+    //#region Hybrid Aquatic Items
+    val RAW_FISH_MEAT = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "raw_fish_meat"))
+    val RAW_FISH_STEAK = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "raw_fish_steak"))
+    val GLOWSLIME = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "glowslime"))
+    val HAGSLIME = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "hagslime"))
+    val TUBE_SPONGE = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "tube_sponge"))
+    //#endregion
 
     override fun buildRecipes(exporter: RecipeOutput) {
         cuttingRecipes(exporter)
@@ -86,7 +96,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .addIngredient(HDItems.SALT.get())
             .addIngredient(HDItems.CARP_ROE.get())
             .unlockedByAnyIngredient(
-                HDItems.SALT.get(), 
+                HDItems.SALT.get(),
                 HDItems.CARP_ROE.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
@@ -94,163 +104,221 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.BAKED_STUFFED_LOBSTER.get(), 1, 400, 1.0f)
-            .addIngredient(HAItems.RAW_LOBSTER.get())
-            .addIngredient(HAItems.RAW_LOBSTER_TAIL.get())
-            .addIngredient(HAItems.RAW_CRAB.get())
+            .addIngredient(HAPIItemTags.LOBSTER_CLAW)
+            .addIngredient(HAPIItemTags.LOBSTER_TAIL)
+            .addIngredient(HAPIItemTags.CRAB_MEAT)
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
-            .unlockedByAnyIngredient(
-                HAItems.RAW_LOBSTER.get(),
-                HAItems.RAW_LOBSTER_TAIL.get(),
-                HAItems.RAW_CRAB.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.LOBSTER_MEAT)
+                        .of(HAPIItemTags.CRAB_MEAT)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.LOBSTER_STEW.get(), 1, 400, 1.0f, Items.BOWL)
-            .addIngredient(HAItems.RAW_LOBSTER.get())
-            .addIngredient(HAItems.RAW_LOBSTER_TAIL.get())
+            .addIngredient(HAPIItemTags.LOBSTER_CLAW)
+            .addIngredient(HAPIItemTags.LOBSTER_TAIL)
             .addIngredient(Items.BREAD)
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
-            .unlockedByAnyIngredient(
-                HAItems.RAW_LOBSTER.get(),
-                HAItems.RAW_LOBSTER_TAIL.get(),
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.LOBSTER_MEAT)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.BISQUE.get(), 1, 300, 1.0f, Items.BOWL)
-            .addIngredient(HAItems.RAW_TENTACLE.get())
-            .addIngredient(HAItems.RAW_CRAYFISH.get())
-            .addIngredient(HAItems.UNI.get())
+            .addIngredient(HAPIItemTags.TENTACLE)
+            .addIngredient(HAPIItemTags.SHRIMP)
+            .addIngredient(HAPIItemTags.UNI)
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
-            .unlockedByAnyIngredient(
-                HAItems.RAW_TENTACLE.get(),
-                HAItems.RAW_CRAYFISH.get(),
-                HAItems.UNI.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.TENTACLE)
+                        .of(HAPIItemTags.SHRIMP)
+                        .of(HAPIItemTags.UNI)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CHOWDER.get(), 1, 300, 1.0f, Items.BOWL)
-            .addIngredient(HAItems.RAW_CRAB.get())
+            .addIngredient(HAPIItemTags.CRAB_MEAT)
             .addIngredient(ModItems.MILK_BOTTLE.get())
             .addIngredient(Items.POTATO)
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
-            .unlockedByAnyIngredient(
-                HAItems.RAW_CRAB.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.CRAB_MEAT)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CRAB_CAKE.get(), 1, 300, 1.0f)
-            .addIngredient(HAItems.COOKED_CRAB.get())
+            .addIngredient(HAPIItemTags.CRAB_MEAT)
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "grains/wheat")))
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "eggs")))
-            .unlockedByAnyIngredient(
-                HAItems.COOKED_CRAB.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.CRAB_MEAT)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CRAB_RANGOON.get(), 1, 200, 1.0f)
-            .addIngredient(HAItems.RAW_CRAB.get())
+            .addIngredient(HAPIItemTags.CRAB_MEAT)
             .addIngredient(ModItems.MILK_BOTTLE.get())
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "dough")))
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "onion")))
-            .unlockedByAnyIngredient(
-                HAItems.RAW_CRAB.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.CRAB_MEAT)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.TUNA_CASSEROLE.get(), 1, 400, 1.0f, Items.BOWL)
-            .addIngredient(HAItems.TUNA.get())
+            .addIngredient(HAPIItemTags.TUNA)
             .addIngredient(ModItems.RAW_PASTA.get())
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "eggs")))
-            .unlockedByAnyIngredient(
-                HAItems.TUNA.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.TUNA)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.MASGOUF.get(), 1, 400, 1.0f)
-            .addIngredient(HAItems.CARP.get())
+            .addIngredient(HAPIItemTags.CARP)
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
-            .unlockedByAnyIngredient(
-                HAItems.CARP.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.CARP)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.FISHERMANS_SOUP.get(), 1, 200, 1.0f, Items.BOWL)
-            .addIngredient(HAItems.RAW_FISH_MEAT.get())
+            .addIngredient(HAPIItemTags.FISH_MEAT)
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
-            .unlockedByAnyIngredient(
-                HAItems.RAW_FISH_MEAT.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.FISH_MEAT)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.EEL_NOODLES.get(), 1, 400, 1.0f, Items.BOWL)
-            .addIngredient(HAItems.MORAY_EEL.get())
+            .addIngredient(HAPIItemTags.EEL)
             .addIngredient(ModItems.RAW_PASTA.get())
             .addIngredient(Items.SUGAR)
-            .unlockedByAnyIngredient(
-                HAItems.MORAY_EEL.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.EEL)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.FISH_KEBAB.get(), 1, 200, 1.0f, Items.STICK)
-            .addIngredient(HAItems.RAW_FISH_MEAT.get())
+            .addIngredient(HAPIItemTags.FISH_MEAT)
             .addIngredient(ModItems.COD_SLICE.get())
             .addIngredient(ModItems.SALMON_SLICE.get())
-            .unlockedByAnyIngredient(
-                HAItems.RAW_FISH_MEAT.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.FISH_MEAT)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.FISH_N_CHIPS.get(), 1, 200, 1.0f, Items.STICK)
-            .addIngredient(HAItems.RAW_FISH_MEAT.get())
+            .addIngredient(HAPIItemTags.FISH_MEAT)
             .addIngredient(Items.POTATO)
-            .unlockedByAnyIngredient(
-                HAItems.RAW_FISH_MEAT.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.FISH_MEAT)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.SHRIMP_FRIED_RICE.get(), 1, 200, 1.0f, Items.BOWL)
-            .addIngredient(HAItems.RAW_SHRIMP.get())
+            .addIngredient(HAPIItemTags.SHRIMP)
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
@@ -259,8 +327,13 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 ResourceLocation.fromNamespaceAndPath("c", "crops/rice")))
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "vegetables/carrot")))
-            .unlockedByAnyIngredient(
-                HAItems.RAW_SHRIMP.get()
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.SHRIMP)
+                        .build()
+                )
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
@@ -269,63 +342,39 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
     private fun cuttingRecipes(exporter: RecipeOutput) {
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.ANGLERFISH.get()),
+            Ingredient.of(HAPIItemTags.GLOWSLIME_FISH),
             KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 2
+            RAW_FISH_MEAT, 2
         )
-            .addResultWithChance(HAItems.GLOWSLIME.get(), 0.75f)
+            .addResultWithChance(GLOWSLIME, 0.75f)
             .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.DRAGONFISH.get()),
+            Ingredient.of(HAPIItemTags.HAGFISH),
             KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 2
+            RAW_FISH_MEAT, 2
         )
-            .addResultWithChance(HAItems.GLOWSLIME.get(), 0.75f)
+            .addResultWithChance(HAGSLIME, 1.0f)
             .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.FLASHLIGHT_FISH.get()),
+            Ingredient.of(HAPIItemTags.CARP),
             KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 2
-        )
-            .addResultWithChance(HAItems.GLOWSLIME.get(), 0.75f)
-            .save(exporter)
-
-        CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.BARRELEYE.get()),
-            KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 2
-        )
-            .addResultWithChance(HAItems.GLOWSLIME.get(), 0.75f)
-            .save(exporter)
-
-        CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.HAGFISH.get()),
-            KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 2
-        )
-            .addResultWithChance(HAItems.HAGSLIME.get(), 1.0f)
-            .save(exporter)
-
-        CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.CARP.get()),
-            KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 2
+            RAW_FISH_MEAT, 2
         )
             .addResultWithChance(HDItems.CARP_ROE.get(), 0.5f)
             .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.TUNA.get()),
+            Ingredient.of(HAPIItemTags.TUNA),
             KNIVES,
-            HAItems.RAW_FISH_STEAK.get(), 2
+            RAW_FISH_STEAK, 2
         )
             .addResultWithChance(HDItems.FISH_GELATIN.get(), 0.66f)
             .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.STINGRAY.get()),
+            Ingredient.of(HAPIItemTags.RAY),
             KNIVES,
             HDItems.RAY_WING.get(), 2
         )
@@ -364,21 +413,14 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.TROPICAL_FISH),
             KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 2
+            RAW_FISH_MEAT, 2
         )
             .addResult(Items.BONE_MEAL)
             .addResultWithChance(HDItems.TROPICAL_FISH_ROE.get(), 0.5f)
             .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(Items.PUFFERFISH),
-            KNIVES,
-            HDItems.PUFFERFISH_SLICE.get(), 2)
-            .addResult(Items.BONE_MEAL)
-            .save(exporter)
-
-        CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.BLOWFISH.get()),
+            Ingredient.of(HAPIItemTags.PUFFERFISH),
             KNIVES,
             HDItems.PUFFERFISH_SLICE.get(), 2)
             .addResult(Items.BONE_MEAL)
@@ -397,15 +439,15 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.RAW_FISH_STEAK.get()),
+            Ingredient.of(RAW_FISH_STEAK),
             KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 2)
+            RAW_FISH_MEAT, 2)
             .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.SPONGE),
             KNIVES,
-            HAItems.TUBE_SPONGE.get(), 4)
+            TUBE_SPONGE, 4)
             .save(exporter)
     }
 
@@ -413,22 +455,30 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, HDItems.CORAL_KNIFE.get())
             .pattern("C")
             .pattern("S")
-            .define('C', HAItems.CORAL_CHUNK.get())
+            .define('C', HAPIItemTags.CORAL_CHUNK)
             .define('S', Items.STICK)
             .unlockedBy(
-                "coral_chunk",
-                has(HAItems.CORAL_CHUNK.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.CORAL_CHUNK)
+                        .build()
+                )
             )
             .save(exporter)
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, HDItems.SHARK_TOOTH_KNIFE.get())
             .pattern("C")
             .pattern("S")
-            .define('C', HAItems.SHARK_TOOTH.get())
+            .define('C', HAPIItemTags.SHARK_TOOTH)
             .define('S', Items.STICK)
             .unlockedBy(
-                "shark_tooth",
-                has(HAItems.SHARK_TOOTH.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.SHARK_TOOTH)
+                        .build()
+                )
             )
             .save(exporter)
     }
@@ -439,24 +489,32 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .pattern("FEF")
             .pattern(" P ")
             .define('P', ModItems.PIE_CRUST.get())
-            .define('F', HAItems.COOKED_FISH_STEAK.get())
-            .define('C', HAItems.COOKED_CRAB.get())
+            .define('F', HAPIItemTags.FISH_STEAK)
+            .define('C', HAPIItemTags.CRAB_MEAT)
             .define('E', TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "eggs")))
             .unlockedBy(
-                "has_cooked_fish_steak",
-                has(HAItems.COOKED_FISH_STEAK.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.FISH_STEAK)
+                        .build()
+                )
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(
             RecipeCategory.MISC, HDItems.BRINE_BOTTLE.get(), 4
         )
-            .requires(HAPlatformItems.BRINE_BUCKET.get())
+            .requires(HAPIItemTags.BRINE_BUCKET)
             .requires(Items.GLASS_BOTTLE, 4)
             .unlockedBy(
-                "has_brine_bucket",
-                has(HAPlatformItems.BRINE_BUCKET.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.BRINE_BUCKET)
+                        .build()
+                )
             )
             .save(exporter)
 
@@ -465,11 +523,15 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             HDItems.TUNA_ROLL.get(),
             2
         )
-            .requires(HAItems.TUNA.get())
+            .requires(HAPIItemTags.TUNA)
             .requires(ModItems.COOKED_RICE.get())
             .unlockedBy(
-                "has_tuna",
-                has(HAItems.TUNA.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.TUNA)
+                        .build()
+                )
             )
             .save(exporter)
 
@@ -490,14 +552,18 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             RecipeCategory.MISC,
             HDItems.TUNA_SALAD.get()
         )
-            .requires(HAItems.TUNA.get())
+            .requires(HAPIItemTags.TUNA)
             .requires(Items.BOWL)
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "salad_ingredients")))
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "eggs")))
             .unlockedBy(
-                "has_tuna",
-                has(HAItems.TUNA.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.TUNA)
+                        .build()
+                )
             )
             .save(exporter)
 
@@ -505,14 +571,18 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             RecipeCategory.MISC,
             HDItems.TUNA_NACHOS.get()
         )
-            .requires(HAItems.TUNA.get())
+            .requires(HAPIItemTags.TUNA)
             .requires(Items.BOWL)
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/cabbage")))
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "bread/wheat")))
             .unlockedBy(
-                "has_tuna",
-                has(HAItems.TUNA.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.TUNA)
+                        .build()
+                )
             )
             .save(exporter)
 
@@ -520,42 +590,58 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             RecipeCategory.MISC,
             HDItems.JELLIED_CARP.get()
         )
-            .requires(HAItems.CARP.get())
+            .requires(HAPIItemTags.CARP)
             .requires(HDItems.FISH_GELATIN.get(),2)
             .requires(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "vegetables/carrot")))
             .unlockedBy(
-                "has_carp",
-                has(HAItems.CARP.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.CARP)
+                        .build()
+                )
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.TUNA_SANDWICH.get())
-            .requires(HAItems.TUNA.get())
+            .requires(HAPIItemTags.TUNA)
             .requires(Items.BREAD)
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "salad_ingredients")))
             .unlockedBy(
-                "has_tuna",
-                has(HAItems.TUNA.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.TUNA)
+                        .build()
+                )
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.PICKLED_HERRING.get())
-            .requires(HAItems.HERRING.get())
+            .requires(HAPIItemTags.HERRING)
             .requires(HDItems.BRINE_BOTTLE.get())
             .unlockedBy(
-                "has_herring",
-                has(HAItems.HERRING.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.HERRING)
+                        .build()
+                )
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.PICKLED_BULL_KELP.get())
-            .requires(HAItems.BULL_KELP.get())
+            .requires(HAPIItemTags.BULL_KELP)
             .requires(HDItems.BRINE_BOTTLE.get())
             .unlockedBy(
-                "has_bull_kelp",
-                has(HAItems.BULL_KELP.get())
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HAPIItemTags.BULL_KELP)
+                        .build()
+                )
             )
             .save(exporter)
 

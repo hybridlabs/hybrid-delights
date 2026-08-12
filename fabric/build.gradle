@@ -44,6 +44,8 @@ repositories {
         name = 'Fabric'
         url = 'https://maven.fabricmc.net/'
     }
+
+    mavenLocal()
 }
 
 dependencies {
@@ -68,6 +70,8 @@ dependencies {
     }
     modRuntimeOnly "dev.emi:trinkets:${trinkets_version}"
 
+    implementation("dev.hybridlabs.hapi:hapi-common-1.21.1:1.0.0")
+    modImplementation("dev.hybridlabs.hapi:hapi-fabric-1.21.1:1.0.0")
     implementation 'org.jetbrains:annotations:25.0.0'
 
     //We still have to load the loader-specific version of any mods included in common
