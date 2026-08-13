@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bull_kelp": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
-            "items": "hybrid_aquatic:bull_kelp"
+            "items": "#hybrid_delights:bull_kelp"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bull_kelp"
+      "has_any_ingredient"
     ]
   ],
   "rewards": {

@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "hybrid_aquatic:brine_bucket"
+      "tag": "hybrid_delights:brine_bucket"
     },
     {
       "item": "minecraft:glass_bottle"

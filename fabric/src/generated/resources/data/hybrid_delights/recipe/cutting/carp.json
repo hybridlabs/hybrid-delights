@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "hybrid_aquatic:carp"
+      "tag": "hybrid_delights:carp"
     }
   ],
   "result": [

@@ -4,7 +4,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "hybrid_aquatic:cooked_crab"
+      "tag": "hybrid_delights:crab_meat"
     },
     {
       "tag": "c:grains/wheat"

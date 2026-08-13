@@ -2,20 +2,14 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "minecraft:pufferfish"
+      "tag": "hybrid_delights:fish_steak"
     }
   ],
   "result": [
     {
       "item": {
         "count": 2,
-        "id": "hybrid_delights:pufferfish_slice"
-      }
-    },
-    {
-      "item": {
-        "count": 1,
-        "id": "minecraft:bone_meal"
+        "id": "hybrid_aquatic:raw_fish_meat"
       }
     }
   ],

@@ -3,13 +3,13 @@
   "category": "misc",
   "key": {
     "C": {
-      "item": "hybrid_aquatic:cooked_crab"
+      "tag": "hybrid_delights:crab_meat"
     },
     "E": {
       "tag": "c:eggs"
     },
     "F": {
-      "item": "hybrid_aquatic:cooked_fish_steak"
+      "tag": "hybrid_delights:fish_steak"
     },
     "P": {
       "item": "farmersdelight:pie_crust"

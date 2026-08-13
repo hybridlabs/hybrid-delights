@@ -8,7 +8,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "hybrid_aquatic:moray_eel"
+      "tag": "hybrid_delights:eel"
     },
     {
       "item": "farmersdelight:raw_pasta"

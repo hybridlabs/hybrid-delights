@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "coral_chunk": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
-            "items": "hybrid_aquatic:coral_chunk"
+            "items": "#hapi:coral_chunk"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "coral_chunk"
+      "has_any_ingredient"
     ]
   ],
   "rewards": {

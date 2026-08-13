@@ -2,21 +2,21 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "hybrid_aquatic:anglerfish"
+      "tag": "hybrid_delights:tuna"
     }
   ],
   "result": [
     {
       "item": {
         "count": 2,
-        "id": "hybrid_aquatic:raw_fish_meat"
+        "id": "hybrid_aquatic:raw_fish_steak"
       }
     },
     {
-      "chance": 0.75,
+      "chance": 0.66,
       "item": {
         "count": 1,
-        "id": "hybrid_aquatic:glowslime"
+        "id": "hybrid_delights:fish_gelatin"
       }
     }
   ],

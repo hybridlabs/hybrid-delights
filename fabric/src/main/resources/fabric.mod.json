@@ -4,7 +4,7 @@
 	"version": "${version}",
 
 	"name": "Hybrid Delights",
-	"description": "A mod that adds integration between HybridLabs' mods and Farmers Delight",
+	"description": "${description}",
 
 	"authors": [
 		"Hybrid Labs"
@@ -38,8 +38,7 @@
       "minecraft": "~1.21.1",
       "java": ">=21",
       "fabric-language-kotlin": "*",
-      "fabric-api": ">=0.92",
-      "hybrid_aquatic": ">=1.6.8"
+      "fabric-api": ">=0.116"
     },
 
 	"suggests": {

@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "hybrid_aquatic:carp"
+      "tag": "hybrid_delights:carp"
     },
     {
       "item": "hybrid_delights:fish_gelatin"

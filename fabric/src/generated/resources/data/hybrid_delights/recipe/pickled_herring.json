@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "hybrid_aquatic:herring"
+      "tag": "hybrid_delights:herring"
     },
     {
       "item": "hybrid_delights:brine_bottle"

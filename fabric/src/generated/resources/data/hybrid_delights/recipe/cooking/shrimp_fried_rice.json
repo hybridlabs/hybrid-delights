@@ -7,7 +7,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "hybrid_aquatic:raw_shrimp"
+      "tag": "hybrid_delights:shrimp"
     },
     {
       "tag": "c:crops/onion"

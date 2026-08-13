@@ -2,21 +2,20 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "hybrid_aquatic:tuna"
+      "tag": "hybrid_delights:hagfish"
     }
   ],
   "result": [
     {
       "item": {
         "count": 2,
-        "id": "hybrid_aquatic:raw_fish_steak"
+        "id": "hybrid_aquatic:raw_fish_meat"
       }
     },
     {
-      "chance": 0.66,
       "item": {
         "count": 1,
-        "id": "hybrid_delights:fish_gelatin"
+        "id": "hybrid_aquatic:hagslime"
       }
     }
   ],

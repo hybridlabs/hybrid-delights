@@ -8,7 +8,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "hybrid_aquatic:tuna"
+      "tag": "hybrid_delights:tuna"
     },
     {
       "item": "farmersdelight:raw_pasta"

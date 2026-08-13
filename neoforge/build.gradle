@@ -81,7 +81,7 @@ processResources {
 
 dependencies {
     compileOnly project(":common")
-    implementation ("maven.modrinth:hybrid-aquatic:${aquatic_version}-neoforge") {
+    runtimeOnly ("maven.modrinth:hybrid-aquatic:${aquatic_version}-neoforge") {
         transitive = false
     }
     runtimeOnly "software.bernie.geckolib:geckolib-neoforge-$geckolib_version"

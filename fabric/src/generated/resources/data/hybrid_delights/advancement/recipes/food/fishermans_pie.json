@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cooked_fish_steak": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
-            "items": "hybrid_aquatic:cooked_fish_steak"
+            "items": "#hybrid_delights:fish_steak"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cooked_fish_steak"
+      "has_any_ingredient"
     ]
   ],
   "rewards": {

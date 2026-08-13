@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_brine_bucket": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
-            "items": "hybrid_aquatic:brine_bucket"
+            "items": "#hybrid_delights:brine_bucket"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_brine_bucket"
+      "has_any_ingredient"
     ]
   ],
   "rewards": {
