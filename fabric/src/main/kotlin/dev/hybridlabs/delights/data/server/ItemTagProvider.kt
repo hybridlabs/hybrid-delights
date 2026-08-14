@@ -61,15 +61,6 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
         getOrCreateTagBuilder(HDItemTags.RAY)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "stingray"))
 
-        getOrCreateTagBuilder(HDItemTags.HAGFISH)
-            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "hagfish"))
-
-        getOrCreateTagBuilder(HDItemTags.GLOWSLIME_FISH)
-            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "anglerfish"))
-            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "barreleye"))
-            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "dragonfish"))
-            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "flashlight_fish"))
-
         getOrCreateTagBuilder(HDItemTags.SHRIMP)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "raw_shrimp"))
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "cooked_shrimp"))
@@ -109,14 +100,8 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "raw_crab"))
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "cooked_crab"))
 
-        getOrCreateTagBuilder(HDItemTags.TUBE_SPONGE)
-            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "tube_sponge"))
-
         getOrCreateTagBuilder(HDItemTags.BULL_KELP)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "bull_kelp"))
-
-        getOrCreateTagBuilder(HDItemTags.HAGSLIME)
-            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "hagslime"))
 
         getOrCreateTagBuilder(HDItemTags.BRINE_BUCKET)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "brine_bucket"))

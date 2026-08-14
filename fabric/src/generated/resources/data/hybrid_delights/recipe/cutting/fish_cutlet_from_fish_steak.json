@@ -2,14 +2,14 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "hybrid_aquatic:raw_fish_steak"
+      "tag": "hybrid_delights:fish_steak"
     }
   ],
   "result": [
     {
       "item": {
-        "count": 2,
-        "id": "hybrid_aquatic:raw_fish_meat"
+        "count": 4,
+        "id": "hybrid_delights:fish_cutlet"
       }
     }
   ],

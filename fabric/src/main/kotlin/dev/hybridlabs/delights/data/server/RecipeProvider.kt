@@ -31,14 +31,6 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/knives"))
         )
 
-    //#region Hybrid Aquatic Items
-    val RAW_FISH_MEAT = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "raw_fish_meat"))
-    val RAW_FISH_STEAK = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "raw_fish_steak"))
-    val GLOWSLIME = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "glowslime"))
-    val HAGSLIME = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "hagslime"))
-    val TUBE_SPONGE = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "tube_sponge"))
-    //#endregion
-
     override fun buildRecipes(exporter: RecipeOutput) {
         cuttingRecipes(exporter)
         knifeRecipes(exporter)
@@ -341,37 +333,9 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
     private fun cuttingRecipes(exporter: RecipeOutput) {
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HDItemTags.GLOWSLIME_FISH),
-            KNIVES,
-            RAW_FISH_MEAT, 2
-        )
-            .addResultWithChance(GLOWSLIME, 0.75f)
-            .save(
-                exporter,
-                ResourceLocation.fromNamespaceAndPath(
-                    "hybrid_delights",
-                    "cutting/glowslime"
-                )
-            )
-
-        CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HDItemTags.HAGFISH),
-            KNIVES,
-            RAW_FISH_MEAT, 2
-        )
-            .addResultWithChance(HAGSLIME, 1.0f)
-            .save(
-                exporter,
-                ResourceLocation.fromNamespaceAndPath(
-                    "hybrid_delights",
-                    "cutting/hagslime"
-                )
-            )
-
-        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HDItemTags.CARP),
             KNIVES,
-            RAW_FISH_MEAT, 2
+            HDItems.FISH_CUTLET.get(), 2
         )
             .addResultWithChance(HDItems.CARP_ROE.get(), 0.5f)
             .save(
@@ -385,7 +349,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HDItemTags.TUNA),
             KNIVES,
-            RAW_FISH_STEAK, 2)
+            HDItems.FISH_CUTLET.get(), 4)
             .addResultWithChance(HDItems.FISH_GELATIN.get(), 0.66f)
             .save(
                 exporter,
@@ -439,7 +403,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.TROPICAL_FISH),
             KNIVES,
-            RAW_FISH_MEAT, 2
+            HDItems.FISH_CUTLET.get(), 2
         )
             .addResult(Items.BONE_MEAL)
             .addResultWithChance(HDItems.TROPICAL_FISH_ROE.get(), 0.5f)
@@ -459,14 +423,26 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             )
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HDItemTags.FISH_STEAK),
+            Ingredient.of(HDItemTags.FISH_MEAT),
             KNIVES,
-            RAW_FISH_MEAT, 2)
+            HDItems.FISH_CUTLET.get(), 2)
             .save(
                 exporter,
                 ResourceLocation.fromNamespaceAndPath(
                     "hybrid_delights",
-                    "cutting/fish_meat"
+                    "cutting/fish_cutlet_from_fish_meat"
+                )
+            )
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(HDItemTags.FISH_STEAK),
+            KNIVES,
+            HDItems.FISH_CUTLET.get(), 4)
+            .save(
+                exporter,
+                ResourceLocation.fromNamespaceAndPath(
+                    "hybrid_delights",
+                    "cutting/fish_cutlet_from_fish_steak"
                 )
             )
 
@@ -480,18 +456,6 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             Ingredient.of(HDItems.SALTED_SALMON.get()),
             KNIVES,
             HDItems.SALTED_SALMON_SLICE.get(), 2)
-            .save(exporter)
-
-        CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(RAW_FISH_STEAK),
-            KNIVES,
-            RAW_FISH_MEAT, 2)
-            .save(exporter)
-
-        CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(Items.SPONGE),
-            KNIVES,
-            TUBE_SPONGE, 4)
             .save(exporter)
     }
 

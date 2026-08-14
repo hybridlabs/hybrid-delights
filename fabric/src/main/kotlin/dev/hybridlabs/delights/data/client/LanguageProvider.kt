@@ -38,6 +38,8 @@ class LanguageProvider( output: FabricDataOutput, lookupProvider: CompletableFut
             HDItems.CARP_ROE.get() to "Carp Roe",
             HDItems.CURED_CARP_ROE.get() to "Cured Carp Roe",
             HDItems.CAVIAR_TOAST.get() to "Caviar Toast",
+            HDItems.FISH_CUTLET.get() to "Fish Cutlet",
+            HDItems.COOKED_FISH_CUTLET.get() to "Cooked Fish Cutlet",
             HDItems.PUFFERFISH_SLICE.get() to "Pufferfish Slice",
             HDItems.COOKED_PUFFERFISH_SLICE.get() to "Cooked Pufferfish Slice",
             HDItems.SALTED_PUFFERFISH_SLICE.get() to "Salted Pufferfish Slice",
