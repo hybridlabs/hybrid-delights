@@ -771,7 +771,7 @@ object HDItems {
                         .saturationModifier(0.6F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         ) {
             HALF_EATEN_FISHSICLE.get()
         }
@@ -788,7 +788,7 @@ object HDItems {
                         .saturationModifier(0.4F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         ) {
             MOSTLY_EATEN_FISHSICLE.get()
         }
@@ -805,7 +805,7 @@ object HDItems {
                         .saturationModifier(0.2F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         )
     }
 
@@ -820,7 +820,7 @@ object HDItems {
                         .saturationModifier(0.6F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         ) {
             HALF_EATEN_SWEET_BERRY_FISHSICLE.get()
         }
@@ -837,7 +837,7 @@ object HDItems {
                         .saturationModifier(0.4F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         ) {
             MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get()
         }
@@ -854,7 +854,7 @@ object HDItems {
                         .saturationModifier(0.2F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         )
     }
 
@@ -869,7 +869,7 @@ object HDItems {
                         .saturationModifier(0.6F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         ) {
             HALF_EATEN_GLOW_BERRY_FISHSICLE.get()
         }
@@ -886,7 +886,7 @@ object HDItems {
                         .saturationModifier(0.4F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         ) {
             MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get()
         }
@@ -903,7 +903,7 @@ object HDItems {
                         .saturationModifier(0.2F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         )
     }
 
@@ -918,7 +918,7 @@ object HDItems {
                         .saturationModifier(0.6F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         ) {
             HALF_EATEN_MELON_FISHSICLE.get()
         }
@@ -935,7 +935,7 @@ object HDItems {
                         .saturationModifier(0.4F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         ) {
             MOSTLY_EATEN_MELON_FISHSICLE.get()
         }
@@ -952,7 +952,7 @@ object HDItems {
                         .saturationModifier(0.2F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         )
     }
 
@@ -967,7 +967,7 @@ object HDItems {
                         .saturationModifier(0.6F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         ) {
             HALF_EATEN_PUMPKIN_FISHSICLE.get()
         }
@@ -984,7 +984,7 @@ object HDItems {
                         .saturationModifier(0.4F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         ) {
             MOSTLY_EATEN_PUMPKIN_FISHSICLE.get()
         }
@@ -1001,7 +1001,7 @@ object HDItems {
                         .saturationModifier(0.2F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(1)
         )
     }
 
