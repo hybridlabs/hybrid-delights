@@ -66,15 +66,6 @@ dependencies {
 
     //We load the Forge version of any included mod dependencies
     implementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
-
-    runtimeOnly("maven.modrinth:hybrid-aquatic:${aquatic_version}-neoforge") {
-        transitive = false
-    }
-
-    runtimeOnly("com.terraformersmc:biolith-forge:${biolith_version}") {
-        exclude(group: "com.github.glitchfiend")
-    }
-    runtimeOnly "maven.modrinth:lithostitched:${lithostitched_version}-neoforge-1.21.1"
 }
 
 configurations {

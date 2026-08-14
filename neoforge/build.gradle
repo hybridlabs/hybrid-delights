@@ -81,21 +81,12 @@ processResources {
 
 dependencies {
     compileOnly project(":common")
-    runtimeOnly ("maven.modrinth:hybrid-aquatic:${aquatic_version}-neoforge") {
-        transitive = false
-    }
-    runtimeOnly "software.bernie.geckolib:geckolib-neoforge-$geckolib_version"
-    runtimeOnly "maven.modrinth:lithostitched:${lithostitched_version}-neoforge-1.21.1"
-    runtimeOnly("com.terraformersmc:biolith-neoforge:${biolith_version}") {
-        exclude(group: "com.github.glitchfiend")
-    }
+
     implementation 'org.jetbrains:annotations:25.0.0'
 
     implementation("dev.hybridlabs.hapi:hapi-neoforge-1.21.1:1.0.0")
 
     implementation "thedarkcolour:kotlinforforge-neoforge:${kotlin_for_forge_version}"
-    compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}:api"
-    runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
     implementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
 }
 
