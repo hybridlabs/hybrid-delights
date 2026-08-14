@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fish_cutlet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hybrid_delights:fish_cutlet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hybrid_delights:cooked_fish_cutlet_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fish_cutlet"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hybrid_delights:cooked_fish_cutlet_from_campfire_cooking"
+    ]
+  }
+}

@@ -722,6 +722,13 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             HDItems.COOKED_PUFFERFISH_SLICE.get(),
             0.35f
         )
+
+        offerSmeltingRecipes(
+            exporter,
+            HDItems.FISH_CUTLET.get(),
+            HDItems.COOKED_FISH_CUTLET.get(),
+            0.35f
+        )
     }
 
     private fun offerSmeltingRecipes(exporter: RecipeOutput, input: Item, output: Item, experience: Float) {
