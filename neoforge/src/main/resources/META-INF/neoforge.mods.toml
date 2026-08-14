@@ -29,12 +29,6 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
-modId = "hybrid_aquatic"
-mandatory = true
-versionRange = "[1.6.5,)"
-side = "BOTH"
-
-[[dependencies.${mod_id}]]
 modId = "farmersdelight"
 mandatory = true
 versionRange = "${farmersdelight_version}"
