@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "hybrid_delights:frigid_vessel"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "farmersdelight:pumpkin_slice"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:pumpkin_fishsicle"
+  }
+}

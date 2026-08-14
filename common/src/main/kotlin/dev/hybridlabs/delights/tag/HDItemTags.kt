@@ -44,6 +44,17 @@ object HDItemTags {
     val BIRD_EGG = create("bird_egg")
     val COOKED_EGG = create("cooked_egg")
 
+    //#region Fantastic Fishery Tags
+    val FRIGID_VESSEL = create("frigid_vessel")
+    val FUNGILL = create("fungill")
+    val BLOOD_EEL = create("blood_eel")
+    val POROUS_SHELL = create("porous_shell")
+    val PLUNDERERS_HOOP = create("plunderers_hoop")
+    val PLUNDERERS_CORE = create("plunderers_core")
+    val MORSEL = create("morsel")
+    val MORSEL_BAR = create("morsel_bar")
+    val MORSEL_POP = create("morsel_pop")
+
     //#region Hybrid API Tags
     val CORAL_CHUNK = createHAPITag("coral_chunk")
     val SHARK_TOOTH = createHAPITag("shark_tooth")

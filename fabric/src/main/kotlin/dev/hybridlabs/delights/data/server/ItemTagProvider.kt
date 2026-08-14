@@ -137,6 +137,35 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "cooked_egg"))
         //#endregion
 
+        //#region Fantastic Fishery Tags
+        getOrCreateTagBuilder(HDItemTags.FRIGID_VESSEL)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("fantastic_fishery", "frigid_vessel"))
+
+        getOrCreateTagBuilder(HDItemTags.FUNGILL)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("fantastic_fishery", "fungill"))
+
+        getOrCreateTagBuilder(HDItemTags.BLOOD_EEL)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("fantastic_fishery", "fungill"))
+
+        getOrCreateTagBuilder(HDItemTags.POROUS_SHELL)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("fantastic_fishery", "porous_shell"))
+
+        getOrCreateTagBuilder(HDItemTags.PLUNDERERS_HOOP)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("fantastic_fishery", "plunderers_hoop"))
+
+        getOrCreateTagBuilder(HDItemTags.PLUNDERERS_CORE)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("fantastic_fishery", "plunderers_core"))
+
+        getOrCreateTagBuilder(HDItemTags.MORSEL)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("fantastic_fishery", "morsel"))
+
+        getOrCreateTagBuilder(HDItemTags.MORSEL_BAR)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("fantastic_fishery", "morsel_bar"))
+
+        getOrCreateTagBuilder(HDItemTags.MORSEL_POP)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("fantastic_fishery", "morsel_pop"))
+        //#endregion
+
         //#region Hybrid API Tags
         getOrCreateTagBuilder(HDItemTags.CORAL_CHUNK)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "coral_chunk"))

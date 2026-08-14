@@ -58,13 +58,35 @@ class LanguageProvider( output: FabricDataOutput, lookupProvider: CompletableFut
             HDItems.JELLIED_CARP.get() to "Jellied Carp",
             HDItems.MASGOUF.get() to "Masgouf",
             HDItems.FISH_N_CHIPS.get() to "Fish N Chips",
-            HDItems.TUNA_ROLL.get() to "Tuna Roll",
             HDItems.FISH_KEBAB.get() to "Fish Kebab",
+
+            HDItems.TUNA_ROLL.get() to "Tuna Roll",
             HDItems.TUNA_SANDWICH.get() to "Tuna Sandwich",
             HDItems.TUNA_CASSEROLE.get() to "Tuna Casserole",
             HDItems.TUNA_SALAD.get() to "Tuna Salad",
             HDItems.TUNA_NACHOS.get() to "Tuna Nachos",
+
             HDItems.EEL_NOODLES.get() to "Eel Noodles",
+
+            HDItems.FISHSICLE.get() to "Fishsicle",
+            HDItems.HALF_EATEN_FISHSICLE.get() to "Half Eaten Fishsicle",
+            HDItems.MOSTLY_EATEN_FISHSICLE.get() to "Mostly Eaten Fishsicle",
+
+            HDItems.SWEET_BERRY_FISHSICLE.get() to "Sweet Berry Fishsicle",
+            HDItems.HALF_EATEN_SWEET_BERRY_FISHSICLE.get() to "Half Eaten Sweet Berry Fishsicle",
+            HDItems.MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get() to "Mostly Eaten Sweet Berry Fishsicle",
+
+            HDItems.GLOW_BERRY_FISHSICLE.get() to "Glow Berry Fishsicle",
+            HDItems.HALF_EATEN_GLOW_BERRY_FISHSICLE.get() to "Half Eaten Glow Berry Fishsicle",
+            HDItems.MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get() to "Mostly Eaten Glow Berry Fishsicle",
+
+            HDItems.MELON_FISHSICLE.get() to "Melon Fishsicle",
+            HDItems.HALF_EATEN_MELON_FISHSICLE.get() to "Half Eaten Melon Fishsicle",
+            HDItems.MOSTLY_EATEN_MELON_FISHSICLE.get() to "Mostly Eaten Melon Fishsicle",
+
+            HDItems.PUMPKIN_FISHSICLE.get() to "Pumpkin Fishsicle",
+            HDItems.HALF_EATEN_PUMPKIN_FISHSICLE.get() to "Half Eaten Pumpkin Fishsicle",
+            HDItems.MOSTLY_EATEN_PUMPKIN_FISHSICLE.get() to "Mostly Eaten Pumpkin Fishsicle",
         ).forEach { (item, translation) ->
             builder.add(item, translation)
         }

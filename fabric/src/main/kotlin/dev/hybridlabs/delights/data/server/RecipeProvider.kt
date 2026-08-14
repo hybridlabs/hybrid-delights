@@ -511,7 +511,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(
-            RecipeCategory.MISC, HDItems.BRINE_BOTTLE.get(), 4
+            RecipeCategory.FOOD, HDItems.BRINE_BOTTLE.get(), 4
         )
             .requires(HDItemTags.BRINE_BUCKET)
             .requires(Items.GLASS_BOTTLE, 4)
@@ -526,7 +526,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(
-            RecipeCategory.MISC,
+            RecipeCategory.FOOD,
             HDItems.TUNA_ROLL.get(),
             2
         )
@@ -543,7 +543,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(
-            RecipeCategory.MISC,
+            RecipeCategory.FOOD,
             HDItems.CAVIAR_TOAST.get(),
             2
         )
@@ -556,7 +556,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(
-            RecipeCategory.MISC,
+            RecipeCategory.FOOD,
             HDItems.TUNA_SALAD.get()
         )
             .requires(HDItemTags.TUNA)
@@ -575,7 +575,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(
-            RecipeCategory.MISC,
+            RecipeCategory.FOOD,
             HDItems.TUNA_NACHOS.get()
         )
             .requires(HDItemTags.TUNA)
@@ -594,7 +594,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(
-            RecipeCategory.MISC,
+            RecipeCategory.FOOD,
             HDItems.JELLIED_CARP.get()
         )
             .requires(HDItemTags.CARP)
@@ -611,7 +611,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             )
             .save(exporter)
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.TUNA_SANDWICH.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.TUNA_SANDWICH.get())
             .requires(HDItemTags.TUNA)
             .requires(Items.BREAD)
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
@@ -652,7 +652,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             )
             .save(exporter)
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.SALTED_COD.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.SALTED_COD.get())
             .requires(Items.COD)
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
@@ -661,7 +661,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             )
             .save(exporter)
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.SALTED_COD_SLICE.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.SALTED_COD_SLICE.get())
             .requires(ModItems.COD_SLICE.get())
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
@@ -670,7 +670,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             )
             .save(exporter)
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.SALTED_SALMON.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.SALTED_SALMON.get())
             .requires(Items.SALMON)
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
@@ -679,7 +679,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             )
             .save(exporter)
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.SALTED_SALMON_SLICE.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.SALTED_SALMON_SLICE.get())
             .requires(ModItems.SALMON_SLICE.get())
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
@@ -688,7 +688,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             )
             .save(exporter)
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.SALTED_PUFFERFISH_SLICE.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.SALTED_PUFFERFISH_SLICE.get())
             .requires(HDItems.PUFFERFISH_SLICE.get())
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
@@ -697,12 +697,61 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             )
             .save(exporter)
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, HDItems.SALTED_RAY_WING.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.SALTED_RAY_WING.get())
             .requires(HDItems.RAY_WING.get())
             .requires(HDItems.SALT.get(), 2)
             .unlockedBy(
                 "has_salt",
                 has(HDItems.SALT.get())
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.FISHSICLE.get())
+            .requires(HDItemTags.FRIGID_VESSEL)
+            .requires(Items.STICK)
+            .unlockedBy(
+                "has_frigid_vessel",
+                has(HDItemTags.FRIGID_VESSEL)
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.SWEET_BERRY_FISHSICLE.get())
+            .requires(HDItemTags.FRIGID_VESSEL)
+            .requires(Items.STICK)
+            .requires(Items.SWEET_BERRIES)
+            .unlockedBy(
+                "has_frigid_vessel",
+                has(HDItemTags.FRIGID_VESSEL)
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.GLOW_BERRY_FISHSICLE.get())
+            .requires(HDItemTags.FRIGID_VESSEL)
+            .requires(Items.STICK)
+            .requires(Items.GLOW_BERRIES)
+            .unlockedBy(
+                "has_frigid_vessel",
+                has(HDItemTags.FRIGID_VESSEL)
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.MELON_FISHSICLE.get())
+            .requires(HDItemTags.FRIGID_VESSEL)
+            .requires(Items.STICK)
+            .requires(Items.MELON_SLICE)
+            .unlockedBy(
+                "has_frigid_vessel",
+                has(HDItemTags.FRIGID_VESSEL)
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.PUMPKIN_FISHSICLE.get())
+            .requires(HDItemTags.FRIGID_VESSEL)
+            .requires(Items.STICK)
+            .requires(ModItems.PUMPKIN_SLICE.get())
+            .unlockedBy(
+                "has_frigid_vessel",
+                has(HDItemTags.FRIGID_VESSEL)
             )
             .save(exporter)
     }

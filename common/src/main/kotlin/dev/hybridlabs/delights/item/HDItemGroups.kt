@@ -84,6 +84,28 @@ object HDItemGroups {
                     entries.accept(HDItems.FISH_N_CHIPS.get())
                 }
 
+                if (Services.PLATFORM.isModLoaded("fantastic_fishery")) {
+                    entries.accept(HDItems.FISHSICLE.get())
+                    entries.accept(HDItems.HALF_EATEN_FISHSICLE.get())
+                    entries.accept(HDItems.MOSTLY_EATEN_FISHSICLE.get())
+
+                    entries.accept(HDItems.SWEET_BERRY_FISHSICLE.get())
+                    entries.accept(HDItems.HALF_EATEN_SWEET_BERRY_FISHSICLE.get())
+                    entries.accept(HDItems.MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get())
+
+                    entries.accept(HDItems.GLOW_BERRY_FISHSICLE.get())
+                    entries.accept(HDItems.HALF_EATEN_GLOW_BERRY_FISHSICLE.get())
+                    entries.accept(HDItems.MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get())
+
+                    entries.accept(HDItems.MELON_FISHSICLE.get())
+                    entries.accept(HDItems.HALF_EATEN_MELON_FISHSICLE.get())
+                    entries.accept(HDItems.MOSTLY_EATEN_MELON_FISHSICLE.get())
+
+                    entries.accept(HDItems.PUMPKIN_FISHSICLE.get())
+                    entries.accept(HDItems.HALF_EATEN_PUMPKIN_FISHSICLE.get())
+                    entries.accept(HDItems.MOSTLY_EATEN_PUMPKIN_FISHSICLE.get())
+                }
+
                 BuiltInRegistries.ITEM.forEach { item ->
                     val id = BuiltInRegistries.ITEM.getKey(item)
                     if (id.namespace != Constants.MOD_ID) {

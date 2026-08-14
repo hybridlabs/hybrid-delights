@@ -72,6 +72,27 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.TUNA_SALAD.get(),
             HDItems.TUNA_NACHOS.get(),
             HDItems.TUNA_SANDWICH.get(),
+
+            HDItems.FISHSICLE.get(),
+            HDItems.HALF_EATEN_FISHSICLE.get(),
+            HDItems.MOSTLY_EATEN_FISHSICLE.get(),
+
+            HDItems.SWEET_BERRY_FISHSICLE.get(),
+            HDItems.HALF_EATEN_SWEET_BERRY_FISHSICLE.get(),
+            HDItems.MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get(),
+
+            HDItems.GLOW_BERRY_FISHSICLE.get(),
+            HDItems.HALF_EATEN_GLOW_BERRY_FISHSICLE.get(),
+            HDItems.MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get(),
+
+            HDItems.MELON_FISHSICLE.get(),
+            HDItems.HALF_EATEN_MELON_FISHSICLE.get(),
+            HDItems.MOSTLY_EATEN_MELON_FISHSICLE.get(),
+
+            HDItems.PUMPKIN_FISHSICLE.get(),
+            HDItems.HALF_EATEN_PUMPKIN_FISHSICLE.get(),
+            HDItems.MOSTLY_EATEN_PUMPKIN_FISHSICLE.get(),
+
         ).forEach { item ->
             generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM)
         }

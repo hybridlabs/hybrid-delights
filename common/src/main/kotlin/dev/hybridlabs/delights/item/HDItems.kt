@@ -2,6 +2,7 @@ package dev.hybridlabs.delights.item
 
 import dev.hybridlabs.delights.HybridDelightsCommon
 import dev.hybridlabs.hapi.item.HAPIToolMaterials
+import dev.hybridlabs.hapi.item.ProgressiveFoodItem
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.food.FoodProperties
@@ -753,7 +754,251 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationModifier(0.75F)
-                        
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val FISHSICLE = register(
+        "fishsicle",
+    ) {
+        ProgressiveFoodItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .build()
+                )
+                .stacksTo(16)
+        ) {
+            HALF_EATEN_FISHSICLE.get()
+        }
+    }
+
+    val HALF_EATEN_FISHSICLE = register(
+        "half_eaten_fishsicle",
+    ) {
+        ProgressiveFoodItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationModifier(0.4F)
+                        .build()
+                )
+                .stacksTo(16)
+        ) {
+            MOSTLY_EATEN_FISHSICLE.get()
+        }
+    }
+
+    val MOSTLY_EATEN_FISHSICLE = register(
+        "mostly_eaten_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationModifier(0.2F)
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val SWEET_BERRY_FISHSICLE = register(
+        "sweet_berry_fishsicle",
+    ) {
+        ProgressiveFoodItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .build()
+                )
+                .stacksTo(16)
+        ) {
+            HALF_EATEN_SWEET_BERRY_FISHSICLE.get()
+        }
+    }
+
+    val HALF_EATEN_SWEET_BERRY_FISHSICLE = register(
+        "half_eaten_sweet_berry_fishsicle",
+    ) {
+        ProgressiveFoodItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationModifier(0.4F)
+                        .build()
+                )
+                .stacksTo(16)
+        ) {
+            MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get()
+        }
+    }
+
+    val MOSTLY_EATEN_SWEET_BERRY_FISHSICLE = register(
+        "mostly_eaten_sweet_berry_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationModifier(0.2F)
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val GLOW_BERRY_FISHSICLE = register(
+        "glow_berry_fishsicle",
+    ) {
+        ProgressiveFoodItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .build()
+                )
+                .stacksTo(16)
+        ) {
+            HALF_EATEN_GLOW_BERRY_FISHSICLE.get()
+        }
+    }
+
+    val HALF_EATEN_GLOW_BERRY_FISHSICLE = register(
+        "half_eaten_glow_berry_fishsicle",
+    ) {
+        ProgressiveFoodItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationModifier(0.4F)
+                        .build()
+                )
+                .stacksTo(16)
+        ) {
+            MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get()
+        }
+    }
+
+    val MOSTLY_EATEN_GLOW_BERRY_FISHSICLE = register(
+        "mostly_eaten_glow_berry_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationModifier(0.2F)
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val MELON_FISHSICLE = register(
+        "melon_fishsicle",
+    ) {
+        ProgressiveFoodItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .build()
+                )
+                .stacksTo(16)
+        ) {
+            HALF_EATEN_MELON_FISHSICLE.get()
+        }
+    }
+
+    val HALF_EATEN_MELON_FISHSICLE = register(
+        "half_eaten_melon_fishsicle",
+    ) {
+        ProgressiveFoodItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationModifier(0.4F)
+                        .build()
+                )
+                .stacksTo(16)
+        ) {
+            MOSTLY_EATEN_MELON_FISHSICLE.get()
+        }
+    }
+
+    val MOSTLY_EATEN_MELON_FISHSICLE = register(
+        "mostly_eaten_melon_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationModifier(0.2F)
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val PUMPKIN_FISHSICLE = register(
+        "pumpkin_fishsicle",
+    ) {
+        ProgressiveFoodItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .build()
+                )
+                .stacksTo(16)
+        ) {
+            HALF_EATEN_PUMPKIN_FISHSICLE.get()
+        }
+    }
+
+    val HALF_EATEN_PUMPKIN_FISHSICLE = register(
+        "half_eaten_pumpkin_fishsicle",
+    ) {
+        ProgressiveFoodItem(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationModifier(0.4F)
+                        .build()
+                )
+                .stacksTo(16)
+        ) {
+            MOSTLY_EATEN_PUMPKIN_FISHSICLE.get()
+        }
+    }
+
+    val MOSTLY_EATEN_PUMPKIN_FISHSICLE = register(
+        "mostly_eaten_pumpkin_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationModifier(0.2F)
                         .build()
                 )
                 .stacksTo(16)
