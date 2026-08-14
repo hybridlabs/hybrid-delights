@@ -15,6 +15,7 @@ object HDItemTags {
     val ROE = create("roe")
     val CURED_ROE = create("cured_roe")
 
+    //#region Hybrid Aquatic Tags
     val TUNA = create("tuna")
     val MACKEREL = create("mackerel")
     val HERRING = create("herring")
@@ -37,10 +38,21 @@ object HDItemTags {
     val BULL_KELP = create("bull_kelp")
     val HAGSLIME = create("hagslime")
     val BRINE_BUCKET = create("brine_bucket")
+    //#endregion
 
+    //#region Hybrid Birds Tags
+    val DUCK_MEAT = create("duck_meat")
+    val GOOSE_MEAT = create("goose_meat")
+    val TURKEY_MEAT = create("turkey_meat")
+    val PUFFIN_MEAT = create("puffin_meat")
+    val BIRD_EGG = create("bird_egg")
+    val COOKED_EGG = create("cooked_egg")
+
+    //#region Hybrid API Tags
     val CORAL_CHUNK = createHAPITag("coral_chunk")
     val SHARK_TOOTH = createHAPITag("shark_tooth")
     val GLOWSLIME = createHAPITag("glowslime")
+    //#endregion
 
     private fun create(id: String): TagKey<Item> {
         return TagKey.create(Registries.ITEM, HybridDelightsCommon.locate(id))

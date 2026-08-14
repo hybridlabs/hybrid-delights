@@ -38,6 +38,7 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
             getOrCreateTagBuilder(HDItemTags.CURED_ROE).add(item)
         }
 
+        //#region Hybrid Aquatic Tags
         getOrCreateTagBuilder(HDItemTags.TUNA)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "tuna"))
 
@@ -114,6 +115,44 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
         getOrCreateTagBuilder(HDItemTags.BULL_KELP)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "bull_kelp"))
 
+        getOrCreateTagBuilder(HDItemTags.HAGSLIME)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "hagslime"))
+
+        getOrCreateTagBuilder(HDItemTags.BRINE_BUCKET)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "brine_bucket"))
+        //#endregion
+
+        //#region Hybrid Birds Tags
+        getOrCreateTagBuilder(HDItemTags.DUCK_MEAT)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "duck"))
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "cooked_duck"))
+        
+        getOrCreateTagBuilder(HDItemTags.GOOSE_MEAT)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "goose"))
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "cooked_goose"))
+
+        getOrCreateTagBuilder(HDItemTags.TURKEY_MEAT)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "turkey"))
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "cooked_turkey"))
+
+        getOrCreateTagBuilder(HDItemTags.PUFFIN_MEAT)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "puffin"))
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "cooked_puffin"))
+
+        getOrCreateTagBuilder(HDItemTags.BIRD_EGG)
+            .add(Items.EGG)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "duck_egg"))
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "goose_egg"))
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "swan_egg"))
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "turkey_egg"))
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "guinea_fowl_egg"))
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "peacock_egg"))
+
+        getOrCreateTagBuilder(HDItemTags.COOKED_EGG)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "cooked_egg"))
+        //#endregion
+
+        //#region Hybrid API Tags
         getOrCreateTagBuilder(HDItemTags.CORAL_CHUNK)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "coral_chunk"))
 
@@ -122,11 +161,6 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
 
         getOrCreateTagBuilder(HDItemTags.GLOWSLIME)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "glowslime"))
-
-        getOrCreateTagBuilder(HDItemTags.HAGSLIME)
-            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "hagslime"))
-
-        getOrCreateTagBuilder(HDItemTags.BRINE_BUCKET)
-            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "brine_bucket"))
+        //#endregion
     }
 }
