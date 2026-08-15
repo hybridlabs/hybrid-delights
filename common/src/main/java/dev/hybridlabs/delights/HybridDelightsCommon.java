@@ -7,6 +7,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import static dev.hybridlabs.delights.Constants.MOD_ID;
 import static dev.hybridlabs.delights.Constants.MOD_NAME;
@@ -19,7 +21,13 @@ import static dev.hybridlabs.delights.Constants.MOD_NAME;
 public class HybridDelightsCommon {
 
     // Create some static RegistrationProviders for reuse elsewhere.
-    public static final RegistrationProvider<Item> ITEMS = RegistrationProvider.get(BuiltInRegistries.ITEM, MOD_ID);
+
+    public static final RegistrationProvider<Block> BLOCKS =
+            RegistrationProvider.get(BuiltInRegistries.BLOCK, MOD_ID);
+    public static final RegistrationProvider<BlockEntityType<?>> BLOCK_ENTITY_TYPES =
+            RegistrationProvider.get(BuiltInRegistries.BLOCK_ENTITY_TYPE, MOD_ID);
+    public static final RegistrationProvider<Item> ITEMS =
+            RegistrationProvider.get(BuiltInRegistries.ITEM, MOD_ID);
     public static final RegistrationProvider<CreativeModeTab> CREATIVE_MODE_TABS =
             RegistrationProvider.get(BuiltInRegistries.CREATIVE_MODE_TAB, MOD_ID);
 

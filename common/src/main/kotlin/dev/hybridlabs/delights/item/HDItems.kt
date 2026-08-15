@@ -1,18 +1,27 @@
 package dev.hybridlabs.delights.item
 
 import dev.hybridlabs.delights.HybridDelightsCommon
+import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.hapi.item.HAPIToolMaterials
 import dev.hybridlabs.hapi.item.ProgressiveFoodItem
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.food.FoodProperties
+import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
+import net.minecraft.world.level.block.Block
 import vectorwing.farmersdelight.common.item.DrinkableItem
 import vectorwing.farmersdelight.common.item.KnifeItem
 import java.util.function.Supplier
 
 object HDItems {
+    
+    val SCHIST_STOVE = registerBlockItem("schist_stove") { HDBlocks.SCHIST_STOVE.get() }
+    val CHIMNEYSTONE_STOVE = registerBlockItem("chimneystone_stove") { HDBlocks.CHIMNEYSTONE_STOVE.get() }
+    val YELLOW_BRINESTONE_STOVE = registerBlockItem("yellow_brinestone_stove") { HDBlocks.YELLOW_BRINESTONE_STOVE.get() }
+    val ORANGE_BRINESTONE_STOVE = registerBlockItem("orange_brinestone_stove") { HDBlocks.ORANGE_BRINESTONE_STOVE.get() }
+    val RED_BRINESTONE_STOVE = registerBlockItem("red_brinestone_stove") { HDBlocks.RED_BRINESTONE_STOVE.get() }
 
     val BRINE_BOTTLE = register(
         "brine_bottle"
@@ -1007,5 +1016,9 @@ object HDItems {
 
     private fun register(id: String, item: Supplier<Item>): Supplier<Item> {
         return HybridDelightsCommon.ITEMS.register(id, item)
+    }
+
+    fun registerBlockItem(id: String, block: Supplier<Block>): Supplier<Item> {
+        return register(id) { BlockItem(block.get(), Item.Properties()) }
     }
 }
