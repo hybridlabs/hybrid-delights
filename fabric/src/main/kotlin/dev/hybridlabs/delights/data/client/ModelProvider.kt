@@ -420,8 +420,8 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         block: Block,
         name: String,
     ) {
-        val closedModelId = HybridDelightsCommon.locate("block/${name}_cabinet_open")
-        val openModelId = HybridDelightsCommon.locate("block/${name}_cabinet")
+        val closedModelId = HybridDelightsCommon.locate("block/${name}_cabinet")
+        val openModelId = HybridDelightsCommon.locate("block/${name}_cabinet_open")
 
         val itemModelId = HybridDelightsCommon.locate("item/${name}_cabinet")
 
