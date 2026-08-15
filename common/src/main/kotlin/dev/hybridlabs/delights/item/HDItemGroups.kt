@@ -98,6 +98,29 @@ object HDItemGroups {
                     entries.accept(HDItems.PUMPKIN_FISHSICLE.get())
                 }
 
+                if (Services.PLATFORM.isModLoaded("hybrid_blocks")) {
+                    entries.accept(HDItems.WHITE_STOVE.get())
+                    entries.accept(HDItems.ORANGE_STOVE.get())
+                    entries.accept(HDItems.MAGENTA_STOVE.get())
+                    entries.accept(HDItems.LIGHT_BLUE_STOVE.get())
+                    entries.accept(HDItems.YELLOW_STOVE.get())
+                    entries.accept(HDItems.LIME_STOVE.get())
+                    entries.accept(HDItems.PINK_STOVE.get())
+                    entries.accept(HDItems.GRAY_STOVE.get())
+                    entries.accept(HDItems.LIGHT_GRAY_STOVE.get())
+                    entries.accept(HDItems.CYAN_STOVE.get())
+                    entries.accept(HDItems.PURPLE_STOVE.get())
+                    entries.accept(HDItems.BLUE_STOVE.get())
+                    entries.accept(HDItems.BROWN_STOVE.get())
+                    entries.accept(HDItems.GREEN_STOVE.get())
+                    entries.accept(HDItems.RED_STOVE.get())
+                    entries.accept(HDItems.BLACK_STOVE.get())
+                    entries.accept(HDItems.NETHER_BRICK_STOVE.get())
+                    entries.accept(HDItems.RED_NETHER_BRICK_STOVE.get())
+                    entries.accept(HDItems.CALCITE_STOVE.get())
+                    entries.accept(HDItems.MUD_STOVE.get())
+                }
+
                 BuiltInRegistries.ITEM.forEach { item ->
                     val id = BuiltInRegistries.ITEM.getKey(item)
                     if (id.namespace != Constants.MOD_ID) {

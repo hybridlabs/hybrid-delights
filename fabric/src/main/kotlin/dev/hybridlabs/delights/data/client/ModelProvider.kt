@@ -1,14 +1,177 @@
 package dev.hybridlabs.delights.data.client
 
+import com.google.gson.JsonObject
+import dev.hybridlabs.delights.Constants
+import dev.hybridlabs.delights.HybridDelightsCommon
+import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.delights.item.HDItems
+import dev.hybridlabs.hapi.CommonClass
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
+import net.minecraft.core.Direction
 import net.minecraft.data.models.BlockModelGenerators
 import net.minecraft.data.models.ItemModelGenerators
+import net.minecraft.data.models.blockstates.MultiVariantGenerator
+import net.minecraft.data.models.blockstates.PropertyDispatch
+import net.minecraft.data.models.blockstates.Variant
+import net.minecraft.data.models.blockstates.VariantProperties
 import net.minecraft.data.models.model.ModelTemplates
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.state.properties.BlockStateProperties
 
 class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
-    override fun generateBlockStateModels(generator: BlockModelGenerators) {}
+    override fun generateBlockStateModels(generator: BlockModelGenerators) {
+
+        orientableStove(
+            generator,
+            HDBlocks.RED_BRINESTONE_STOVE.get(),
+            "red_brinestone"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.ORANGE_BRINESTONE_STOVE.get(),
+            "orange_brinestone"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.YELLOW_BRINESTONE_STOVE.get(),
+            "yellow_brinestone"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.SCHIST_STOVE.get(),
+            "schist"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.CHIMNEYSTONE_STOVE.get(),
+            "chimneystone"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.NETHER_BRICK_STOVE.get(),
+            "nether_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.RED_NETHER_BRICK_STOVE.get(),
+            "red_nether_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.CALCITE_STOVE.get(),
+            "calcite_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.MUD_STOVE.get(),
+            "mud_brick"
+        )
+
+        orientableStove(
+                generator,
+        HDBlocks.WHITE_STOVE.get(),
+        "white_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.ORANGE_STOVE.get(),
+            "orange_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.MAGENTA_STOVE.get(),
+            "magenta_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.LIGHT_BLUE_STOVE.get(),
+            "light_blue_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.YELLOW_STOVE.get(),
+            "yellow_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.LIME_STOVE.get(),
+            "lime_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.PINK_STOVE.get(),
+            "pink_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.GRAY_STOVE.get(),
+            "gray_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.LIGHT_GRAY_STOVE.get(),
+            "light_gray_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.CYAN_STOVE.get(),
+            "cyan_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.PURPLE_STOVE.get(),
+            "purple_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.BLUE_STOVE.get(),
+            "blue_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.BROWN_STOVE.get(),
+            "brown_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.GREEN_STOVE.get(),
+            "green_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.RED_STOVE.get(),
+            "red_brick"
+        )
+
+        orientableStove(
+            generator,
+            HDBlocks.BLACK_STOVE.get(),
+            "black_brick"
+        )
+    }
 
     override fun generateItemModels(generator: ItemModelGenerators) {
         setOf(
@@ -93,7 +256,7 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.HALF_EATEN_PUMPKIN_FISHSICLE.get(),
             HDItems.MOSTLY_EATEN_PUMPKIN_FISHSICLE.get(),
 
-        ).forEach { item ->
+            ).forEach { item ->
             generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM)
         }
         setOf(
@@ -102,5 +265,146 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
         ).forEach { item ->
             generator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM)
         }
+    }
+
+    fun orientableStove(
+        generator: BlockModelGenerators,
+        block: Block,
+        name: String,
+    ) {
+        val onModelId = HybridDelightsCommon.locate("block/${name}_stove_on")
+        val offModelId = HybridDelightsCommon.locate("block/${name}_stove")
+
+        val itemModelId = HybridDelightsCommon.locate("item/${name}_stove")
+
+        val offModel = HybridDelightsCommon.locate("block/${name}_stove")
+        val onModel = HybridDelightsCommon.locate("block/${name}_stove_on")
+
+        generator.modelOutput.accept(onModelId) {
+            JsonObject().apply {
+                addProperty(
+                    "parent",
+                    "minecraft:block/orientable_with_bottom"
+                )
+
+                add("textures", JsonObject().apply {
+                    addProperty(
+                        "bottom",
+                        "${Constants.MOD_ID}:block/${name}_stove_bottom"
+                    )
+                    addProperty(
+                        "front",
+                        "${Constants.MOD_ID}:block/${name}_stove_front_on"
+                    )
+                    addProperty(
+                        "side",
+                        "${Constants.MOD_ID}:block/${name}_stove_side"
+                    )
+                    addProperty(
+                        "top",
+                        "farmersdelight:block/stove_top_on"
+                    )
+                })
+            }
+        }
+
+        generator.modelOutput.accept(offModelId) {
+            JsonObject().apply {
+                addProperty(
+                    "parent",
+                    "minecraft:block/orientable_with_bottom"
+                )
+
+                add("textures", JsonObject().apply {
+                    addProperty(
+                        "bottom",
+                        "${Constants.MOD_ID}:block/${name}_stove_bottom"
+                    )
+                    addProperty(
+                        "front",
+                        "${Constants.MOD_ID}:block/${name}_stove_front"
+                    )
+                    addProperty(
+                        "side",
+                        "${Constants.MOD_ID}:block/${name}_stove_side"
+                    )
+                    addProperty(
+                        "top",
+                        "farmersdelight:block/stove_top"
+                    )
+                })
+            }
+        }
+
+        generator.modelOutput.accept(itemModelId) {
+            JsonObject().apply {
+                addProperty(
+                    "parent",
+                    "${Constants.MOD_ID}:block/${name}_stove"
+                )
+            }
+        }
+
+        generator.blockStateOutput.accept(
+            MultiVariantGenerator.multiVariant(block)
+                .with(
+                    PropertyDispatch.properties(
+                        BlockStateProperties.HORIZONTAL_FACING,
+                        BlockStateProperties.LIT
+                    )
+                        .select(
+                            Direction.NORTH,
+                            false,
+                            Variant.variant().with(VariantProperties.MODEL, offModel)
+                        )
+                        .select(
+                            Direction.NORTH,
+                            true,
+                            Variant.variant().with(VariantProperties.MODEL, onModel)
+                        )
+                        .select(
+                            Direction.EAST,
+                            false,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, offModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90)
+                        )
+                        .select(
+                            Direction.EAST,
+                            true,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, onModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90)
+                        )
+                        .select(
+                            Direction.SOUTH,
+                            false,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, offModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180)
+                        )
+                        .select(
+                            Direction.SOUTH,
+                            true,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, onModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180)
+                        )
+                        .select(
+                            Direction.WEST,
+                            false,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, offModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)
+                        )
+                        .select(
+                            Direction.WEST,
+                            true,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, onModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)
+                        )
+                )
+        )
     }
 }

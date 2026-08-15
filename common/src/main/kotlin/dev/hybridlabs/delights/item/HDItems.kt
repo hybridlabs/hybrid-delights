@@ -23,6 +23,28 @@ object HDItems {
     val ORANGE_BRINESTONE_STOVE = registerBlockItem("orange_brinestone_stove") { HDBlocks.ORANGE_BRINESTONE_STOVE.get() }
     val RED_BRINESTONE_STOVE = registerBlockItem("red_brinestone_stove") { HDBlocks.RED_BRINESTONE_STOVE.get() }
 
+    val NETHER_BRICK_STOVE = registerBlockItem("nether_brick_stove") { HDBlocks.NETHER_BRICK_STOVE.get() }
+    val RED_NETHER_BRICK_STOVE = registerBlockItem("red_nether_brick_stove") { HDBlocks.RED_NETHER_BRICK_STOVE.get() }
+    val CALCITE_STOVE = registerBlockItem("calcite_brick_stove") { HDBlocks.CALCITE_STOVE.get() }
+    val MUD_STOVE = registerBlockItem("mud_brick_stove") { HDBlocks.MUD_STOVE.get() }
+
+    val WHITE_STOVE = registerBlockItem("white_brick_stove") { HDBlocks.WHITE_STOVE.get() }
+    val ORANGE_STOVE = registerBlockItem("orange_brick_stove") { HDBlocks.ORANGE_STOVE.get() }
+    val MAGENTA_STOVE = registerBlockItem("magenta_brick_stove") { HDBlocks.MAGENTA_STOVE.get() }
+    val LIGHT_BLUE_STOVE = registerBlockItem("light_blue_brick_stove") { HDBlocks.LIGHT_BLUE_STOVE.get() }
+    val YELLOW_STOVE = registerBlockItem("yellow_brick_stove") { HDBlocks.YELLOW_STOVE.get() }
+    val LIME_STOVE = registerBlockItem("lime_brick_stove") { HDBlocks.LIME_STOVE.get() }
+    val PINK_STOVE = registerBlockItem("pink_brick_stove") { HDBlocks.PINK_STOVE.get() }
+    val GRAY_STOVE = registerBlockItem("gray_brick_stove") { HDBlocks.GRAY_STOVE.get() }
+    val LIGHT_GRAY_STOVE = registerBlockItem("light_gray_brick_stove") { HDBlocks.LIGHT_GRAY_STOVE.get() }
+    val CYAN_STOVE = registerBlockItem("cyan_brick_stove") { HDBlocks.CYAN_STOVE.get() }
+    val PURPLE_STOVE = registerBlockItem("purple_brick_stove") { HDBlocks.PURPLE_STOVE.get() }
+    val BLUE_STOVE = registerBlockItem("blue_brick_stove") { HDBlocks.BLUE_STOVE.get() }
+    val BROWN_STOVE = registerBlockItem("brown_brick_stove") { HDBlocks.BROWN_STOVE.get() }
+    val GREEN_STOVE = registerBlockItem("green_brick_stove") { HDBlocks.GREEN_STOVE.get() }
+    val RED_STOVE = registerBlockItem("red_brick_stove") { HDBlocks.RED_STOVE.get() }
+    val BLACK_STOVE = registerBlockItem("black_brick_stove") { HDBlocks.BLACK_STOVE.get() }
+
     val BRINE_BOTTLE = register(
         "brine_bottle"
     ) {

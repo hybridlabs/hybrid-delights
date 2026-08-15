@@ -9,16 +9,37 @@ import net.minecraft.world.level.block.entity.BlockEntityType
 
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 object HDBlockEntityTypes {
-    val SCHIST_STOVE =
-        register("schist_stove", ::SchistStoveBlockEntity, HDBlocks.SCHIST_STOVE)
-    val CHIMNEYSTONE_STOVE =
-        register("chimneystone_stove", ::ChimneystoneStoveBlockEntity, HDBlocks.CHIMNEYSTONE_STOVE)
-    val RED_BRINESTONE_STOVE =
-        register("red_brinestone_stove", ::RedBrinestoneStoveBlockEntity, HDBlocks.RED_BRINESTONE_STOVE)
-    val ORANGE_BRINESTONE_STOVE =
-        register("orange_brinestone_stove", ::OrangeBrinestoneStoveBlockEntity, HDBlocks.ORANGE_BRINESTONE_STOVE)
-    val YELLOW_BRINESTONE_STOVE =
-        register("yellow_brinestone_stove", ::YellowBrinestoneStoveBlockEntity, HDBlocks.YELLOW_BRINESTONE_STOVE)
+
+    val STOVE =
+        register(
+            "stove",
+            ::HybridStoveBlockEntity,
+            HDBlocks.YELLOW_BRINESTONE_STOVE,
+            HDBlocks.ORANGE_BRINESTONE_STOVE,
+            HDBlocks.RED_BRINESTONE_STOVE,
+            HDBlocks.SCHIST_STOVE,
+            HDBlocks.CHIMNEYSTONE_STOVE,
+            HDBlocks.RED_STOVE,
+            HDBlocks.ORANGE_STOVE,
+            HDBlocks.YELLOW_STOVE,
+            HDBlocks.GREEN_STOVE,
+            HDBlocks.LIME_STOVE,
+            HDBlocks.CYAN_STOVE,
+            HDBlocks.BLUE_STOVE,
+            HDBlocks.LIGHT_BLUE_STOVE,
+            HDBlocks.PURPLE_STOVE,
+            HDBlocks.MAGENTA_STOVE,
+            HDBlocks.PINK_STOVE,
+            HDBlocks.WHITE_STOVE,
+            HDBlocks.LIGHT_GRAY_STOVE,
+            HDBlocks.GRAY_STOVE,
+            HDBlocks.BLACK_STOVE,
+            HDBlocks.BROWN_STOVE,
+            HDBlocks.NETHER_BRICK_STOVE,
+            HDBlocks.RED_NETHER_BRICK_STOVE,
+            HDBlocks.CALCITE_STOVE,
+            HDBlocks.MUD_STOVE,
+        )
 
     fun <T : BlockEntity?> register(
         id: String,

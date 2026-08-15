@@ -1,5 +1,6 @@
 package dev.hybridlabs.delights.data.client
 
+import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.delights.item.HDItemGroups
 import dev.hybridlabs.delights.item.HDItems
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
@@ -15,6 +16,39 @@ class LanguageProvider( output: FabricDataOutput, lookupProvider: CompletableFut
             BuiltInRegistries.CREATIVE_MODE_TAB.getResourceKey(HDItemGroups.HYBRID_DELIGHTS.get())
                 .orElseThrow { IllegalStateException("Item group not registered") }, "Hybrid Delights"
         )
+
+        // blocks
+        mapOf(
+            HDBlocks.SCHIST_STOVE.get() to "Schist Stove",
+            HDBlocks.CHIMNEYSTONE_STOVE.get() to "Chimneystone Stove",
+            HDBlocks.RED_BRINESTONE_STOVE.get() to "Red Brinestone Stove",
+            HDBlocks.ORANGE_BRINESTONE_STOVE.get() to "Orange Brinestone Stove",
+            HDBlocks.YELLOW_BRINESTONE_STOVE.get() to "Yellow Brinestone Stove",
+
+            HDBlocks.NETHER_BRICK_STOVE.get() to "Nether Brick Stove",
+            HDBlocks.RED_NETHER_BRICK_STOVE.get() to "Red Nether Brick Stove",
+            HDBlocks.CALCITE_STOVE.get() to "Calcite Brick Stove",
+            HDBlocks.MUD_STOVE.get() to "Mud Brick Stove",
+
+            HDBlocks.WHITE_STOVE.get() to "White Stove",
+            HDBlocks.ORANGE_STOVE.get() to "Orange Stove",
+            HDBlocks.MAGENTA_STOVE.get() to "Magenta Stove",
+            HDBlocks.LIGHT_BLUE_STOVE.get() to "Light Blue Stove",
+            HDBlocks.YELLOW_STOVE.get() to "Yellow Stove",
+            HDBlocks.LIME_STOVE.get() to "Lime Stove",
+            HDBlocks.PINK_STOVE.get() to "Pink Stove",
+            HDBlocks.GRAY_STOVE.get() to "Gray Stove",
+            HDBlocks.LIGHT_GRAY_STOVE.get() to "Light Gray Stove",
+            HDBlocks.CYAN_STOVE.get() to "Cyan Stove",
+            HDBlocks.PURPLE_STOVE.get() to "Purple Stove",
+            HDBlocks.BLUE_STOVE.get() to "Blue Stove",
+            HDBlocks.BROWN_STOVE.get() to "Brown Stove",
+            HDBlocks.GREEN_STOVE.get() to "Green Stove",
+            HDBlocks.RED_STOVE.get() to "Red Stove",
+            HDBlocks.BLACK_STOVE.get() to "Black Stove",
+        ).forEach { (block, translation) ->
+            builder.add(block, translation)
+        }
 
         // items
         mapOf(
