@@ -19,6 +19,8 @@ object HDItemGroups {
             .icon { ItemStack(HDItems.CRAB_CAKE.get()) }
             .displayItems { _, entries ->
                 if (Services.PLATFORM.isModLoaded("hybrid_aquatic")) {
+                    entries.accept(HDItems.DRIFTWOOD_CABINET.get())
+
                     entries.accept(HDItems.SCHIST_STOVE.get())
                     entries.accept(HDItems.CHIMNEYSTONE_STOVE.get())
                     entries.accept(HDItems.YELLOW_BRINESTONE_STOVE.get())

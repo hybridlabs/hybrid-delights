@@ -6,6 +6,7 @@ import dev.hybridlabs.delights.platform.registration.RegistryObject
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
+import vectorwing.farmersdelight.common.block.entity.CabinetBlockEntity
 
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 object HDBlockEntityTypes {
@@ -39,6 +40,13 @@ object HDBlockEntityTypes {
             HDBlocks.RED_NETHER_BRICK_STOVE,
             HDBlocks.CALCITE_STOVE,
             HDBlocks.MUD_STOVE,
+        )
+
+    val CABINET =
+        register(
+            "cabinet",
+            ::CabinetBlockEntity,
+            HDBlocks.DRIFTWOOD_CABINET
         )
 
     fun <T : BlockEntity?> register(

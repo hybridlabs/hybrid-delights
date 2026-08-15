@@ -19,6 +19,8 @@ class LanguageProvider( output: FabricDataOutput, lookupProvider: CompletableFut
 
         // blocks
         mapOf(
+            HDBlocks.DRIFTWOOD_CABINET.get() to "Driftwood Cabinet",
+
             HDBlocks.SCHIST_STOVE.get() to "Schist Stove",
             HDBlocks.CHIMNEYSTONE_STOVE.get() to "Chimneystone Stove",
             HDBlocks.RED_BRINESTONE_STOVE.get() to "Red Brinestone Stove",

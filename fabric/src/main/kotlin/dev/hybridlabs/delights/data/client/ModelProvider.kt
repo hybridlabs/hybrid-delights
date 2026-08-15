@@ -16,11 +16,18 @@ import net.minecraft.data.models.blockstates.PropertyDispatch
 import net.minecraft.data.models.blockstates.Variant
 import net.minecraft.data.models.blockstates.VariantProperties
 import net.minecraft.data.models.model.ModelTemplates
+import net.minecraft.data.models.model.TexturedModel
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 
 class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
     override fun generateBlockStateModels(generator: BlockModelGenerators) {
+
+        orientableCabinet(
+            generator,
+            HDBlocks.DRIFTWOOD_CABINET.get(),
+            "driftwood"
+        )
 
         orientableStove(
             generator,
@@ -402,6 +409,139 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                             true,
                             Variant.variant()
                                 .with(VariantProperties.MODEL, onModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)
+                        )
+                )
+        )
+    }
+
+    fun orientableCabinet(
+        generator: BlockModelGenerators,
+        block: Block,
+        name: String,
+    ) {
+        val closedModelId = HybridDelightsCommon.locate("block/${name}_cabinet_open")
+        val openModelId = HybridDelightsCommon.locate("block/${name}_cabinet")
+
+        val itemModelId = HybridDelightsCommon.locate("item/${name}_cabinet")
+
+        val closedModel = HybridDelightsCommon.locate("block/${name}_cabinet")
+        val openModel = HybridDelightsCommon.locate("block/${name}_cabinet_open")
+
+        generator.modelOutput.accept(openModelId) {
+            JsonObject().apply {
+                addProperty(
+                    "parent",
+                    "minecraft:block/orientable"
+                )
+
+                add("textures", JsonObject().apply {
+                    addProperty(
+                        "front",
+                        "${Constants.MOD_ID}:block/${name}_cabinet_front_open"
+                    )
+                    addProperty(
+                        "side",
+                        "${Constants.MOD_ID}:block/${name}_cabinet_side"
+                    )
+                    addProperty(
+                        "top",
+                        "${Constants.MOD_ID}:block/${name}_cabinet_top"
+                    )
+                })
+            }
+        }
+
+        generator.modelOutput.accept(closedModelId) {
+            JsonObject().apply {
+                addProperty(
+                    "parent",
+                    "minecraft:block/orientable"
+                )
+
+                add("textures", JsonObject().apply {
+                    addProperty(
+                        "front",
+                        "${Constants.MOD_ID}:block/${name}_cabinet_front"
+                    )
+                    addProperty(
+                        "side",
+                        "${Constants.MOD_ID}:block/${name}_cabinet_side"
+                    )
+                    addProperty(
+                        "top",
+                        "${Constants.MOD_ID}:block/${name}_cabinet_top"
+                    )
+                })
+            }
+        }
+
+        generator.modelOutput.accept(itemModelId) {
+            JsonObject().apply {
+                addProperty(
+                    "parent",
+                    "${Constants.MOD_ID}:block/${name}_cabinet"
+                )
+            }
+        }
+
+        generator.blockStateOutput.accept(
+            MultiVariantGenerator.multiVariant(block)
+                .with(
+                    PropertyDispatch.properties(
+                        BlockStateProperties.HORIZONTAL_FACING,
+                        BlockStateProperties.OPEN
+                    )
+                        .select(
+                            Direction.NORTH,
+                            false,
+                            Variant.variant().with(VariantProperties.MODEL, closedModel)
+                        )
+                        .select(
+                            Direction.NORTH,
+                            true,
+                            Variant.variant().with(VariantProperties.MODEL, openModel)
+                        )
+                        .select(
+                            Direction.EAST,
+                            false,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, closedModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90)
+                        )
+                        .select(
+                            Direction.EAST,
+                            true,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, openModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90)
+                        )
+                        .select(
+                            Direction.SOUTH,
+                            false,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, closedModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180)
+                        )
+                        .select(
+                            Direction.SOUTH,
+                            true,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, openModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180)
+                        )
+                        .select(
+                            Direction.WEST,
+                            false,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, closedModel)
+                                .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)
+                        )
+                        .select(
+                            Direction.WEST,
+                            true,
+                            Variant.variant()
+                                .with(VariantProperties.MODEL, openModel)
                                 .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)
                         )
                 )

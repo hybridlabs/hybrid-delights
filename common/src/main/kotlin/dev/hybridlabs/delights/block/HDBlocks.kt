@@ -13,6 +13,13 @@ import java.util.function.ToIntFunction
 
 object HDBlocks {
 
+    val DRIFTWOOD_CABINET = register("driftwood_cabinet") {
+        HybridCabinetBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)
+                .mapColor(MapColor.COLOR_LIGHT_GRAY)
+        )
+    }
+
     val SCHIST_STOVE = register("schist_stove") {
         HybridStoveBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.BRICKS)
