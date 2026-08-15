@@ -5,7 +5,6 @@ import dev.hybridlabs.delights.Constants
 import dev.hybridlabs.delights.HybridDelightsCommon
 import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.delights.item.HDItems
-import dev.hybridlabs.hapi.CommonClass
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
 import net.minecraft.core.Direction
@@ -16,7 +15,6 @@ import net.minecraft.data.models.blockstates.PropertyDispatch
 import net.minecraft.data.models.blockstates.Variant
 import net.minecraft.data.models.blockstates.VariantProperties
 import net.minecraft.data.models.model.ModelTemplates
-import net.minecraft.data.models.model.TexturedModel
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 
