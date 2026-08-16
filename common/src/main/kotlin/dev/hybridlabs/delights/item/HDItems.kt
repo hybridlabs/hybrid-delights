@@ -3,7 +3,6 @@ package dev.hybridlabs.delights.item
 import dev.hybridlabs.delights.HybridDelightsCommon
 import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.hapi.item.HAPIToolMaterials
-import dev.hybridlabs.hapi.item.ProgressiveFoodItem
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.food.FoodProperties
@@ -55,8 +54,8 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(0)
-                        .saturationModifier(0.0F)
-                        .effect(MobEffectInstance(MobEffects.POISON, 300, 0),1.0f)
+                        .saturationModifier(0.0F).effect(MobEffectInstance(MobEffects.POISON, 300, 0),1.0F)
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
@@ -73,7 +72,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationModifier(0.3F)
-                        
                         .build()
                 )
         )
@@ -88,7 +86,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationModifier(0.3F)
-                        
                         .fast()
                         .build()
                 )
@@ -104,7 +101,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationModifier(0.3F)
-                        
                         .fast()
                         .build()
                 )
@@ -120,7 +116,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationModifier(0.3F)
-                        
                         .fast()
                         .build()
                 )
@@ -136,7 +131,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationModifier(0.3F)
-                        
                         .fast()
                         .build()
                 )
@@ -168,7 +162,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationModifier(0.6F)
-                        
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
@@ -185,7 +179,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationModifier(0.6F)
-                        
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
@@ -202,7 +196,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(1)
                         .saturationModifier(0.2F)
-                        
                         .build()
                 )
         )
@@ -217,7 +210,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationModifier(0.4F)
-                        
                         .build()
                 )
                 .stacksTo(16)
@@ -233,7 +225,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(4)
                         .saturationModifier(0.6F)
-                        
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .fast()
                         .build()
                 )
@@ -251,7 +243,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationModifier(0.4F)
-                        
                         .build()
                 )
                 .stacksTo(16)
@@ -267,7 +258,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(4)
                         .saturationModifier(0.6F)
-                        
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .fast()
                         .build()
                 )
@@ -285,7 +276,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationModifier(0.4F)
-                        
                         .build()
                 )
                 .stacksTo(16)
@@ -301,7 +291,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(4)
                         .saturationModifier(0.6F)
-                        
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .fast()
                         .build()
                 )
@@ -319,7 +309,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationModifier(0.4F)
-                        
                         .build()
                 )
                 .stacksTo(16)
@@ -335,7 +324,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(4)
                         .saturationModifier(0.6F)
-                        
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .fast()
                         .build()
                 )
@@ -353,7 +342,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(8)
                         .saturationModifier(0.8F)
-                        
                         .fast()
                         .build()
                 )
@@ -370,7 +358,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationModifier(0.1F)
-                        
                         .build()
                 )
         )
@@ -385,7 +372,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationModifier(0.8F)
-                        
                         .build()
                 )
         )
@@ -399,8 +385,7 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(3)
-                        .saturationModifier(0.3F)
-                        .fast()
+                        .saturationModifier(0.3F).fast()
                         
                         .build()
                 )
@@ -445,8 +430,7 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(1)
-                        .saturationModifier(0.1F)
-                        .effect(MobEffectInstance(MobEffects.POISON, 300, 0),0.25f)
+                        .saturationModifier(0.1F).effect(MobEffectInstance(MobEffects.POISON, 300, 0),0.25f)
 
                         .build()
                 )
@@ -462,7 +446,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationModifier(0.8F)
-                        
                         .build()
                 )
         )
@@ -476,8 +459,7 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(2)
-                        .saturationModifier(0.3F)
-                        .fast()
+                        .saturationModifier(0.3F).fast()
                         
                         .build()
                 )
@@ -493,7 +475,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationModifier(0.8F)
-                        
                         .build()
                 )
         )
@@ -507,8 +488,7 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(3)
-                        .saturationModifier(0.8F)
-                        .fast()
+                        .saturationModifier(0.8F).fast()
                         
                         .build()
                 )
@@ -524,10 +504,9 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationModifier(0.8F)
-                        
+                        .usingConvertsTo { Items.BOWL }
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -541,10 +520,9 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationModifier(0.8F)
-                        
+                        .usingConvertsTo { Items.BOWL }
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -558,10 +536,9 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationModifier(0.8F)
-                        
+                        .usingConvertsTo { Items.BOWL }
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -576,10 +553,9 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationModifier(0.8F)
-                        
+                        .usingConvertsTo { Items.BOWL }
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -593,7 +569,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(10)
                         .saturationModifier(0.8F)
-                        
                         .build()
                 )
         )
@@ -608,7 +583,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(10)
                         .saturationModifier(0.8F)
-                        
                         .build()
                 )
                 .stacksTo(16)
@@ -624,10 +598,9 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationModifier(0.75F)
-                        
+                        .usingConvertsTo { Items.BOWL }
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -641,10 +614,9 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(8)
                         .saturationModifier(0.95F)
-                        
+                        .usingConvertsTo { Items.BOWL }
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -658,10 +630,9 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationModifier(0.8F)
-                        
+                        .usingConvertsTo { Items.BOWL }
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -675,7 +646,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationModifier(0.75F)
-                        
                         .build()
                 )
                 .craftRemainder(Items.BOWL)
@@ -692,7 +662,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationModifier(0.75F)
-                        
                         .build()
                 )
                 .stacksTo(1)
@@ -708,7 +677,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationModifier(0.75F)
-                        
                         .build()
                 )
                 .stacksTo(16)
@@ -724,7 +692,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationModifier(0.75F)
-                        
                         .build()
                 )
                 .stacksTo(16)
@@ -740,7 +707,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(10)
                         .saturationModifier(1.0F)
-                        
+                        .usingConvertsTo { Items.STICK }
                         .build()
                 )
                 .stacksTo(16)
@@ -756,7 +723,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(10)
                         .saturationModifier(1.0F)
-
                         .build()
                 )
                 .stacksTo(16)
@@ -772,7 +738,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(7)
                         .saturationModifier(0.6F)
-                        
                         .build()
                 )
         )
@@ -793,39 +758,7 @@ object HDItems {
         )
     }
 
-    val FISHSICLE = register(
-        "fishsicle",
-    ) {
-        ProgressiveFoodItem(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(8)
-                        .saturationModifier(0.6F)
-                        .build()
-                )
-                .stacksTo(1)
-        ) {
-            HALF_EATEN_FISHSICLE.get()
-        }
-    }
-
-    val HALF_EATEN_FISHSICLE = register(
-        "half_eaten_fishsicle",
-    ) {
-        ProgressiveFoodItem(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(6)
-                        .saturationModifier(0.4F)
-                        .build()
-                )
-                .stacksTo(1)
-        ) {
-            MOSTLY_EATEN_FISHSICLE.get()
-        }
-    }
+    //#region Fantastic Fishery Items
 
     val MOSTLY_EATEN_FISHSICLE = register(
         "mostly_eaten_fishsicle",
@@ -838,42 +771,40 @@ object HDItems {
                         .saturationModifier(0.2F)
                         .build()
                 )
-                .stacksTo(1)
+                .stacksTo(16)
         )
     }
 
-    val SWEET_BERRY_FISHSICLE = register(
-        "sweet_berry_fishsicle",
+    val HALF_EATEN_FISHSICLE = register(
+        "half_eaten_fishsicle",
     ) {
-        ProgressiveFoodItem(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(8)
-                        .saturationModifier(0.6F)
-                        .build()
-                )
-                .stacksTo(1)
-        ) {
-            HALF_EATEN_SWEET_BERRY_FISHSICLE.get()
-        }
-    }
-
-    val HALF_EATEN_SWEET_BERRY_FISHSICLE = register(
-        "half_eaten_sweet_berry_fishsicle",
-    ) {
-        ProgressiveFoodItem(
+        Item(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationModifier(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_FISHSICLE.get() }
                         .build()
                 )
-                .stacksTo(1)
-        ) {
-            MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get()
-        }
+                .stacksTo(16)
+        )
+    }
+
+    val FISHSICLE = register(
+        "fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .usingConvertsTo { HALF_EATEN_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
     }
 
     val MOSTLY_EATEN_SWEET_BERRY_FISHSICLE = register(
@@ -884,45 +815,42 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(4)
-                        .saturationModifier(0.2F)
-                        .build()
+                        .saturationModifier(0.2F).build()
                 )
-                .stacksTo(1)
+                .stacksTo(16)
         )
     }
 
-    val GLOW_BERRY_FISHSICLE = register(
-        "glow_berry_fishsicle",
+    val HALF_EATEN_SWEET_BERRY_FISHSICLE = register(
+        "half_eaten_sweet_berry_fishsicle",
     ) {
-        ProgressiveFoodItem(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(8)
-                        .saturationModifier(0.6F)
-                        .build()
-                )
-                .stacksTo(1)
-        ) {
-            HALF_EATEN_GLOW_BERRY_FISHSICLE.get()
-        }
-    }
-
-    val HALF_EATEN_GLOW_BERRY_FISHSICLE = register(
-        "half_eaten_glow_berry_fishsicle",
-    ) {
-        ProgressiveFoodItem(
+        Item(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationModifier(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get() }
                         .build()
                 )
-                .stacksTo(1)
-        ) {
-            MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get()
-        }
+                .stacksTo(16)
+        )
+    }
+
+    val SWEET_BERRY_FISHSICLE = register(
+        "sweet_berry_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .usingConvertsTo { HALF_EATEN_SWEET_BERRY_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
     }
 
     val MOSTLY_EATEN_GLOW_BERRY_FISHSICLE = register(
@@ -933,45 +861,42 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(4)
-                        .saturationModifier(0.2F)
-                        .build()
+                        .saturationModifier(0.2F).build()
                 )
-                .stacksTo(1)
+                .stacksTo(16)
         )
     }
 
-    val MELON_FISHSICLE = register(
-        "melon_fishsicle",
+    val HALF_EATEN_GLOW_BERRY_FISHSICLE = register(
+        "half_eaten_glow_berry_fishsicle",
     ) {
-        ProgressiveFoodItem(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(8)
-                        .saturationModifier(0.6F)
-                        .build()
-                )
-                .stacksTo(1)
-        ) {
-            HALF_EATEN_MELON_FISHSICLE.get()
-        }
-    }
-
-    val HALF_EATEN_MELON_FISHSICLE = register(
-        "half_eaten_melon_fishsicle",
-    ) {
-        ProgressiveFoodItem(
+        Item(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationModifier(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get() }
                         .build()
                 )
-                .stacksTo(1)
-        ) {
-            MOSTLY_EATEN_MELON_FISHSICLE.get()
-        }
+                .stacksTo(16)
+        )
+    }
+
+    val GLOW_BERRY_FISHSICLE = register(
+        "glow_berry_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .usingConvertsTo { HALF_EATEN_GLOW_BERRY_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
     }
 
     val MOSTLY_EATEN_MELON_FISHSICLE = register(
@@ -985,42 +910,40 @@ object HDItems {
                         .saturationModifier(0.2F)
                         .build()
                 )
-                .stacksTo(1)
+                .stacksTo(16)
         )
     }
 
-    val PUMPKIN_FISHSICLE = register(
-        "pumpkin_fishsicle",
+    val HALF_EATEN_MELON_FISHSICLE = register(
+        "half_eaten_melon_fishsicle",
     ) {
-        ProgressiveFoodItem(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(8)
-                        .saturationModifier(0.6F)
-                        .build()
-                )
-                .stacksTo(1)
-        ) {
-            HALF_EATEN_PUMPKIN_FISHSICLE.get()
-        }
-    }
-
-    val HALF_EATEN_PUMPKIN_FISHSICLE = register(
-        "half_eaten_pumpkin_fishsicle",
-    ) {
-        ProgressiveFoodItem(
+        Item(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationModifier(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_MELON_FISHSICLE.get() }
                         .build()
                 )
-                .stacksTo(1)
-        ) {
-            MOSTLY_EATEN_PUMPKIN_FISHSICLE.get()
-        }
+                .stacksTo(16)
+        )
+    }
+
+    val MELON_FISHSICLE = register(
+        "melon_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .usingConvertsTo { HALF_EATEN_MELON_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
     }
 
     val MOSTLY_EATEN_PUMPKIN_FISHSICLE = register(
@@ -1034,9 +957,91 @@ object HDItems {
                         .saturationModifier(0.2F)
                         .build()
                 )
-                .stacksTo(1)
+                .stacksTo(16)
         )
     }
+
+    val HALF_EATEN_PUMPKIN_FISHSICLE = register(
+        "half_eaten_pumpkin_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationModifier(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_PUMPKIN_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val PUMPKIN_FISHSICLE = register(
+        "pumpkin_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .usingConvertsTo { HALF_EATEN_PUMPKIN_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val MORSEL_OF_MORSEL = register(
+        "morsel_of_morsel"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(10)
+                        .saturationModifier(0.8F)
+                        .fast()
+                        .build()
+                )
+        )
+    }
+
+    val PLUNDERERS_ROE = register(
+        "plunderers_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationModifier(0.4F)
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val CURED_PLUNDERERS_ROE = register(
+        "cured_plunderers_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationModifier(0.6F)
+                        .fast()
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
+                        .build()
+                )
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+        )
+    }
+
+    //#endregion
 
     private fun register(id: String, item: Supplier<Item>): Supplier<Item> {
         return HybridDelightsCommon.ITEMS.register(id, item)

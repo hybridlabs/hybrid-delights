@@ -123,6 +123,11 @@ class LanguageProvider( output: FabricDataOutput, lookupProvider: CompletableFut
             HDItems.PUMPKIN_FISHSICLE.get() to "Pumpkin Fishsicle",
             HDItems.HALF_EATEN_PUMPKIN_FISHSICLE.get() to "Half Eaten Pumpkin Fishsicle",
             HDItems.MOSTLY_EATEN_PUMPKIN_FISHSICLE.get() to "Mostly Eaten Pumpkin Fishsicle",
+
+            HDItems.MORSEL_OF_MORSEL.get() to "Morsel Of Morsel",
+
+            HDItems.PLUNDERERS_ROE.get() to "Plunderers Roe",
+            HDItems.CURED_PLUNDERERS_ROE.get() to "Cured Plunderers Roe",
         ).forEach { (item, translation) ->
             builder.add(item, translation)
         }

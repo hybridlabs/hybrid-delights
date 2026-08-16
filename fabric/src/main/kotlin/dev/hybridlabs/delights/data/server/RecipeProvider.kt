@@ -148,6 +148,17 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
             .save(exporter)
+
+        CookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.CURED_PLUNDERERS_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
+            .addIngredient(HDItems.SALT.get())
+            .addIngredient(HDItems.PLUNDERERS_ROE.get())
+            .unlockedByAnyIngredient(
+                HDItems.SALT.get(),
+                HDItems.PLUNDERERS_ROE.get()
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+            .save(exporter)
         
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CURED_CARP_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
@@ -398,6 +409,20 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
     }
 
     private fun cuttingRecipes(exporter: RecipeOutput) {
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(HDItemTags.PLUNDERERS_HOOP),
+            KNIVES,
+            HDItems.FISH_CUTLET.get(), 2
+        )
+            .addResultWithChance(HDItems.PLUNDERERS_ROE.get(), 0.5f)
+            .save(
+                exporter,
+                ResourceLocation.fromNamespaceAndPath(
+                    "hybrid_delights",
+                    "cutting/plunderers_hoop"
+                )
+            )
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HDItemTags.CARP),

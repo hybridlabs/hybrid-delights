@@ -205,11 +205,13 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.CARP_ROE.get(),
             HDItems.CURED_CARP_ROE.get(),
             HDItems.COD_ROE.get(),
+            HDItems.PLUNDERERS_ROE.get(),
             HDItems.CURED_COD_ROE.get(),
             HDItems.SALMON_ROE.get(),
             HDItems.CURED_SALMON_ROE.get(),
             HDItems.TROPICAL_FISH_ROE.get(),
             HDItems.CURED_TROPICAL_FISH_ROE.get(),
+            HDItems.CURED_PLUNDERERS_ROE.get(),
 
             HDItems.CAVIAR_TOAST.get(),
 
@@ -260,6 +262,8 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.PUMPKIN_FISHSICLE.get(),
             HDItems.HALF_EATEN_PUMPKIN_FISHSICLE.get(),
             HDItems.MOSTLY_EATEN_PUMPKIN_FISHSICLE.get(),
+
+            HDItems.MORSEL_OF_MORSEL.get(),
 
             ).forEach { item ->
             generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM)
