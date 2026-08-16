@@ -8,10 +8,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "hybrid_delights:lobster_claw"
+      "item": "hybrid_aquatic:raw_lobster"
     },
     {
-      "tag": "hybrid_delights:lobster_tail"
+      "item": "hybrid_aquatic:raw_lobster_tail"
     },
     {
       "item": "minecraft:bread"

@@ -56,9 +56,6 @@ object HDItemGroups {
                     entries.accept(HDItems.SALTED_SALMON.get())
                     entries.accept(HDItems.SALTED_SALMON_SLICE.get())
 
-                    entries.accept(HDItems.FISH_CUTLET.get())
-                    entries.accept(HDItems.COOKED_FISH_CUTLET.get())
-
                     entries.accept(HDItems.PUFFERFISH_SLICE.get())
                     entries.accept(HDItems.COOKED_PUFFERFISH_SLICE.get())
                     entries.accept(HDItems.SALTED_PUFFERFISH_SLICE.get())

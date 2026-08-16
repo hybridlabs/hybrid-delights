@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#hapi:shark_tooth"
+            "items": "hybrid_aquatic:shark_tooth"
           }
         ]
       },

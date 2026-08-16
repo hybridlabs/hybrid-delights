@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "hybrid_delights:frigid_vessel"
+      "item": "fantastic_fishery:frigid_vessel"
     },
     {
       "item": "minecraft:stick"

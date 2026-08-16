@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "B": {
-      "tag": "hybrid_delights:chimneystone"
+      "item": "hybrid_aquatic:chimneystone_bricks"
     },
     "C": {
       "item": "minecraft:campfire"

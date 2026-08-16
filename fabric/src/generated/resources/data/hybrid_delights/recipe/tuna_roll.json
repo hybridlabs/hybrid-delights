@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "hybrid_delights:tuna"
+      "item": "hybrid_aquatic:tuna"
     },
     {
       "item": "farmersdelight:cooked_rice"

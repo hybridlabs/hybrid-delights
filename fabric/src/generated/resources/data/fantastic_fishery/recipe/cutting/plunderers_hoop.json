@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "fantastic_fishery:plunderers_hoop"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "fantastic_fishery:plunderers_core"
+      }
+    },
+    {
+      "chance": 0.5,
+      "item": {
+        "count": 1,
+        "id": "hybrid_delights:plunderers_roe"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

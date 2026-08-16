@@ -4,7 +4,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "hybrid_delights:carp"
+      "item": "hybrid_aquatic:carp"
     },
     {
       "tag": "c:crops/onion"

@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "B": {
-      "tag": "hybrid_delights:gray_bricks"
+      "item": "hybrid_blocks:gray_bricks"
     },
     "C": {
       "item": "minecraft:campfire"

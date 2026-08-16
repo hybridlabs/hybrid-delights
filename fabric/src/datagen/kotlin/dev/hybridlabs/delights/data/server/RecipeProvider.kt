@@ -1,7 +1,11 @@
 package dev.hybridlabs.delights.data.server
 
+import dev.hybridlabs.aquatic.item.HAItems
+import dev.hybridlabs.aquatic.item.HAPlatformItems
+import dev.hybridlabs.blocks.item.HybridBlocksItems
 import dev.hybridlabs.delights.item.HDItems
 import dev.hybridlabs.delights.tag.HDItemTags
+import dev.hybridlabs.fantasticfishery.item.FFItems
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
 import net.minecraft.advancements.critereon.InventoryChangeTrigger
@@ -42,74 +46,85 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         smeltingRecipes(exporter)
         cookingRecipes(exporter)
 
-        coloredStoveRecipe(HDItems.WHITE_STOVE.get(), HDItemTags.WHITE_BRICKS)
+        coloredStoveRecipe(HDItems.WHITE_STOVE.get(), HybridBlocksItems.WHITE_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.ORANGE_STOVE.get(), HDItemTags.ORANGE_BRICKS)
+        coloredStoveRecipe(HDItems.ORANGE_STOVE.get(), HybridBlocksItems.ORANGE_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.MAGENTA_STOVE.get(), HDItemTags.MAGENTA_BRICKS)
+        coloredStoveRecipe(HDItems.MAGENTA_STOVE.get(), HybridBlocksItems.MAGENTA_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.LIGHT_BLUE_STOVE.get(), HDItemTags.LIGHT_BLUE_BRICKS)
+        coloredStoveRecipe(HDItems.LIGHT_BLUE_STOVE.get(), HybridBlocksItems.LIGHT_BLUE_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.YELLOW_STOVE.get(), HDItemTags.YELLOW_BRICKS)
+        coloredStoveRecipe(HDItems.YELLOW_STOVE.get(), HybridBlocksItems.YELLOW_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.LIME_STOVE.get(), HDItemTags.LIME_BRICKS)
+        coloredStoveRecipe(HDItems.LIME_STOVE.get(), HybridBlocksItems.LIME_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.PINK_STOVE.get(), HDItemTags.PINK_BRICKS)
+        coloredStoveRecipe(HDItems.PINK_STOVE.get(), HybridBlocksItems.PINK_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.GRAY_STOVE.get(), HDItemTags.GRAY_BRICKS)
+        coloredStoveRecipe(HDItems.GRAY_STOVE.get(), HybridBlocksItems.GRAY_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.LIGHT_GRAY_STOVE.get(), HDItemTags.LIGHT_GRAY_BRICKS)
+        coloredStoveRecipe(HDItems.LIGHT_GRAY_STOVE.get(), HybridBlocksItems.LIGHT_GRAY_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.CYAN_STOVE.get(), HDItemTags.CYAN_BRICKS)
+        coloredStoveRecipe(HDItems.CYAN_STOVE.get(), HybridBlocksItems.CYAN_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.PURPLE_STOVE.get(), HDItemTags.PURPLE_BRICKS)
+        coloredStoveRecipe(HDItems.PURPLE_STOVE.get(), HybridBlocksItems.PURPLE_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.BLUE_STOVE.get(), HDItemTags.BLUE_BRICKS)
+        coloredStoveRecipe(HDItems.BLUE_STOVE.get(), HybridBlocksItems.BLUE_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.BROWN_STOVE.get(), HDItemTags.BROWN_BRICKS)
+        coloredStoveRecipe(HDItems.BROWN_STOVE.get(), HybridBlocksItems.BROWN_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.GREEN_STOVE.get(), HDItemTags.GREEN_BRICKS)
+        coloredStoveRecipe(HDItems.GREEN_STOVE.get(), HybridBlocksItems.GREEN_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.RED_STOVE.get(), HDItemTags.RED_BRICKS)
+        coloredStoveRecipe(HDItems.RED_STOVE.get(), HybridBlocksItems.RED_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.BLACK_STOVE.get(), HDItemTags.BLACK_BRICKS)
+        coloredStoveRecipe(HDItems.BLACK_STOVE.get(), HybridBlocksItems.BLACK_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.CALCITE_STOVE.get(), HDItemTags.CALCITE_BRICKS)
+        coloredStoveRecipe(HDItems.CALCITE_STOVE.get(), HybridBlocksItems.POLISHED_CALCITE_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.SCHIST_STOVE.get(), HDItemTags.SCHIST)
+        coloredStoveRecipe(HDItems.SCHIST_STOVE.get(), HAItems.SCHIST_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.CHIMNEYSTONE_STOVE.get(), HDItemTags.CHIMNEYSTONE)
+        coloredStoveRecipe(HDItems.CHIMNEYSTONE_STOVE.get(), HAItems.CHIMNEYSTONE_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.RED_BRINESTONE_STOVE.get(), HDItemTags.RED_BRINESTONE)
+        coloredStoveRecipe(HDItems.RED_BRINESTONE_STOVE.get(), HAItems.RED_BRINESTONE_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.ORANGE_BRINESTONE_STOVE.get(), HDItemTags.ORANGE_BRINESTONE)
+        coloredStoveRecipe(HDItems.ORANGE_BRINESTONE_STOVE.get(), HAItems.ORANGE_BRINESTONE_BRICKS.get())
             .save(exporter)
 
-        coloredStoveRecipe(HDItems.YELLOW_BRINESTONE_STOVE.get(), HDItemTags.YELLOW_BRINESTONE)
+        coloredStoveRecipe(HDItems.YELLOW_BRINESTONE_STOVE.get(), HAItems.YELLOW_BRINESTONE_BRICKS.get())
             .save(exporter)
     }
 
     private fun cookingRecipes(exporter: RecipeOutput) {
+        CookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.MORSEL_OF_MORSEL.get(), 3, 100, 1.0f, Items.PAPER)
+            .addIngredient(FFItems.MORSEL_BAR.get())
+            .addIngredient(Items.SUGAR)
+            .addIngredient(Items.SUGAR)
+            .unlockedByAnyIngredient(
+                FFItems.MORSEL_BAR.get()
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+            .save(exporter)
+
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.SALT.get(), 1, 100, 1.0f)
             .addIngredient(HDItems.BRINE_BOTTLE.get())
@@ -176,17 +191,18 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.BAKED_STUFFED_LOBSTER.get(), 1, 400, 1.0f)
-            .addIngredient(HDItemTags.LOBSTER_CLAW)
-            .addIngredient(HDItemTags.LOBSTER_TAIL)
-            .addIngredient(HDItemTags.CRAB_MEAT)
+            .addIngredient(HAItems.RAW_LOBSTER.get())
+            .addIngredient(HAItems.RAW_LOBSTER_TAIL.get())
+            .addIngredient(HAItems.RAW_CRAB.get())
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.LOBSTER_MEAT)
-                        .of(HDItemTags.CRAB_MEAT)
+                        .of(HAItems.RAW_LOBSTER.get())
+                        .of(HAItems.RAW_LOBSTER_TAIL.get())
+                        .of(HAItems.RAW_CRAB.get())
                         .build()
                 )
             )
@@ -195,8 +211,8 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.LOBSTER_STEW.get(), 1, 400, 1.0f, Items.BOWL)
-            .addIngredient(HDItemTags.LOBSTER_CLAW)
-            .addIngredient(HDItemTags.LOBSTER_TAIL)
+            .addIngredient(HAItems.RAW_LOBSTER.get())
+            .addIngredient(HAItems.RAW_LOBSTER_TAIL.get())
             .addIngredient(Items.BREAD)
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
@@ -206,7 +222,8 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.LOBSTER_MEAT)
+                        .of(HAItems.RAW_LOBSTER.get())
+                        .of(HAItems.RAW_LOBSTER_TAIL.get())
                         .build()
                 )
             )
@@ -215,18 +232,18 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.BISQUE.get(), 1, 300, 1.0f, Items.BOWL)
-            .addIngredient(HDItemTags.TENTACLE)
-            .addIngredient(HDItemTags.SHRIMP)
-            .addIngredient(HDItemTags.UNI)
+            .addIngredient(HAItems.RAW_TENTACLE.get())
+            .addIngredient(HAItems.RAW_SHRIMP.get())
+            .addIngredient(HAItems.UNI.get())
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.TENTACLE)
-                        .of(HDItemTags.SHRIMP)
-                        .of(HDItemTags.UNI)
+                        .of(HAItems.RAW_TENTACLE.get())
+                        .of(HAItems.RAW_SHRIMP.get())
+                        .of(HAItems.UNI.get())
                         .build()
                 )
             )
@@ -235,7 +252,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CHOWDER.get(), 1, 300, 1.0f, Items.BOWL)
-            .addIngredient(HDItemTags.CRAB_MEAT)
+            .addIngredient(HAItems.RAW_CRAB.get())
             .addIngredient(ModItems.MILK_BOTTLE.get())
             .addIngredient(Items.POTATO)
             .addIngredient(TagKey.create(Registries.ITEM,
@@ -244,7 +261,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.CRAB_MEAT)
+                        .of(HAItems.RAW_CRAB.get())
                         .build()
                 )
             )
@@ -253,7 +270,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CRAB_CAKE.get(), 1, 300, 1.0f)
-            .addIngredient(HDItemTags.CRAB_MEAT)
+            .addIngredient(HAItems.RAW_CRAB.get())
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "grains/wheat")))
             .addIngredient(TagKey.create(Registries.ITEM,
@@ -262,7 +279,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.CRAB_MEAT)
+                        .of(HAItems.RAW_CRAB.get())
                         .build()
                 )
             )
@@ -271,7 +288,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CRAB_RANGOON.get(), 1, 200, 1.0f)
-            .addIngredient(HDItemTags.CRAB_MEAT)
+            .addIngredient(HAItems.RAW_CRAB.get())
             .addIngredient(ModItems.MILK_BOTTLE.get())
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "dough")))
@@ -281,7 +298,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.CRAB_MEAT)
+                        .of(HAItems.RAW_CRAB.get())
                         .build()
                 )
             )
@@ -290,7 +307,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.TUNA_CASSEROLE.get(), 1, 400, 1.0f, Items.BOWL)
-            .addIngredient(HDItemTags.TUNA)
+            .addIngredient(HAItems.TUNA.get())
             .addIngredient(ModItems.RAW_PASTA.get())
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "eggs")))
@@ -298,7 +315,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.TUNA)
+                        .of(HAItems.TUNA.get())
                         .build()
                 )
             )
@@ -307,7 +324,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.MASGOUF.get(), 1, 400, 1.0f)
-            .addIngredient(HDItemTags.CARP)
+            .addIngredient(HAItems.CARP.get())
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
@@ -316,7 +333,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.CARP)
+                        .of(HAItems.CARP.get())
                         .build()
                 )
             )
@@ -325,7 +342,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.FISHERMANS_SOUP.get(), 1, 200, 1.0f, Items.BOWL)
-            .addIngredient(HDItemTags.FISH_MEAT)
+            .addIngredient(HAItems.RAW_FISH_MEAT.get())
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
@@ -334,7 +351,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.FISH_MEAT)
+                        .of(HAItems.RAW_FISH_MEAT.get())
                         .build()
                 )
             )
@@ -343,14 +360,14 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.EEL_NOODLES.get(), 1, 400, 1.0f, Items.BOWL)
-            .addIngredient(HDItemTags.EEL)
+            .addIngredient(HAItems.MORAY_EEL.get())
             .addIngredient(ModItems.RAW_PASTA.get())
             .addIngredient(Items.SUGAR)
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.EEL)
+                        .of(HAItems.MORAY_EEL.get())
                         .build()
                 )
             )
@@ -359,14 +376,14 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.FISH_KEBAB.get(), 1, 200, 1.0f, Items.STICK)
-            .addIngredient(HDItemTags.FISH_MEAT)
+            .addIngredient(HAItems.RAW_FISH_MEAT.get())
             .addIngredient(ModItems.COD_SLICE.get())
             .addIngredient(ModItems.SALMON_SLICE.get())
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.FISH_MEAT)
+                        .of(HAItems.RAW_FISH_MEAT.get())
                         .build()
                 )
             )
@@ -375,13 +392,13 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.FISH_N_CHIPS.get(), 1, 200, 1.0f, Items.STICK)
-            .addIngredient(HDItemTags.FISH_MEAT)
+            .addIngredient(HAItems.RAW_FISH_MEAT.get())
             .addIngredient(Items.POTATO)
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.FISH_MEAT)
+                        .of(HAItems.RAW_FISH_MEAT.get())
                         .build()
                 )
             )
@@ -390,7 +407,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.SHRIMP_FRIED_RICE.get(), 1, 200, 1.0f, Items.BOWL)
-            .addIngredient(HDItemTags.SHRIMP)
+            .addIngredient(HAItems.RAW_SHRIMP.get())
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .addIngredient(TagKey.create(Registries.ITEM,
@@ -403,7 +420,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.SHRIMP)
+                        .of(HAItems.RAW_SHRIMP.get())
                         .build()
                 )
             )
@@ -414,57 +431,34 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
     private fun cuttingRecipes(exporter: RecipeOutput) {
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HDItemTags.PLUNDERERS_HOOP),
+            Ingredient.of(FFItems.PLUNDERERS_HOOP.get()),
             KNIVES,
-            HDItems.FISH_CUTLET.get(), 2
+            FFItems.PLUNDERERS_CORE.get(), 1
         )
             .addResultWithChance(HDItems.PLUNDERERS_ROE.get(), 0.5f)
-            .save(
-                exporter,
-                ResourceLocation.fromNamespaceAndPath(
-                    "hybrid_delights",
-                    "cutting/plunderers_hoop"
-                )
-            )
+            .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HDItemTags.CARP),
+            Ingredient.of(HAItems.CARP.get()),
             KNIVES,
-            HDItems.FISH_CUTLET.get(), 2
+            HAItems.RAW_FISH_MEAT.get(), 2
         )
             .addResultWithChance(HDItems.CARP_ROE.get(), 0.5f)
-            .save(
-                exporter,
-                ResourceLocation.fromNamespaceAndPath(
-                    "hybrid_delights",
-                    "cutting/carp"
-                )
-            )
+            .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HDItemTags.TUNA),
+            Ingredient.of(HAItems.TUNA.get()),
             KNIVES,
-            HDItems.FISH_CUTLET.get(), 4)
+            HAItems.RAW_FISH_STEAK.get(), 2
+        )
             .addResultWithChance(HDItems.FISH_GELATIN.get(), 0.66f)
-            .save(
-                exporter,
-                ResourceLocation.fromNamespaceAndPath(
-                    "hybrid_delights",
-                    "cutting/fish_gelatin"
-                )
-            )
+            .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HDItemTags.RAY),
+            Ingredient.of(HAItems.STINGRAY.get()),
             KNIVES,
             HDItems.RAY_WING.get(), 2)
-            .save(
-                exporter,
-                ResourceLocation.fromNamespaceAndPath(
-                    "hybrid_delights",
-                    "cutting/ray"
-                )
-            )
+            .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.COD),
@@ -498,48 +492,39 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(Items.TROPICAL_FISH),
             KNIVES,
-            HDItems.FISH_CUTLET.get(), 2
+            HAItems.RAW_FISH_MEAT.get(), 2
         )
             .addResult(Items.BONE_MEAL)
             .addResultWithChance(HDItems.TROPICAL_FISH_ROE.get(), 0.5f)
             .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HDItemTags.PUFFERFISH),
+            Ingredient.of(Items.PUFFERFISH),
             KNIVES,
             HDItems.PUFFERFISH_SLICE.get(), 2)
             .addResult(Items.BONE_MEAL)
-            .save(
-                exporter,
-                ResourceLocation.fromNamespaceAndPath(
-                    "hybrid_delights",
-                    "cutting/pufferfish"
-                )
-            )
+            .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HDItemTags.FISH_MEAT),
+            Ingredient.of(HAItems.BLOWFISH.get()),
             KNIVES,
-            HDItems.FISH_CUTLET.get(), 2)
-            .save(
-                exporter,
-                ResourceLocation.fromNamespaceAndPath(
-                    "hybrid_delights",
-                    "cutting/fish_cutlet_from_fish_meat"
-                )
-            )
+            HDItems.PUFFERFISH_SLICE.get(), 2)
+            .addResult(Items.BONE_MEAL)
+            .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HDItemTags.FISH_STEAK),
+            Ingredient.of(HAItems.RAW_FISH_MEAT.get()),
             KNIVES,
-            HDItems.FISH_CUTLET.get(), 4)
-            .save(
-                exporter,
-                ResourceLocation.fromNamespaceAndPath(
-                    "hybrid_delights",
-                    "cutting/fish_cutlet_from_fish_steak"
-                )
-            )
+            HAItems.RAW_FISH_MEAT.get(), 2
+        )
+            .save(exporter)
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(HAItems.RAW_FISH_STEAK.get()),
+            KNIVES,
+            HAItems.RAW_FISH_MEAT.get(), 3
+        )
+            .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HDItems.SALTED_COD.get()),
@@ -558,13 +543,13 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, HDItems.CORAL_KNIFE.get())
             .pattern("C")
             .pattern("S")
-            .define('C', HDItemTags.CORAL_CHUNK)
+            .define('C', HAItems.CORAL_CHUNK.get())
             .define('S', Items.STICK)
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.CORAL_CHUNK)
+                        .of(HAItems.CORAL_CHUNK.get())
                         .build()
                 )
             )
@@ -573,13 +558,13 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, HDItems.SHARK_TOOTH_KNIFE.get())
             .pattern("C")
             .pattern("S")
-            .define('C', HDItemTags.SHARK_TOOTH)
+            .define('C', HAItems.SHARK_TOOTH.get())
             .define('S', Items.STICK)
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.SHARK_TOOTH)
+                        .of(HAItems.SHARK_TOOTH.get())
                         .build()
                 )
             )
@@ -635,13 +620,13 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .pattern("___")
             .pattern("D D")
             .pattern("___")
-            .define('D', HDItemTags.DRIFTWOOD_PLANKS)
-            .define('_', HDItemTags.DRIFTWOOD_SLAB)
+            .define('D', HAPlatformItems.DRIFTWOOD_PLANKS.get())
+            .define('_', HAPlatformItems.DRIFTWOOD_SLAB.get())
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.DRIFTWOOD_PLANKS)
+                        .of(HAPlatformItems.DRIFTWOOD_PLANKS.get())
                         .build()
                 )
             )
@@ -652,15 +637,15 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .pattern("FEF")
             .pattern(" P ")
             .define('P', ModItems.PIE_CRUST.get())
-            .define('F', HDItemTags.FISH_STEAK)
-            .define('C', HDItemTags.CRAB_MEAT)
+            .define('F', HAItems.RAW_FISH_STEAK.get())
+            .define('C', HAItems.RAW_CRAB.get())
             .define('E', TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "eggs")))
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.FISH_STEAK)
+                        .of(HAItems.RAW_FISH_STEAK.get())
                         .build()
                 )
             )
@@ -669,13 +654,13 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         ShapelessRecipeBuilder.shapeless(
             RecipeCategory.FOOD, HDItems.BRINE_BOTTLE.get(), 4
         )
-            .requires(HDItemTags.BRINE_BUCKET)
+            .requires(HAPlatformItems.BRINE_BUCKET.get())
             .requires(Items.GLASS_BOTTLE, 4)
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.BRINE_BUCKET)
+                        .of(HAPlatformItems.BRINE_BUCKET.get())
                         .build()
                 )
             )
@@ -686,13 +671,13 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             HDItems.TUNA_ROLL.get(),
             2
         )
-            .requires(HDItemTags.TUNA)
+            .requires(HAItems.TUNA.get())
             .requires(ModItems.COOKED_RICE.get())
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.TUNA)
+                        .of(HAItems.TUNA.get())
                         .build()
                 )
             )
@@ -715,7 +700,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             RecipeCategory.FOOD,
             HDItems.TUNA_SALAD.get()
         )
-            .requires(HDItemTags.TUNA)
+            .requires(HAItems.TUNA.get())
             .requires(Items.BOWL)
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "salad_ingredients")))
@@ -724,7 +709,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.TUNA)
+                        .of(HAItems.TUNA.get())
                         .build()
                 )
             )
@@ -734,7 +719,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             RecipeCategory.FOOD,
             HDItems.TUNA_NACHOS.get()
         )
-            .requires(HDItemTags.TUNA)
+            .requires(HAItems.TUNA.get())
             .requires(Items.BOWL)
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/cabbage")))
@@ -743,7 +728,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.TUNA)
+                        .of(HAItems.TUNA.get())
                         .build()
                 )
             )
@@ -753,7 +738,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             RecipeCategory.FOOD,
             HDItems.JELLIED_CARP.get()
         )
-            .requires(HDItemTags.CARP)
+            .requires(HAItems.CARP.get())
             .requires(HDItems.FISH_GELATIN.get(),2)
             .requires(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "vegetables/carrot")))
@@ -761,14 +746,14 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.CARP)
+                        .of(HAItems.CARP.get())
                         .build()
                 )
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.TUNA_SANDWICH.get())
-            .requires(HDItemTags.TUNA)
+            .requires(HAItems.TUNA.get())
             .requires(Items.BREAD)
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "salad_ingredients")))
@@ -776,33 +761,33 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.TUNA)
+                        .of(HAItems.TUNA.get())
                         .build()
                 )
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.PICKLED_HERRING.get())
-            .requires(HDItemTags.HERRING)
+            .requires(HAItems.HERRING.get())
             .requires(HDItems.BRINE_BOTTLE.get())
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.HERRING)
+                        .of(HAItems.HERRING.get())
                         .build()
                 )
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.PICKLED_BULL_KELP.get())
-            .requires(HDItemTags.BULL_KELP)
+            .requires(HAItems.BULL_KELP.get())
             .requires(HDItems.BRINE_BOTTLE.get())
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
                     ItemPredicate.Builder.item()
-                        .of(HDItemTags.BULL_KELP)
+                        .of(HAItems.BULL_KELP.get())
                         .build()
                 )
             )
@@ -863,51 +848,51 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.FISHSICLE.get())
-            .requires(HDItemTags.FRIGID_VESSEL)
+            .requires(FFItems.FRIGID_VESSEL.get())
             .requires(Items.STICK)
             .unlockedBy(
                 "has_frigid_vessel",
-                has(HDItemTags.FRIGID_VESSEL)
+                has(FFItems.FRIGID_VESSEL.get())
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.SWEET_BERRY_FISHSICLE.get())
-            .requires(HDItemTags.FRIGID_VESSEL)
+            .requires(FFItems.FRIGID_VESSEL.get())
             .requires(Items.STICK)
             .requires(Items.SWEET_BERRIES)
             .unlockedBy(
                 "has_frigid_vessel",
-                has(HDItemTags.FRIGID_VESSEL)
+                has(FFItems.FRIGID_VESSEL.get())
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.GLOW_BERRY_FISHSICLE.get())
-            .requires(HDItemTags.FRIGID_VESSEL)
+            .requires(FFItems.FRIGID_VESSEL.get())
             .requires(Items.STICK)
             .requires(Items.GLOW_BERRIES)
             .unlockedBy(
                 "has_frigid_vessel",
-                has(HDItemTags.FRIGID_VESSEL)
+                has(FFItems.FRIGID_VESSEL.get())
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.MELON_FISHSICLE.get())
-            .requires(HDItemTags.FRIGID_VESSEL)
+            .requires(FFItems.FRIGID_VESSEL.get())
             .requires(Items.STICK)
             .requires(Items.MELON_SLICE)
             .unlockedBy(
                 "has_frigid_vessel",
-                has(HDItemTags.FRIGID_VESSEL)
+                has(FFItems.FRIGID_VESSEL.get())
             )
             .save(exporter)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.PUMPKIN_FISHSICLE.get())
-            .requires(HDItemTags.FRIGID_VESSEL)
+            .requires(FFItems.FRIGID_VESSEL.get())
             .requires(Items.STICK)
             .requires(ModItems.PUMPKIN_SLICE.get())
             .unlockedBy(
                 "has_frigid_vessel",
-                has(HDItemTags.FRIGID_VESSEL)
+                has(FFItems.FRIGID_VESSEL.get())
             )
             .save(exporter)
     }
@@ -925,13 +910,6 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             exporter,
             HDItems.PUFFERFISH_SLICE.get(),
             HDItems.COOKED_PUFFERFISH_SLICE.get(),
-            0.35f
-        )
-
-        offerSmeltingRecipes(
-            exporter,
-            HDItems.FISH_CUTLET.get(),
-            HDItems.COOKED_FISH_CUTLET.get(),
             0.35f
         )
     }
@@ -971,7 +949,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
     private fun coloredStoveRecipe(
         output: ItemLike,
-        bricks: TagKey<Item>
+        bricks: ItemLike
     ): ShapedRecipeBuilder {
         return ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output)
             .pattern("iii")

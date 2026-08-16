@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "B": {
-      "tag": "hybrid_delights:pink_bricks"
+      "item": "hybrid_blocks:pink_bricks"
     },
     "C": {
       "item": "minecraft:campfire"

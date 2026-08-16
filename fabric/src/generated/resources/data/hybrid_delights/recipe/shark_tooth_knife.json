@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "C": {
-      "tag": "hapi:shark_tooth"
+      "item": "hybrid_aquatic:shark_tooth"
     },
     "S": {
       "item": "minecraft:stick"

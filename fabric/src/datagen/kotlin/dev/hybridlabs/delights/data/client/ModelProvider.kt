@@ -195,9 +195,6 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.COOKED_RAY_WING.get(),
             HDItems.SALTED_RAY_WING.get(),
 
-            HDItems.FISH_CUTLET.get(),
-            HDItems.COOKED_FISH_CUTLET.get(),
-
             HDItems.PUFFERFISH_SLICE.get(),
             HDItems.COOKED_PUFFERFISH_SLICE.get(),
             HDItems.SALTED_PUFFERFISH_SLICE.get(),

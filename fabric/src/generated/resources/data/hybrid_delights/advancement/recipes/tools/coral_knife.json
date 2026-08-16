@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#hapi:coral_chunk"
+            "items": "hybrid_aquatic:coral_chunk"
           }
         ]
       },

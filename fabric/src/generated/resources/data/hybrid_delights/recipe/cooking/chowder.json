@@ -8,7 +8,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "hybrid_delights:crab_meat"
+      "item": "hybrid_aquatic:raw_crab"
     },
     {
       "item": "farmersdelight:milk_bottle"

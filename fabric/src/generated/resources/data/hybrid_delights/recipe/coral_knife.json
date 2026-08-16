@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "C": {
-      "tag": "hapi:coral_chunk"
+      "item": "hybrid_aquatic:coral_chunk"
     },
     "S": {
       "item": "minecraft:stick"

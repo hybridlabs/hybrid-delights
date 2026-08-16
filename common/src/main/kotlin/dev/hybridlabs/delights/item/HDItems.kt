@@ -392,36 +392,6 @@ object HDItems {
         )
     }
 
-    val FISH_CUTLET = register(
-        "fish_cutlet"
-    ) {
-        Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(3)
-                        .saturationModifier(0.2F)
-
-                        .build()
-                )
-        )
-    }
-
-    val COOKED_FISH_CUTLET = register(
-        "cooked_fish_cutlet"
-    ) {
-        Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(6)
-                        .saturationModifier(0.5F)
-
-                        .build()
-                )
-        )
-    }
-
     val PUFFERFISH_SLICE = register(
         "pufferfish_slice"
     ) {

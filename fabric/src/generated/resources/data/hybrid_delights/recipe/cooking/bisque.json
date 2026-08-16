@@ -8,13 +8,13 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "hybrid_delights:tentacle"
+      "item": "hybrid_aquatic:raw_tentacle"
     },
     {
-      "tag": "hybrid_delights:shrimp"
+      "item": "hybrid_aquatic:raw_shrimp"
     },
     {
-      "tag": "hybrid_delights:uni"
+      "item": "hybrid_aquatic:uni"
     },
     {
       "tag": "c:crops/tomato"

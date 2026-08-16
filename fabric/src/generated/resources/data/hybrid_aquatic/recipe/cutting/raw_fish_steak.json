@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "hybrid_aquatic:raw_fish_steak"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 3,
+        "id": "hybrid_aquatic:raw_fish_meat"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

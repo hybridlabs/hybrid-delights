@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "hybrid_aquatic:tuna"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "hybrid_aquatic:raw_fish_steak"
+      }
+    },
+    {
+      "chance": 0.66,
+      "item": {
+        "count": 1,
+        "id": "hybrid_delights:fish_gelatin"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

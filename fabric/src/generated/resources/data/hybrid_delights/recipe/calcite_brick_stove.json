@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "B": {
-      "tag": "hybrid_delights:calcite_bricks"
+      "item": "hybrid_blocks:polished_calcite_bricks"
     },
     "C": {
       "item": "minecraft:campfire"

@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "hybrid_delights:bull_kelp"
+      "item": "hybrid_aquatic:bull_kelp"
     },
     {
       "item": "hybrid_delights:brine_bottle"

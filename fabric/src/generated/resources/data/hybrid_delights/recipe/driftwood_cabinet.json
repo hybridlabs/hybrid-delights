@@ -3,10 +3,10 @@
   "category": "misc",
   "key": {
     "D": {
-      "tag": "hybrid_delights:driftwood_planks"
+      "item": "hybrid_aquatic:driftwood_planks"
     },
     "_": {
-      "tag": "hybrid_delights:driftwood_slab"
+      "item": "hybrid_aquatic:driftwood_slab"
     }
   },
   "pattern": [
