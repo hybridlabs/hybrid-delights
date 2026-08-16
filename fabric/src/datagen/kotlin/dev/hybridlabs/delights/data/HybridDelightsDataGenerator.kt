@@ -6,7 +6,6 @@ import dev.hybridlabs.delights.data.client.ModelProvider
 import dev.hybridlabs.delights.data.server.tag.BlockTagProvider
 import dev.hybridlabs.delights.data.server.tag.ItemTagProvider
 import dev.hybridlabs.delights.data.server.tag.RecipeProvider
-import dev.hybridlabs.delights.data.server.loot.EntityTypeLootTableProvider
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
 import net.minecraft.core.Registry
@@ -19,7 +18,6 @@ object HybridDelightsDataGenerator : DataGeneratorEntrypoint {
         pack.addProvider(::ItemTagProvider)
         pack.addProvider(::BlockTagProvider)
         pack.addProvider(::RecipeProvider)
-        pack.addProvider(::EntityTypeLootTableProvider)
     }
 
     fun <T> filterHybridDelights(registry: Registry<T>): (T & Any) -> Boolean {
