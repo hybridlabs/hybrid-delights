@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "hybrid_delights:red_brinestone"
+    },
+    "C": {
+      "item": "minecraft:campfire"
+    },
+    "i": {
+      "tag": "c:ingots/iron"
+    }
+  },
+  "pattern": [
+    "iii",
+    "B B",
+    "BCB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:red_brinestone_stove"
+  }
+}

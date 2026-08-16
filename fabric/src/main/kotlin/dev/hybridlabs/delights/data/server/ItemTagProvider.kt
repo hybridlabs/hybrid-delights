@@ -105,6 +105,30 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
 
         getOrCreateTagBuilder(HDItemTags.BRINE_BUCKET)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "brine_bucket"))
+
+        getOrCreateTagBuilder(HDItemTags.DRIFTWOOD_LOG)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "driftwood_log"))
+
+        getOrCreateTagBuilder(HDItemTags.DRIFTWOOD_PLANKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "driftwood_planks"))
+
+        getOrCreateTagBuilder(HDItemTags.DRIFTWOOD_SLAB)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "driftwood_slab"))
+
+        getOrCreateTagBuilder(HDItemTags.SCHIST)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "schist"))
+
+        getOrCreateTagBuilder(HDItemTags.CHIMNEYSTONE)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "chimneystone"))
+
+        getOrCreateTagBuilder(HDItemTags.RED_BRINESTONE)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "red_brinestone"))
+
+        getOrCreateTagBuilder(HDItemTags.ORANGE_BRINESTONE)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "orange_brinestone"))
+
+        getOrCreateTagBuilder(HDItemTags.YELLOW_BRINESTONE)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_aquatic", "yellow_brinestone"))
         //#endregion
 
         //#region Hybrid Birds Tags
@@ -135,6 +159,60 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
 
         getOrCreateTagBuilder(HDItemTags.COOKED_EGG)
             .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_birds", "cooked_egg"))
+        //#endregion
+
+        //#region Hybrid Blocks Tags
+        getOrCreateTagBuilder(HDItemTags.WHITE_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "white_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.ORANGE_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "orange_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.MAGENTA_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "magenta_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.LIGHT_BLUE_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "light_blue_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.YELLOW_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "yellow_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.LIME_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "lime_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.PINK_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "pink_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.GRAY_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "gray_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.LIGHT_GRAY_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "light_gray_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.CYAN_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "cyan_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.PURPLE_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "purple_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.BLUE_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "blue_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.BROWN_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "brown_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.GREEN_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "green_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.RED_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "red_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.BLACK_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "black_bricks"))
+
+        getOrCreateTagBuilder(HDItemTags.CALCITE_BRICKS)
+            .addOptional(ResourceLocation.fromNamespaceAndPath("hybrid_blocks", "polished_calcite_bricks"))
+
         //#endregion
 
         //#region Fantastic Fishery Tags

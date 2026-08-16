@@ -17,8 +17,10 @@ import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.*
+import net.minecraft.world.level.ItemLike
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab
 import vectorwing.farmersdelight.common.registry.ModItems
+import vectorwing.farmersdelight.common.tag.CommonTags
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder
 import java.util.concurrent.CompletableFuture
@@ -36,6 +38,72 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         craftingRecipes(exporter)
         smeltingRecipes(exporter)
         cookingRecipes(exporter)
+
+        coloredStoveRecipe(HDItems.WHITE_STOVE.get(), HDItemTags.WHITE_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.ORANGE_STOVE.get(), HDItemTags.ORANGE_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.MAGENTA_STOVE.get(), HDItemTags.MAGENTA_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.LIGHT_BLUE_STOVE.get(), HDItemTags.LIGHT_BLUE_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.YELLOW_STOVE.get(), HDItemTags.YELLOW_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.LIME_STOVE.get(), HDItemTags.LIME_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.PINK_STOVE.get(), HDItemTags.PINK_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.GRAY_STOVE.get(), HDItemTags.GRAY_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.LIGHT_GRAY_STOVE.get(), HDItemTags.LIGHT_GRAY_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.CYAN_STOVE.get(), HDItemTags.CYAN_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.PURPLE_STOVE.get(), HDItemTags.PURPLE_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.BLUE_STOVE.get(), HDItemTags.BLUE_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.BROWN_STOVE.get(), HDItemTags.BROWN_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.GREEN_STOVE.get(), HDItemTags.GREEN_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.RED_STOVE.get(), HDItemTags.RED_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.BLACK_STOVE.get(), HDItemTags.BLACK_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.CALCITE_STOVE.get(), HDItemTags.CALCITE_BRICKS)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.SCHIST_STOVE.get(), HDItemTags.SCHIST)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.CHIMNEYSTONE_STOVE.get(), HDItemTags.CHIMNEYSTONE)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.RED_BRINESTONE_STOVE.get(), HDItemTags.RED_BRINESTONE)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.ORANGE_BRINESTONE_STOVE.get(), HDItemTags.ORANGE_BRINESTONE)
+            .save(exporter)
+
+        coloredStoveRecipe(HDItems.YELLOW_BRINESTONE_STOVE.get(), HDItemTags.YELLOW_BRINESTONE)
+            .save(exporter)
     }
 
     private fun cookingRecipes(exporter: RecipeOutput) {
@@ -491,6 +559,66 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
     }
 
     private fun craftingRecipes(exporter: RecipeOutput) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, HDItems.NETHER_BRICK_STOVE.get())
+            .pattern("iii")
+            .pattern("B B")
+            .pattern("BCB")
+            .define('B', Items.NETHER_BRICKS)
+            .define('C', Items.CAMPFIRE)
+            .define('i',
+                TagKey.create(
+                    Registries.ITEM,
+                    ResourceLocation.fromNamespaceAndPath("c", "ingots/iron")
+                )
+            )
+            .unlockedBy(
+                "has_campfire",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(Items.CAMPFIRE)
+                        .build()
+                )
+            )
+            .save(exporter)
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, HDItems.RED_NETHER_BRICK_STOVE.get())
+            .pattern("iii")
+            .pattern("B B")
+            .pattern("BCB")
+            .define('B', Items.RED_NETHER_BRICKS)
+            .define('C', Items.CAMPFIRE)
+            .define('i',
+                TagKey.create(
+                    Registries.ITEM,
+                    ResourceLocation.fromNamespaceAndPath("c", "ingots/iron")
+                )
+            )
+            .unlockedBy(
+                "has_campfire",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(Items.CAMPFIRE)
+                        .build()
+                )
+            )
+            .save(exporter)
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, HDItems.DRIFTWOOD_CABINET.get())
+            .pattern("___")
+            .pattern("D D")
+            .pattern("___")
+            .define('D', HDItemTags.DRIFTWOOD_PLANKS)
+            .define('_', HDItemTags.DRIFTWOOD_SLAB)
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(HDItemTags.DRIFTWOOD_PLANKS)
+                        .build()
+                )
+            )
+            .save(exporter)
+
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, HDItems.FISHERMANS_PIE.get())
             .pattern(" C ")
             .pattern("FEF")
@@ -811,5 +939,28 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             output,
             experience
         )
+    }
+
+    private fun coloredStoveRecipe(
+        output: ItemLike,
+        bricks: TagKey<Item>
+    ): ShapedRecipeBuilder {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output)
+            .pattern("iii")
+            .pattern("B B")
+            .pattern("BCB")
+            .define('B', bricks)
+            .define('C', Items.CAMPFIRE)
+            .define('i', TagKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath("c", "ingots/iron")))
+            .unlockedBy(
+                "has_campfire",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(Items.CAMPFIRE)
+                        .build()
+                )
+            )
     }
 }

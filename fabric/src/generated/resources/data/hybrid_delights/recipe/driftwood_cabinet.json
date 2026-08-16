@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "tag": "hybrid_delights:driftwood_planks"
+    },
+    "_": {
+      "tag": "hybrid_delights:driftwood_slab"
+    }
+  },
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:driftwood_cabinet"
+  }
+}

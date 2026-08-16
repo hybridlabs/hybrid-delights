@@ -34,6 +34,14 @@ object HDItemTags {
     val CRAB_MEAT = create("crab_meat")
     val BULL_KELP = create("bull_kelp")
     val BRINE_BUCKET = create("brine_bucket")
+    val DRIFTWOOD_LOG = create("driftwood_log")
+    val DRIFTWOOD_PLANKS = create("driftwood_planks")
+    val DRIFTWOOD_SLAB = create("driftwood_slab")
+    val SCHIST = create("schist")
+    val CHIMNEYSTONE = create("chimneystone")
+    val RED_BRINESTONE = create("red_brinestone")
+    val ORANGE_BRINESTONE = create("orange_brinestone")
+    val YELLOW_BRINESTONE = create("yellow_brinestone")
     //#endregion
 
     //#region Hybrid Birds Tags
@@ -43,6 +51,27 @@ object HDItemTags {
     val PUFFIN_MEAT = create("puffin_meat")
     val BIRD_EGG = create("bird_egg")
     val COOKED_EGG = create("cooked_egg")
+    //#endregion
+
+    //#region Hybrid Blocks Tags
+    val WHITE_BRICKS = create("white_bricks")
+    val ORANGE_BRICKS = create("orange_bricks")
+    val MAGENTA_BRICKS = create("magenta_bricks")
+    val LIGHT_BLUE_BRICKS = create("light_blue_bricks")
+    val YELLOW_BRICKS = create("yellow_bricks")
+    val LIME_BRICKS = create("lime_bricks")
+    val PINK_BRICKS = create("pink_bricks")
+    val GRAY_BRICKS = create("gray_bricks")
+    val LIGHT_GRAY_BRICKS = create("light_gray_bricks")
+    val CYAN_BRICKS = create("cyan_bricks")
+    val PURPLE_BRICKS = create("purple_bricks")
+    val BLUE_BRICKS = create("blue_bricks")
+    val BROWN_BRICKS = create("brown_bricks")
+    val GREEN_BRICKS = create("green_bricks")
+    val RED_BRICKS = create("red_bricks")
+    val BLACK_BRICKS = create("black_bricks")
+    val CALCITE_BRICKS = create("calcite_bricks")
+    //#endregion
 
     //#region Fantastic Fishery Tags
     val FRIGID_VESSEL = create("frigid_vessel")
@@ -54,6 +83,7 @@ object HDItemTags {
     val MORSEL = create("morsel")
     val MORSEL_BAR = create("morsel_bar")
     val MORSEL_POP = create("morsel_pop")
+    //#endregion
 
     //#region Hybrid API Tags
     val CORAL_CHUNK = createHAPITag("coral_chunk")
