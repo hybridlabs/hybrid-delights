@@ -74,6 +74,8 @@ class LanguageProvider( output: FabricDataOutput, lookupProvider: CompletableFut
             HDItems.CARP_ROE.get() to "Carp Roe",
             HDItems.CURED_CARP_ROE.get() to "Cured Carp Roe",
             HDItems.CAVIAR_TOAST.get() to "Caviar Toast",
+            HDItems.JELLY.get() to "Jelly",
+            HDItems.JELLY_TOAST.get() to "Jelly Toast",
             HDItems.PUFFERFISH_SLICE.get() to "Pufferfish Slice",
             HDItems.COOKED_PUFFERFISH_SLICE.get() to "Cooked Pufferfish Slice",
             HDItems.SALTED_PUFFERFISH_SLICE.get() to "Salted Pufferfish Slice",

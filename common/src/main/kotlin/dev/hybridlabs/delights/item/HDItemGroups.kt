@@ -18,17 +18,58 @@ object HDItemGroups {
             .title(Component.translatable("itemGroup.${Constants.MOD_ID}.items"))
             .icon { ItemStack(HDItems.CRAB_CAKE.get()) }
             .displayItems { _, entries ->
-                if (Services.PLATFORM.isModLoaded("hybrid_aquatic")) {
-                    entries.accept(HDItems.DRIFTWOOD_CABINET.get())
 
+                //#region Stoves
+                // Hybrid Blocks Stoves
+                if (Services.PLATFORM.isModLoaded("hybrid_blocks")) {
+                    entries.accept(HDItems.WHITE_STOVE.get())
+                    entries.accept(HDItems.ORANGE_STOVE.get())
+                    entries.accept(HDItems.MAGENTA_STOVE.get())
+                    entries.accept(HDItems.LIGHT_BLUE_STOVE.get())
+                    entries.accept(HDItems.YELLOW_STOVE.get())
+                    entries.accept(HDItems.LIME_STOVE.get())
+                    entries.accept(HDItems.PINK_STOVE.get())
+                    entries.accept(HDItems.GRAY_STOVE.get())
+                    entries.accept(HDItems.LIGHT_GRAY_STOVE.get())
+                    entries.accept(HDItems.CYAN_STOVE.get())
+                    entries.accept(HDItems.PURPLE_STOVE.get())
+                    entries.accept(HDItems.BLUE_STOVE.get())
+                    entries.accept(HDItems.BROWN_STOVE.get())
+                    entries.accept(HDItems.GREEN_STOVE.get())
+                    entries.accept(HDItems.RED_STOVE.get())
+                    entries.accept(HDItems.BLACK_STOVE.get())
+                    entries.accept(HDItems.NETHER_BRICK_STOVE.get())
+                    entries.accept(HDItems.RED_NETHER_BRICK_STOVE.get())
+                    entries.accept(HDItems.CALCITE_STOVE.get())
+                    entries.accept(HDItems.MUD_STOVE.get())
+                }
+
+                // Hybrid Aquatic Stoves
+                if (Services.PLATFORM.isModLoaded("hybrid_aquatic")) {
                     entries.accept(HDItems.SCHIST_STOVE.get())
                     entries.accept(HDItems.CHIMNEYSTONE_STOVE.get())
                     entries.accept(HDItems.YELLOW_BRINESTONE_STOVE.get())
                     entries.accept(HDItems.ORANGE_BRINESTONE_STOVE.get())
                     entries.accept(HDItems.RED_BRINESTONE_STOVE.get())
+                }
+                //#endregion
 
+                //#region Cabinets
+                // Hybrid Aquatic Stoves
+                if (Services.PLATFORM.isModLoaded("hybrid_aquatic")) {
+                    entries.accept(HDItems.DRIFTWOOD_CABINET.get())
+                }
+                //#endregion
+
+                //#region Knives
+                // Hybrid Aquatic Knives
+                if (Services.PLATFORM.isModLoaded("hybrid_aquatic")) {
                     entries.accept(HDItems.CORAL_KNIFE.get())
                     entries.accept(HDItems.SHARK_TOOTH_KNIFE.get())
+                }
+                //#endregion
+
+                if (Services.PLATFORM.isModLoaded("hybrid_aquatic")) {
 
                     entries.accept(HDItems.BRINE_BOTTLE.get())
                     entries.accept(HDItems.SALT.get())
@@ -43,6 +84,9 @@ object HDItemGroups {
                     entries.accept(HDItems.CURED_CARP_ROE.get())
 
                     entries.accept(HDItems.CAVIAR_TOAST.get())
+
+                    entries.accept(HDItems.JELLY.get())
+                    entries.accept(HDItems.JELLY_TOAST.get())
 
                     entries.accept(HDItems.PICKLED_HERRING.get())
                     entries.accept(HDItems.PICKLED_BULL_KELP.get())
@@ -95,29 +139,9 @@ object HDItemGroups {
                     entries.accept(HDItems.GLOW_BERRY_FISHSICLE.get())
                     entries.accept(HDItems.MELON_FISHSICLE.get())
                     entries.accept(HDItems.PUMPKIN_FISHSICLE.get())
-                }
-
-                if (Services.PLATFORM.isModLoaded("hybrid_blocks")) {
-                    entries.accept(HDItems.WHITE_STOVE.get())
-                    entries.accept(HDItems.ORANGE_STOVE.get())
-                    entries.accept(HDItems.MAGENTA_STOVE.get())
-                    entries.accept(HDItems.LIGHT_BLUE_STOVE.get())
-                    entries.accept(HDItems.YELLOW_STOVE.get())
-                    entries.accept(HDItems.LIME_STOVE.get())
-                    entries.accept(HDItems.PINK_STOVE.get())
-                    entries.accept(HDItems.GRAY_STOVE.get())
-                    entries.accept(HDItems.LIGHT_GRAY_STOVE.get())
-                    entries.accept(HDItems.CYAN_STOVE.get())
-                    entries.accept(HDItems.PURPLE_STOVE.get())
-                    entries.accept(HDItems.BLUE_STOVE.get())
-                    entries.accept(HDItems.BROWN_STOVE.get())
-                    entries.accept(HDItems.GREEN_STOVE.get())
-                    entries.accept(HDItems.RED_STOVE.get())
-                    entries.accept(HDItems.BLACK_STOVE.get())
-                    entries.accept(HDItems.NETHER_BRICK_STOVE.get())
-                    entries.accept(HDItems.RED_NETHER_BRICK_STOVE.get())
-                    entries.accept(HDItems.CALCITE_STOVE.get())
-                    entries.accept(HDItems.MUD_STOVE.get())
+                    entries.accept(HDItems.MORSEL_OF_MORSEL.get())
+                    entries.accept(HDItems.PLUNDERERS_ROE.get())
+                    entries.accept(HDItems.CURED_PLUNDERERS_ROE.get())
                 }
 
                 BuiltInRegistries.ITEM.forEach { item ->

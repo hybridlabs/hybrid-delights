@@ -1,4 +1,4 @@
-package dev.hybridlabs.delights.data.server
+package dev.hybridlabs.delights.data.server.tag
 
 import dev.hybridlabs.aquatic.item.HAItems
 import dev.hybridlabs.aquatic.item.HAPlatformItems
@@ -8,6 +8,7 @@ import dev.hybridlabs.delights.tag.HDItemTags
 import dev.hybridlabs.fantasticfishery.item.FFItems
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
+import net.fabricmc.fabric.api.recipe.v1.ingredient.DefaultCustomIngredients
 import net.minecraft.advancements.critereon.InventoryChangeTrigger
 import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.core.HolderLookup
@@ -20,24 +21,21 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
-import net.minecraft.world.item.crafting.CampfireCookingRecipe
-import net.minecraft.world.item.crafting.Ingredient
-import net.minecraft.world.item.crafting.RecipeSerializer
-import net.minecraft.world.item.crafting.SmeltingRecipe
-import net.minecraft.world.item.crafting.SmokingRecipe
+import net.minecraft.world.item.crafting.*
 import net.minecraft.world.level.ItemLike
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab
+import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient
 import vectorwing.farmersdelight.common.registry.ModItems
+import vectorwing.farmersdelight.common.tag.CommonTags
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder
+import vectorwing.farmersdelight.refabricated.ItemAbility
 import java.util.concurrent.CompletableFuture
 
 class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture<HolderLookup.Provider>) :
     FabricRecipeProvider(output, lookupProvider) {
-    val KNIVES: Ingredient =
-        Ingredient.of(
-            TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/knives"))
-        )
+
+    val KNIVES = Ingredient.of(CommonTags.Items.TOOLS_KNIFE)
 
     override fun buildRecipes(exporter: RecipeOutput) {
         cuttingRecipes(exporter)
@@ -455,6 +453,14 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(HAItems.BLOBFISH.get()),
+            KNIVES,
+            HAItems.RAW_FISH_MEAT.get(), 2
+        )
+            .addResultWithChance(HDItems.FISH_GELATIN.get(), 1.0f)
+            .save(exporter)
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.STINGRAY.get()),
             KNIVES,
             HDItems.RAY_WING.get(), 2)
@@ -522,7 +528,14 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
         CuttingBoardRecipeBuilder.cuttingRecipe(
             Ingredient.of(HAItems.RAW_FISH_STEAK.get()),
             KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 3
+            HAItems.RAW_FISH_MEAT.get(), 2
+        )
+            .save(exporter)
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(HAItems.COOKED_FISH_STEAK.get()),
+            KNIVES,
+            HAItems.COOKED_FISH_MEAT.get(), 2
         )
             .save(exporter)
 
@@ -536,6 +549,34 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             Ingredient.of(HDItems.SALTED_SALMON.get()),
             KNIVES,
             HDItems.SALTED_SALMON_SLICE.get(), 2)
+            .save(exporter)
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(HDItemTags.GLOWSLIME_FISH),
+            KNIVES,
+            HAItems.RAW_FISH_MEAT.get(), 2
+        )
+            .addResultWithChance(HAItems.GLOWSLIME.get(), 0.75f)
+            .save(
+                exporter,
+                ResourceLocation.fromNamespaceAndPath(
+                    "hybrid_delights",
+                    "cutting/glowslime"
+                )
+            )
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(HAItems.HAGFISH.get()),
+            KNIVES,
+            HAItems.RAW_FISH_MEAT.get(), 2
+        )
+            .addResultWithChance(HAItems.HAGSLIME.get(), 1.0f)
+            .save(exporter)
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+            Ingredient.of(Items.SPONGE),
+            KNIVES,
+            HAItems.TUBE_SPONGE.get(), 4)
             .save(exporter)
     }
 
@@ -693,6 +734,19 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .unlockedBy(
                 "has_roe",
                 has(HDItemTags.CURED_ROE)
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(
+            RecipeCategory.FOOD,
+            HDItems.JELLY_TOAST.get(),
+            2
+        )
+            .requires(HDItems.JELLY.get())
+            .requires(Items.BREAD)
+            .unlockedBy(
+                "has_jelly",
+                has(HDItems.JELLY.get())
             )
             .save(exporter)
 
@@ -949,7 +1003,7 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
     private fun coloredStoveRecipe(
         output: ItemLike,
-        bricks: ItemLike
+        bricks: ItemLike,
     ): ShapedRecipeBuilder {
         return ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output)
             .pattern("iii")
@@ -968,5 +1022,9 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
                         .build()
                 )
             )
+    }
+
+    private fun matchesTool(toolAction: ItemAbility, fallbackTag: TagKey<Item?>): Ingredient {
+        return DefaultCustomIngredients.any(ItemAbilityIngredient(toolAction).toVanilla(), Ingredient.of(fallbackTag))
     }
 }

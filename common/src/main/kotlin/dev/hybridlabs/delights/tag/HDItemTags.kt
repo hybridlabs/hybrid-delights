@@ -9,10 +9,12 @@ import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
 
 object HDItemTags {
-    val KNIVES = createConventional("tools/knives")
+    val KNIFE = createConventional("tools/knife")
 
     val ROE = create("roe")
     val CURED_ROE = create("cured_roe")
+
+    val GLOWSLIME_FISH = create("glowslime_fish")
 
     //#region Hybrid API Tags
     val CORAL_CHUNK = createHAPITag("coral_chunk")

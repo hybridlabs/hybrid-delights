@@ -2,20 +2,20 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "hybrid_aquatic:blowfish"
+      "item": "hybrid_aquatic:blobfish"
     }
   ],
   "result": [
     {
       "item": {
         "count": 2,
-        "id": "hybrid_delights:pufferfish_slice"
+        "id": "hybrid_aquatic:raw_fish_meat"
       }
     },
     {
       "item": {
         "count": 1,
-        "id": "minecraft:bone_meal"
+        "id": "hybrid_delights:fish_gelatin"
       }
     }
   ],

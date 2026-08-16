@@ -1,12 +1,12 @@
-package dev.hybridlabs.delights.data.server
+package dev.hybridlabs.delights.data.server.tag
 
+import dev.hybridlabs.aquatic.item.HAItems
 import dev.hybridlabs.delights.item.HDItems
 import dev.hybridlabs.delights.tag.HDItemTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
 import net.minecraft.core.HolderLookup
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.world.item.Items
 import java.util.concurrent.CompletableFuture
 
 class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFuture<HolderLookup.Provider>) :
@@ -17,7 +17,7 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
             HDItems.CORAL_KNIFE.get(),
             HDItems.SHARK_TOOTH_KNIFE.get(),
         ).forEach { item ->
-            getOrCreateTagBuilder(HDItemTags.KNIVES).add(item)
+            getOrCreateTagBuilder(HDItemTags.KNIFE).add(item)
         }
 
         setOf(
@@ -37,6 +37,14 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
         ).forEach { item ->
             getOrCreateTagBuilder(HDItemTags.CURED_ROE).add(item)
         }
+
+        getOrCreateTagBuilder(HDItemTags.GLOWSLIME_FISH)
+            .add(
+                HAItems.ANGLERFISH.get(),
+                HAItems.DRAGONFISH.get(),
+                HAItems.FLASHLIGHT_FISH.get(),
+                HAItems.BARRELEYE.get(),
+            )
 
         //#region Hybrid API Tags
         getOrCreateTagBuilder(HDItemTags.CORAL_CHUNK)

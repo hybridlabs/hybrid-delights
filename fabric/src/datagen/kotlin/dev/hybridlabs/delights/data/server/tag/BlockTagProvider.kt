@@ -1,4 +1,4 @@
-package dev.hybridlabs.delights.data.server
+package dev.hybridlabs.delights.data.server.tag
 
 import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.delights.tag.HDBlockTags

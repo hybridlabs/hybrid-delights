@@ -201,6 +201,36 @@ object HDItems {
         )
     }
 
+    val JELLY = register(
+        "jelly"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationModifier(0.2F)
+                        .build()
+                )
+        )
+    }
+
+    val JELLY_TOAST = register(
+        "jelly_toast"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.8F)
+                        .fast()
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
     val COD_ROE = register(
         "cod_roe"
     ) {

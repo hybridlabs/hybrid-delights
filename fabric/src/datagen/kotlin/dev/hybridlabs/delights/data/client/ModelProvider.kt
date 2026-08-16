@@ -212,6 +212,9 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
             HDItems.CAVIAR_TOAST.get(),
 
+            HDItems.JELLY.get(),
+            HDItems.JELLY_TOAST.get(),
+
             HDItems.FISH_GELATIN.get(),
 
             HDItems.BISQUE.get(),

@@ -2,20 +2,21 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "hybrid_aquatic:blowfish"
+      "tag": "hybrid_delights:glowslime_fish"
     }
   ],
   "result": [
     {
       "item": {
         "count": 2,
-        "id": "hybrid_delights:pufferfish_slice"
+        "id": "hybrid_aquatic:raw_fish_meat"
       }
     },
     {
+      "chance": 0.75,
       "item": {
         "count": 1,
-        "id": "minecraft:bone_meal"
+        "id": "hybrid_aquatic:glowslime"
       }
     }
   ],
