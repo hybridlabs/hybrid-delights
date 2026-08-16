@@ -4,8 +4,8 @@ import dev.hybridlabs.delights.Constants
 import dev.hybridlabs.delights.data.client.LanguageProvider
 import dev.hybridlabs.delights.data.client.ModelProvider
 import dev.hybridlabs.delights.data.server.BlockTagProvider
-import dev.hybridlabs.delights.data.server.RecipeProvider
 import dev.hybridlabs.delights.data.server.ItemTagProvider
+import dev.hybridlabs.delights.data.server.RecipeProvider
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
 import net.minecraft.core.Registry

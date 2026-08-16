@@ -83,11 +83,36 @@ fabricApi {
     configureDataGeneration {
         setModId("$mod_id")
         outputDirectory = file("src/generated/resources")
+        // Datagen lives in its own source set (src/datagen/kotlin) so that datagen-only
+        // mod dependencies never reach the compile classpath of the shipped jar.
+        createSourceSet = true
     }
 
     dependencies {
         datagenOutput files(runDatagen)
     }
+}
+
+// configureDataGeneration created the '$mod_id' classpath group containing only the datagen
+// source set. Add main so Loader sees both outputs as one mod and can find the entrypoint.
+loom.mods.named("$mod_id") {
+    sourceSet sourceSets.main
+}
+
+dependencies {
+    // Datagen-only mods. These are on the datagen source set alone: they are absent from the
+    // main compile classpath, from remapJar, and from the published POM.
+    modDatagenImplementation "maven.modrinth:fantastic-fishery:${fantastic_fishery_version}"
+    modDatagenImplementation "maven.modrinth:hybrid-aquatic:${hybrid_aquatic_version}"
+    modDatagenImplementation "maven.modrinth:hybrid-birds:${hybrid_birds_version}"
+
+    // Their hard dependencies. Loader refuses to start the datagen run without these.
+    modDatagenRuntimeOnly "maven.modrinth:geckolib:${geckolib_version}"
+    modDatagenRuntimeOnly "maven.modrinth:biolith:${biolith_version}"
+    modDatagenRuntimeOnly "maven.modrinth:trinkets:${trinkets_version}"
+    modDatagenRuntimeOnly "maven.modrinth:lithostitched:${lithostitched_version}"
+    modDatagenRuntimeOnly "org.ladysnake.cardinal-components-api:cardinal-components-base:${cardinal_components_version}"
+    modDatagenRuntimeOnly "org.ladysnake.cardinal-components-api:cardinal-components-entity:${cardinal_components_version}"
 }
 
 loom {
