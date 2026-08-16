@@ -106,8 +106,6 @@ dependencies {
     modDatagenImplementation "maven.modrinth:hybrid-aquatic:${hybrid_aquatic_version}"
     modDatagenImplementation "maven.modrinth:hybrid-birds:${hybrid_birds_version}"
     modDatagenImplementation "maven.modrinth:hybrid-blocks:${hybrid_blocks_version}"
-    modDatagenImplementation "dev.hybridlabs.hapi:hapi-common-1.21.1:1.0.0"
-    modDatagenImplementation "dev.hybridlabs.hapi:hapi-fabric-1.21.1:1.0.0"
 
     // Their hard dependencies. Loader refuses to start the datagen run without these.
     modDatagenRuntimeOnly "maven.modrinth:geckolib:${geckolib_version}"
