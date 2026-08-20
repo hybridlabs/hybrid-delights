@@ -4,6 +4,7 @@ import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.delights.block.entity.HDBlockEntityTypes
 import dev.hybridlabs.delights.item.HDItemGroups
 import dev.hybridlabs.delights.item.HDItems
+import dev.hybridlabs.delights.loot.HDLootModification
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.loader.api.FabricLoader
 import org.slf4j.Logger
@@ -26,5 +27,7 @@ object HybridDelights : ModInitializer {
 		HDItems
 		HDItemGroups
         HDBlockEntityTypes
+
+        HDLootModification.register()
 	}
 }

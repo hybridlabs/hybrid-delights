@@ -99,21 +99,38 @@ loom.mods.named("$mod_id") {
     sourceSet sourceSets.main
 }
 
-dependencies {
-    // Datagen-only mods. These are on the datagen source set alone: they are absent from the
-    // main compile classpath, from remapJar, and from the published POM.
-    modDatagenImplementation "maven.modrinth:fantastic-fishery:${fantastic_fishery_version}"
-    modDatagenImplementation "maven.modrinth:hybrid-aquatic:${hybrid_aquatic_version}"
-    modDatagenImplementation "maven.modrinth:hybrid-birds:${hybrid_birds_version}"
-    modDatagenImplementation "maven.modrinth:hybrid-blocks:${hybrid_blocks_version}"
+// Mods Hybrid Delights integrates with. These are absent from the main compile classpath, from
+// remapJar, and from the published POM.
+def integrationMods = [
+        "maven.modrinth:fantastic-fishery:${fantastic_fishery_version}",
+        "maven.modrinth:hybrid-aquatic:${hybrid_aquatic_version}",
+        "maven.modrinth:hybrid-birds:${hybrid_birds_version}",
+        "maven.modrinth:hybrid-blocks:${hybrid_blocks_version}",
+]
 
-    // Their hard dependencies. Loader refuses to start the datagen run without these.
-    modDatagenRuntimeOnly "maven.modrinth:geckolib:${geckolib_version}"
-    modDatagenRuntimeOnly "maven.modrinth:biolith:${biolith_version}"
-    modDatagenRuntimeOnly "maven.modrinth:trinkets:${trinkets_version}"
-    modDatagenRuntimeOnly "maven.modrinth:lithostitched:${lithostitched_version}"
-    modDatagenRuntimeOnly "org.ladysnake.cardinal-components-api:cardinal-components-base:${cardinal_components_version}"
-    modDatagenRuntimeOnly "org.ladysnake.cardinal-components-api:cardinal-components-entity:${cardinal_components_version}"
+// Hard dependencies of the above. Loader refuses to start a run without these.
+def integrationModDependencies = [
+        "maven.modrinth:geckolib:${geckolib_version}",
+        "maven.modrinth:biolith:${biolith_version}",
+        "maven.modrinth:trinkets:${trinkets_version}",
+        "maven.modrinth:lithostitched:${lithostitched_version}",
+        "org.ladysnake.cardinal-components-api:cardinal-components-base:${cardinal_components_version}",
+        "org.ladysnake.cardinal-components-api:cardinal-components-entity:${cardinal_components_version}",
+]
+
+dependencies {
+    integrationMods.each {
+        // On the datagen source set, so datagen can read their tags, items and recipes.
+        modDatagenImplementation it
+
+        // On the dev client and server, so the integrations can be tested in runClient.
+        modLocalRuntime it
+    }
+
+    integrationModDependencies.each {
+        modDatagenRuntimeOnly it
+        modLocalRuntime it
+    }
 }
 
 loom {

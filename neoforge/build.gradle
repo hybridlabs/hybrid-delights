@@ -84,6 +84,26 @@ processResources {
     from configurations.fabricDatagen.singleFile
 }
 
+// Mods Hybrid Delights integrates with, so the integrations can be tested in a dev run. Their own
+// configuration, so they are absent from the compile classpath and from the published POM.
+configurations {
+    integrationMods {
+        canBeConsumed = false
+        transitive = false
+    }
+}
+
+// FML only registers a jar as a mod once it finds it in the run's 'mods' folder, so the jars are
+// copied there instead of going on the runtime classpath. Sync clears anything else in it.
+def copyIntegrationMods = tasks.register('copyIntegrationMods', Sync) {
+    from configurations.integrationMods
+    into layout.projectDirectory.dir('run/mods')
+}
+
+tasks.named('runClient') { dependsOn copyIntegrationMods }
+tasks.named('runServer') { dependsOn copyIntegrationMods }
+tasks.named('runData') { dependsOn copyIntegrationMods }
+
 dependencies {
     compileOnly project(":common")
 
@@ -93,6 +113,14 @@ dependencies {
 
     implementation "thedarkcolour:kotlinforforge-neoforge:${kotlin_for_forge_version}"
     implementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
+
+    integrationMods "maven.modrinth:hybrid-aquatic:${hybrid_aquatic_version}"
+
+    // Their hard dependencies. NeoForge refuses to start a run without these. Geckolib is left
+    // out on purpose: it already arrives as a mod, and a second copy breaks module resolution.
+    integrationMods "maven.modrinth:curios:${curios_version}"
+    integrationMods "maven.modrinth:lithostitched:${lithostitched_version}"
+    integrationMods "maven.modrinth:biolith:${biolith_version}"
 }
 
 compileKotlin {

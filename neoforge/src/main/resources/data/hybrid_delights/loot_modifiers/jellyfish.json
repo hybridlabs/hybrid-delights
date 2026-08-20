@@ -1,0 +1,19 @@
+{
+  "type": "neoforge:add_table",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "hybrid_aquatic"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "#hybrid_aquatic:all_jellyfish"
+      }
+    }
+  ],
+  "table": "hybrid_delights:inject/jellyfish"
+}
