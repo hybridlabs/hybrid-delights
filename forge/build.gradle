@@ -16,11 +16,6 @@ legacyForge {
     apply plugin: 'kotlin'
     version = "${minecraft_version}-${forge_version}"
 
-    mixin {
-        add(sourceSets.main, "${mod_id}.refmap.json")
-        config("${mod_id}.forge.mixins.json")
-    }
-
     // AT validation is broken on Forge 1.20.1
     validateAccessTransformers = false
 
@@ -121,6 +116,7 @@ dependencies {
     implementation 'org.jetbrains:annotations:25.0.0'
     implementation 'thedarkcolour:kotlinforforge:4.11.0'
     implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0"))
+    modRuntimeOnly  "software.bernie.geckolib:geckolib-forge-$geckolib_version"
 
     // Their hard dependencies. NeoForge refuses to start a run without these. Geckolib is left
     // out on purpose: it already arrives as a mod, and a second copy breaks module resolution.

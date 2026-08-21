@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import vectorwing.farmersdelight.common.block.AbstractStoveBlock
-import vectorwing.farmersdelight.common.registry.ModSounds
 
 class HybridStoveBlock(
     properties: Properties,
