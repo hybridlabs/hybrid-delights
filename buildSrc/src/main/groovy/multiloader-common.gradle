@@ -100,7 +100,6 @@ processResources {
             'credits'                   : credits,
             'java_version'              : java_version,
             'kotlin_version'            : kotlin_version,
-            'aquatic_version'           : aquatic_version,
             'farmersdelight_version'   : farmersdelight_version,
     ]
 

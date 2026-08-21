@@ -54,6 +54,8 @@ repositories {
         name = 'Fabric'
         url = 'https://maven.fabricmc.net/'
     }
+
+    mavenLocal()
 }
 
 dependencies {
@@ -68,25 +70,18 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
     modImplementation "net.fabricmc:fabric-language-kotlin:$fabric_kotlin_version+kotlin.$kotlin_version"
-    modImplementation ("maven.modrinth:hybrid-aquatic:${aquatic_version}-fabric") {
-        transitive = false
-    }
-    modApi "software.bernie.geckolib:geckolib-fabric-$geckolib_version"
-    include modImplementation("com.jamieswhiteshirt:reach-entity-attributes:$reach_entity_attributes_version")
-    modImplementation "maven.modrinth:lithostitched:${lithostitched_version}-fabric-1.20"
-    modImplementation("com.terraformersmc:biolith-fabric:${biolith_version}") {
-        exclude(group: "com.github.glitchfiend")
-    }
-    modImplementation "dev.emi:trinkets:${trinkets_version}"
 
+    implementation("dev.hybridlabs.hapi:hapi-common-1.20.1:1.0.0")
+    modImplementation("dev.hybridlabs.hapi:hapi-fabric-1.20.1:1.0.0")
     implementation 'org.jetbrains:annotations:25.0.0'
 
     //We still have to load the loader-specific version of any mods included in common
-    modRuntimeOnly "io.github.flemmli97:debugutils:$minecraft_version-$debug_utils_version-fabric"
-    modRuntimeOnly "maven.modrinth:carpet:$carpet_version"
-    modImplementation("vectorwing:FarmersDelight:${fdrf_version}") {exclude(group: "net.fabricmc")}
 
-    modApi("com.terraformersmc:modmenu:${modmenu_version}")
+    modRuntimeOnly "io.github.flemmli97:debugutils:$minecraft_version-$debug_utils_version-fabric"
+    modImplementation "maven.modrinth:carpet:$carpet_version"
+    modImplementation("vectorwing:FarmersDelight:${fdrf_version}") {
+        exclude(group: "net.fabricmc")
+    }
 }
 
 // Set up datagen and export the output to be consumed by other projects
@@ -98,10 +93,53 @@ fabricApi {
     configureDataGeneration {
         setModId("$mod_id")
         outputDirectory = file("src/generated/resources")
+        // Datagen lives in its own source set (src/datagen/kotlin) so that datagen-only
+        // mod dependencies never reach the compile classpath of the shipped jar.
+        createSourceSet = true
     }
 
     dependencies {
         datagenOutput files(runDatagen)
+    }
+}
+
+// configureDataGeneration created the '$mod_id' classpath group containing only the datagen
+// source set. Add main so Loader sees both outputs as one mod and can find the entrypoint.
+loom.mods.named("$mod_id") {
+    sourceSet sourceSets.main
+}
+
+// Mods Hybrid Delights integrates with. These are absent from the main compile classpath, from
+// remapJar, and from the published POM.
+def integrationMods = [
+        "maven.modrinth:fantastic-fishery:${fantastic_fishery_version}",
+        "maven.modrinth:hybrid-aquatic:${hybrid_aquatic_version}",
+        "maven.modrinth:hybrid-birds:${hybrid_birds_version}",
+        "maven.modrinth:hybrid-blocks:${hybrid_blocks_version}",
+]
+
+// Hard dependencies of the above. Loader refuses to start a run without these.
+def integrationModDependencies = [
+        "maven.modrinth:geckolib:${geckolib_version}",
+        "maven.modrinth:biolith:${biolith_version}",
+        "maven.modrinth:trinkets:${trinkets_version}",
+        "maven.modrinth:lithostitched:${lithostitched_version}",
+        "org.ladysnake.cardinal-components-api:cardinal-components-base:${cardinal_components_version}",
+        "org.ladysnake.cardinal-components-api:cardinal-components-entity:${cardinal_components_version}",
+]
+
+dependencies {
+    integrationMods.each {
+        // On the datagen source set, so datagen can read their tags, items and recipes.
+        modDatagenImplementation it
+
+        // On the dev client and server, so the integrations can be tested in runClient.
+        modLocalRuntime it
+    }
+
+    integrationModDependencies.each {
+        modDatagenRuntimeOnly it
+        modLocalRuntime it
     }
 }
 
@@ -114,13 +152,11 @@ loom {
     }
 
     mixin {
-        useLegacyMixinAp = true
         defaultRefmapName.set("${mod_id}.refmap.json")
     }
 
     compileKotlin {
         source(project(":common").sourceSets.main.allSource)
-        source(sourceSets.main.allSource)
         inputs.file "../gradle.properties"
     }
 

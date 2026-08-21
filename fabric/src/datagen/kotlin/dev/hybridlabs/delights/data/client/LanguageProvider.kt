@@ -14,6 +14,40 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
                 .orElseThrow { IllegalStateException("Item group not registered") }, "Hybrid Delights"
         )
 
+        mapOf(
+            HDBlocks.DRIFTWOOD_CABINET.get() to "Driftwood Cabinet",
+
+            HDBlocks.SCHIST_STOVE.get() to "Schist Stove",
+            HDBlocks.CHIMNEYSTONE_STOVE.get() to "Chimneystone Stove",
+            HDBlocks.RED_BRINESTONE_STOVE.get() to "Red Brinestone Stove",
+            HDBlocks.ORANGE_BRINESTONE_STOVE.get() to "Orange Brinestone Stove",
+            HDBlocks.YELLOW_BRINESTONE_STOVE.get() to "Yellow Brinestone Stove",
+
+            HDBlocks.NETHER_BRICK_STOVE.get() to "Nether Brick Stove",
+            HDBlocks.RED_NETHER_BRICK_STOVE.get() to "Red Nether Brick Stove",
+            HDBlocks.CALCITE_STOVE.get() to "Calcite Brick Stove",
+            HDBlocks.MUD_STOVE.get() to "Mud Brick Stove",
+
+            HDBlocks.WHITE_STOVE.get() to "White Stove",
+            HDBlocks.ORANGE_STOVE.get() to "Orange Stove",
+            HDBlocks.MAGENTA_STOVE.get() to "Magenta Stove",
+            HDBlocks.LIGHT_BLUE_STOVE.get() to "Light Blue Stove",
+            HDBlocks.YELLOW_STOVE.get() to "Yellow Stove",
+            HDBlocks.LIME_STOVE.get() to "Lime Stove",
+            HDBlocks.PINK_STOVE.get() to "Pink Stove",
+            HDBlocks.GRAY_STOVE.get() to "Gray Stove",
+            HDBlocks.LIGHT_GRAY_STOVE.get() to "Light Gray Stove",
+            HDBlocks.CYAN_STOVE.get() to "Cyan Stove",
+            HDBlocks.PURPLE_STOVE.get() to "Purple Stove",
+            HDBlocks.BLUE_STOVE.get() to "Blue Stove",
+            HDBlocks.BROWN_STOVE.get() to "Brown Stove",
+            HDBlocks.GREEN_STOVE.get() to "Green Stove",
+            HDBlocks.RED_STOVE.get() to "Red Stove",
+            HDBlocks.BLACK_STOVE.get() to "Black Stove",
+        ).forEach { (block, translation) ->
+            builder.add(block, translation)
+        }
+
         // items
         mapOf(
             HDItems.CORAL_KNIFE.get() to "Coral Knife",
@@ -36,6 +70,8 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
             HDItems.CARP_ROE.get() to "Carp Roe",
             HDItems.CURED_CARP_ROE.get() to "Cured Carp Roe",
             HDItems.CAVIAR_TOAST.get() to "Caviar Toast",
+            HDItems.JELLY.get() to "Jelly",
+            HDItems.JELLY_TOAST.get() to "Jelly Toast",
             HDItems.PUFFERFISH_SLICE.get() to "Pufferfish Slice",
             HDItems.COOKED_PUFFERFISH_SLICE.get() to "Cooked Pufferfish Slice",
             HDItems.SALTED_PUFFERFISH_SLICE.get() to "Salted Pufferfish Slice",
@@ -54,13 +90,40 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
             HDItems.JELLIED_CARP.get() to "Jellied Carp",
             HDItems.MASGOUF.get() to "Masgouf",
             HDItems.FISH_N_CHIPS.get() to "Fish N Chips",
-            HDItems.TUNA_ROLL.get() to "Tuna Roll",
             HDItems.FISH_KEBAB.get() to "Fish Kebab",
+
+            HDItems.TUNA_ROLL.get() to "Tuna Roll",
             HDItems.TUNA_SANDWICH.get() to "Tuna Sandwich",
             HDItems.TUNA_CASSEROLE.get() to "Tuna Casserole",
             HDItems.TUNA_SALAD.get() to "Tuna Salad",
             HDItems.TUNA_NACHOS.get() to "Tuna Nachos",
+
             HDItems.EEL_NOODLES.get() to "Eel Noodles",
+
+            HDItems.FISHSICLE.get() to "Fishsicle",
+            HDItems.HALF_EATEN_FISHSICLE.get() to "Half Eaten Fishsicle",
+            HDItems.MOSTLY_EATEN_FISHSICLE.get() to "Mostly Eaten Fishsicle",
+
+            HDItems.SWEET_BERRY_FISHSICLE.get() to "Sweet Berry Fishsicle",
+            HDItems.HALF_EATEN_SWEET_BERRY_FISHSICLE.get() to "Half Eaten Sweet Berry Fishsicle",
+            HDItems.MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get() to "Mostly Eaten Sweet Berry Fishsicle",
+
+            HDItems.GLOW_BERRY_FISHSICLE.get() to "Glow Berry Fishsicle",
+            HDItems.HALF_EATEN_GLOW_BERRY_FISHSICLE.get() to "Half Eaten Glow Berry Fishsicle",
+            HDItems.MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get() to "Mostly Eaten Glow Berry Fishsicle",
+
+            HDItems.MELON_FISHSICLE.get() to "Melon Fishsicle",
+            HDItems.HALF_EATEN_MELON_FISHSICLE.get() to "Half Eaten Melon Fishsicle",
+            HDItems.MOSTLY_EATEN_MELON_FISHSICLE.get() to "Mostly Eaten Melon Fishsicle",
+
+            HDItems.PUMPKIN_FISHSICLE.get() to "Pumpkin Fishsicle",
+            HDItems.HALF_EATEN_PUMPKIN_FISHSICLE.get() to "Half Eaten Pumpkin Fishsicle",
+            HDItems.MOSTLY_EATEN_PUMPKIN_FISHSICLE.get() to "Mostly Eaten Pumpkin Fishsicle",
+
+            HDItems.MORSEL_OF_MORSEL.get() to "Morsel Of Morsel",
+
+            HDItems.PLUNDERERS_ROE.get() to "Plunderers Roe",
+            HDItems.CURED_PLUNDERERS_ROE.get() to "Cured Plunderers Roe",
         ).forEach { (item, translation) ->
             builder.add(item, translation)
         }

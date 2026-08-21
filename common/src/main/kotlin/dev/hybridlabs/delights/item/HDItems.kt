@@ -1,17 +1,51 @@
 package dev.hybridlabs.delights.item
 
-import dev.hybridlabs.aquatic.item.HAToolMaterials
 import dev.hybridlabs.delights.HybridDelightsCommon
+import dev.hybridlabs.delights.block.HDBlocks
+import dev.hybridlabs.hapi.item.HAPIToolMaterials
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.food.FoodProperties
+import net.minecraft.world.item.BlockItem
+import net.minecraft.world.item.BowlFoodItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
+import net.minecraft.world.level.block.Block
 import vectorwing.farmersdelight.common.item.DrinkableItem
 import vectorwing.farmersdelight.common.item.KnifeItem
 import java.util.function.Supplier
 
 object HDItems {
+
+    val DRIFTWOOD_CABINET = registerBlockItem("driftwood_cabinet") { HDBlocks.DRIFTWOOD_CABINET.get() }
+
+    val SCHIST_STOVE = registerBlockItem("schist_stove") { HDBlocks.SCHIST_STOVE.get() }
+    val CHIMNEYSTONE_STOVE = registerBlockItem("chimneystone_stove") { HDBlocks.CHIMNEYSTONE_STOVE.get() }
+    val YELLOW_BRINESTONE_STOVE = registerBlockItem("yellow_brinestone_stove") { HDBlocks.YELLOW_BRINESTONE_STOVE.get() }
+    val ORANGE_BRINESTONE_STOVE = registerBlockItem("orange_brinestone_stove") { HDBlocks.ORANGE_BRINESTONE_STOVE.get() }
+    val RED_BRINESTONE_STOVE = registerBlockItem("red_brinestone_stove") { HDBlocks.RED_BRINESTONE_STOVE.get() }
+
+    val NETHER_BRICK_STOVE = registerBlockItem("nether_brick_stove") { HDBlocks.NETHER_BRICK_STOVE.get() }
+    val RED_NETHER_BRICK_STOVE = registerBlockItem("red_nether_brick_stove") { HDBlocks.RED_NETHER_BRICK_STOVE.get() }
+    val CALCITE_STOVE = registerBlockItem("calcite_brick_stove") { HDBlocks.CALCITE_STOVE.get() }
+    val MUD_STOVE = registerBlockItem("mud_brick_stove") { HDBlocks.MUD_STOVE.get() }
+
+    val WHITE_STOVE = registerBlockItem("white_brick_stove") { HDBlocks.WHITE_STOVE.get() }
+    val ORANGE_STOVE = registerBlockItem("orange_brick_stove") { HDBlocks.ORANGE_STOVE.get() }
+    val MAGENTA_STOVE = registerBlockItem("magenta_brick_stove") { HDBlocks.MAGENTA_STOVE.get() }
+    val LIGHT_BLUE_STOVE = registerBlockItem("light_blue_brick_stove") { HDBlocks.LIGHT_BLUE_STOVE.get() }
+    val YELLOW_STOVE = registerBlockItem("yellow_brick_stove") { HDBlocks.YELLOW_STOVE.get() }
+    val LIME_STOVE = registerBlockItem("lime_brick_stove") { HDBlocks.LIME_STOVE.get() }
+    val PINK_STOVE = registerBlockItem("pink_brick_stove") { HDBlocks.PINK_STOVE.get() }
+    val GRAY_STOVE = registerBlockItem("gray_brick_stove") { HDBlocks.GRAY_STOVE.get() }
+    val LIGHT_GRAY_STOVE = registerBlockItem("light_gray_brick_stove") { HDBlocks.LIGHT_GRAY_STOVE.get() }
+    val CYAN_STOVE = registerBlockItem("cyan_brick_stove") { HDBlocks.CYAN_STOVE.get() }
+    val PURPLE_STOVE = registerBlockItem("purple_brick_stove") { HDBlocks.PURPLE_STOVE.get() }
+    val BLUE_STOVE = registerBlockItem("blue_brick_stove") { HDBlocks.BLUE_STOVE.get() }
+    val BROWN_STOVE = registerBlockItem("brown_brick_stove") { HDBlocks.BROWN_STOVE.get() }
+    val GREEN_STOVE = registerBlockItem("green_brick_stove") { HDBlocks.GREEN_STOVE.get() }
+    val RED_STOVE = registerBlockItem("red_brick_stove") { HDBlocks.RED_STOVE.get() }
+    val BLACK_STOVE = registerBlockItem("black_brick_stove") { HDBlocks.BLACK_STOVE.get() }
 
     val BRINE_BOTTLE = register(
         "brine_bottle"
@@ -21,9 +55,7 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(0)
-                        .saturationMod(0.0F)
-                        .effect(MobEffectInstance(MobEffects.POISON, 300, 0),1.0f)
-                        .meat()
+                        .saturationMod(0.0F).effect(MobEffectInstance(MobEffects.POISON, 300, 0),1.0F)
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
@@ -40,7 +72,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.3F)
-                        .meat()
                         .build()
                 )
         )
@@ -55,7 +86,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationMod(0.3F)
-                        .meat()
                         .fast()
                         .build()
                 )
@@ -71,7 +101,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.3F)
-                        .meat()
                         .fast()
                         .build()
                 )
@@ -87,7 +116,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationMod(0.3F)
-                        .meat()
                         .fast()
                         .build()
                 )
@@ -103,7 +131,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.3F)
-                        .meat()
                         .fast()
                         .build()
                 )
@@ -113,14 +140,14 @@ object HDItems {
     val CORAL_KNIFE = register(
         "coral_knife"
     ) {
-        KnifeItem(HAToolMaterials.CORAL, 0.5f, -2.0f, Item.Properties()
+        KnifeItem(HAPIToolMaterials.CORAL, 0.5f, -2.0f, Item.Properties()
         )
     }
 
     val SHARK_TOOTH_KNIFE = register(
         "shark_tooth_knife"
     ) {
-        KnifeItem(HAToolMaterials.SEASHELL, 0.5f, -2.0f, Item.Properties()
+        KnifeItem(HAPIToolMaterials.SEASHELL, 0.5f, -2.0f, Item.Properties()
         )
     }
 
@@ -133,7 +160,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationMod(0.6F)
-                        .meat()
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
@@ -150,7 +177,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationMod(0.6F)
-                        .meat()
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
@@ -167,9 +194,38 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(1)
                         .saturationMod(0.2F)
-                        .meat()
                         .build()
                 )
+        )
+    }
+
+    val JELLY = register(
+        "jelly"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.2F)
+                        .build()
+                )
+        )
+    }
+
+    val JELLY_TOAST = register(
+        "jelly_toast"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationMod(0.8F)
+                        .fast()
+                        .build()
+                )
+                .stacksTo(16)
         )
     }
 
@@ -182,7 +238,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.4F)
-                        .meat()
                         .build()
                 )
                 .stacksTo(16)
@@ -198,7 +253,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(4)
                         .saturationMod(0.6F)
-                        .meat()
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .fast()
                         .build()
                 )
@@ -216,7 +271,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.4F)
-                        .meat()
                         .build()
                 )
                 .stacksTo(16)
@@ -232,7 +286,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(4)
                         .saturationMod(0.6F)
-                        .meat()
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .fast()
                         .build()
                 )
@@ -250,7 +304,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.4F)
-                        .meat()
                         .build()
                 )
                 .stacksTo(16)
@@ -266,7 +319,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(4)
                         .saturationMod(0.6F)
-                        .meat()
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .fast()
                         .build()
                 )
@@ -284,7 +337,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.4F)
-                        .meat()
                         .build()
                 )
                 .stacksTo(16)
@@ -300,7 +352,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(4)
                         .saturationMod(0.6F)
-                        .meat()
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
                         .fast()
                         .build()
                 )
@@ -318,7 +370,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(8)
                         .saturationMod(0.8F)
-                        .meat()
                         .fast()
                         .build()
                 )
@@ -335,7 +386,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationMod(0.1F)
-                        .meat()
                         .build()
                 )
         )
@@ -350,7 +400,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationMod(0.8F)
-                        .meat()
                         .build()
                 )
         )
@@ -364,9 +413,8 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(3)
-                        .saturationMod(0.3F)
-                        .fast()
-                        .meat()
+                        .saturationMod(0.3F).fast()
+
                         .build()
                 )
         )
@@ -380,9 +428,8 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(1)
-                        .saturationMod(0.1F)
-                        .effect(MobEffectInstance(MobEffects.POISON, 300, 0),0.25f)
-                        .meat()
+                        .saturationMod(0.1F).effect(MobEffectInstance(MobEffects.POISON, 300, 0),0.25f)
+
                         .build()
                 )
         )
@@ -397,7 +444,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationMod(0.8F)
-                        .meat()
                         .build()
                 )
         )
@@ -411,9 +457,8 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(2)
-                        .saturationMod(0.3F)
-                        .fast()
-                        .meat()
+                        .saturationMod(0.3F).fast()
+
                         .build()
                 )
         )
@@ -428,7 +473,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationMod(0.8F)
-                        .meat()
                         .build()
                 )
         )
@@ -442,9 +486,8 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(3)
-                        .saturationMod(0.8F)
-                        .fast()
-                        .meat()
+                        .saturationMod(0.8F).fast()
+
                         .build()
                 )
         )
@@ -453,16 +496,14 @@ object HDItems {
     val BISQUE = register(
         "bisque"
     ) {
-        Item(
+        BowlFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationMod(0.8F)
-                        .meat()
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -470,16 +511,14 @@ object HDItems {
     val SHRIMP_FRIED_RICE = register(
         "shrimp_fried_rice"
     ) {
-        Item(
+        BowlFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationMod(0.8F)
-                        .meat()
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -487,16 +526,14 @@ object HDItems {
     val LOBSTER_STEW = register(
         "lobster_stew"
     ) {
-        Item(
+        BowlFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationMod(0.8F)
-                        .meat()
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -505,16 +542,14 @@ object HDItems {
     val CHOWDER = register(
         "chowder",
     ) {
-        Item(
+        BowlFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationMod(0.8F)
-                        .meat()
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -528,7 +563,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(10)
                         .saturationMod(0.8F)
-                        .meat()
                         .build()
                 )
         )
@@ -543,7 +577,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(10)
                         .saturationMod(0.8F)
-                        .meat()
                         .build()
                 )
                 .stacksTo(16)
@@ -553,16 +586,14 @@ object HDItems {
     val TUNA_CASSEROLE = register(
         "tuna_casserole"
     ) {
-        Item(
+        BowlFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
-                        .meat()
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -570,16 +601,14 @@ object HDItems {
     val TUNA_SALAD = register(
         "tuna_salad"
     ) {
-        Item(
+        BowlFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(8)
                         .saturationMod(0.95F)
-                        .meat()
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -587,16 +616,14 @@ object HDItems {
     val FISHERMANS_SOUP = register(
         "fishermans_soup"
     ) {
-        Item(
+        BowlFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationMod(0.8F)
-                        .meat()
                         .build()
                 )
-                .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
     }
@@ -610,7 +637,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
-                        .meat()
                         .build()
                 )
                 .craftRemainder(Items.BOWL)
@@ -627,7 +653,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
-                        .meat()
                         .build()
                 )
                 .stacksTo(1)
@@ -643,7 +668,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
-                        .meat()
                         .build()
                 )
                 .stacksTo(16)
@@ -659,7 +683,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
-                        .meat()
                         .build()
                 )
                 .stacksTo(16)
@@ -675,7 +698,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(10)
                         .saturationMod(1.0F)
-                        .meat()
+                        .usingConvertsTo { Items.STICK }
                         .build()
                 )
                 .stacksTo(16)
@@ -691,7 +714,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(10)
                         .saturationMod(1.0F)
-                        .meat()
                         .build()
                 )
                 .stacksTo(16)
@@ -707,7 +729,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(7)
                         .saturationMod(0.6F)
-                        .meat()
                         .build()
                 )
         )
@@ -722,14 +743,302 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
-                        .meat()
                         .build()
                 )
                 .stacksTo(16)
         )
     }
 
+    //#region Fantastic Fishery Items
+
+    val MOSTLY_EATEN_FISHSICLE = register(
+        "mostly_eaten_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationMod(0.2F)
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val HALF_EATEN_FISHSICLE = register(
+        "half_eaten_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationMod(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val FISHSICLE = register(
+        "fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationMod(0.6F)
+                        .usingConvertsTo { HALF_EATEN_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val MOSTLY_EATEN_SWEET_BERRY_FISHSICLE = register(
+        "mostly_eaten_sweet_berry_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationMod(0.2F).build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val HALF_EATEN_SWEET_BERRY_FISHSICLE = register(
+        "half_eaten_sweet_berry_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationMod(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val SWEET_BERRY_FISHSICLE = register(
+        "sweet_berry_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationMod(0.6F)
+                        .usingConvertsTo { HALF_EATEN_SWEET_BERRY_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val MOSTLY_EATEN_GLOW_BERRY_FISHSICLE = register(
+        "mostly_eaten_glow_berry_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationMod(0.2F).build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val HALF_EATEN_GLOW_BERRY_FISHSICLE = register(
+        "half_eaten_glow_berry_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationMod(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val GLOW_BERRY_FISHSICLE = register(
+        "glow_berry_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationMod(0.6F)
+                        .usingConvertsTo { HALF_EATEN_GLOW_BERRY_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val MOSTLY_EATEN_MELON_FISHSICLE = register(
+        "mostly_eaten_melon_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationMod(0.2F)
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val HALF_EATEN_MELON_FISHSICLE = register(
+        "half_eaten_melon_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationMod(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_MELON_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val MELON_FISHSICLE = register(
+        "melon_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationMod(0.6F)
+                        .usingConvertsTo { HALF_EATEN_MELON_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val MOSTLY_EATEN_PUMPKIN_FISHSICLE = register(
+        "mostly_eaten_pumpkin_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationMod(0.2F)
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val HALF_EATEN_PUMPKIN_FISHSICLE = register(
+        "half_eaten_pumpkin_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationMod(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_PUMPKIN_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val PUMPKIN_FISHSICLE = register(
+        "pumpkin_fishsicle",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationMod(0.6F)
+                        .usingConvertsTo { HALF_EATEN_PUMPKIN_FISHSICLE.get() }
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val MORSEL_OF_MORSEL = register(
+        "morsel_of_morsel"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(10)
+                        .saturationMod(0.8F)
+                        .fast()
+                        .build()
+                )
+        )
+    }
+
+    val PLUNDERERS_ROE = register(
+        "plunderers_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(2)
+                        .saturationMod(0.4F)
+                        .build()
+                )
+                .stacksTo(16)
+        )
+    }
+
+    val CURED_PLUNDERERS_ROE = register(
+        "cured_plunderers_roe"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationMod(0.6F)
+                        .fast()
+                        .usingConvertsTo { Items.GLASS_BOTTLE }
+                        .build()
+                )
+                .craftRemainder(Items.GLASS_BOTTLE)
+                .stacksTo(16)
+        )
+    }
+
+    //#endregion
+
     private fun register(id: String, item: Supplier<Item>): Supplier<Item> {
         return HybridDelightsCommon.ITEMS.register(id, item)
+    }
+
+    fun registerBlockItem(id: String, block: Supplier<Block>): Supplier<Item> {
+        return register(id) { BlockItem(block.get(), Item.Properties()) }
     }
 }
