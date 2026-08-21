@@ -1,12 +1,12 @@
 package dev.hybridlabs.delights.block.entity
 
+import dev.hybridlabs.delights.block.HybridCabinetBlock
 import net.minecraft.core.BlockPos
-import net.minecraft.core.Direction
-import net.minecraft.core.HolderLookup
 import net.minecraft.core.NonNullList
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.sounds.SoundEvent
+import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
 import net.minecraft.world.ContainerHelper
 import net.minecraft.world.entity.player.Inventory
@@ -18,13 +18,11 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity
 import net.minecraft.world.level.block.state.BlockState
-import dev.hybridlabs.delights.block.HybridCabinetBlock
-import vectorwing.farmersdelight.common.registry.ModSounds
 import vectorwing.farmersdelight.common.utility.TextUtils
 
 class HybridCabinetBlockEntity(
     pos: BlockPos,
-    state: BlockState
+    state: BlockState,
 ) : RandomizableContainerBlockEntity(
     HDBlockEntityTypes.CABINET.get(),
     pos,
@@ -39,11 +37,11 @@ class HybridCabinetBlockEntity(
         override fun onOpen(
             level: Level,
             pos: BlockPos,
-            state: BlockState
+            state: BlockState,
         ) {
             this@HybridCabinetBlockEntity.playSound(
                 state,
-                ModSounds.BLOCK_CABINET_OPEN.get()
+                SoundEvents.BARREL_OPEN
             )
 
             this@HybridCabinetBlockEntity.updateBlockState(state, true)
@@ -52,11 +50,11 @@ class HybridCabinetBlockEntity(
         override fun onClose(
             level: Level,
             pos: BlockPos,
-            state: BlockState
+            state: BlockState,
         ) {
             this@HybridCabinetBlockEntity.playSound(
                 state,
-                ModSounds.BLOCK_CABINET_CLOSE.get()
+                SoundEvents.BARREL_CLOSE
             )
 
             this@HybridCabinetBlockEntity.updateBlockState(state, false)
@@ -67,7 +65,7 @@ class HybridCabinetBlockEntity(
             pos: BlockPos,
             state: BlockState,
             oldCount: Int,
-            newCount: Int
+            newCount: Int,
         ) {
         }
 
@@ -97,39 +95,23 @@ class HybridCabinetBlockEntity(
 
     override fun createMenu(
         id: Int,
-        player: Inventory
+        player: Inventory,
     ): AbstractContainerMenu {
         return ChestMenu.threeRows(id, player, this)
     }
 
-    override fun saveAdditional(
-        tag: CompoundTag,
-        registries: HolderLookup.Provider
-    ) {
-        super.saveAdditional(tag, registries)
-
-        if (!trySaveLootTable(tag)) {
-            ContainerHelper.saveAllItems(tag, contents, registries)
+    public override fun saveAdditional(compound: CompoundTag) {
+        super.saveAdditional(compound)
+        if (!this.trySaveLootTable(compound)) {
+            ContainerHelper.saveAllItems(compound, this.contents)
         }
     }
 
-    override fun loadAdditional(
-        tag: CompoundTag,
-        registries: HolderLookup.Provider
-    ) {
-        super.loadAdditional(tag, registries)
-
-        contents = NonNullList.withSize(
-            containerSize,
-            ItemStack.EMPTY
-        )
-
-        if (!tryLoadLootTable(tag)) {
-            ContainerHelper.loadAllItems(
-                tag,
-                contents,
-                registries
-            )
+    override fun load(compound: CompoundTag) {
+        super.load(compound)
+        this.contents = NonNullList.withSize(this.containerSize, ItemStack.EMPTY)
+        if (!this.tryLoadLootTable(compound)) {
+            ContainerHelper.loadAllItems(compound, this.contents)
         }
     }
 
@@ -167,7 +149,7 @@ class HybridCabinetBlockEntity(
 
     private fun updateBlockState(
         state: BlockState,
-        open: Boolean
+        open: Boolean,
     ) {
         level?.setBlock(
             blockPos,
@@ -178,7 +160,7 @@ class HybridCabinetBlockEntity(
 
     private fun playSound(
         state: BlockState,
-        sound: SoundEvent
+        sound: SoundEvent,
     ) {
         val level = level ?: return
 
