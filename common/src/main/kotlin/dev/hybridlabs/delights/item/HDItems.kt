@@ -3,6 +3,8 @@ package dev.hybridlabs.delights.item
 import dev.hybridlabs.delights.HybridDelightsCommon
 import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.hapi.item.HAPIToolMaterials
+import dev.hybridlabs.hapi.item.ProgressiveDrinkItem
+import dev.hybridlabs.hapi.item.ProgressiveFoodItem
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.food.FoodProperties
@@ -11,7 +13,6 @@ import net.minecraft.world.item.BowlFoodItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Block
-import vectorwing.farmersdelight.common.item.DrinkableItem
 import vectorwing.farmersdelight.common.item.KnifeItem
 import java.util.function.Supplier
 
@@ -50,16 +51,17 @@ object HDItems {
     val BRINE_BOTTLE = register(
         "brine_bottle"
     ) {
-        BrineBottleItem(
+        ProgressiveDrinkItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
                         .nutrition(0)
-                        .saturationMod(0.0F).effect(MobEffectInstance(MobEffects.POISON, 300, 0),1.0F)
+                        .saturationMod(0.0F).effect(MobEffectInstance(MobEffects.POISON, 300, 0), 1.0F)
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { Items.GLASS_BOTTLE }
         )
     }
 
@@ -154,7 +156,7 @@ object HDItems {
     val PICKLED_HERRING = register(
         "pickled_herring"
     ) {
-        DrinkableItem(
+        ProgressiveDrinkItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -163,14 +165,15 @@ object HDItems {
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { Items.GLASS_BOTTLE }
         )
     }
 
     val PICKLED_BULL_KELP = register(
         "pickled_bull_kelp"
     ) {
-        DrinkableItem(
+        ProgressiveDrinkItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -179,7 +182,8 @@ object HDItems {
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { Items.GLASS_BOTTLE }
         )
     }
 
@@ -245,7 +249,7 @@ object HDItems {
     val CURED_COD_ROE = register(
         "cured_cod_roe"
     ) {
-        Item(
+        ProgressiveDrinkItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -255,7 +259,8 @@ object HDItems {
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { Items.GLASS_BOTTLE }
         )
     }
 
@@ -277,7 +282,7 @@ object HDItems {
     val CURED_SALMON_ROE = register(
         "cured_salmon_roe"
     ) {
-        Item(
+        ProgressiveDrinkItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -287,7 +292,8 @@ object HDItems {
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { Items.GLASS_BOTTLE }
         )
     }
 
@@ -309,7 +315,7 @@ object HDItems {
     val CURED_TROPICAL_FISH_ROE = register(
         "cured_tropical_fish_roe"
     ) {
-        Item(
+        ProgressiveDrinkItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -319,7 +325,8 @@ object HDItems {
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { Items.GLASS_BOTTLE }
         )
     }
 
@@ -341,7 +348,7 @@ object HDItems {
     val CURED_CARP_ROE = register(
         "cured_carp_roe"
     ) {
-        Item(
+        ProgressiveDrinkItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -351,7 +358,8 @@ object HDItems {
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { Items.GLASS_BOTTLE }
         )
     }
 
@@ -759,10 +767,10 @@ object HDItems {
         )
     }
 
-    val HALF_EATEN_FISHSICLE = register(
-        "half_eaten_fishsicle",
+    val PARTIALLY_EATEN_FISHSICLE = register(
+        "partially_eaten_fishsicle",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -770,14 +778,15 @@ object HDItems {
                         .saturationMod(0.4F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { MOSTLY_EATEN_FISHSICLE.get() }
         )
     }
 
     val FISHSICLE = register(
         "fishsicle",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -785,7 +794,8 @@ object HDItems {
                         .saturationMod(0.6F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { PARTIALLY_EATEN_FISHSICLE.get() }
         )
     }
 
@@ -803,10 +813,10 @@ object HDItems {
         )
     }
 
-    val HALF_EATEN_SWEET_BERRY_FISHSICLE = register(
-        "half_eaten_sweet_berry_fishsicle",
+    val PARTIALLY_EATEN_SWEET_BERRY_FISHSICLE = register(
+        "partially_eaten_sweet_berry_fishsicle",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -814,14 +824,15 @@ object HDItems {
                         .saturationMod(0.4F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get() }
         )
     }
 
     val SWEET_BERRY_FISHSICLE = register(
         "sweet_berry_fishsicle",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -829,7 +840,8 @@ object HDItems {
                         .saturationMod(0.6F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { PARTIALLY_EATEN_SWEET_BERRY_FISHSICLE.get() }
         )
     }
 
@@ -847,10 +859,10 @@ object HDItems {
         )
     }
 
-    val HALF_EATEN_GLOW_BERRY_FISHSICLE = register(
-        "half_eaten_glow_berry_fishsicle",
+    val PARTIALLY_EATEN_GLOW_BERRY_FISHSICLE = register(
+        "partially_eaten_glow_berry_fishsicle",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -858,14 +870,15 @@ object HDItems {
                         .saturationMod(0.4F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get() }
         )
     }
 
     val GLOW_BERRY_FISHSICLE = register(
         "glow_berry_fishsicle",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -873,7 +886,8 @@ object HDItems {
                         .saturationMod(0.6F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { PARTIALLY_EATEN_GLOW_BERRY_FISHSICLE.get() }
         )
     }
 
@@ -892,10 +906,10 @@ object HDItems {
         )
     }
 
-    val HALF_EATEN_MELON_FISHSICLE = register(
-        "half_eaten_melon_fishsicle",
+    val PARTIALLY_EATEN_MELON_FISHSICLE = register(
+        "partially_eaten_melon_fishsicle",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -903,14 +917,15 @@ object HDItems {
                         .saturationMod(0.4F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { MOSTLY_EATEN_MELON_FISHSICLE.get() }
         )
     }
 
     val MELON_FISHSICLE = register(
         "melon_fishsicle",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -918,7 +933,8 @@ object HDItems {
                         .saturationMod(0.6F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { PARTIALLY_EATEN_MELON_FISHSICLE.get() }
         )
     }
 
@@ -937,10 +953,10 @@ object HDItems {
         )
     }
 
-    val HALF_EATEN_PUMPKIN_FISHSICLE = register(
-        "half_eaten_pumpkin_fishsicle",
+    val PARTIALLY_EATEN_PUMPKIN_FISHSICLE = register(
+        "partially_eaten_pumpkin_fishsicle",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -948,14 +964,15 @@ object HDItems {
                         .saturationMod(0.4F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { MOSTLY_EATEN_PUMPKIN_FISHSICLE.get() }
         )
     }
 
     val PUMPKIN_FISHSICLE = register(
         "pumpkin_fishsicle",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -963,7 +980,8 @@ object HDItems {
                         .saturationMod(0.6F)
                         .build()
                 )
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { PARTIALLY_EATEN_PUMPKIN_FISHSICLE.get() }
         )
     }
 
@@ -1000,7 +1018,7 @@ object HDItems {
     val CURED_PLUNDERERS_ROE = register(
         "cured_plunderers_roe"
     ) {
-        Item(
+        ProgressiveDrinkItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -1010,7 +1028,8 @@ object HDItems {
                         .build()
                 )
                 .craftRemainder(Items.GLASS_BOTTLE)
-                .stacksTo(16)
+                .stacksTo(16),
+            nextItem = { Items.GLASS_BOTTLE }
         )
     }
 

@@ -1,5 +1,6 @@
 package dev.hybridlabs.delights.data.client
 
+import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.delights.item.HDItemGroups
 import dev.hybridlabs.delights.item.HDItems
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
@@ -101,23 +102,23 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
             HDItems.EEL_NOODLES.get() to "Eel Noodles",
 
             HDItems.FISHSICLE.get() to "Fishsicle",
-            HDItems.HALF_EATEN_FISHSICLE.get() to "Half Eaten Fishsicle",
+            HDItems.PARTIALLY_EATEN_FISHSICLE.get() to "Partially Eaten Fishsicle",
             HDItems.MOSTLY_EATEN_FISHSICLE.get() to "Mostly Eaten Fishsicle",
 
             HDItems.SWEET_BERRY_FISHSICLE.get() to "Sweet Berry Fishsicle",
-            HDItems.HALF_EATEN_SWEET_BERRY_FISHSICLE.get() to "Half Eaten Sweet Berry Fishsicle",
+            HDItems.PARTIALLY_EATEN_SWEET_BERRY_FISHSICLE.get() to "Partially Eaten Sweet Berry Fishsicle",
             HDItems.MOSTLY_EATEN_SWEET_BERRY_FISHSICLE.get() to "Mostly Eaten Sweet Berry Fishsicle",
 
             HDItems.GLOW_BERRY_FISHSICLE.get() to "Glow Berry Fishsicle",
-            HDItems.HALF_EATEN_GLOW_BERRY_FISHSICLE.get() to "Half Eaten Glow Berry Fishsicle",
+            HDItems.PARTIALLY_EATEN_GLOW_BERRY_FISHSICLE.get() to "Partially Eaten Glow Berry Fishsicle",
             HDItems.MOSTLY_EATEN_GLOW_BERRY_FISHSICLE.get() to "Mostly Eaten Glow Berry Fishsicle",
 
             HDItems.MELON_FISHSICLE.get() to "Melon Fishsicle",
-            HDItems.HALF_EATEN_MELON_FISHSICLE.get() to "Half Eaten Melon Fishsicle",
+            HDItems.PARTIALLY_EATEN_MELON_FISHSICLE.get() to "Partially Eaten Melon Fishsicle",
             HDItems.MOSTLY_EATEN_MELON_FISHSICLE.get() to "Mostly Eaten Melon Fishsicle",
 
             HDItems.PUMPKIN_FISHSICLE.get() to "Pumpkin Fishsicle",
-            HDItems.HALF_EATEN_PUMPKIN_FISHSICLE.get() to "Half Eaten Pumpkin Fishsicle",
+            HDItems.PARTIALLY_EATEN_PUMPKIN_FISHSICLE.get() to "Partially Eaten Pumpkin Fishsicle",
             HDItems.MOSTLY_EATEN_PUMPKIN_FISHSICLE.get() to "Mostly Eaten Pumpkin Fishsicle",
 
             HDItems.MORSEL_OF_MORSEL.get() to "Morsel Of Morsel",
