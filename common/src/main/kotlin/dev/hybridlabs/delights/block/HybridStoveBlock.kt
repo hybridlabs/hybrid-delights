@@ -8,14 +8,15 @@ import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
 import net.minecraft.util.RandomSource
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.BaseEntityBlock
+import net.minecraft.world.level.block.CampfireBlock.LIT
 import net.minecraft.world.level.block.HorizontalDirectionalBlock
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
-import vectorwing.farmersdelight.common.block.AbstractStoveBlock
 
 class HybridStoveBlock(
     properties: Properties,
-) : AbstractStoveBlock(properties) {
+) : BaseEntityBlock(properties) {
 
     override fun newBlockEntity(
         pos: BlockPos,
