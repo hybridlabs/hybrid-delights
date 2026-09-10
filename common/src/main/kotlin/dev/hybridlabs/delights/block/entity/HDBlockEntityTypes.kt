@@ -11,37 +11,6 @@ import vectorwing.farmersdelight.common.block.entity.CabinetBlockEntity
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 object HDBlockEntityTypes {
 
-    val STOVE =
-        register(
-            "stove",
-            ::HybridStoveBlockEntity,
-            HDBlocks.YELLOW_BRINESTONE_STOVE,
-            HDBlocks.ORANGE_BRINESTONE_STOVE,
-            HDBlocks.RED_BRINESTONE_STOVE,
-            HDBlocks.SCHIST_STOVE,
-            HDBlocks.CHIMNEYSTONE_STOVE,
-            HDBlocks.RED_STOVE,
-            HDBlocks.ORANGE_STOVE,
-            HDBlocks.YELLOW_STOVE,
-            HDBlocks.GREEN_STOVE,
-            HDBlocks.LIME_STOVE,
-            HDBlocks.CYAN_STOVE,
-            HDBlocks.BLUE_STOVE,
-            HDBlocks.LIGHT_BLUE_STOVE,
-            HDBlocks.PURPLE_STOVE,
-            HDBlocks.MAGENTA_STOVE,
-            HDBlocks.PINK_STOVE,
-            HDBlocks.WHITE_STOVE,
-            HDBlocks.LIGHT_GRAY_STOVE,
-            HDBlocks.GRAY_STOVE,
-            HDBlocks.BLACK_STOVE,
-            HDBlocks.BROWN_STOVE,
-            HDBlocks.NETHER_BRICK_STOVE,
-            HDBlocks.RED_NETHER_BRICK_STOVE,
-            HDBlocks.CALCITE_STOVE,
-            HDBlocks.MUD_STOVE,
-        )
-
     val CABINET =
         register(
             "cabinet",

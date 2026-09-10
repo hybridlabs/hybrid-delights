@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "hybrid_delights:schist_stove",
+    "hybrid_delights:chimneystone_stove",
+    "hybrid_delights:red_brinestone_stove",
+    "hybrid_delights:orange_brinestone_stove",
+    "hybrid_delights:yellow_brinestone_stove",
+    "hybrid_delights:calcite_stove",
+    "hybrid_delights:mud_brick_stove",
+    "hybrid_delights:nether_brick_stove",
+    "hybrid_delights:red_nether_brick_stove",
+    "hybrid_delights:white_brick_stove",
+    "hybrid_delights:orange_brick_stove",
+    "hybrid_delights:magenta_brick_stove",
+    "hybrid_delights:light_blue_brick_stove",
+    "hybrid_delights:yellow_brick_stove",
+    "hybrid_delights:lime_brick_stove",
+    "hybrid_delights:pink_brick_stove",
+    "hybrid_delights:gray_brick_stove",
+    "hybrid_delights:light_gray_brick_stove",
+    "hybrid_delights:cyan_brick_stove",
+    "hybrid_delights:purple_brick_stove",
+    "hybrid_delights:blue_brick_stove",
+    "hybrid_delights:brown_brick_stove",
+    "hybrid_delights:green_brick_stove",
+    "hybrid_delights:red_brick_stove",
+    "hybrid_delights:black_brick_stove"
+  ]
+}

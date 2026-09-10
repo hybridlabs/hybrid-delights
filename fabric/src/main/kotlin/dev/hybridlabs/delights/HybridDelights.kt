@@ -1,5 +1,7 @@
 package dev.hybridlabs.delights
 
+import dev.hybridlabs.delights.block.HDBlocks
+import dev.hybridlabs.delights.block.entity.HDBlockEntityTypes
 import dev.hybridlabs.delights.item.HDItemGroups
 import dev.hybridlabs.delights.item.HDItems
 import net.fabricmc.api.ModInitializer
@@ -20,7 +22,9 @@ object HybridDelights : ModInitializer {
 		logger.info("Initializing $MOD_NAME")
         HybridDelightsCommon.init()
 
+		HDBlocks
 		HDItems
 		HDItemGroups
+		HDBlockEntityTypes
 	}
 }
