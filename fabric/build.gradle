@@ -124,8 +124,8 @@ def integrationModDependencies = [
         "maven.modrinth:biolith:${biolith_version}",
         "maven.modrinth:trinkets:${trinkets_version}",
         "maven.modrinth:lithostitched:${lithostitched_version}",
-        "org.ladysnake.cardinal-components-api:cardinal-components-base:${cardinal_components_version}",
-        "org.ladysnake.cardinal-components-api:cardinal-components-entity:${cardinal_components_version}",
+        "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${cardinal_components_version}",
+        "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${cardinal_components_version}",
 ]
 
 dependencies {
