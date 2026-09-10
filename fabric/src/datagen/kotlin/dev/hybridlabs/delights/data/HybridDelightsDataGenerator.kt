@@ -3,6 +3,7 @@ package dev.hybridlabs.delights.data
 import dev.hybridlabs.delights.Constants
 import dev.hybridlabs.delights.data.client.LanguageProvider
 import dev.hybridlabs.delights.data.client.ModelProvider
+import dev.hybridlabs.delights.data.server.loot.BlockLootTableProvider
 import dev.hybridlabs.delights.data.server.tag.BlockTagProvider
 import dev.hybridlabs.delights.data.server.tag.ItemTagProvider
 import dev.hybridlabs.delights.data.server.tag.RecipeProvider
@@ -17,6 +18,7 @@ object HybridDelightsDataGenerator : DataGeneratorEntrypoint {
         pack.addProvider(::ModelProvider)
         pack.addProvider(::ItemTagProvider)
         pack.addProvider(::BlockTagProvider)
+        pack.addProvider(::BlockLootTableProvider)
         pack.addProvider(::RecipeProvider)
     }
 
