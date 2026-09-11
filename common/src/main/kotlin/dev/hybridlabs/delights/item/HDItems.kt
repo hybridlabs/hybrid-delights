@@ -3,10 +3,13 @@ package dev.hybridlabs.delights.item
 import dev.hybridlabs.delights.HybridDelightsCommon
 import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.hapi.item.HAPIToolMaterials
+import dev.hybridlabs.hapi.item.ProgressiveDrinkItem
+import dev.hybridlabs.hapi.item.ProgressiveFoodItem
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.BlockItem
+import net.minecraft.world.item.BowlFoodItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Block
@@ -15,13 +18,15 @@ import vectorwing.farmersdelight.common.item.KnifeItem
 import java.util.function.Supplier
 
 object HDItems {
-    
+
     val DRIFTWOOD_CABINET = registerBlockItem("driftwood_cabinet") { HDBlocks.DRIFTWOOD_CABINET.get() }
 
     val SCHIST_STOVE = registerBlockItem("schist_stove") { HDBlocks.SCHIST_STOVE.get() }
     val CHIMNEYSTONE_STOVE = registerBlockItem("chimneystone_stove") { HDBlocks.CHIMNEYSTONE_STOVE.get() }
-    val YELLOW_BRINESTONE_STOVE = registerBlockItem("yellow_brinestone_stove") { HDBlocks.YELLOW_BRINESTONE_STOVE.get() }
-    val ORANGE_BRINESTONE_STOVE = registerBlockItem("orange_brinestone_stove") { HDBlocks.ORANGE_BRINESTONE_STOVE.get() }
+    val YELLOW_BRINESTONE_STOVE =
+        registerBlockItem("yellow_brinestone_stove") { HDBlocks.YELLOW_BRINESTONE_STOVE.get() }
+    val ORANGE_BRINESTONE_STOVE =
+        registerBlockItem("orange_brinestone_stove") { HDBlocks.ORANGE_BRINESTONE_STOVE.get() }
     val RED_BRINESTONE_STOVE = registerBlockItem("red_brinestone_stove") { HDBlocks.RED_BRINESTONE_STOVE.get() }
 
     val NETHER_BRICK_STOVE = registerBlockItem("nether_brick_stove") { HDBlocks.NETHER_BRICK_STOVE.get() }
@@ -54,7 +59,7 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(0)
-                        .saturationModifier(0.0F).effect(MobEffectInstance(MobEffects.POISON, 300, 0),1.0F)
+                        .saturationModifier(0.0F).effect(MobEffectInstance(MobEffects.POISON, 300, 0), 1.0F)
                         .usingConvertsTo { Items.GLASS_BOTTLE }
                         .build()
                 )
@@ -141,7 +146,7 @@ object HDItems {
         "coral_knife"
     ) {
         KnifeItem(
-            HAPIToolMaterials.CORAL,  Item.Properties()
+            HAPIToolMaterials.CORAL, Item.Properties()
         )
     }
 
@@ -416,7 +421,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationModifier(0.3F).fast()
-                        
+
                         .build()
                 )
         )
@@ -430,7 +435,7 @@ object HDItems {
                 .food(
                     FoodProperties.Builder()
                         .nutrition(1)
-                        .saturationModifier(0.1F).effect(MobEffectInstance(MobEffects.POISON, 300, 0),0.25f)
+                        .saturationModifier(0.1F).effect(MobEffectInstance(MobEffects.POISON, 300, 0), 0.25f)
 
                         .build()
                 )
@@ -460,7 +465,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(2)
                         .saturationModifier(0.3F).fast()
-                        
+
                         .build()
                 )
         )
@@ -489,7 +494,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(3)
                         .saturationModifier(0.8F).fast()
-                        
+
                         .build()
                 )
         )
@@ -1039,15 +1044,100 @@ object HDItems {
                 .craftRemainder(Items.GLASS_BOTTLE)
                 .stacksTo(16)
         )
-    }
+        //#endregion
 
-    //#endregion
+        //#region Hybrid Skies Items
+        val SUNFLOWER_OIL = register(
+            "sunflower_oil"
+        ) {
+            Item(
+                Item.Properties()
+            )
+        }
 
-    private fun register(id: String, item: Supplier<Item>): Supplier<Item> {
-        return HybridDelightsCommon.ITEMS.register(id, item)
-    }
+        val CHICKEN_NUGGET = register(
+            "chicken_nugget"
+        ) {
+            Item(
+                Item.Properties()
+                    .food(
+                        FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.6F)
+                            .fast()
+                            .build()
+                    )
+            )
+        }
 
-    fun registerBlockItem(id: String, block: Supplier<Block>): Supplier<Item> {
-        return register(id) { BlockItem(block.get(), Item.Properties()) }
+        val FRIED_CHICKEN = register(
+            "fried_chicken"
+        ) {
+            Item(
+                Item.Properties()
+                    .food(
+                        FoodProperties.Builder()
+                            .nutrition(6)
+                            .saturationModifier(0.8F)
+                            .fast()
+                            .build()
+                    )
+            )
+        }
+
+        val MOSTLY_EATEN_BUCKET_OF_CHICKEN = register(
+            "mostly_eaten_bucket_of_chicken",
+        ) {
+            Item(
+                Item.Properties()
+                    .food(
+                        FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.2F)
+                            .build()
+                    )
+                    .stacksTo(1)
+            )
+        }
+
+        val PARTIALLY_EATEN_BUCKET_OF_CHICKEN = register(
+            "partially_eaten_bucket_of_chicken",
+        ) {
+            ProgressiveFoodItem(
+                Item.Properties()
+                    .food(
+                        FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.4F)
+                            .build()
+                    )
+                    .stacksTo(1),
+            )
+        }
+
+        val BUCKET_OF_CHICKEN = register(
+            "bucket_of_chicken",
+        ) {
+            ProgressiveFoodItem(
+                Item.Properties()
+                    .food(
+                        FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.6F)
+                            .build()
+                    )
+                    .stacksTo(1),
+            )
+        }
+
+        //#endregion
+
+        private fun register(id: String, item: Supplier<Item>): Supplier<Item> {
+            return HybridDelightsCommon.ITEMS.register(id, item)
+        }
+
+        fun registerBlockItem(id: String, block: Supplier<Block>): Supplier<Item> {
+            return register(id) { BlockItem(block.get(), Item.Properties()) }
+        }
     }
 }
