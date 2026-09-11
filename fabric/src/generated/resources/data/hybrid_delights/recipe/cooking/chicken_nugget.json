@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "hybrid_delights:sunflower_oil"
+    },
+    {
+      "item": "farmersdelight:chicken_cuts"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "id": "hybrid_delights:chicken_nugget"
+  }
+}

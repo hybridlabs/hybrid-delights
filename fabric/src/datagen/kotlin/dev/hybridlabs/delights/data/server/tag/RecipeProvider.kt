@@ -424,6 +424,36 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .save(exporter)
+
+        CookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.CHICKEN_NUGGET.get(), 3, 200, 1.0f)
+            .addIngredient(HDItems.SUNFLOWER_OIL.get())
+            .addIngredient(ModItems.CHICKEN_CUTS.get())
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(Items.CHICKEN)
+                        .build()
+                )
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+            .save(exporter)
+
+        CookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.FRIED_CHICKEN.get(), 2, 200, 1.0f)
+            .addIngredient(HDItems.SUNFLOWER_OIL.get())
+            .addIngredient(Items.CHICKEN)
+            .unlockedBy(
+                "has_any_ingredient",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(Items.CHICKEN)
+                        .build()
+                )
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+            .save(exporter)
     }
 
     private fun cuttingRecipes(exporter: RecipeOutput) {
@@ -947,6 +977,24 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
             .unlockedBy(
                 "has_frigid_vessel",
                 has(FFItems.FRIGID_VESSEL.get())
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.SUNFLOWER_OIL.get())
+            .requires(Items.GLASS_BOTTLE)
+            .requires(Items.SUNFLOWER)
+            .unlockedBy(
+                "has_sunflower",
+                has(Items.SUNFLOWER)
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, HDItems.BUCKET_OF_CHICKEN.get())
+            .requires(HDItems.FRIED_CHICKEN.get(), 3)
+            .requires(Items.BUCKET)
+            .unlockedBy(
+                "has_fried_chicken",
+                has(HDItems.FRIED_CHICKEN.get())
             )
             .save(exporter)
     }
