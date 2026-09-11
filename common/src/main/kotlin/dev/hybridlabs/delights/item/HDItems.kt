@@ -1078,7 +1078,7 @@ object HDItems {
     val MOSTLY_EATEN_BUCKET_OF_CHICKEN = register(
         "mostly_eaten_bucket_of_chicken",
     ) {
-        Item(
+        ProgressiveFoodItem(
             Item.Properties()
                 .food(
                     FoodProperties.Builder()
@@ -1086,7 +1086,8 @@ object HDItems {
                         .saturationMod(0.2F)
                         .build()
                 )
-                .stacksTo(1)
+                .stacksTo(1),
+            nextItem = { Items.BUCKET }
         )
     }
 

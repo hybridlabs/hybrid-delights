@@ -128,6 +128,8 @@ class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output
 
             HDItems.SUNFLOWER_OIL.get() to "Sunflower Oil",
 
+            HDItems.CHICKEN_NUGGET.get() to "Chicken Nugget",
+            HDItems.FRIED_CHICKEN.get() to "Fried Chicken",
             HDItems.BUCKET_OF_CHICKEN.get() to "Bucket Of Chicken",
             HDItems.PARTIALLY_EATEN_BUCKET_OF_CHICKEN.get() to "Partially Eaten Bucket Of Chicken",
             HDItems.MOSTLY_EATEN_BUCKET_OF_CHICKEN.get() to "Mostly Eaten Bucket Of Chicken",

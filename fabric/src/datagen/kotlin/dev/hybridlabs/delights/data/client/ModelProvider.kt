@@ -267,6 +267,8 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
             HDItems.SUNFLOWER_OIL.get(),
 
+            HDItems.CHICKEN_NUGGET.get(),
+            HDItems.FRIED_CHICKEN.get(),
             HDItems.BUCKET_OF_CHICKEN.get(),
             HDItems.PARTIALLY_EATEN_BUCKET_OF_CHICKEN.get(),
             HDItems.MOSTLY_EATEN_BUCKET_OF_CHICKEN.get(),
