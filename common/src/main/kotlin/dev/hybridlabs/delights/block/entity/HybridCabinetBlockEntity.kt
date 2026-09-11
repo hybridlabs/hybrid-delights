@@ -78,7 +78,7 @@ class HybridCabinetBlockEntity(
     }
 
     override fun getDefaultName(): Component {
-        return Component.translatable("cabinet")
+        return Component.translatable("Cabinet")
     }
 
     override fun getItems(): NonNullList<ItemStack> {
