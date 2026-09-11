@@ -265,6 +265,12 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
 
             HDItems.MORSEL_OF_MORSEL.get(),
 
+            HDItems.SUNFLOWER_OIL.get(),
+
+            HDItems.BUCKET_OF_CHICKEN.get(),
+            HDItems.PARTIALLY_EATEN_BUCKET_OF_CHICKEN.get(),
+            HDItems.MOSTLY_EATEN_BUCKET_OF_CHICKEN.get(),
+
             ).forEach { item ->
             generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM)
         }

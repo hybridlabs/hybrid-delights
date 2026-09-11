@@ -144,6 +144,13 @@ object HDItemGroups {
                     entries.accept(HDItems.CURED_PLUNDERERS_ROE.get())
                 }
 
+                if (Services.PLATFORM.isModLoaded("hybrid_birds")) {
+                    entries.accept(HDItems.SUNFLOWER_OIL.get())
+                    entries.accept(HDItems.CHICKEN_NUGGET.get())
+                    entries.accept(HDItems.FRIED_CHICKEN.get())
+                    entries.accept(HDItems.BUCKET_OF_CHICKEN.get())
+                }
+
                 BuiltInRegistries.ITEM.forEach { item ->
                     val id = BuiltInRegistries.ITEM.getKey(item)
                     if (id.namespace != Constants.MOD_ID) {
