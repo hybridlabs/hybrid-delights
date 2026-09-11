@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 150,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:chicken_cuts"
+    },
+    {
+      "item": "hybrid_delights:sunflower_oil"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "count": 3,
+    "item": "hybrid_delights:chicken_nugget"
+  }
+}
