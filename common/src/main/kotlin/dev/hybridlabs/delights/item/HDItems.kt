@@ -3,13 +3,10 @@ package dev.hybridlabs.delights.item
 import dev.hybridlabs.delights.HybridDelightsCommon
 import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.hapi.item.HAPIToolMaterials
-import dev.hybridlabs.hapi.item.ProgressiveDrinkItem
-import dev.hybridlabs.hapi.item.ProgressiveFoodItem
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.BlockItem
-import net.minecraft.world.item.BowlFoodItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Block
@@ -1044,100 +1041,103 @@ object HDItems {
                 .craftRemainder(Items.GLASS_BOTTLE)
                 .stacksTo(16)
         )
-        //#endregion
+    }
+    //#endregion
 
-        //#region Hybrid Skies Items
-        val SUNFLOWER_OIL = register(
-            "sunflower_oil"
-        ) {
-            Item(
-                Item.Properties()
-            )
-        }
+    //#region Hybrid Skies Items
+    val SUNFLOWER_OIL = register(
+        "sunflower_oil"
+    ) {
+        Item(
+            Item.Properties()
+        )
+    }
 
-        val CHICKEN_NUGGET = register(
-            "chicken_nugget"
-        ) {
-            Item(
-                Item.Properties()
-                    .food(
-                        FoodProperties.Builder()
-                            .nutrition(4)
-                            .saturationModifier(0.6F)
-                            .fast()
-                            .build()
-                    )
-            )
-        }
+    val CHICKEN_NUGGET = register(
+        "chicken_nugget"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(4)
+                        .saturationModifier(0.6F)
+                        .fast()
+                        .build()
+                )
+        )
+    }
 
-        val FRIED_CHICKEN = register(
-            "fried_chicken"
-        ) {
-            Item(
-                Item.Properties()
-                    .food(
-                        FoodProperties.Builder()
-                            .nutrition(6)
-                            .saturationModifier(0.8F)
-                            .fast()
-                            .build()
-                    )
-            )
-        }
+    val FRIED_CHICKEN = register(
+        "fried_chicken"
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(6)
+                        .saturationModifier(0.8F)
+                        .fast()
+                        .build()
+                )
+        )
+    }
 
-        val MOSTLY_EATEN_BUCKET_OF_CHICKEN = register(
-            "mostly_eaten_bucket_of_chicken",
-        ) {
-            Item(
-                Item.Properties()
-                    .food(
-                        FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationModifier(0.2F)
-                            .build()
-                    )
-                    .stacksTo(1)
-            )
-        }
+    val MOSTLY_EATEN_BUCKET_OF_CHICKEN = register(
+        "mostly_eaten_bucket_of_chicken",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.2F)
+                        .usingConvertsTo { Items.BUCKET }
+                        .build()
+                )
+                .stacksTo(1)
+        )
+    }
 
-        val PARTIALLY_EATEN_BUCKET_OF_CHICKEN = register(
-            "partially_eaten_bucket_of_chicken",
-        ) {
-            ProgressiveFoodItem(
-                Item.Properties()
-                    .food(
-                        FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationModifier(0.4F)
-                            .build()
-                    )
-                    .stacksTo(1),
-            )
-        }
+    val PARTIALLY_EATEN_BUCKET_OF_CHICKEN = register(
+        "partially_eaten_bucket_of_chicken",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.4F)
+                        .usingConvertsTo { MOSTLY_EATEN_BUCKET_OF_CHICKEN.get() }
+                        .build()
+                )
+                .stacksTo(1),
+        )
+    }
 
-        val BUCKET_OF_CHICKEN = register(
-            "bucket_of_chicken",
-        ) {
-            ProgressiveFoodItem(
-                Item.Properties()
-                    .food(
-                        FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationModifier(0.6F)
-                            .build()
-                    )
-                    .stacksTo(1),
-            )
-        }
+    val BUCKET_OF_CHICKEN = register(
+        "bucket_of_chicken",
+    ) {
+        Item(
+            Item.Properties()
+                .food(
+                    FoodProperties.Builder()
+                        .nutrition(8)
+                        .saturationModifier(0.6F)
+                        .usingConvertsTo { PARTIALLY_EATEN_BUCKET_OF_CHICKEN.get() }
+                        .build()
+                )
+                .stacksTo(1),
+        )
+    }
 
-        //#endregion
+    //#endregion
 
-        private fun register(id: String, item: Supplier<Item>): Supplier<Item> {
-            return HybridDelightsCommon.ITEMS.register(id, item)
-        }
+    private fun register(id: String, item: Supplier<Item>): Supplier<Item> {
+        return HybridDelightsCommon.ITEMS.register(id, item)
+    }
 
-        fun registerBlockItem(id: String, block: Supplier<Block>): Supplier<Item> {
-            return register(id) { BlockItem(block.get(), Item.Properties()) }
-        }
+    fun registerBlockItem(id: String, block: Supplier<Block>): Supplier<Item> {
+        return register(id) { BlockItem(block.get(), Item.Properties()) }
     }
 }
