@@ -263,6 +263,29 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
             .saveToHD(exporter)
+
+        HDCookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.CHICKEN_NUGGET.get(), 3, 150, 1.0f)
+            .addIngredient(ModItems.CHICKEN_CUTS.get())
+            .addIngredient(HDItems.SUNFLOWER_OIL.get())
+            .unlockedByAnyIngredient(
+                HDItems.SUNFLOWER_OIL.get(),
+                ModItems.CHICKEN_CUTS.get(),
+                Items.CHICKEN
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+            .saveToHD(exporter)
+
+        HDCookingPotRecipeBuilder.cookingPotRecipe(
+            HDItems.FRIED_CHICKEN.get(), 2, 150, 1.0f)
+            .addIngredient(Items.CHICKEN)
+            .addIngredient(HDItems.SUNFLOWER_OIL.get())
+            .unlockedByAnyIngredient(
+                HDItems.SUNFLOWER_OIL.get(),
+                Items.CHICKEN
+            )
+            .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+            .saveToHD(exporter)
     }
 
     private fun cuttingRecipes(exporter: Consumer<FinishedRecipe>) {
@@ -609,6 +632,28 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .unlockedBy(
                 "has_salt",
                 has(HDItems.SALT.get())
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(
+            RecipeCategory.MISC, HDItems.BUCKET_OF_CHICKEN.get(), 1
+        )
+            .requires(HDItems.FRIED_CHICKEN.get(), 3)
+            .requires(Items.BUCKET)
+            .unlockedBy(
+                "has_fried_chicken",
+                has(HDItems.FRIED_CHICKEN.get())
+            )
+            .save(exporter)
+
+        ShapelessRecipeBuilder.shapeless(
+            RecipeCategory.MISC, HDItems.SUNFLOWER_OIL.get(), 1
+        )
+            .requires(Items.SUNFLOWER)
+            .requires(Items.GLASS_BOTTLE)
+            .unlockedBy(
+                "has_sunflower",
+                has(Items.SUNFLOWER)
             )
             .save(exporter)
     }
