@@ -14,8 +14,9 @@
 	],
 
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://hybridlabs.net/",
+		"sources": "https://github.com/hybridlabs/hybrid-delights",
+		"issues": "https://github.com/hybridlabs/hybrid-delights/issues"
 	},
 
 	"license": "MIT",
