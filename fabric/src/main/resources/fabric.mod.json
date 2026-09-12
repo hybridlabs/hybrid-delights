@@ -11,6 +11,7 @@
 	],
 
   "contact": {
+    "homepage": "https://hybridlabs.net/",
     "sources": "https://github.com/hybridlabs/hybrid-delights",
     "issues": "https://github.com/hybridlabs/hybrid-delights/issues"
   },
