@@ -109,7 +109,7 @@ def copyIntegrationMods = tasks.register('copyIntegrationMods', Sync) {
 dependencies {
     compileOnly project(":common")
 
-    modImplementation("dev.hybridlabs.hapi:hapi-forge-1.20.1:1.0.0")
+    modImplementation("dev.hybridlabs.hapi:hapi-forge-1.20.1:1.1.0")
 
     modImplementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
 

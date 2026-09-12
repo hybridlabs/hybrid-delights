@@ -3,6 +3,7 @@ import dev.hybridlabs.delights.block.HDBlocks
 import dev.hybridlabs.delights.block.entity.HDBlockEntityTypes
 import dev.hybridlabs.delights.item.HDItemGroups
 import dev.hybridlabs.delights.item.HDItems
+import dev.hybridlabs.delights.loot.HDForgeLootModification
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent
@@ -26,6 +27,8 @@ object HybridDelightsForge {
         HDItems
         HDItemGroups
         HDBlockEntityTypes
+
+        HDForgeLootModification.register()
     }
 
     /**
