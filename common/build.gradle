@@ -53,7 +53,10 @@ repositories {
         url = "https://maven.minecraftforge.net/"
     }
     mavenCentral()
-    mavenLocal()
+    maven {
+        name = "Hybrid Labs"
+        url = "https://maven.dvitski.cc/releases"
+    }
 }
 
 dependencies {
