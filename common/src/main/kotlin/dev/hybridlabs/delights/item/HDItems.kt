@@ -1077,7 +1077,6 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationModifier(0.8F)
-                        .fast()
                         .build()
                 )
         )
