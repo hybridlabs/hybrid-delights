@@ -1,41 +1,32 @@
-# Normalize all text files to LF in the repository.
+# Normalise every text file to LF in the repository and in the working tree.
+# LF works on Linux, macOS and Windows (Git for Windows, IntelliJ and Gradle all handle it),
+# so there is no reason to let CRLF into the tree and produce whitespace-only diffs.
 * text=auto eol=lf
 
-# Windows-specific scripts should use CRLF.
-*.bat text eol=crlf
-*.cmd text eol=crlf
-*.ps1 text eol=crlf
+# Windows batch files are the one exception - cmd.exe requires CRLF.
+*.bat           text eol=crlf
+*.cmd           text eol=crlf
 
-# Shell scripts should always use LF.
-*.sh text eol=lf
+# The Gradle start script must stay LF or it will not execute.
+/gradlew        text eol=lf
 
-# Common binary files — never modify line endings.
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.webp binary
-*.ico binary
-*.bmp binary
-*.tga binary
+# Binary assets: never touch these.
+*.png           binary
+*.gif           binary
+*.jpg           binary
+*.jpeg          binary
+*.ogg           binary
+*.wav           binary
+*.exe           binary
+*.dll           binary
+*.jar           binary
+*.zip           binary
+*.lzma          binary
+*.pyd           binary
+*.jks           binary
+*.nbt           binary
+*.dat           binary
+*.blend         binary
 
-*.pdf binary
-*.zip binary
-*.jar binary
-*.war binary
-*.7z binary
-*.tar binary
-*.gz binary
-
-*.mp3 binary
-*.ogg binary
-*.wav binary
-*.mp4 binary
-*.mov binary
-*.avi binary
-
-# Fonts
-*.ttf binary
-*.otf binary
-*.woff binary
-*.woff2 binary
+# Generated datagen output - collapse it in diffs and reviews.
+*/src/generated/resources/** linguist-generated=true

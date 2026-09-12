@@ -12,8 +12,6 @@ dependencies {
 }
 
 legacyForge {
-    apply plugin: 'org.jetbrains.kotlin.jvm'
-    apply plugin: 'kotlin'
     version = "${minecraft_version}-${forge_version}"
 
     // AT validation is broken on Forge 1.20.1
@@ -63,24 +61,22 @@ repositories {
         name = 'Kotlin for Forge'
         url = 'https://thedarkcolour.github.io/KotlinForForge/'
     }
+
     maven {
         name = "Geckolib"
         url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
     }
-    maven {
-        name = "Modrinth"
-        url = "https://api.modrinth.com/maven/"
-    }
+
     maven {
         name = "Terraformers"
         url = "https://maven.terraformersmc.com/releases/"
     }
+
     maven {
         name = "Curios"
         url = "https://maven.theillusivec4.top/"
     }
 
-    mavenCentral()
     mavenLocal()
 }
 
