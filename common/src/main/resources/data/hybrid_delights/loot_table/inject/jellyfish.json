@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "hybrid_delights:fish_gelatin",
+          "name": "hybrid_delights:jelly",
           "functions": [
             {
               "function": "minecraft:enchanted_count_increase",
