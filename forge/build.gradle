@@ -1,91 +1,9 @@
 plugins {
-    id 'multiloader-loader'
-    id 'net.neoforged.moddev.legacyforge'
+    id 'dev.hybridlabs.forge'
     id 'org.jetbrains.kotlin.jvm'
-    id 'me.modmuss50.mod-publish-plugin'
 }
-
-// This config will copy the output of Fabric's runDatagen task into
-// 'src/generated/resources/fabric' when the Forge runData task is run.
-configurations.create('fabricDatagen')
-dependencies {
-    fabricDatagen project(path: ':fabric', configuration: 'datagenOutput')
-}
-
-legacyForge {
-    version = "${minecraft_version}-${forge_version}"
-
-    // AT validation is broken on Forge 1.20.1
-    validateAccessTransformers = false
-
-    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
-    if (at.exists()) {
-        accessTransformers = [project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')]
-
-    }
-
-    parchment {
-        minecraftVersion = minecraft_version
-        mappingsVersion = parchment_version
-    }
-
-    sourceSets {
-        main.kotlin.srcDirs = ['src/main/java', 'src/main/kotlin']
-    }
-
-    runs {
-        client {
-            client()
-        }
-        data {
-            data()
-            programArguments.addAll '--mod', mod_id, '--all',
-                    '--output', file('src/generated/resources/').getAbsolutePath(),
-                    '--existing', file('../common/src/main/resources/').getAbsolutePath(),
-                    '--existing', file('src/main/resources/').getAbsolutePath(),
-                    '--existing', file("../fabric/src/generated/resources").getAbsolutePath()
-        }
-        server {
-            server()
-        }
-    }
-
-    mods {
-        "${mod_id}" {
-            sourceSet sourceSets.main
-        }
-    }
-}
-
-repositories {
-    maven {
-        name = 'Kotlin for Forge'
-        url = 'https://thedarkcolour.github.io/KotlinForForge/'
-    }
-
-    maven {
-        name = "Geckolib"
-        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
-    }
-
-    maven {
-        name = "Terraformers"
-        url = "https://maven.terraformersmc.com/releases/"
-    }
-
-    maven {
-        name = "Curios"
-        url = "https://maven.theillusivec4.top/"
-    }
-
-    mavenLocal()
-}
-
-sourceSets.main.resources.srcDirs += 'src/generated/resources'
 
 processResources {
-    from configurations.fabricDatagen.singleFile
-
     // Recipes for optional integrations carry Fabric's load conditions, which Forge ignores.
     // Translate them, or every such recipe fails to parse when the integrated mod is absent.
     doLast {
@@ -126,15 +44,10 @@ def copyIntegrationMods = tasks.register('copyIntegrationMods', Sync) {
 }
 
 dependencies {
-    compileOnly project(":common")
-
     modImplementation("dev.hybridlabs.hapi:hapi-forge-1.20.1:1.1.0")
 
     modImplementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
 
-    implementation 'org.jetbrains:annotations:25.0.0'
-    implementation 'thedarkcolour:kotlinforforge:4.11.0'
-    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0"))
     modRuntimeOnly  "software.bernie.geckolib:geckolib-forge-$geckolib_version"
 
     // Their hard dependencies. NeoForge refuses to start a run without these. Geckolib is left
@@ -142,11 +55,6 @@ dependencies {
     integrationMods "maven.modrinth:curios:${curios_version}"
     integrationMods "maven.modrinth:lithostitched:${lithostitched_version}"
     integrationMods "maven.modrinth:biolith:${biolith_version}"
-}
-
-compileKotlin {
-    source(project(":common").sourceSets.main.allSource)
-    inputs.file "../gradle.properties"
 }
 
 publishMods.platforms.configureEach {

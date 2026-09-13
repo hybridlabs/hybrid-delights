@@ -1,15 +1,9 @@
 plugins {
-    id 'multiloader-loader'
-    id 'fabric-loom'
-    id 'me.modmuss50.mod-publish-plugin'
+    id 'dev.hybridlabs.fabric'
     id 'org.jetbrains.kotlin.jvm'
 }
 
 repositories {
-    maven {
-        url "https://maven.terraformersmc.com/releases/"
-    }
-
     maven {
         url "https://jitpack.io/" // Fabric ASM
         content {
@@ -18,68 +12,22 @@ repositories {
     }
 
     maven {
-        name = "Ladysnake Libs"
-        url = 'https://maven.ladysnake.org/releases'
-    }
-
-    maven {
-        name = "Geckolib"
-        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
-    }
-
-    maven {
         name = "Greenhouse Maven"
         url = 'https://maven.greenhouse.lgbt/releases/'
     }
 
-    maven { url "https://mvn.devos.one/releases/" }
-
-    // Porting Lib
-
-    maven {
-        url "https://maven.jamieswhiteshirt.com/libs-release" // Reach Entity Attributes (Required by Porting Lib)
-        content {
-            includeGroup "com.jamieswhiteshirt"
-        }
-    }
-
-    maven {
-        name = "Debug Utils (GitLab)"
-        url = "https://gitlab.com/api/v4/projects/21830712/packages/maven/"
-    }
-
-    mavenLocal()
+    maven { url "https://mvn.devos.one/releases/" } // Porting Lib
 }
 
 dependencies {
-    minecraft "com.mojang:minecraft:${minecraft_version}"
-
-    mappings loom.layered {
-        officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
-    }
-
-    implementation project(":common")
-    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-    modImplementation "net.fabricmc:fabric-language-kotlin:$fabric_kotlin_version+kotlin.$kotlin_version"
-
     implementation("dev.hybridlabs.hapi:hapi-common-1.20.1:1.1.0")
     modImplementation("dev.hybridlabs.hapi:hapi-fabric-1.20.1:1.1.0")
-    implementation 'org.jetbrains:annotations:25.0.0'
-
-    //We still have to load the loader-specific version of any mods included in common
 
     modRuntimeOnly "io.github.flemmli97:debugutils:$minecraft_version-$debug_utils_version-fabric"
     modImplementation "maven.modrinth:carpet:$carpet_version"
     modImplementation("vectorwing:FarmersDelight:${fdrf_version}") {
         exclude(group: "net.fabricmc")
     }
-}
-
-// Set up datagen and export the output to be consumed by other projects
-configurations {
-    datagenOutput
 }
 
 fabricApi {
@@ -89,10 +37,6 @@ fabricApi {
         // Datagen lives in its own source set (src/datagen/kotlin) so that datagen-only
         // mod dependencies never reach the compile classpath of the shipped jar.
         createSourceSet = true
-    }
-
-    dependencies {
-        datagenOutput files(runDatagen)
     }
 }
 
@@ -133,39 +77,6 @@ dependencies {
     integrationModDependencies.each {
         modDatagenRuntimeOnly it
         modLocalRuntime it
-    }
-}
-
-loom {
-    var accessWidenerFile = file("src/main/resources/${mod_id}.accesswidener")
-    if (accessWidenerFile.exists()) {
-        accessWidenerPath.set(accessWidenerFile)
-    } else {
-        println "No access widener exists!"
-    }
-
-    mixin {
-        defaultRefmapName.set("${mod_id}.refmap.json")
-    }
-
-    compileKotlin {
-        source(project(":common").sourceSets.main.allSource)
-        inputs.file "../gradle.properties"
-    }
-
-    runs {
-        client {
-            client()
-            setConfigName("Fabric Client")
-            ideConfigGenerated(true)
-            runDir("run")
-        }
-        server {
-            server()
-            setConfigName("Fabric Server")
-            ideConfigGenerated(true)
-            runDir("run")
-        }
     }
 }
 
