@@ -84,6 +84,28 @@ sourceSets.main.resources.srcDirs += 'src/generated/resources'
 
 processResources {
     from configurations.fabricDatagen.singleFile
+
+    // Recipes for optional integrations carry Fabric's load conditions, which Forge ignores.
+    // Translate them, or every such recipe fails to parse when the integrated mod is absent.
+    doLast {
+        fileTree(destinationDir).matching { include 'data/**/*.json' }.each { file ->
+            if (!file.text.contains('"fabric:load_conditions"')) return
+
+            def json = new groovy.json.JsonSlurper().parse(file)
+            def conditions = json.remove('fabric:load_conditions')
+            if (conditions == null) return
+
+            json['conditions'] = conditions.collect { condition ->
+                def modLoaded = condition['values'].collect { [type: 'forge:mod_loaded', modid: it] }
+                switch (condition['condition']) {
+                    case 'fabric:all_mods_loaded': return modLoaded
+                    case 'fabric:any_mods_loaded': return [[type: 'forge:or', values: modLoaded]]
+                    default: throw new GradleException("${file}: no Forge equivalent for ${condition['condition']}")
+                }
+            }.flatten()
+            file.text = groovy.json.JsonOutput.toJson(json)
+        }
+    }
 }
 
 // Mods Hybrid Delights integrates with, so the integrations can be tested in a dev run. Their own

@@ -2,12 +2,14 @@ package dev.hybridlabs.delights.data.server
 
 import dev.hybridlabs.aquatic.item.HAItems
 import dev.hybridlabs.aquatic.item.HAPlatformItems
+import dev.hybridlabs.delights.data.OptionalMods
 import dev.hybridlabs.delights.data.builder.HDCookingPotRecipeBuilder
 import dev.hybridlabs.delights.data.builder.HDCuttingBoardRecipeBuilder
 import dev.hybridlabs.delights.item.HDItems
 import dev.hybridlabs.delights.tag.HDItemTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
+import net.fabricmc.fabric.api.resource.conditions.v1.DefaultResourceConditions
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.recipes.FinishedRecipe
 import net.minecraft.data.recipes.RecipeCategory
@@ -29,7 +31,9 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             TagKey.create(Registries.ITEM, ResourceLocation("c", "tools/knives"))
         )
 
-    override fun buildRecipes(exporter: Consumer<FinishedRecipe>) {
+    override fun buildRecipes(unconditionalExporter: Consumer<FinishedRecipe>) {
+        val exporter = withOptionalModConditions(unconditionalExporter)
+
         cuttingRecipes(exporter)
         knifeRecipes(exporter)
         craftingRecipes(exporter)
@@ -703,5 +707,18 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             output,
             experience
         )
+    }
+
+    /**
+     * Gives every recipe that references an optional mod a condition on that mod, so it is skipped
+     * rather than failing to parse when the mod is absent. The advancement inherits the condition.
+     */
+    private fun withOptionalModConditions(exporter: Consumer<FinishedRecipe>) = Consumer<FinishedRecipe> { recipe ->
+        val mods = OptionalMods.referencedBy(recipe.serializeRecipe()) +
+                (recipe.serializeAdvancement()?.let(OptionalMods::referencedBy) ?: emptySet())
+
+        val target = if (mods.isEmpty()) exporter
+        else withConditions(exporter, DefaultResourceConditions.allModsLoaded(*mods.sorted().toTypedArray()))
+        target.accept(recipe)
     }
 }
