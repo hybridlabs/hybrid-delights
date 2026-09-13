@@ -45,23 +45,27 @@ side = "BOTH"
 [[dependencies.${mod_id}]]
 modId = "hybrid_aquatic"
 mandatory = false
+versionRange = "[0,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
 modId = "hybrid_blocks"
 mandatory = false
+versionRange = "[0,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
 modId = "hybrid_birds"
 mandatory = false
+versionRange = "[0,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
 modId = "fantastic_fishery"
 mandatory = false
+versionRange = "[0,)"
 ordering = "NONE"
 side = "BOTH"
