@@ -11,18 +11,20 @@ repositories {
     }
 
     maven {
-        name = "Sleeping Town"
-        url = "https://repo.sleeping.town/"
-    }
-
-    maven {
         name = "Ladysnake Libs"
         url = 'https://maven.ladysnake.org/releases'
     }
 
-    maven {
-        name = "Geckolib"
-        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
+    // HAPI's POM pulls Geckolib in transitively. Keep it off every other repo, since a 5xx from
+    // any repo listed earlier fails resolution instead of falling through.
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Geckolib"
+                url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
+            }
+        }
+        filter { includeGroup("software.bernie.geckolib") }
     }
 
     maven {
