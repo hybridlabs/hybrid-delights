@@ -41,11 +41,16 @@
       "minecraft": "~1.21.1",
       "java": ">=21",
       "fabric-language-kotlin": "*",
-      "fabric-api": ">=0.116"
+      "fabric-api": ">=0.116",
+      "hapi": ">=1.0.0",
+      "farmersdelight": "*"
     },
 
 	"suggests": {
-		"farmersdelight": "*",
-		"farm_and_charm": "*"
+		"farm_and_charm": "*",
+		"hybrid_aquatic": "*",
+		"hybrid_blocks": "*",
+		"hybrid_birds": "*",
+		"fantastic_fishery": "*"
 	}
 }
