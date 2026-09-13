@@ -48,11 +48,15 @@
 		"java": ">=17",
 		"fabric-language-kotlin": "*",
 		"fabric-api": ">=0.92",
-		"hybrid_aquatic": ">=1.6.3"
+		"hapi": ">=1.1.0",
+		"farmersdelight": "*"
 	},
 
 	"suggests": {
-		"farmersdelight": "*",
-		"farm_and_charm": "*"
+		"farm_and_charm": "*",
+		"hybrid_aquatic": "*",
+		"hybrid_blocks": "*",
+		"hybrid_birds": "*",
+		"fantastic_fishery": "*"
 	}
 }
