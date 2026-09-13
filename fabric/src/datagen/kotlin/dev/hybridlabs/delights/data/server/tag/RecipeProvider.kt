@@ -1,14 +1,19 @@
 package dev.hybridlabs.delights.data.server.tag
 
+import com.mojang.serialization.JsonOps
 import dev.hybridlabs.aquatic.item.HAItems
 import dev.hybridlabs.aquatic.item.HAPlatformItems
 import dev.hybridlabs.blocks.item.HybridBlocksItems
+import dev.hybridlabs.delights.data.OptionalMods
 import dev.hybridlabs.delights.item.HDItems
 import dev.hybridlabs.delights.tag.HDItemTags
 import dev.hybridlabs.fantasticfishery.item.FFItems
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
 import net.fabricmc.fabric.api.recipe.v1.ingredient.DefaultCustomIngredients
+import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions
+import net.minecraft.advancements.Advancement
+import net.minecraft.advancements.AdvancementHolder
 import net.minecraft.advancements.critereon.InventoryChangeTrigger
 import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.core.HolderLookup
@@ -32,12 +37,14 @@ import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder
 import vectorwing.farmersdelight.refabricated.ItemAbility
 import java.util.concurrent.CompletableFuture
 
-class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture<HolderLookup.Provider>) :
+class RecipeProvider(output: FabricDataOutput, private val lookupProvider: CompletableFuture<HolderLookup.Provider>) :
     FabricRecipeProvider(output, lookupProvider) {
 
     val KNIVES = Ingredient.of(CommonTags.Items.TOOLS_KNIFE)
 
-    override fun buildRecipes(exporter: RecipeOutput) {
+    override fun buildRecipes(unconditionalExporter: RecipeOutput) {
+        val exporter = withOptionalModConditions(unconditionalExporter)
+
         cuttingRecipes(exporter)
         knifeRecipes(exporter)
         craftingRecipes(exporter)
@@ -1074,5 +1081,27 @@ class RecipeProvider(output: FabricDataOutput, lookupProvider: CompletableFuture
 
     private fun matchesTool(toolAction: ItemAbility, fallbackTag: TagKey<Item?>): Ingredient {
         return DefaultCustomIngredients.any(ItemAbilityIngredient(toolAction).toVanilla(), Ingredient.of(fallbackTag))
+    }
+
+    /**
+     * Gives every recipe that references an optional mod a condition on that mod, so it is skipped
+     * rather than failing to parse when the mod is absent. The advancement inherits the condition.
+     */
+    private fun withOptionalModConditions(exporter: RecipeOutput): RecipeOutput = object : RecipeOutput {
+        override fun accept(id: ResourceLocation, recipe: Recipe<*>, advancement: AdvancementHolder?) {
+            val ops = lookupProvider.join().createSerializationContext(JsonOps.INSTANCE)
+            val mods = OptionalMods.referencedBy(Recipe.CODEC.encodeStart(ops, recipe).orThrow) +
+                    (advancement?.let { OptionalMods.referencedBy(Advancement.CODEC.encodeStart(ops, it.value).orThrow) }
+                        ?: emptySet())
+
+            val target = if (mods.isEmpty()) exporter
+            else withConditions(exporter, ResourceConditions.allModsLoaded(*mods.sorted().toTypedArray()))
+            target.accept(id, recipe, advancement)
+        }
+
+        override fun advancement(): Advancement.Builder = exporter.advancement()
+
+        override fun getRecipeIdentifier(recipeId: ResourceLocation): ResourceLocation =
+            exporter.getRecipeIdentifier(recipeId)
     }
 }

@@ -1,8 +1,20 @@
 {
   "values": [
-    "hybrid_aquatic:anglerfish",
-    "hybrid_aquatic:dragonfish",
-    "hybrid_aquatic:flashlight_fish",
-    "hybrid_aquatic:barreleye"
+    {
+      "id": "hybrid_aquatic:anglerfish",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:dragonfish",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:flashlight_fish",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:barreleye",
+      "required": false
+    }
   ]
 }

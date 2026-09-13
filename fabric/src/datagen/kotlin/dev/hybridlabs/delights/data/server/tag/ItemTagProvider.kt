@@ -6,6 +6,7 @@ import dev.hybridlabs.delights.tag.HDItemTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
 import net.minecraft.core.HolderLookup
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.ResourceLocation
 import java.util.concurrent.CompletableFuture
 
@@ -38,13 +39,14 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
             getOrCreateTagBuilder(HDItemTags.CURED_ROE).add(item)
         }
 
-        getOrCreateTagBuilder(HDItemTags.GLOWSLIME_FISH)
-            .add(
-                HAItems.ANGLERFISH.get(),
-                HAItems.DRAGONFISH.get(),
-                HAItems.FLASHLIGHT_FISH.get(),
-                HAItems.BARRELEYE.get(),
-            )
+        setOf(
+            HAItems.ANGLERFISH.get(),
+            HAItems.DRAGONFISH.get(),
+            HAItems.FLASHLIGHT_FISH.get(),
+            HAItems.BARRELEYE.get(),
+        ).forEach { item ->
+            getOrCreateTagBuilder(HDItemTags.GLOWSLIME_FISH).addOptional(BuiltInRegistries.ITEM.getKey(item))
+        }
 
         //#region Hybrid API Tags
         getOrCreateTagBuilder(HDItemTags.CORAL_CHUNK)
