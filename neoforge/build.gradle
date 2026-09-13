@@ -145,3 +145,8 @@ compileKotlin {
     source(project(":common").sourceSets.main.allSource)
     inputs.file "../gradle.properties"
 }
+
+publishMods.platforms.configureEach {
+    requires 'kotlin-for-forge', 'farmers-delight', 'hybrid-api'
+    optional 'lets-do-farm-charm', 'hybrid-aquatic', 'hybrid-birds', 'hybrid-blocks', 'fantastic-fishery'
+}

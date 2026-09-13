@@ -153,3 +153,8 @@ loom {
         }
     }
 }
+
+publishMods.platforms.configureEach {
+    requires 'fabric-api', 'fabric-language-kotlin', 'farmers-delight-refabricated', 'hybrid-api'
+    optional 'lets-do-farm-charm', 'hybrid-aquatic', 'hybrid-birds', 'hybrid-blocks', 'fantastic-fishery'
+}
