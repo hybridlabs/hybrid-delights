@@ -158,7 +158,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             HDItems.CRAB_CAKE.get(), 1, 300, 1.0f)
             .addIngredient(HAItems.COOKED_CRAB.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "grains/wheat")))
+                ResourceLocation("c", "grain/wheat")))
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation("c", "eggs")))
             .unlockedByAnyIngredient(
@@ -174,7 +174,7 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation("c", "dough")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation("c", "onion")))
+                ResourceLocation("c", "crops/onion")))
             .unlockedByAnyIngredient(
                 HAItems.RAW_CRAB.get()
             )
