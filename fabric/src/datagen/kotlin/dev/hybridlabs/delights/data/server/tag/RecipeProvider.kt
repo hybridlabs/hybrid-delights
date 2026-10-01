@@ -277,7 +277,7 @@ class RecipeProvider(output: FabricDataOutput, private val lookupProvider: Compl
             HDItems.CRAB_CAKE.get(), 1, 300, 1.0f)
             .addIngredient(HAItems.RAW_CRAB.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation.fromNamespaceAndPath("c", "grains/wheat")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/wheat")))
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "eggs")))
             .unlockedBy(
@@ -296,9 +296,9 @@ class RecipeProvider(output: FabricDataOutput, private val lookupProvider: Compl
             .addIngredient(HAItems.RAW_CRAB.get())
             .addIngredient(ModItems.MILK_BOTTLE.get())
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation.fromNamespaceAndPath("c", "dough")))
+                ResourceLocation.fromNamespaceAndPath("c", "foods/dough")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation.fromNamespaceAndPath("c", "onion")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/onion")))
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
@@ -420,7 +420,7 @@ class RecipeProvider(output: FabricDataOutput, private val lookupProvider: Compl
             .addIngredient(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath("c", "crops/rice")))
             .addIngredient(TagKey.create(Registries.ITEM,
-                ResourceLocation.fromNamespaceAndPath("c", "vegetables/carrot")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/carrot")))
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
@@ -794,7 +794,7 @@ class RecipeProvider(output: FabricDataOutput, private val lookupProvider: Compl
             .requires(HAItems.TUNA.get())
             .requires(Items.BOWL)
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "salad_ingredients")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "foods/leafy_green")))
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "eggs")))
             .unlockedBy(
                 "has_any_ingredient",
@@ -814,7 +814,7 @@ class RecipeProvider(output: FabricDataOutput, private val lookupProvider: Compl
             .requires(Items.BOWL)
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/cabbage")))
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "bread/wheat")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "foods/bread")))
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
@@ -832,7 +832,7 @@ class RecipeProvider(output: FabricDataOutput, private val lookupProvider: Compl
             .requires(HAItems.CARP.get())
             .requires(HDItems.FISH_GELATIN.get(),2)
             .requires(TagKey.create(Registries.ITEM,
-                ResourceLocation.fromNamespaceAndPath("c", "vegetables/carrot")))
+                ResourceLocation.fromNamespaceAndPath("c", "crops/carrot")))
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(
@@ -847,7 +847,7 @@ class RecipeProvider(output: FabricDataOutput, private val lookupProvider: Compl
             .requires(HAItems.TUNA.get())
             .requires(Items.BREAD)
             .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "crops/tomato")))
-            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "salad_ingredients")))
+            .requires(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "foods/leafy_green")))
             .unlockedBy(
                 "has_any_ingredient",
                 InventoryChangeTrigger.TriggerInstance.hasItems(

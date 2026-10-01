@@ -20,7 +20,7 @@
       "item": "minecraft:milk_bucket"
     },
     {
-      "tag": "c:dough"
+      "tag": "c:foods/dough"
     }
   ],
   "container": {

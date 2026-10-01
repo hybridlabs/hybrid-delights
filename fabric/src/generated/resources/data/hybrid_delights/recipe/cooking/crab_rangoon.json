@@ -17,10 +17,10 @@
       "item": "farmersdelight:milk_bottle"
     },
     {
-      "tag": "c:dough"
+      "tag": "c:foods/dough"
     },
     {
-      "tag": "c:onion"
+      "tag": "c:crops/onion"
     }
   ],
   "recipe_book_tab": "meals",
