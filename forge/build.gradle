@@ -4,6 +4,14 @@ plugins {
 }
 
 processResources {
+    // The recipes and tags are generated for Fabric, where shared tags live in the 'c' namespace.
+    // On 1.20.1 Forge they live in 'forge', and that is where Farmer's Delight puts its tags, so
+    // a 'c' tag is empty there: the ingredient matches nothing and the recipe cannot be made.
+    filesMatching('data/**/*.json') {
+        filter { it.replaceAll(/"(#?)c:/, '"$1forge:') }
+        path = path.replaceFirst(/^data\/c\//, 'data/forge/')
+    }
+
     // Recipes for optional integrations carry Fabric's load conditions, which Forge ignores.
     // Translate them, or every such recipe fails to parse when the integrated mod is absent.
     doLast {
