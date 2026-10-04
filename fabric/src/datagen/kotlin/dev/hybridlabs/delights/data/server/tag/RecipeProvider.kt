@@ -138,35 +138,35 @@ class RecipeProvider(output: FabricDataOutput, private val lookupProvider: Compl
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
             .save(exporter)
-        
+
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CURED_COD_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
             .addIngredient(HDItems.SALT.get())
             .addIngredient(HDItems.COD_ROE.get())
             .unlockedByAnyIngredient(
-                HDItems.SALT.get(), 
+                HDItems.SALT.get(),
                 HDItems.COD_ROE.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
             .save(exporter)
-        
+
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CURED_SALMON_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
             .addIngredient(HDItems.SALT.get())
             .addIngredient(HDItems.SALMON_ROE.get())
             .unlockedByAnyIngredient(
-                HDItems.SALT.get(), 
+                HDItems.SALT.get(),
                 HDItems.SALMON_ROE.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
             .save(exporter)
-        
+
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CURED_TROPICAL_FISH_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
             .addIngredient(HDItems.SALT.get())
             .addIngredient(HDItems.TROPICAL_FISH_ROE.get())
             .unlockedByAnyIngredient(
-                HDItems.SALT.get(), 
+                HDItems.SALT.get(),
                 HDItems.TROPICAL_FISH_ROE.get()
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
@@ -182,7 +182,7 @@ class RecipeProvider(output: FabricDataOutput, private val lookupProvider: Compl
             )
             .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
             .save(exporter)
-        
+
         CookingPotRecipeBuilder.cookingPotRecipe(
             HDItems.CURED_CARP_ROE.get(), 1, 150, 1.0f, Items.GLASS_BOTTLE)
             .addIngredient(HDItems.SALT.get())
@@ -553,13 +553,6 @@ class RecipeProvider(output: FabricDataOutput, private val lookupProvider: Compl
             KNIVES,
             HDItems.PUFFERFISH_SLICE.get(), 2)
             .addResult(Items.BONE_MEAL)
-            .save(exporter)
-
-        CuttingBoardRecipeBuilder.cuttingRecipe(
-            Ingredient.of(HAItems.RAW_FISH_MEAT.get()),
-            KNIVES,
-            HAItems.RAW_FISH_MEAT.get(), 2
-        )
             .save(exporter)
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
