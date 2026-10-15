@@ -1011,6 +1011,7 @@ object HDItems {
                         .nutrition(10)
                         .saturationMod(0.8F)
                         .fast()
+                        .effect(MobEffectInstance(MobEffects.REGENERATION, 30, 0), 1.0F)
                         .build()
                 )
         )
