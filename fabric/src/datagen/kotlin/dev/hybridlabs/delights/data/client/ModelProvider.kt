@@ -271,6 +271,9 @@ class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             HDItems.PARTIALLY_EATEN_BUCKET_OF_CHICKEN.get(),
             HDItems.MOSTLY_EATEN_BUCKET_OF_CHICKEN.get(),
 
+            HDItems.CHICKEN_NUGGET.get(),
+            HDItems.FRIED_CHICKEN.get(),
+
             ).forEach { item ->
             generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM)
         }
