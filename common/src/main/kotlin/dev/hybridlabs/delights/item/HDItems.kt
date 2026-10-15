@@ -13,7 +13,9 @@ import net.minecraft.world.item.BowlFoodItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Block
+import vectorwing.farmersdelight.common.item.DrinkableItem
 import vectorwing.farmersdelight.common.item.KnifeItem
+import vectorwing.farmersdelight.common.registry.ModEffects
 import java.util.function.Supplier
 
 object HDItems {
@@ -504,6 +506,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationMod(0.8F)
+                        .effect(MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(16)
@@ -534,6 +537,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationMod(0.8F)
+                        .effect(MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(16)
@@ -550,6 +554,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationMod(0.8F)
+                        .effect(MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(16)
@@ -624,6 +629,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(12)
                         .saturationMod(0.8F)
+                        .effect(MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(16)
@@ -639,6 +645,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
+                        .effect(MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f)
                         .build()
                 )
                 .craftRemainder(Items.BOWL)
@@ -655,6 +662,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
+                        .effect(MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(1)
@@ -670,6 +678,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
+                        .effect(MobEffectInstance(ModEffects.NOURISHMENT.get(), 1200, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(16)
@@ -685,6 +694,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
+                        .effect(MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(16)
@@ -744,6 +754,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(14)
                         .saturationMod(0.75F)
+                        .effect(MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(16)
@@ -855,6 +866,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationMod(0.6F)
+                        .effect(MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(16)
@@ -870,6 +882,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationMod(0.6F)
+                        .effect(MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(16),
@@ -886,6 +899,7 @@ object HDItems {
                     FoodProperties.Builder()
                         .nutrition(6)
                         .saturationMod(0.6F)
+                        .effect(MobEffectInstance(MobEffects.GLOWING, 600, 0), 1.0f)
                         .build()
                 )
                 .stacksTo(16),
