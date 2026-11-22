@@ -1,0 +1,13 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    "hybrid_delights:sunflower_oil",
+    "minecraft:chicken"
+  ],
+  "result": {
+    "id": "hybrid_delights:fried_chicken",
+    "count": 2
+  }
+}

@@ -453,6 +453,68 @@ object HDItems {
         )
     }
 
+
+    //#region Hybrid Birds items
+    val SUNFLOWER_OIL = register(
+        "sunflower_oil"
+    ) {
+        Item(
+            HDItemProperties.props()
+        )
+    }
+
+    val CHICKEN_NUGGET = register(
+        "chicken_nugget"
+    ) {
+        Item(
+            HDItemProperties.props()
+                .hdFood(4, 0.6f, fast = true)
+        )
+    }
+
+    val FRIED_CHICKEN = register(
+        "fried_chicken"
+    ) {
+        Item(
+            HDItemProperties.props()
+                .hdFood(6, 0.8f)
+        )
+    }
+
+    val MOSTLY_EATEN_BUCKET_OF_CHICKEN = register(
+        "mostly_eaten_bucket_of_chicken",
+    ) {
+        Item(
+            HDItemProperties.props()
+                .hdFood(8, 0.2f)
+                .usingConvertsTo(Items.BUCKET)
+                .stacksTo(1)
+        )
+    }
+
+    val PARTIALLY_EATEN_BUCKET_OF_CHICKEN = register(
+        "partially_eaten_bucket_of_chicken",
+    ) {
+        Item(
+            HDItemProperties.props()
+                .hdFood(8, 0.4f)
+                .usingConvertsTo(MOSTLY_EATEN_BUCKET_OF_CHICKEN.get())
+                .stacksTo(1)
+        )
+    }
+
+    val BUCKET_OF_CHICKEN = register(
+        "bucket_of_chicken",
+    ) {
+        Item(
+            HDItemProperties.props()
+                .hdFood(8, 0.6f)
+                .usingConvertsTo(PARTIALLY_EATEN_BUCKET_OF_CHICKEN.get())
+                .stacksTo(1)
+        )
+    }
+    //#endregion
+
     private fun register(id: String, item: Supplier<Item>): Supplier<Item> {
         return HybridDelightsCommon.ITEMS.register(id) { HDItemProperties.withId(id, item::get) }
     }
