@@ -23,8 +23,8 @@ repositories {
 
 dependencies {
     implementation("dev.hybridlabs.hapi:hapi-neoforge-${minecraft_version}:${hapi_version}")
-    implementation "software.bernie.geckolib:geckolib-neoforge-${geckolib_version}"
-    implementation("curse.maven:farmers-delight-modern-neoforge-1707272:${fdneoforge_version}")
+    implementation "com.geckolib:geckolib-neoforge-${geckolib_version}"
+    implementation("curse.maven:farmers-delight-26-neo-ver-1699768:${fdneoforge_version}")
 }
 
 // Recipes for optional integrations carry Fabric's load conditions, which NeoForge ignores.
@@ -64,4 +64,15 @@ neoForge {
 publishMods.platforms.configureEach {
     requires 'kotlin-for-forge', 'farmers-delight', 'hybrid-api'
     optional 'farm_and_charm', 'hybrid-aquatic'
+}
+
+// GeckoLib 5.5 moved to the com.geckolib group, which hybrid-gradle's GeckoLib repository
+// filter does not include yet.
+repositories {
+    maven {
+        url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroup('com.geckolib')
+        }
+    }
 }

@@ -2,20 +2,23 @@ package dev.hybridlabs.delights.data.server
 
 import dev.hybridlabs.delights.item.HDItems
 import dev.hybridlabs.delights.tag.HDItemTags
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider
 import net.minecraft.core.HolderLookup
+import net.minecraft.core.registries.BuiltInRegistries
+import net.minecraft.resources.ResourceKey
+import net.minecraft.world.item.Item
 import java.util.concurrent.CompletableFuture
 
-class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFuture<HolderLookup.Provider>) :
-    FabricTagProvider.ItemTagProvider(output, registriesFuture) {
+class ItemTagProvider(output: FabricPackOutput, registriesFuture: CompletableFuture<HolderLookup.Provider>) :
+    FabricTagsProvider.ItemTagsProvider(output, registriesFuture) {
     override fun addTags(arg: HolderLookup.Provider) {
 
         setOf(
             HDItems.CORAL_KNIFE.get(),
             HDItems.SHARK_TOOTH_KNIFE.get(),
         ).forEach { item ->
-            valueLookupBuilder(HDItemTags.KNIVES).add(item)
+            builder(HDItemTags.KNIVES).add(key(item))
         }
 
         setOf(
@@ -24,7 +27,7 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
             HDItems.TROPICAL_FISH_ROE.get(),
             HDItems.CARP_ROE.get(),
         ).forEach { item ->
-            valueLookupBuilder(HDItemTags.ROE).add(item)
+            builder(HDItemTags.ROE).add(key(item))
         }
 
         setOf(
@@ -33,7 +36,10 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
             HDItems.CURED_TROPICAL_FISH_ROE.get(),
             HDItems.CURED_CARP_ROE.get(),
         ).forEach { item ->
-            valueLookupBuilder(HDItemTags.CURED_ROE).add(item)
+            builder(HDItemTags.CURED_ROE).add(key(item))
         }
     }
+
+    private fun key(item: Item): ResourceKey<Item> =
+        BuiltInRegistries.ITEM.getResourceKey(item).orElseThrow()
 }

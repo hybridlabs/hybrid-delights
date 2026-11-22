@@ -4,11 +4,10 @@ plugins {
 }
 
 dependencies {
-    implementation("dev.hybridlabs.hapi:hapi-common-${minecraft_version}:${hapi_version}")
-    modImplementation("dev.hybridlabs.hapi:hapi-fabric-${minecraft_version}:${hapi_version}")
+    implementation("dev.hybridlabs.hapi:hapi-fabric-${minecraft_version}:${hapi_version}")
 
-    modImplementation "software.bernie.geckolib:geckolib-fabric-${geckolib_version}"
-    modImplementation("maven.modrinth:farmers-delight-refabricated:${fdrf_version}")
+    implementation "com.geckolib:geckolib-fabric-${geckolib_version}"
+    implementation("maven.modrinth:farmers-delight-refabricated:${fdrf_version}")
 }
 
 configurations {
@@ -37,4 +36,15 @@ tasks.withType(Jar).configureEach {
 publishMods.platforms.configureEach {
     requires 'fabric-api', 'fabric-language-kotlin', 'farmers-delight-refabricated', 'hybrid-api'
     optional 'farm_and_charm', 'hybrid-aquatic'
+}
+
+// GeckoLib 5.5 moved to the com.geckolib group, which hybrid-gradle's GeckoLib repository
+// filter does not include yet.
+repositories {
+    maven {
+        url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroup('com.geckolib')
+        }
+    }
 }

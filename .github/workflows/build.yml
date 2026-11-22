@@ -24,16 +24,12 @@ jobs:
           # hybrid-api is built from its checkout (local_mods).
           submodules: true
 
-      # setup-java points JAVA_HOME at the LAST version listed, and that is the JVM Gradle runs
-      # on - it must be 21 or newer or Loom refuses to load. The earlier entry is the toolchain
-      # this project compiles against (java_version in gradle.properties), installed here so
-      # Gradle does not download a JDK on every run.
+      # Gradle itself has to run on Java 25 for the Loom/ModDevGradle generation used by
+      # 26.x, and the project toolchain is 25 as well.
       - name: set up jdks
         uses: actions/setup-java@v6
         with:
-          java-version: |
-            17
-            21
+          java-version: 25
           distribution: temurin
 
       # Validates the wrapper checksum, and caches ~/.gradle plus the Gradle build cache between
@@ -42,7 +38,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
 
       - name: build
-        run: ./gradlew build "-Dorg.gradle.java.installations.fromEnv=JAVA_HOME_17_X64,JAVA_HOME_21_X64"
+        run: ./gradlew build "-Dorg.gradle.java.installations.fromEnv=JAVA_HOME_25_X64"
 
       - name: capture build artifacts
         uses: actions/upload-artifact@v7

@@ -4,17 +4,19 @@ plugins {
 }
 
 dependencies {
-    implementation("dev.hybridlabs.hapi:hapi-common-${minecraft_version}:${hapi_version}")
-    implementation("software.bernie.geckolib:geckolib-neoforge-${geckolib_version}")
-
-    // Farmer's Delight's item and block classes are loader-independent. Compile common against the
-    // NeoForge port; each loader adds its own runtime jar below.
-    implementation("curse.maven:farmers-delight-modern-neoforge-1707272:${fdneoforge_version}")
+    // The common module compiles against the vanilla API only. Loader modules bring HAPI and
+    // GeckoLib at runtime.
+    compileOnly("dev.hybridlabs.hapi:hapi-common-${minecraft_version}:${hapi_version}")
+    compileOnly("com.geckolib:geckolib-neoforge-${geckolib_version}")
 }
 
+// GeckoLib 5.5 moved to the com.geckolib group, which hybrid-gradle's GeckoLib repository
+// filter does not include yet.
 repositories {
     maven {
-        name = 'CurseMaven'
-        url = 'https://cursemaven.com'
+        url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroup('com.geckolib')
+        }
     }
 }

@@ -2,14 +2,14 @@ package dev.hybridlabs.delights.data.client
 
 import dev.hybridlabs.delights.item.HDItemGroups
 import dev.hybridlabs.delights.item.HDItems
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.registries.BuiltInRegistries
 import java.util.concurrent.CompletableFuture
 
 class LanguageProvider(
-    output: FabricDataOutput,
+    output: FabricPackOutput,
     registries: CompletableFuture<HolderLookup.Provider>,
 ) : FabricLanguageProvider(output, registries) {
     override fun generateTranslations(registries: HolderLookup.Provider, builder: TranslationBuilder) {
