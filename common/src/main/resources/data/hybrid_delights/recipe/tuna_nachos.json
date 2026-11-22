@@ -6,7 +6,7 @@
     "minecraft:bowl",
     "#c:crops/tomato",
     "#c:crops/cabbage",
-    "#c:bread/wheat"
+    "#c:foods/bread"
   ],
   "result": {
     "id": "hybrid_delights:tuna_nachos",

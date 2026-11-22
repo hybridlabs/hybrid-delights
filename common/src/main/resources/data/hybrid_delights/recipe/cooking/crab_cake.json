@@ -4,7 +4,7 @@
   "experience": 1.0,
   "ingredients": [
     "hybrid_aquatic:cooked_crab",
-    "#c:grains/wheat",
+    "#c:crops/wheat",
     "#c:eggs"
   ],
   "recipe_book_tab": "meals",
