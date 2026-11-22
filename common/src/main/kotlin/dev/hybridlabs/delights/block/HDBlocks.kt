@@ -2,6 +2,9 @@ package dev.hybridlabs.delights.block
 
 import dev.hybridlabs.delights.HybridDelightsCommon
 import dev.hybridlabs.delights.platform.registration.RegistryObject
+import dev.hybridlabs.hapi.block.HAPIBlockProperties
+import net.minecraft.core.registries.Registries
+import net.minecraft.resources.ResourceKey
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.state.BlockState
@@ -14,14 +17,14 @@ object HDBlocks {
 
     val DRIFTWOOD_CABINET = register("driftwood_cabinet") {
         HybridCabinetBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BARREL)
+            HAPIBlockProperties.ofFullCopy(Blocks.BARREL)
                 .mapColor(MapColor.COLOR_LIGHT_GRAY)
         )
     }
 
     val SCHIST_STOVE = register("schist_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_BLACK)
                 .lightLevel(litBlockEmission(13))
         )
@@ -29,7 +32,7 @@ object HDBlocks {
 
     val CHIMNEYSTONE_STOVE = register("chimneystone_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_BROWN)
                 .lightLevel(litBlockEmission(13))
         )
@@ -37,7 +40,7 @@ object HDBlocks {
 
     val RED_BRINESTONE_STOVE = register("red_brinestone_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_RED)
                 .lightLevel(litBlockEmission(13))
         )
@@ -45,7 +48,7 @@ object HDBlocks {
 
     val ORANGE_BRINESTONE_STOVE = register("orange_brinestone_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_ORANGE)
                 .lightLevel(litBlockEmission(13))
         )
@@ -53,7 +56,7 @@ object HDBlocks {
 
     val YELLOW_BRINESTONE_STOVE = register("yellow_brinestone_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_YELLOW)
                 .lightLevel(litBlockEmission(13))
         )
@@ -61,7 +64,7 @@ object HDBlocks {
 
     val CALCITE_STOVE = register("calcite_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.CALCITE)
+            HAPIBlockProperties.ofFullCopy(Blocks.CALCITE)
                 .mapColor(MapColor.TERRACOTTA_WHITE)
                 .lightLevel(litBlockEmission(13))
         )
@@ -69,7 +72,7 @@ object HDBlocks {
 
     val MUD_STOVE = register("mud_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.MUD_BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.MUD_BRICKS)
                 .mapColor(MapColor.TERRACOTTA_BROWN)
                 .lightLevel(litBlockEmission(13))
         )
@@ -77,7 +80,7 @@ object HDBlocks {
 
     val NETHER_BRICK_STOVE = register("nether_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.NETHER_BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.NETHER_BRICKS)
                 .mapColor(MapColor.TERRACOTTA_BROWN)
                 .lightLevel(litBlockEmission(13))
         )
@@ -85,7 +88,7 @@ object HDBlocks {
 
     val RED_NETHER_BRICK_STOVE = register("red_nether_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.RED_NETHER_BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.RED_NETHER_BRICKS)
                 .mapColor(MapColor.TERRACOTTA_RED)
                 .lightLevel(litBlockEmission(13))
         )
@@ -93,7 +96,7 @@ object HDBlocks {
 
     val WHITE_STOVE = register("white_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_WHITE)
                 .lightLevel(litBlockEmission(13))
         )
@@ -101,7 +104,7 @@ object HDBlocks {
 
     val ORANGE_STOVE = register("orange_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_ORANGE)
                 .lightLevel(litBlockEmission(13))
         )
@@ -109,7 +112,7 @@ object HDBlocks {
 
     val MAGENTA_STOVE = register("magenta_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_MAGENTA)
                 .lightLevel(litBlockEmission(13))
         )
@@ -117,7 +120,7 @@ object HDBlocks {
 
     val LIGHT_BLUE_STOVE = register("light_blue_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_LIGHT_BLUE)
                 .lightLevel(litBlockEmission(13))
         )
@@ -125,7 +128,7 @@ object HDBlocks {
 
     val YELLOW_STOVE = register("yellow_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_YELLOW)
                 .lightLevel(litBlockEmission(13))
         )
@@ -133,7 +136,7 @@ object HDBlocks {
 
     val LIME_STOVE = register("lime_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.COLOR_LIGHT_GREEN)
                 .lightLevel(litBlockEmission(13))
         )
@@ -141,7 +144,7 @@ object HDBlocks {
 
     val PINK_STOVE = register("pink_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_PINK)
                 .lightLevel(litBlockEmission(13))
         )
@@ -149,7 +152,7 @@ object HDBlocks {
 
     val GRAY_STOVE = register("gray_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_GRAY)
                 .lightLevel(litBlockEmission(13))
         )
@@ -157,7 +160,7 @@ object HDBlocks {
 
     val LIGHT_GRAY_STOVE = register("light_gray_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)
                 .lightLevel(litBlockEmission(13))
         )
@@ -165,7 +168,7 @@ object HDBlocks {
 
     val CYAN_STOVE = register("cyan_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_CYAN)
                 .lightLevel(litBlockEmission(13))
         )
@@ -173,7 +176,7 @@ object HDBlocks {
 
     val PURPLE_STOVE = register("purple_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_PURPLE)
                 .lightLevel(litBlockEmission(13))
         )
@@ -181,7 +184,7 @@ object HDBlocks {
 
     val BLUE_STOVE = register("blue_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_BLUE)
                 .lightLevel(litBlockEmission(13))
         )
@@ -189,7 +192,7 @@ object HDBlocks {
 
     val BROWN_STOVE = register("brown_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_BROWN)
                 .lightLevel(litBlockEmission(13))
         )
@@ -197,7 +200,7 @@ object HDBlocks {
 
     val GREEN_STOVE = register("green_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_GREEN)
                 .lightLevel(litBlockEmission(13))
         )
@@ -205,7 +208,7 @@ object HDBlocks {
 
     val RED_STOVE = register("red_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_RED)
                 .lightLevel(litBlockEmission(13))
         )
@@ -213,7 +216,7 @@ object HDBlocks {
 
     val BLACK_STOVE = register("black_brick_stove") {
         HybridStoveBlock(
-            HDBlockProperties.ofFullCopy(Blocks.BRICKS)
+            HAPIBlockProperties.ofFullCopy(Blocks.BRICKS)
                 .mapColor(MapColor.TERRACOTTA_BLACK)
                 .lightLevel(litBlockEmission(13))
         )
@@ -224,6 +227,8 @@ object HDBlocks {
     }
 
     fun register(id: String, block: Supplier<out Block>): RegistryObject<Block> {
-        return HybridDelightsCommon.BLOCKS.register(id) { HDBlockProperties.withId(id) { block.get() } }
+        return HybridDelightsCommon.BLOCKS.register(id) {
+            HAPIBlockProperties.withId(ResourceKey.create(Registries.BLOCK, HybridDelightsCommon.locate(id))) { block.get() }
+        }
     }
 }
