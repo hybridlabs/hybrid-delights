@@ -7,9 +7,6 @@ dependencies {
     implementation("dev.hybridlabs.hapi:hapi-common-${minecraft_version}:${hapi_version}")
     implementation("software.bernie.geckolib:geckolib-neoforge-${geckolib_version}")
 
-    // Built from the hybrid-birds checkout listed in local_mods, rather than its published jar.
-    implementation("dev.hybridlabs:hybrid_birds-common-${minecraft_version}:${hybrid_birds_version}")
-
     // Farmer's Delight's item and block classes are loader-independent. Compile common against the
     // NeoForge port; each loader adds its own runtime jar below.
     implementation("curse.maven:farmers-delight-modern-neoforge-1707272:${fdneoforge_version}")
