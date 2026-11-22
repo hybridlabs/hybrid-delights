@@ -5,7 +5,7 @@
     "hybrid_aquatic:carp",
     "hybrid_delights:fish_gelatin",
     "hybrid_delights:fish_gelatin",
-    "#c:vegetables/carrot"
+    "#c:crops/carrot"
   ],
   "result": {
     "id": "hybrid_delights:jellied_carp",
