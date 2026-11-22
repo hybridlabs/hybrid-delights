@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "hybrid_delights:block/calcite_brick_stove_bottom",
+    "front": "hybrid_delights:block/calcite_brick_stove_front_on",
+    "side": "hybrid_delights:block/calcite_brick_stove_side",
+    "top": "farmersdelight:block/stove_top_on"
+  }
+}

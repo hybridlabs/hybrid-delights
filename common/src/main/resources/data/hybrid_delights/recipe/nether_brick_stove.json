@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:nether_bricks",
+    "C": "minecraft:campfire",
+    "i": "#c:ingots/iron"
+  },
+  "pattern": [
+    "iii",
+    "B B",
+    "BCB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:nether_brick_stove"
+  }
+}
