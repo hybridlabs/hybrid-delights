@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "minecraft:sunflower"
+  ],
+  "result": {
+    "id": "hybrid_delights:sunflower_oil",
+    "count": 1
+  }
+}
