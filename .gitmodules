@@ -2,7 +2,3 @@
 	path = hybrid-api
 	url = https://github.com/hybridlabs/hybrid-api.git
 	branch = 26.2
-[submodule "hybrid-birds"]
-	path = hybrid-birds
-	url = ../hybrid-birds.git
-	branch = 26.2-1.3
