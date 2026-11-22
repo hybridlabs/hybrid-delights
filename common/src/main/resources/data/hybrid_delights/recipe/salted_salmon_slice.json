@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "farmersdelight:salmon_slice",
+    "hybrid_delights:salt",
+    "hybrid_delights:salt"
+  ],
+  "result": {
+    "id": "hybrid_delights:salted_salmon_slice",
+    "count": 1
+  }
+}

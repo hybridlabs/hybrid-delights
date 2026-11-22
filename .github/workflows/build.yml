@@ -21,8 +21,7 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v7
         with:
-          # hybrid-aquatic is built from its checkout (local_mods); its own submodules stay
-          # uninitialised so its dependencies resolve from Maven, as they do in Aquatic's CI.
+          # hybrid-api is built from its checkout (local_mods).
           submodules: true
 
       # setup-java points JAVA_HOME at the LAST version listed, and that is the JVM Gradle runs
@@ -51,5 +50,5 @@ jobs:
           name: artifacts
           path: |
             fabric/build/libs/
-            forge/build/libs/
+            neoforge/build/libs/
           if-no-files-found: error

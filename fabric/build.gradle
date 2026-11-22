@@ -3,85 +3,23 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
 }
 
-repositories {
-    maven {
-        url "https://jitpack.io/" // Fabric ASM
-        content {
-            excludeGroup "io.github.fabricators_of_create"
-        }
-    }
-
-    maven {
-        name = "Greenhouse Maven"
-        url = 'https://maven.greenhouse.lgbt/releases/'
-    }
-}
-
 dependencies {
     implementation("dev.hybridlabs.hapi:hapi-common-${minecraft_version}:${hapi_version}")
     modImplementation("dev.hybridlabs.hapi:hapi-fabric-${minecraft_version}:${hapi_version}")
 
-    // Built from the hybrid-aquatic checkout listed in local_mods, rather than its published jar.
-    modImplementation("dev.hybridlabs:hybrid_aquatic-fabric-${minecraft_version}:${aquatic_version}") {
-        transitive = false
-    }
-
-    modApi "software.bernie.geckolib:geckolib-fabric-$geckolib_version"
-    include modImplementation("com.jamieswhiteshirt:reach-entity-attributes:$reach_entity_attributes_version")
-
-    modImplementation "maven.modrinth:lithostitched:${lithostitched_version}-fabric-1.20"
-    modImplementation("com.terraformersmc:biolith-fabric:${biolith_version}") {
-        exclude(group: "com.github.glitchfiend")
-    }
-    modImplementation "dev.emi:trinkets:${trinkets_version}"
-
-    implementation 'org.jetbrains:annotations:25.0.0'
-
-    modRuntimeOnly "io.github.flemmli97:debugutils:$minecraft_version-$debug_utils_version-fabric"
-    modRuntimeOnly "maven.modrinth:carpet:$carpet_version"
-    modImplementation("vectorwing:FarmersDelight:${fdrf_version}") {
-        exclude(group: "net.fabricmc")
-        // Bundled inside the Farmer's Delight jar, and no longer served on its maven.
-        exclude(group: "io.github.fabricators_of_create.Porting-Lib")
-    }
-
-    modApi("com.terraformersmc:modmenu:${modmenu_version}")
+    modImplementation "software.bernie.geckolib:geckolib-fabric-${geckolib_version}"
+    modImplementation("maven.modrinth:farmers-delight-refabricated:${fdrf_version}")
 }
 
-// Set up datagen and export the output to be consumed by other projects
 configurations {
     datagenOutput
-}
-
-// Farmer's Delight Refabricated depends on Porting Lib, whose maven no longer serves the
-// individual modules. Its Modrinth distribution bundles them as nested jars, which Loom does not
-// remap, so unpack them into a flat directory and treat each one as a mod dependency.
-def portingLibVersion = '2.3.8+1.20.1'
-def portingLibUrl = "https://cdn.modrinth.com/data/tEJPA4Ty/versions/c8mvvgoR/porting_lib-${portingLibVersion}.jar"
-def portingLibDir = layout.buildDirectory.dir('porting-lib').get().asFile
-def portingLibBundle = new File(portingLibDir, 'bundle.zip')
-
-if (!portingLibBundle.exists()) {
-    portingLibDir.mkdirs()
-    new URL(portingLibUrl).withInputStream { input ->
-        portingLibBundle.withOutputStream { output -> output << input }
-    }
-}
-zipTree(portingLibBundle).matching { include 'META-INF/jars/*.jar' }.visit { entry ->
-    if (entry.directory) return
-    def target = new File(portingLibDir, entry.name)
-    if (target.exists()) return
-    entry.open().withStream { input -> target.withOutputStream { output -> output << input } }
-}
-
-dependencies {
-    modRuntimeOnly fileTree(portingLibDir) { include '*.jar' }
 }
 
 fabricApi {
     configureDataGeneration {
         setModId("$mod_id")
         outputDirectory = file("src/generated/resources")
+        client = true
     }
 
     dependencies {
@@ -89,14 +27,14 @@ fabricApi {
     }
 }
 
-loom {
-    mixin {
-        useLegacyMixinAp = true
-        defaultRefmapName.set("${mod_id}.refmap.json")
-    }
+// runDatagen writes into src/generated/resources, which is part of the main sourceset.
+// Without this ordering Gradle rejects a combined 'build runDatagen' invocation with an
+// implicit-dependency validation error and datagen never gets a chance to run.
+tasks.withType(Jar).configureEach {
+    if (name == 'sourcesJar') mustRunAfter tasks.named('runDatagen')
 }
 
 publishMods.platforms.configureEach {
-    requires 'fabric-api', 'fabric-language-kotlin', 'geckolib', 'farmers-delight-refabricated', 'hybrid-aquatic'
-    optional 'trinkets'
+    requires 'fabric-api', 'fabric-language-kotlin', 'farmers-delight-refabricated', 'hybrid-api'
+    optional 'farm_and_charm', 'hybrid-aquatic'
 }

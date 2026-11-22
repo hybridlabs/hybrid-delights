@@ -1,5 +1,6 @@
 pluginManagement {
     repositories {
+        mavenCentral()
         gradlePluginPortal()
         maven {
             name = 'Fabric'
@@ -22,4 +23,4 @@ plugins {
 rootProject.name = 'hybrid-delights'
 include 'common'
 include 'fabric'
-include 'forge'
+include 'neoforge'

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": "hybrid_delights:pufferfish_slice",
+  "result": {
+    "id": "hybrid_delights:cooked_pufferfish_slice",
+    "count": 1
+  }
+}

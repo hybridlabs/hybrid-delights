@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": "hybrid_delights:ray_wing",
+  "result": {
+    "id": "hybrid_delights:cooked_ray_wing",
+    "count": 1
+  }
+}

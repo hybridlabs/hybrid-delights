@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "hybrid_aquatic:stingray"
+  ],
+  "result": [
+    {
+      "item": {
+        "id": "hybrid_delights:ray_wing",
+        "count": 1
+      }
+    }
+  ],
+  "tool": "#c:tools/knife",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "hybrid_aquatic"
+      ]
+    }
+  ]
+}

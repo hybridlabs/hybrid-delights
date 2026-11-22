@@ -2,11 +2,9 @@ package dev.hybridlabs.delights.item
 
 import net.minecraft.advancements.CriteriaTriggers
 import net.minecraft.server.level.ServerPlayer
-import net.minecraft.sounds.SoundEvent
-import net.minecraft.sounds.SoundEvents
 import net.minecraft.stats.Stats
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.*
@@ -34,23 +32,15 @@ class BrineBottleItem(properties: Properties) : Item(properties) {
         }
     }
 
-    override fun getUseDuration(stack: ItemStack): Int {
+    override fun getUseDuration(stack: ItemStack, entity: LivingEntity): Int {
         return 40
     }
 
-    override fun getUseAnimation(stack: ItemStack): UseAnim {
-        return UseAnim.DRINK
+    override fun getUseAnimation(stack: ItemStack): ItemUseAnimation {
+        return ItemUseAnimation.DRINK
     }
 
-    override fun getDrinkingSound(): SoundEvent {
-        return SoundEvents.GENERIC_DRINK
-    }
-
-    override fun getEatingSound(): SoundEvent {
-        return SoundEvents.GENERIC_DRINK
-    }
-
-    override fun use(level: Level, player: Player, hand: InteractionHand): InteractionResultHolder<ItemStack?> {
+    override fun use(level: Level, player: Player, hand: InteractionHand): InteractionResult {
         return ItemUtils.startUsingInstantly(level, player, hand)
     }
 }

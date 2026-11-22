@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "hybrid_delights:pufferfish_slice",
+    "hybrid_delights:salt",
+    "hybrid_delights:salt"
+  ],
+  "result": {
+    "id": "hybrid_delights:salted_pufferfish_slice",
+    "count": 1
+  }
+}

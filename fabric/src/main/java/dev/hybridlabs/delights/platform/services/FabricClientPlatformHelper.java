@@ -1,15 +1,13 @@
 package dev.hybridlabs.delights.platform.services;
 
 import dev.hybridlabs.delights.platform.registration.RegistryObject;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.renderer.RenderType;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.Block;
-
-import java.util.Arrays;
 
 public class FabricClientPlatformHelper implements ClientPlatformHelper {
 
@@ -20,8 +18,7 @@ public class FabricClientPlatformHelper implements ClientPlatformHelper {
     }
 
     @Override
-    public void registerBlockRenderers(RenderType renderType, Block... blocks) {
-        BlockRenderLayerMap registry = BlockRenderLayerMap.INSTANCE;
-        Arrays.stream(blocks).forEach(block -> registry.putBlocks(renderType, blocks));
+    public void registerBlockRenderers(ChunkSectionLayer layer, Block... blocks) {
+        BlockRenderLayerMap.putBlocks(layer, blocks);
     }
 }

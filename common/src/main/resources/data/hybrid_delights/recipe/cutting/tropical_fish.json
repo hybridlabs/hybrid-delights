@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "minecraft:tropical_fish"
+  ],
+  "result": [
+    {
+      "item": {
+        "id": "hybrid_aquatic:raw_fish_meat",
+        "count": 1
+      }
+    },
+    {
+      "item": {
+        "id": "minecraft:bone_meal",
+        "count": 1
+      }
+    },
+    {
+      "chance": 0.5,
+      "item": {
+        "id": "hybrid_delights:tropical_fish_roe",
+        "count": 1
+      }
+    }
+  ],
+  "tool": "#c:tools/knife",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "hybrid_aquatic"
+      ]
+    }
+  ]
+}

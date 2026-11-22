@@ -1,0 +1,67 @@
+plugins {
+    id 'dev.hybridlabs.neoforge'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+// Datagen only runs on Fabric. Copy its output into the NeoForge jar so both loaders ship the
+// same generated language files and tags.
+configurations.create('fabricDatagen')
+dependencies {
+    fabricDatagen project(path: ':fabric', configuration: 'datagenOutput')
+}
+
+processResources {
+    from configurations.fabricDatagen.singleFile
+}
+
+repositories {
+    maven {
+        name = 'CurseMaven'
+        url = 'https://cursemaven.com'
+    }
+}
+
+dependencies {
+    implementation("dev.hybridlabs.hapi:hapi-neoforge-${minecraft_version}:${hapi_version}")
+    implementation "software.bernie.geckolib:geckolib-neoforge-${geckolib_version}"
+    implementation("curse.maven:farmers-delight-modern-neoforge-1707272:${fdneoforge_version}")
+}
+
+// Recipes for optional integrations carry Fabric's load conditions, which NeoForge ignores.
+// Translate them, or every such recipe fails to parse when the integrated mod is absent.
+processResources {
+    doLast {
+        fileTree(destinationDir).matching { include 'data/**/*.json' }.each { file ->
+            if (!file.text.contains('"fabric:load_conditions"')) return
+
+            def json = new groovy.json.JsonSlurper().parse(file)
+            def conditions = json.remove('fabric:load_conditions')
+            if (conditions == null) return
+
+            json['neoforge:conditions'] = conditions.collect { condition ->
+                def modLoaded = condition['values'].collect { [type: 'neoforge:mod_loaded', modid: it] }
+                switch (condition['condition']) {
+                    case 'fabric:all_mods_loaded': return modLoaded
+                    case 'fabric:any_mods_loaded': return [[type: 'neoforge:or', values: modLoaded]]
+                    default: throw new GradleException("${file}: no NeoForge equivalent for ${condition['condition']}")
+                }
+            }.flatten()
+            file.text = groovy.json.JsonOutput.toJson(json)
+        }
+    }
+}
+
+// hybrid-gradle still configures its data run with the MDG 1.x `data()` type, which NeoForge no
+// longer ships from 1.21.4 on (only clientData/serverData exist now). Keep the run/task names
+// (`runData`, `prepareDataRun`) but use the server data generator: this module only registers
+// GatherDataEvent.Server providers, while client assets come from the Fabric project's datagen.
+neoForge {
+    runs.named('data') {
+        serverData()
+    }
+}
+
+publishMods.platforms.configureEach {
+    requires 'kotlin-for-forge', 'farmers-delight', 'hybrid-api'
+    optional 'farm_and_charm', 'hybrid-aquatic'
+}

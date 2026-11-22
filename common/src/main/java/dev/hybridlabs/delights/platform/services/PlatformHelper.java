@@ -1,19 +1,6 @@
 package dev.hybridlabs.delights.platform.services;
 
-import dev.hybridlabs.delights.platform.registration.RegistryObject;
-import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SpawnEggItem;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.levelgen.Heightmap;
-import org.jetbrains.annotations.NotNull;
-
 import java.nio.file.Path;
-import java.util.concurrent.Callable;
-import java.util.function.Supplier;
 
 public interface PlatformHelper {
 
@@ -35,7 +22,7 @@ public interface PlatformHelper {
     /**
      * Check if the game is currently in a development environment.
      *
-     * @return True if in a development environment, false otherwise.
+     * @return True in a development environment, false otherwise.
      */
     boolean isDevelopmentEnvironment();
 
@@ -45,10 +32,8 @@ public interface PlatformHelper {
      * @return The name of the environment type.
      */
     default String getEnvironmentName() {
-
         return isDevelopmentEnvironment() ? "development" : "production";
     }
 
     Path getConfigDir();
 }
-

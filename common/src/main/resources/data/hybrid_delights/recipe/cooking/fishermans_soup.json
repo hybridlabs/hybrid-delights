@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    "hybrid_aquatic:raw_fish_meat",
+    "#c:crops/onion",
+    "#c:crops/tomato"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "hybrid_delights:fishermans_soup",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "hybrid_aquatic"
+      ]
+    }
+  ]
+}

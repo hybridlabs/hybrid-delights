@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#hybrid_delights:cured_roe",
+    "minecraft:bread"
+  ],
+  "result": {
+    "id": "hybrid_delights:caviar_toast",
+    "count": 2
+  }
+}

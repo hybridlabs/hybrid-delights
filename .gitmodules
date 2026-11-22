@@ -1,4 +1,4 @@
-[submodule "hybrid-aquatic"]
-	path = hybrid-aquatic
-	url = ../hybrid-aquatic.git
-	branch = 1.20.1-1.7
+[submodule "hybrid-api"]
+	path = hybrid-api
+	url = https://github.com/hybridlabs/hybrid-api.git
+	branch = 1.21.11

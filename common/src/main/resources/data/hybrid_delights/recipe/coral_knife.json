@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": "hybrid_aquatic:coral_chunk",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "C",
+    "S"
+  ],
+  "result": {
+    "id": "hybrid_delights:coral_knife",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "hybrid_aquatic"
+      ]
+    }
+  ]
+}

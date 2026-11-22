@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "minecraft:salmon"
+  ],
+  "result": [
+    {
+      "item": {
+        "id": "farmersdelight:salmon_slice",
+        "count": 1
+      }
+    },
+    {
+      "item": {
+        "id": "minecraft:bone_meal",
+        "count": 1
+      }
+    },
+    {
+      "chance": 0.5,
+      "item": {
+        "id": "hybrid_delights:salmon_roe",
+        "count": 1
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

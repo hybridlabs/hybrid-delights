@@ -1,0 +1,57 @@
+modLoader = "kotlinforforge"
+
+loaderVersion = "[4,)"
+license = "${license}"
+issueTrackerURL = "https://github.com/hybridlabs/hybrid-delights/issues"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${version}"
+displayName = "${mod_name}"
+displayURL = "https://hybridlabs.net/"
+logoFile = "${mod_id}.png"
+credits = '''${credits}'''
+authors = "${mod_author}"
+description = '''${description}'''
+
+[[dependencies.${mod_id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "[${neoforge_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "hapi"
+type = "required"
+versionRange = "[${hapi_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "farmersdelight"
+type = "required"
+versionRange = "[0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "farm_and_charm"
+type = "optional"
+versionRange = "[0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "hybrid_aquatic"
+type = "optional"
+versionRange = "[0,)"
+ordering = "NONE"
+side = "BOTH"

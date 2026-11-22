@@ -4,10 +4,15 @@ import dev.hybridlabs.delights.item.HDItemGroups
 import dev.hybridlabs.delights.item.HDItems
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
+import net.minecraft.core.HolderLookup
 import net.minecraft.core.registries.BuiltInRegistries
+import java.util.concurrent.CompletableFuture
 
-class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output) {
-    override fun generateTranslations(builder: TranslationBuilder) {
+class LanguageProvider(
+    output: FabricDataOutput,
+    registries: CompletableFuture<HolderLookup.Provider>,
+) : FabricLanguageProvider(output, registries) {
+    override fun generateTranslations(registries: HolderLookup.Provider, builder: TranslationBuilder) {
         // item group
         builder.add(
             BuiltInRegistries.CREATIVE_MODE_TAB.getResourceKey(HDItemGroups.HYBRID_DELIGHTS.get())

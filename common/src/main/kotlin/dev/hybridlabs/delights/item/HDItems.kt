@@ -2,13 +2,11 @@ package dev.hybridlabs.delights.item
 
 import dev.hybridlabs.hapi.item.HAPIToolMaterials
 import dev.hybridlabs.delights.HybridDelightsCommon
+import dev.hybridlabs.delights.item.HDItemProperties
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
-import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
-import vectorwing.farmersdelight.common.item.DrinkableItem
-import vectorwing.farmersdelight.common.item.KnifeItem
 import java.util.function.Supplier
 
 object HDItems {
@@ -17,15 +15,8 @@ object HDItems {
         "brine_bottle"
     ) {
         BrineBottleItem(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(0)
-                        .saturationMod(0.0F)
-                        .effect(MobEffectInstance(MobEffects.POISON, 300, 0),1.0f)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(0, 0.0f, effect = MobEffectInstance(MobEffects.POISON, 300, 0), chance = 1.0f, drink = true)
                 .craftRemainder(Items.GLASS_BOTTLE)
                 .stacksTo(16)
         )
@@ -35,14 +26,8 @@ object HDItems {
         "salt"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.3F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(2, 0.3f)
         )
     }
 
@@ -50,15 +35,8 @@ object HDItems {
         "salted_cod"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(3)
-                        .saturationMod(0.3F)
-                        .meat()
-                        .fast()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(3, 0.3f, fast = true)
         )
     }
 
@@ -66,15 +44,8 @@ object HDItems {
         "salted_cod_slice"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.3F)
-                        .meat()
-                        .fast()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(2, 0.3f, fast = true)
         )
     }
 
@@ -82,15 +53,8 @@ object HDItems {
         "salted_salmon"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(3)
-                        .saturationMod(0.3F)
-                        .meat()
-                        .fast()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(3, 0.3f, fast = true)
         )
     }
 
@@ -98,44 +62,29 @@ object HDItems {
         "salted_salmon_slice"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.3F)
-                        .meat()
-                        .fast()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(2, 0.3f, fast = true)
         )
     }
 
     val CORAL_KNIFE = register(
         "coral_knife"
     ) {
-        KnifeItem(HAPIToolMaterials.CORAL, 0.5f, -2.0f, Item.Properties()
-        )
+        Item(HDItemProperties.props().sword(HAPIToolMaterials.CORAL, 0.5f, -2.0f))
     }
 
     val SHARK_TOOTH_KNIFE = register(
         "shark_tooth_knife"
     ) {
-        KnifeItem(HAPIToolMaterials.SEASHELL, 0.5f, -2.0f, Item.Properties()
-        )
+        Item(HDItemProperties.props().sword(HAPIToolMaterials.SEASHELL, 0.5f, -2.0f))
     }
 
     val PICKLED_HERRING = register(
         "pickled_herring"
     ) {
-        DrinkableItem(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(6)
-                        .saturationMod(0.6F)
-                        .meat()
-                        .build()
-                )
+        Item(
+            HDItemProperties.props()
+                .hdFood(6, 0.6f, drink = true)
                 .craftRemainder(Items.GLASS_BOTTLE)
                 .stacksTo(16)
         )
@@ -144,15 +93,9 @@ object HDItems {
     val PICKLED_BULL_KELP = register(
         "pickled_bull_kelp"
     ) {
-        DrinkableItem(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(6)
-                        .saturationMod(0.6F)
-                        .meat()
-                        .build()
-                )
+        Item(
+            HDItemProperties.props()
+                .hdFood(6, 0.6f, drink = true)
                 .craftRemainder(Items.GLASS_BOTTLE)
                 .stacksTo(16)
         )
@@ -162,14 +105,8 @@ object HDItems {
         "fish_gelatin"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(1)
-                        .saturationMod(0.2F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(1, 0.2f)
         )
     }
 
@@ -177,14 +114,8 @@ object HDItems {
         "cod_roe"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.4F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(2, 0.4f)
                 .stacksTo(16)
         )
     }
@@ -193,15 +124,8 @@ object HDItems {
         "cured_cod_roe"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(4)
-                        .saturationMod(0.6F)
-                        .meat()
-                        .fast()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(4, 0.6f, fast = true)
                 .craftRemainder(Items.GLASS_BOTTLE)
                 .stacksTo(16)
         )
@@ -211,14 +135,8 @@ object HDItems {
         "salmon_roe"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.4F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(2, 0.4f)
                 .stacksTo(16)
         )
     }
@@ -227,15 +145,8 @@ object HDItems {
         "cured_salmon_roe"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(4)
-                        .saturationMod(0.6F)
-                        .meat()
-                        .fast()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(4, 0.6f, fast = true)
                 .craftRemainder(Items.GLASS_BOTTLE)
                 .stacksTo(16)
         )
@@ -245,14 +156,8 @@ object HDItems {
         "tropical_fish_roe"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.4F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(2, 0.4f)
                 .stacksTo(16)
         )
     }
@@ -261,15 +166,8 @@ object HDItems {
         "cured_tropical_fish_roe"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(4)
-                        .saturationMod(0.6F)
-                        .meat()
-                        .fast()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(4, 0.6f, fast = true)
                 .craftRemainder(Items.GLASS_BOTTLE)
                 .stacksTo(16)
         )
@@ -279,14 +177,8 @@ object HDItems {
         "carp_roe"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.4F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(2, 0.4f)
                 .stacksTo(16)
         )
     }
@@ -295,15 +187,8 @@ object HDItems {
         "cured_carp_roe"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(4)
-                        .saturationMod(0.6F)
-                        .meat()
-                        .fast()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(4, 0.6f, fast = true)
                 .craftRemainder(Items.GLASS_BOTTLE)
                 .stacksTo(16)
         )
@@ -313,15 +198,8 @@ object HDItems {
         "caviar_toast"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(8)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .fast()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(8, 0.8f, fast = true)
                 .stacksTo(16)
         )
     }
@@ -330,14 +208,8 @@ object HDItems {
         "ray_wing"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.1F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(2, 0.1f)
         )
     }
 
@@ -345,14 +217,8 @@ object HDItems {
         "cooked_ray_wing"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(6)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(6, 0.8f)
         )
     }
 
@@ -360,15 +226,8 @@ object HDItems {
         "salted_ray_wing"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(3)
-                        .saturationMod(0.3F)
-                        .fast()
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(3, 0.3f, fast = true)
         )
     }
 
@@ -376,15 +235,8 @@ object HDItems {
         "pufferfish_slice"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(1)
-                        .saturationMod(0.1F)
-                        .effect(MobEffectInstance(MobEffects.POISON, 300, 0),0.25f)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(1, 0.1f, effect = MobEffectInstance(MobEffects.POISON, 300, 0), chance = 0.25f)
         )
     }
 
@@ -392,14 +244,8 @@ object HDItems {
         "cooked_pufferfish_slice"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(3)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(3, 0.8f)
         )
     }
 
@@ -407,15 +253,8 @@ object HDItems {
         "salted_pufferfish_slice"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(2)
-                        .saturationMod(0.3F)
-                        .fast()
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(2, 0.3f, fast = true)
         )
     }
 
@@ -423,14 +262,8 @@ object HDItems {
         "crab_cake"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(3)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(3, 0.8f)
         )
     }
 
@@ -438,15 +271,8 @@ object HDItems {
         "crab_rangoon"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(3)
-                        .saturationMod(0.8F)
-                        .fast()
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(3, 0.8f, fast = true)
         )
     }
 
@@ -454,14 +280,8 @@ object HDItems {
         "bisque"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(12)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(12, 0.8f)
                 .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
@@ -471,14 +291,8 @@ object HDItems {
         "shrimp_fried_rice"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(12)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(12, 0.8f)
                 .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
@@ -488,14 +302,8 @@ object HDItems {
         "lobster_stew"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(12)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(12, 0.8f)
                 .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
@@ -506,14 +314,8 @@ object HDItems {
         "chowder",
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(12)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(12, 0.8f)
                 .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
@@ -523,14 +325,8 @@ object HDItems {
         "tuna_sandwich"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(10)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(10, 0.8f)
         )
     }
 
@@ -538,14 +334,8 @@ object HDItems {
         "tuna_nachos"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(10)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(10, 0.8f)
                 .stacksTo(16)
         )
     }
@@ -554,14 +344,8 @@ object HDItems {
         "tuna_casserole"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(14)
-                        .saturationMod(0.75F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(14, 0.75f)
                 .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
@@ -571,14 +355,8 @@ object HDItems {
         "tuna_salad"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(8)
-                        .saturationMod(0.95F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(8, 0.95f)
                 .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
@@ -588,14 +366,8 @@ object HDItems {
         "fishermans_soup"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(12)
-                        .saturationMod(0.8F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(12, 0.8f)
                 .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
@@ -605,14 +377,8 @@ object HDItems {
         "eel_noodles"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(14)
-                        .saturationMod(0.75F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(14, 0.75f)
                 .craftRemainder(Items.BOWL)
                 .stacksTo(16)
         )
@@ -622,14 +388,8 @@ object HDItems {
         "fishermans_pie"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(14)
-                        .saturationMod(0.75F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(14, 0.75f)
                 .stacksTo(1)
         )
     }
@@ -638,14 +398,8 @@ object HDItems {
         "jellied_carp",
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(14)
-                        .saturationMod(0.75F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(14, 0.75f)
                 .stacksTo(16)
         )
     }
@@ -654,14 +408,8 @@ object HDItems {
         "masgouf",
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(14)
-                        .saturationMod(0.75F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(14, 0.75f)
                 .stacksTo(16)
         )
     }
@@ -670,14 +418,8 @@ object HDItems {
         "fish_kebab"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(10)
-                        .saturationMod(1.0F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(10, 1.0f)
                 .stacksTo(16)
         )
     }
@@ -686,14 +428,8 @@ object HDItems {
         "fish_n_chips"
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(10)
-                        .saturationMod(1.0F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(10, 1.0f)
                 .stacksTo(16)
         )
     }
@@ -702,14 +438,8 @@ object HDItems {
         "tuna_roll",
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(7)
-                        .saturationMod(0.6F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(7, 0.6f)
         )
     }
 
@@ -717,19 +447,13 @@ object HDItems {
         "baked_stuffed_lobster",
     ) {
         Item(
-            Item.Properties()
-                .food(
-                    FoodProperties.Builder()
-                        .nutrition(14)
-                        .saturationMod(0.75F)
-                        .meat()
-                        .build()
-                )
+            HDItemProperties.props()
+                .hdFood(14, 0.75f)
                 .stacksTo(16)
         )
     }
 
     private fun register(id: String, item: Supplier<Item>): Supplier<Item> {
-        return HybridDelightsCommon.ITEMS.register(id, item)
+        return HybridDelightsCommon.ITEMS.register(id) { HDItemProperties.withId(id, item::get) }
     }
 }

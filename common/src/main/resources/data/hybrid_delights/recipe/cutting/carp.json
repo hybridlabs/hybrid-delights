@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "hybrid_aquatic:carp"
+  ],
+  "result": [
+    {
+      "item": {
+        "id": "hybrid_aquatic:raw_fish_meat",
+        "count": 1
+      }
+    },
+    {
+      "chance": 0.5,
+      "item": {
+        "id": "hybrid_delights:carp_roe",
+        "count": 1
+      }
+    }
+  ],
+  "tool": "#c:tools/knife",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "hybrid_aquatic"
+      ]
+    }
+  ]
+}

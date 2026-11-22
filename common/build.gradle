@@ -4,16 +4,17 @@ plugins {
 }
 
 dependencies {
-    // Aquatic moved its tool materials into HAPI, so the shared item types live here.
     implementation("dev.hybridlabs.hapi:hapi-common-${minecraft_version}:${hapi_version}")
+    implementation("software.bernie.geckolib:geckolib-neoforge-${geckolib_version}")
 
-    // Built from the hybrid-aquatic checkout listed in local_mods, rather than its published jar.
-    implementation("dev.hybridlabs:hybrid_aquatic-common-${minecraft_version}:${aquatic_version}")
+    // Farmer's Delight's item and block classes are loader-independent. Compile common against the
+    // NeoForge port; each loader adds its own runtime jar below.
+    implementation("curse.maven:farmers-delight-modern-neoforge-1707272:${fdneoforge_version}")
+}
 
-    modImplementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
-
-    implementation("com.terraformersmc:biolith-forge:${biolith_version}") {
-        exclude(group: "com.github.glitchfiend")
+repositories {
+    maven {
+        name = 'CurseMaven'
+        url = 'https://cursemaven.com'
     }
-    modImplementation "maven.modrinth:lithostitched:${lithostitched_version}-forge-1.20"
 }

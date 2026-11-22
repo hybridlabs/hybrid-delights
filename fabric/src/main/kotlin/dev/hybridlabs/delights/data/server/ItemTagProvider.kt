@@ -15,7 +15,7 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
             HDItems.CORAL_KNIFE.get(),
             HDItems.SHARK_TOOTH_KNIFE.get(),
         ).forEach { item ->
-            getOrCreateTagBuilder(HDItemTags.KNIVES).add(item)
+            valueLookupBuilder(HDItemTags.KNIVES).add(item)
         }
 
         setOf(
@@ -24,7 +24,7 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
             HDItems.TROPICAL_FISH_ROE.get(),
             HDItems.CARP_ROE.get(),
         ).forEach { item ->
-            getOrCreateTagBuilder(HDItemTags.ROE).add(item)
+            valueLookupBuilder(HDItemTags.ROE).add(item)
         }
 
         setOf(
@@ -33,7 +33,7 @@ class ItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableFut
             HDItems.CURED_TROPICAL_FISH_ROE.get(),
             HDItems.CURED_CARP_ROE.get(),
         ).forEach { item ->
-            getOrCreateTagBuilder(HDItemTags.CURED_ROE).add(item)
+            valueLookupBuilder(HDItemTags.CURED_ROE).add(item)
         }
     }
 }

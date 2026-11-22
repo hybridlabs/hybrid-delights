@@ -4,7 +4,7 @@ import dev.hybridlabs.delights.platform.Services;
 import dev.hybridlabs.delights.platform.registration.RegistrationProvider;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
@@ -30,7 +30,7 @@ public class HybridDelightsCommon {
         }
     }
 
-    public static ResourceLocation locate(String path) {
-        return new ResourceLocation(MOD_ID, path);
+    public static Identifier locate(String path) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, path);
     }
 }
