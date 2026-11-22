@@ -5,7 +5,7 @@
     "hybrid_aquatic:tuna",
     "minecraft:bread",
     "#c:crops/tomato",
-    "#c:salad_ingredients"
+    "#c:foods/vegetable"
   ],
   "result": {
     "id": "hybrid_delights:tuna_sandwich",
