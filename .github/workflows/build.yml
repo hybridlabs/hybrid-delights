@@ -1,37 +1,55 @@
-# Automatically build the project and run any configured tests for every push
-# and submitted pull request. This can help catch issues that only occur on
-# certain platforms or Java versions, and provides a first line of defence
-# against bad commits.
-
+# Builds the mod on every push and pull request, as a first line of defence against bad commits.
+#
+# Linux only: that is the only platform the team develops and ships from. The mod jars themselves
+# are platform-independent, so a second OS in the matrix only bought us a slower pipeline.
 name: build
-on: [pull_request, push]
+on: [push, pull_request]
+
+# A newer push to the same ref makes an in-flight run redundant. Cancel PR runs; let pushes to a
+# real branch finish so their artifacts stay available.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
 
 jobs:
   build:
-    strategy:
-      matrix:
-        # Use these Java versions
-        java: [
-          21,    # Current Java LTS
-        ]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: checkout repository
-        uses: actions/checkout@v4
-      - name: validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v2
-      - name: setup jdk ${{ matrix.java }}
-        uses: actions/setup-java@v4
+        uses: actions/checkout@v7
         with:
-          java-version: ${{ matrix.java }}
-          distribution: 'microsoft'
-      - name: make gradle wrapper executable
-        run: chmod +x ./gradlew
+          # hybrid-aquatic is built from its checkout (local_mods); its own submodules stay
+          # uninitialised so its dependencies resolve from Maven, as they do in Aquatic's CI.
+          submodules: true
+
+      # setup-java points JAVA_HOME at the LAST version listed, and that is the JVM Gradle runs
+      # on - it must be 21 or newer or Loom refuses to load. The earlier entry is the toolchain
+      # this project compiles against (java_version in gradle.properties), installed here so
+      # Gradle does not download a JDK on every run.
+      - name: set up jdks
+        uses: actions/setup-java@v6
+        with:
+          java-version: |
+            17
+            21
+          distribution: temurin
+
+      # Validates the wrapper checksum, and caches ~/.gradle plus the Gradle build cache between
+      # runs - the single biggest saving available to this pipeline.
+      - name: set up gradle
+        uses: gradle/actions/setup-gradle@v6
+
       - name: build
-        run: ./gradlew build
+        run: ./gradlew build "-Dorg.gradle.java.installations.fromEnv=JAVA_HOME_17_X64,JAVA_HOME_21_X64"
+
       - name: capture build artifacts
-        if: ${{ matrix.java == '21' }} # Only upload artifacts built from latest java
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: Artifacts
-          path: build/libs/
+          name: artifacts
+          path: |
+            fabric/build/libs/
+            forge/build/libs/
+          if-no-files-found: error

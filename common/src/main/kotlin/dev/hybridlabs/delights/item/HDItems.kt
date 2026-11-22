@@ -1,6 +1,6 @@
 package dev.hybridlabs.delights.item
 
-import dev.hybridlabs.aquatic.item.HAToolMaterials
+import dev.hybridlabs.hapi.item.HAPIToolMaterials
 import dev.hybridlabs.delights.HybridDelightsCommon
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
@@ -113,14 +113,14 @@ object HDItems {
     val CORAL_KNIFE = register(
         "coral_knife"
     ) {
-        KnifeItem(HAToolMaterials.CORAL, 0.5f, -2.0f, Item.Properties()
+        KnifeItem(HAPIToolMaterials.CORAL, 0.5f, -2.0f, Item.Properties()
         )
     }
 
     val SHARK_TOOTH_KNIFE = register(
         "shark_tooth_knife"
     ) {
-        KnifeItem(HAToolMaterials.SEASHELL, 0.5f, -2.0f, Item.Properties()
+        KnifeItem(HAPIToolMaterials.SEASHELL, 0.5f, -2.0f, Item.Properties()
         )
     }
 

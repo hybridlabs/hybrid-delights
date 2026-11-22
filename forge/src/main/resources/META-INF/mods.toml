@@ -29,9 +29,16 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
+modId = "hapi"
+mandatory = true
+versionRange = "[${hapi_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
 modId = "hybrid_aquatic"
 mandatory = true
-versionRange = "${aquatic_version}"
+versionRange = "[${aquatic_version},)"
 ordering = "NONE"
 side = "BOTH"
 
