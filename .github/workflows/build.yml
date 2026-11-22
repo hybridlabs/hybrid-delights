@@ -21,8 +21,9 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v7
         with:
-          # hybrid-api is built from its checkout (local_mods).
-          submodules: true
+          # hybrid-api and hybrid-birds are built from their checkouts (local_mods), and
+          # hybrid-birds has its own hybrid-api submodule.
+          submodules: recursive
 
       # Gradle itself has to run on Java 25 for the Loom/ModDevGradle generation used by
       # 26.x, and the project toolchain is 25 as well.
