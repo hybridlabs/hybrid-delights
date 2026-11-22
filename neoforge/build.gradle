@@ -63,5 +63,5 @@ neoForge {
 
 publishMods.platforms.configureEach {
     requires 'kotlin-for-forge', 'farmers-delight', 'hybrid-api'
-    optional 'farm_and_charm', 'hybrid-aquatic'
+    optional 'farm_and_charm', 'hybrid-aquatic', 'hybrid-birds'
 }

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "hybrid_delights:fried_chicken",
+    "hybrid_delights:fried_chicken",
+    "hybrid_delights:fried_chicken",
+    "minecraft:bucket"
+  ],
+  "result": {
+    "id": "hybrid_delights:bucket_of_chicken",
+    "count": 1
+  }
+}

@@ -47,6 +47,7 @@
 
 	"suggests": {
 		"farm_and_charm": "*",
-		"hybrid_aquatic": "*"
+		"hybrid_aquatic": "*",
+		"hybrid_birds": "*"
 	}
 }

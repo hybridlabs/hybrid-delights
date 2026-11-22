@@ -4,6 +4,7 @@ package dev.hybridlabs.delights.item
 
 import dev.hybridlabs.delights.Constants
 import dev.hybridlabs.delights.HybridDelightsCommon
+import dev.hybridlabs.delights.platform.Services
 import dev.hybridlabs.delights.platform.registration.RegistryObject
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.network.chat.Component
@@ -73,6 +74,15 @@ object  HDItemGroups {
 
             entries.accept(HDItems.FISHERMANS_SOUP.get())
             entries.accept(HDItems.FISHERMANS_PIE.get())
+
+            if (Services.PLATFORM.isModLoaded("hybrid_birds")) {
+                entries.accept(HDItems.SUNFLOWER_OIL.get())
+                entries.accept(HDItems.CHICKEN_NUGGET.get())
+                entries.accept(HDItems.FRIED_CHICKEN.get())
+                entries.accept(HDItems.BUCKET_OF_CHICKEN.get())
+                entries.accept(HDItems.PARTIALLY_EATEN_BUCKET_OF_CHICKEN.get())
+                entries.accept(HDItems.MOSTLY_EATEN_BUCKET_OF_CHICKEN.get())
+            }
 
             entries.accept(HDItems.EEL_NOODLES.get())
             entries.accept(HDItems.MASGOUF.get())
