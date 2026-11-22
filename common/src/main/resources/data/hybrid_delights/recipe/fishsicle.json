@@ -1,0 +1,20 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "fantastic_fishery"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "fantastic_fishery:frigid_vessel",
+    "minecraft:stick"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:fishsicle"
+  }
+}
