@@ -8,11 +8,18 @@ dependencies {
     // GeckoLib at runtime.
     compileOnly("dev.hybridlabs.hapi:hapi-common-${minecraft_version}:${hapi_version}")
     compileOnly("com.geckolib:geckolib-neoforge-${geckolib_version}")
+
+    // Farmer's Delight's common classes (food effects, cabinet sounds) are loader-independent.
+    compileOnly("curse.maven:farmers-delight-26-neo-ver-1699768:${fdneoforge_version}")
 }
 
 // GeckoLib 5.5 moved to the com.geckolib group, which hybrid-gradle's GeckoLib repository
 // filter does not include yet.
 repositories {
+    maven {
+        name = 'CurseMaven'
+        url = 'https://cursemaven.com'
+    }
     maven {
         url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
         content {

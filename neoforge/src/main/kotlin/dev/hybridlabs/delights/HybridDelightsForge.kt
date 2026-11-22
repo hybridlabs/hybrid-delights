@@ -1,5 +1,7 @@
 package dev.hybridlabs.delights
 
+import dev.hybridlabs.delights.block.HDBlocks
+import dev.hybridlabs.delights.block.entity.HDBlockEntityTypes
 import dev.hybridlabs.delights.item.HDItemGroups
 import dev.hybridlabs.delights.item.HDItems
 import net.neoforged.fml.common.Mod
@@ -17,7 +19,9 @@ object HybridDelightsForge {
     init {
         HybridDelightsCommon.init()
 
+        HDBlocks
         HDItems
         HDItemGroups
+        HDBlockEntityTypes
     }
 }
