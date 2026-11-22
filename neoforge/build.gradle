@@ -24,9 +24,6 @@ repositories {
 dependencies {
     implementation("dev.hybridlabs.hapi:hapi-neoforge-${minecraft_version}:${hapi_version}")
     implementation "com.geckolib:geckolib-neoforge-${geckolib_version}"
-
-    // Built from the hybrid-birds checkout listed in local_mods, rather than its published jar.
-    runtimeOnly("dev.hybridlabs:hybrid_birds-neoforge-${minecraft_version}:${hybrid_birds_version}")
     implementation("curse.maven:farmers-delight-26-neo-ver-1699768:${fdneoforge_version}")
 }
 
