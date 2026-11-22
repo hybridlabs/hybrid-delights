@@ -2,6 +2,7 @@ package dev.hybridlabs.delights.item
 
 import dev.hybridlabs.delights.Constants
 import dev.hybridlabs.delights.HybridDelightsCommon
+import dev.hybridlabs.delights.platform.Services
 import dev.hybridlabs.delights.platform.registration.RegistryObject
 import net.minecraft.network.chat.Component
 import net.minecraft.world.item.CreativeModeTab
@@ -20,6 +21,9 @@ object HDItemGroups {
                 .icon { ItemStack(HDItems.CRAB_CAKE.get()) }
                 .displayItems { _, output ->
                     HDItemGroupItems.DISPLAY_ITEMS.forEach { output.accept(it.get()) }
+                    if (Services.PLATFORM.isModLoaded("hybrid_birds")) {
+                        HDItemGroupItems.HYBRID_BIRDS_ITEMS.forEach { output.accept(it.get()) }
+                    }
                 }
                 .build()
         }

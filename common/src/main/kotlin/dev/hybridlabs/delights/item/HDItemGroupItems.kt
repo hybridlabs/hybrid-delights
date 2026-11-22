@@ -52,4 +52,14 @@ object HDItemGroupItems {
         HDItems.FISH_KEBAB,
         HDItems.FISH_N_CHIPS,
     )
+
+    /** Items that only make sense alongside Hybrid Birds, shown when that mod is loaded. */
+    val HYBRID_BIRDS_ITEMS: List<Supplier<Item>> = listOf(
+        HDItems.SUNFLOWER_OIL,
+        HDItems.CHICKEN_NUGGET,
+        HDItems.FRIED_CHICKEN,
+        HDItems.BUCKET_OF_CHICKEN,
+        HDItems.PARTIALLY_EATEN_BUCKET_OF_CHICKEN,
+        HDItems.MOSTLY_EATEN_BUCKET_OF_CHICKEN,
+    )
 }
