@@ -5,8 +5,8 @@
   "ingredients": [
     "hybrid_aquatic:raw_crab",
     "farmersdelight:milk_bottle",
-    "#c:dough",
-    "#c:onion"
+    "#c:foods/dough",
+    "#c:crops/onion"
   ],
   "recipe_book_tab": "meals",
   "result": {
