@@ -225,6 +225,6 @@ object HDBlocks {
     }
 
     fun register(id: String, block: Supplier<out Block>): RegistryObject<Block> {
-        return HybridDelightsCommon.BLOCKS.register(id) { block.get() }
+        return HybridDelightsCommon.BLOCKS.register(id) { HDBlockProperties.withId(id) { block.get() } }
     }
 }
