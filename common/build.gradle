@@ -8,6 +8,9 @@ dependencies {
     // GeckoLib at runtime.
     compileOnly("dev.hybridlabs.hapi:hapi-common-${minecraft_version}:${hapi_version}")
     compileOnly("com.geckolib:geckolib-neoforge-${geckolib_version}")
+
+    // Built from the hybrid-birds checkout listed in local_mods, rather than its published jar.
+    compileOnly("dev.hybridlabs:hybrid_birds-common-${minecraft_version}:${hybrid_birds_version}")
 }
 
 // GeckoLib 5.5 moved to the com.geckolib group, which hybrid-gradle's GeckoLib repository

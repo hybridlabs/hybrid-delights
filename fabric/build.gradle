@@ -7,6 +7,9 @@ dependencies {
     implementation("dev.hybridlabs.hapi:hapi-fabric-${minecraft_version}:${hapi_version}")
 
     implementation "com.geckolib:geckolib-fabric-${geckolib_version}"
+
+    // Built from the hybrid-birds checkout listed in local_mods, rather than its published jar.
+    localRuntime("dev.hybridlabs:hybrid_birds-fabric-${minecraft_version}:${hybrid_birds_version}")
     implementation("maven.modrinth:farmers-delight-refabricated:${fdrf_version}")
 }
 
