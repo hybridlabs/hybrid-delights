@@ -19,6 +19,8 @@ object HDItemGroupItems {
         HDItems.CARP_ROE,
         HDItems.CURED_CARP_ROE,
         HDItems.CAVIAR_TOAST,
+        HDItems.JELLY,
+        HDItems.JELLY_TOAST,
         HDItems.PICKLED_HERRING,
         HDItems.PICKLED_BULL_KELP,
         HDItems.FISH_GELATIN,
@@ -51,6 +53,55 @@ object HDItemGroupItems {
         HDItems.MASGOUF,
         HDItems.FISH_KEBAB,
         HDItems.FISH_N_CHIPS,
+    )
+
+    /** Stoves made from Hybrid Blocks' bricks. */
+    val HYBRID_BLOCKS_STOVES: List<Supplier<Item>> = listOf(
+        HDItems.WHITE_STOVE,
+        HDItems.ORANGE_STOVE,
+        HDItems.MAGENTA_STOVE,
+        HDItems.LIGHT_BLUE_STOVE,
+        HDItems.YELLOW_STOVE,
+        HDItems.LIME_STOVE,
+        HDItems.PINK_STOVE,
+        HDItems.GRAY_STOVE,
+        HDItems.LIGHT_GRAY_STOVE,
+        HDItems.CYAN_STOVE,
+        HDItems.PURPLE_STOVE,
+        HDItems.BLUE_STOVE,
+        HDItems.BROWN_STOVE,
+        HDItems.GREEN_STOVE,
+        HDItems.RED_STOVE,
+        HDItems.BLACK_STOVE,
+        HDItems.NETHER_BRICK_STOVE,
+        HDItems.RED_NETHER_BRICK_STOVE,
+        HDItems.CALCITE_STOVE,
+        HDItems.MUD_STOVE,
+    )
+
+    /** Stoves made from Hybrid Aquatic's stones. */
+    val HYBRID_AQUATIC_STOVES: List<Supplier<Item>> = listOf(
+        HDItems.SCHIST_STOVE,
+        HDItems.CHIMNEYSTONE_STOVE,
+        HDItems.YELLOW_BRINESTONE_STOVE,
+        HDItems.ORANGE_BRINESTONE_STOVE,
+        HDItems.RED_BRINESTONE_STOVE,
+    )
+
+    val HYBRID_AQUATIC_FURNITURE: List<Supplier<Item>> = listOf(
+        HDItems.DRIFTWOOD_CABINET,
+    )
+
+    /** Items that only make sense alongside Fantastic Fishery, shown when that mod is loaded. */
+    val FANTASTIC_FISHERY_ITEMS: List<Supplier<Item>> = listOf(
+        HDItems.FISHSICLE,
+        HDItems.SWEET_BERRY_FISHSICLE,
+        HDItems.GLOW_BERRY_FISHSICLE,
+        HDItems.MELON_FISHSICLE,
+        HDItems.PUMPKIN_FISHSICLE,
+        HDItems.MORSEL_OF_MORSEL,
+        HDItems.PLUNDERERS_ROE,
+        HDItems.CURED_PLUNDERERS_ROE,
     )
 
     /** Items that only make sense alongside Hybrid Birds, shown when that mod is loaded. */

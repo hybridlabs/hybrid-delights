@@ -20,7 +20,17 @@ object HDItemGroups {
                 .title(Component.translatable("itemGroup.${Constants.MOD_ID}.items"))
                 .icon { ItemStack(HDItems.CRAB_CAKE.get()) }
                 .displayItems { _, output ->
+                    if (Services.PLATFORM.isModLoaded("hybrid_blocks")) {
+                        HDItemGroupItems.HYBRID_BLOCKS_STOVES.forEach { output.accept(it.get()) }
+                    }
+                    if (Services.PLATFORM.isModLoaded("hybrid_aquatic")) {
+                        HDItemGroupItems.HYBRID_AQUATIC_STOVES.forEach { output.accept(it.get()) }
+                        HDItemGroupItems.HYBRID_AQUATIC_FURNITURE.forEach { output.accept(it.get()) }
+                    }
                     HDItemGroupItems.DISPLAY_ITEMS.forEach { output.accept(it.get()) }
+                    if (Services.PLATFORM.isModLoaded("fantastic_fishery")) {
+                        HDItemGroupItems.FANTASTIC_FISHERY_ITEMS.forEach { output.accept(it.get()) }
+                    }
                     if (Services.PLATFORM.isModLoaded("hybrid_birds")) {
                         HDItemGroupItems.HYBRID_BIRDS_ITEMS.forEach { output.accept(it.get()) }
                     }

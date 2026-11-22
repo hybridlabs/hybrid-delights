@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "cookingtime": 150,
+  "experience": 1.0,
+  "ingredients": [
+    "hybrid_delights:salt",
+    "hybrid_delights:plunderers_roe"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:cured_plunderers_roe"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "hybrid_blocks"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "hybrid_blocks:orange_bricks",
+    "C": "minecraft:campfire",
+    "i": "#c:ingots/iron"
+  },
+  "pattern": [
+    "iii",
+    "B B",
+    "BCB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hybrid_delights:orange_brick_stove"
+  }
+}

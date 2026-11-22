@@ -1,0 +1,30 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "hybrid_aquatic"
+      ]
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "#hybrid_delights:glowslime_fish"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "hybrid_aquatic:raw_fish_meat"
+      }
+    },
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "hybrid_aquatic:glowslime"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

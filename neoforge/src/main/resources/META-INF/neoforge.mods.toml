@@ -62,3 +62,17 @@ type = "optional"
 versionRange = "[0,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "hybrid_blocks"
+type = "optional"
+versionRange = "[0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "fantastic_fishery"
+type = "optional"
+versionRange = "[0,)"
+ordering = "NONE"
+side = "BOTH"
