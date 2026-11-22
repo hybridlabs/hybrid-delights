@@ -24,7 +24,7 @@ class BrineBottleItem(properties: Properties) : Item(properties) {
             if (entityLiving is Player && !entityLiving.abilities.instabuild) {
                 val itemstack = ItemStack(Items.GLASS_BOTTLE)
                 if (!entityLiving.inventory.add(itemstack)) {
-                    entityLiving.drop(itemstack, false)
+                    entityLiving.drop(itemstack, false, net.minecraft.util.Prediction.PREDICTED)
                 }
             }
 
