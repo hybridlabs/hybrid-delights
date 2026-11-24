@@ -11,8 +11,8 @@ repositories {
 }
 
 dependencies {
-    implementation("dev.hybridlabs.hapi:hapi-common-1.21.1:1.0.0")
-    modImplementation("dev.hybridlabs.hapi:hapi-fabric-1.21.1:1.0.0")
+    implementation("dev.hybridlabs.hapi:hapi-common-1.21.1:1.2.0")
+    modImplementation("dev.hybridlabs.hapi:hapi-fabric-1.21.1:1.2.0")
 
     modRuntimeOnly "io.github.flemmli97:debugutils:$minecraft_version-$debug_utils_version-fabric"
     modImplementation "maven.modrinth:carpet:$carpet_version"

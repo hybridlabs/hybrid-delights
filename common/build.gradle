@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    implementation("dev.hybridlabs.hapi:hapi-common-1.21.1:1.0.0")
+    implementation("dev.hybridlabs.hapi:hapi-common-1.21.1:1.2.0")
 
     implementation("maven.modrinth:farmers-delight:${farmersdelight_version}")
 }
