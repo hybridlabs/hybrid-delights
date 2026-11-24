@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-## [1.3.5]
+## [1.3.5] 2026-11-24
 
-- Restored the items and blocks from 1.3.4 on the newer Minecraft versions
+- Now available for Minecraft 26.2.
+- Restored fried chicken, chicken nuggets and the cabinet block.
+
+### Developer notes
+
+- Fried chicken, chicken nuggets and the cabinet are restored from the 1.21.1 branch.
 
 ## [1.3.4]
 

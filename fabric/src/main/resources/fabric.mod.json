@@ -35,7 +35,7 @@
 		"java": ">=25",
 		"fabric-language-kotlin": "*",
 		"fabric-api": ">=0.161",
-		"hapi": ">=1.5.0",
+		"hapi": ">=1.2.0",
 		"farmersdelight": "*"
 	},
 	"suggests": {
