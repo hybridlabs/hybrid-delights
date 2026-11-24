@@ -5,9 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.3.4] 2026-10-16
+## [1.3.5] 2026-11-24
 
-- Added status effects to some items
+- Some meals now grant Nourishment.
+- Glow berry foods now grant Glowing.
+
+### Developer notes
+
+- Nourishment and Glowing are applied through food properties.
+- Glow-berry fishsicles grant Glowing.
 
 ## [1.3.3] 2026-10-04
 
